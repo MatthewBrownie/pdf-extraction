@@ -218,9 +218,12 @@
     .pdf-toolbar .toggle input { accent-color: var(--accent); }
 
     .pdf-canvas-wrap {
-      flex: 1; overflow: auto;
+      flex: 1; overflow: auto; position: relative;
       display: flex; align-items: flex-start; justify-content: center;
       padding: 20px; background: #14161e;
+    }
+    .pdf-pages {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
     }
     .pdf-page-container {
       position: relative;
@@ -230,6 +233,12 @@
     }
     .pdf-page-container canvas {
       display: block;
+    }
+    .pdf-page-container .pdf-page-label {
+      position: absolute; top: 4px; left: 6px;
+      font-size: 0.65rem; font-family: var(--mono); color: rgba(0,0,0,0.45);
+      background: rgba(255,255,255,0.7); padding: 1px 5px; border-radius: 3px;
+      pointer-events: none; line-height: 1.2;
     }
     .pdf-overlay {
       position: absolute; inset: 0; pointer-events: none;
@@ -647,10 +656,7 @@
             <div class="pdf-empty-icon">📄</div>
             <p>Select or upload a PDF, then click Extract.</p>
           </div>
-          <div class="pdf-page-container" id="pdf-page-container" style="display:none">
-            <canvas id="pdf-canvas"></canvas>
-            <svg class="pdf-overlay" id="pdf-overlay"></svg>
-          </div>
+          <div class="pdf-pages" id="pdf-pages" style="display:none"></div>
         </div>
       </div>
 
@@ -800,8 +806,10 @@
   let allChunks = [], allTables = [], allImages = [];
   let pdfDoc = null, currentPdfName = null, currentPage = 1, totalPages = 1;
   let zoom = 1.0;
-  let currentRender = null;
-  let lastRenderedViewport = null;
+  let pageStates = [];           // per-page: { pageNum, container, canvas, overlay, viewport, render }
+  let renderToken = 0;           // incremented to cancel in-flight re-renders
+  let scrollObserver = null;
+  let suppressScrollSync = 0;    // when >0, ignore scroll-driven page updates
   let activeBox = null;          // { type, index } currently focused
   let hoverBoxState = null;      // { type, index } currently hovered (transient)
   let showAllBoxes = false;
@@ -1185,13 +1193,13 @@
   async function loadPdfDocument(url) {
     try {
       $('pdf-empty').style.display = 'none';
-      $('pdf-page-container').style.display = '';
+      $('pdf-pages').style.display = '';
       const loadingTask = pdfjsLib.getDocument(url);
       pdfDoc = await loadingTask.promise;
       totalPages = pdfDoc.numPages;
       currentPage = 1;
       zoom = 1.0;
-      await renderPage();
+      await buildAndRenderAllPages();
     } catch (err) {
       console.error('PDF load failed', err);
       hidePdfViewer();
@@ -1200,52 +1208,205 @@
   }
 
   function hidePdfViewer() {
+    cancelAllPageRenders();
+    teardownScrollObserver();
     pdfDoc = null;
+    pageStates = [];
+    $('pdf-pages').innerHTML = '';
     $('pdf-empty').style.display = '';
-    $('pdf-page-container').style.display = 'none';
+    $('pdf-pages').style.display = 'none';
     $('page-info').textContent = '—';
     $('zoom-info').textContent = '100%';
+    $('page-prev').disabled = true;
+    $('page-next').disabled = true;
   }
 
-  async function renderPage() {
+  function cancelAllPageRenders() {
+    for (const ps of pageStates) {
+      if (ps && ps.render) { try { ps.render.cancel(); } catch {} }
+    }
+    renderToken++;
+  }
+
+  function teardownScrollObserver() {
+    if (scrollObserver) { try { scrollObserver.disconnect(); } catch {} scrollObserver = null; }
+  }
+
+  // Build per-page DOM containers (canvas + overlay) and render every page.
+  async function buildAndRenderAllPages() {
     if (!pdfDoc) return;
-    if (currentRender) { try { currentRender.cancel(); } catch {} }
-    const page = await pdfDoc.getPage(currentPage);
+    cancelAllPageRenders();
+    teardownScrollObserver();
+    const pagesEl = $('pdf-pages');
+    pagesEl.innerHTML = '';
+    pageStates = new Array(totalPages + 1); // 1-indexed
+
+    // Build placeholders first (so scrollable height exists), then render.
+    for (let p = 1; p <= totalPages; p++) {
+      const container = document.createElement('div');
+      container.className = 'pdf-page-container';
+      container.dataset.pageNum = String(p);
+      const canvas = document.createElement('canvas');
+      const overlay = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      overlay.setAttribute('class', 'pdf-overlay');
+      const label = document.createElement('div');
+      label.className = 'pdf-page-label';
+      label.textContent = `Page ${p}`;
+      container.appendChild(canvas);
+      container.appendChild(overlay);
+      container.appendChild(label);
+      pagesEl.appendChild(container);
+      pageStates[p] = { pageNum: p, container, canvas, overlay, viewport: null, render: null };
+    }
+
+    $('zoom-info').textContent = Math.round(zoom * 100) + '%';
+    setupScrollObserver();
+    updatePageInfo();
+
+    // Render pages sequentially so the visible ones come up first and we don't
+    // hammer pdf.js with a huge concurrent render burst.
+    const token = ++renderToken;
+    for (let p = 1; p <= totalPages; p++) {
+      if (token !== renderToken) return; // a newer render started
+      await renderSinglePage(p, token);
+    }
+  }
+
+  async function renderSinglePage(pageNum, token) {
+    const ps = pageStates[pageNum];
+    if (!ps || !pdfDoc) return;
+    if (ps.render) { try { ps.render.cancel(); } catch {} }
+    const page = await pdfDoc.getPage(pageNum);
+    if (token !== renderToken) return;
     const viewport = page.getViewport({ scale: zoom * 1.5 }); // 1.5 base for crispness
-    lastRenderedViewport = viewport;
-    const canvas = $('pdf-canvas');
+    ps.viewport = viewport;
+    const { canvas, container, overlay } = ps;
     const ctx = canvas.getContext('2d');
     canvas.width = viewport.width;
     canvas.height = viewport.height;
     canvas.style.width = viewport.width + 'px';
     canvas.style.height = viewport.height + 'px';
-    const container = $('pdf-page-container');
     container.style.width = viewport.width + 'px';
     container.style.height = viewport.height + 'px';
-    const overlay = $('pdf-overlay');
     overlay.setAttribute('viewBox', `0 0 ${viewport.width} ${viewport.height}`);
     overlay.setAttribute('width', viewport.width);
     overlay.setAttribute('height', viewport.height);
-    currentRender = page.render({ canvasContext: ctx, viewport });
-    try { await currentRender.promise; } catch (e) { /* canceled */ }
-    $('page-info').textContent = `Page ${currentPage} / ${totalPages}`;
-    $('zoom-info').textContent = Math.round(zoom * 100) + '%';
-    drawOverlay();
+    ps.render = page.render({ canvasContext: ctx, viewport });
+    try { await ps.render.promise; } catch (e) { /* canceled */ }
+    ps.render = null;
+    if (token !== renderToken) return;
+    drawPageOverlay(pageNum);
   }
 
-  $('page-prev').addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderPage(); } });
-  $('page-next').addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; renderPage(); } });
-  $('zoom-in').addEventListener('click', () => { zoom = Math.min(zoom + 0.25, 4); renderPage(); });
-  $('zoom-out').addEventListener('click', () => { zoom = Math.max(zoom - 0.25, 0.25); renderPage(); });
-  $('show-all-boxes').addEventListener('change', (e) => { showAllBoxes = e.target.checked; drawOverlay(); });
+  // Re-render every page at the current zoom while keeping the user roughly
+  // anchored on the page they were viewing.
+  async function rerenderAllAtCurrentZoom() {
+    if (!pdfDoc) return;
+    const wrap = $('pdf-canvas-wrap');
+    const anchorPage = currentPage;
+    const ps = pageStates[anchorPage];
+    // Capture how far down inside the anchor page we were (as a 0..1 fraction)
+    let intraFrac = 0;
+    if (ps && ps.container) {
+      const rect = ps.container.getBoundingClientRect();
+      const wrapRect = wrap.getBoundingClientRect();
+      const offsetWithin = wrapRect.top - rect.top;
+      const h = rect.height || 1;
+      intraFrac = Math.max(0, Math.min(1, offsetWithin / h));
+    }
+    $('zoom-info').textContent = Math.round(zoom * 100) + '%';
+
+    const token = ++renderToken;
+    // Render the anchor page first so we can re-anchor scroll immediately.
+    await renderSinglePage(anchorPage, token);
+    if (token !== renderToken) return;
+    const newPs = pageStates[anchorPage];
+    if (newPs && newPs.container) {
+      suppressScrollSync++;
+      const newH = newPs.container.getBoundingClientRect().height || 1;
+      const target = newPs.container.offsetTop + intraFrac * newH;
+      wrap.scrollTop = target;
+      // Release the suppression on the next frame, after the scroll settles.
+      requestAnimationFrame(() => { suppressScrollSync = Math.max(0, suppressScrollSync - 1); });
+    }
+    // Then the rest of the pages.
+    for (let p = 1; p <= totalPages; p++) {
+      if (p === anchorPage) continue;
+      if (token !== renderToken) return;
+      await renderSinglePage(p, token);
+    }
+  }
+
+  function setupScrollObserver() {
+    teardownScrollObserver();
+    const wrap = $('pdf-canvas-wrap');
+    // IntersectionObserver tracks how much of each page is in the viewport;
+    // whichever has the largest visible area becomes the "current" page.
+    const visible = new Map(); // pageNum -> intersectionRatio
+    scrollObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const p = parseInt(entry.target.dataset.pageNum, 10);
+        if (!p) continue;
+        if (entry.isIntersecting) visible.set(p, entry.intersectionRatio);
+        else visible.delete(p);
+      }
+      if (suppressScrollSync > 0) return;
+      if (!visible.size) return;
+      // Pick the page with the highest visible ratio; tie-break by lower page #.
+      let best = null, bestRatio = -1;
+      for (const [p, r] of visible) {
+        if (r > bestRatio || (r === bestRatio && (best === null || p < best))) {
+          best = p; bestRatio = r;
+        }
+      }
+      if (best && best !== currentPage) {
+        currentPage = best;
+        updatePageInfo();
+      }
+    }, {
+      root: wrap,
+      // Trigger updates at multiple thresholds for smoother tracking.
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1.0],
+    });
+    for (let p = 1; p <= totalPages; p++) {
+      const ps = pageStates[p];
+      if (ps && ps.container) scrollObserver.observe(ps.container);
+    }
+  }
+
+  function updatePageInfo() {
+    if (!pdfDoc) { $('page-info').textContent = '—'; return; }
+    $('page-info').textContent = `Page ${currentPage} / ${totalPages}`;
+    $('page-prev').disabled = currentPage <= 1;
+    $('page-next').disabled = currentPage >= totalPages;
+  }
+
+  function scrollToPage(pageNum, behavior = 'smooth') {
+    const ps = pageStates[pageNum];
+    const wrap = $('pdf-canvas-wrap');
+    if (!ps || !ps.container || !wrap) return;
+    suppressScrollSync++;
+    currentPage = pageNum;
+    updatePageInfo();
+    // Use scrollTo for predictable alignment and to avoid horizontal jumps.
+    wrap.scrollTo({ top: ps.container.offsetTop - 8, behavior });
+    // Release suppression once the smooth scroll has had time to settle.
+    setTimeout(() => { suppressScrollSync = Math.max(0, suppressScrollSync - 1); }, behavior === 'smooth' ? 600 : 50);
+  }
+
+  $('page-prev').addEventListener('click', () => { if (currentPage > 1) scrollToPage(currentPage - 1); });
+  $('page-next').addEventListener('click', () => { if (currentPage < totalPages) scrollToPage(currentPage + 1); });
+  $('zoom-in').addEventListener('click', () => { zoom = Math.min(zoom + 0.25, 4); rerenderAllAtCurrentZoom(); });
+  $('zoom-out').addEventListener('click', () => { zoom = Math.max(zoom - 0.25, 0.25); rerenderAllAtCurrentZoom(); });
+  $('show-all-boxes').addEventListener('change', (e) => { showAllBoxes = e.target.checked; drawAllOverlays(); });
 
   // ── Overlay drawing ──
-  function bboxToCanvas(bbox, pageSize) {
-    if (!bbox || !pageSize || !lastRenderedViewport) return null;
+  function bboxToCanvas(bbox, pageSize, viewport) {
+    if (!bbox || !pageSize || !viewport) return null;
     // PDF.js viewport.width/height are in pixels at the chosen scale.
     // pageSize is in PDF points (top-left origin matching our extracted bbox).
-    const sx = lastRenderedViewport.width / pageSize[0];
-    const sy = lastRenderedViewport.height / pageSize[1];
+    const sx = viewport.width / pageSize[0];
+    const sy = viewport.height / pageSize[1];
     const [x0, y0, x1, y1] = bbox;
     return {
       x: x0 * sx,
@@ -1255,81 +1416,106 @@
     };
   }
 
-  function drawOverlay() {
-    const overlay = $('pdf-overlay');
-    if (!overlay) return;
-    overlay.innerHTML = '';
-    if (!pdfDoc || !lastRenderedViewport) return;
+  const OVERLAY_COLORS = {
+    chunk: 'rgba(62, 207, 142, 0.95)',
+    table: 'rgba(240, 192, 64, 0.95)',
+    image: 'rgba(108, 140, 255, 0.95)',
+  };
 
-    const draw = (item, color, isActive) => {
+  function isHighlighted(type, i) {
+    return (activeBox && activeBox.type === type && activeBox.index === i) ||
+           (hoverBoxState && hoverBoxState.type === type && hoverBoxState.index === i);
+  }
+
+  function drawAllOverlays() {
+    if (!pdfDoc) return;
+    for (let p = 1; p <= totalPages; p++) drawPageOverlay(p);
+  }
+
+  function drawPageOverlay(pageNum) {
+    const ps = pageStates[pageNum];
+    if (!ps || !ps.overlay) return;
+    const overlay = ps.overlay;
+    overlay.innerHTML = '';
+    if (!ps.viewport) return;
+
+    const drawItem = (item, type, idx) => {
       if (!item.bbox || !item.page_size) return;
-      if (item.page !== currentPage) return;
-      const r = bboxToCanvas(item.bbox, item.page_size);
+      if (item.page !== pageNum) return;
+      const r = bboxToCanvas(item.bbox, item.page_size, ps.viewport);
       if (!r) return;
+      const active = isHighlighted(type, idx);
+      const color = OVERLAY_COLORS[type];
       const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
       rect.setAttribute('x', r.x);
       rect.setAttribute('y', r.y);
       rect.setAttribute('width', Math.max(r.w, 1));
       rect.setAttribute('height', Math.max(r.h, 1));
-      rect.setAttribute('fill', isActive ? color.replace('0.95', '0.18') : 'none');
+      rect.setAttribute('fill', active ? color.replace('0.95', '0.18') : 'none');
       rect.setAttribute('stroke', color);
-      rect.setAttribute('stroke-width', isActive ? 2.5 : 1);
+      rect.setAttribute('stroke-width', active ? 2.5 : 1);
       rect.setAttribute('vector-effect', 'non-scaling-stroke');
       overlay.appendChild(rect);
     };
 
-    const colors = {
-      chunk: 'rgba(62, 207, 142, 0.95)',
-      table: 'rgba(240, 192, 64, 0.95)',
-      image: 'rgba(108, 140, 255, 0.95)',
-    };
-
-    const isHighlighted = (type, i) =>
-      (activeBox && activeBox.type === type && activeBox.index === i) ||
-      (hoverBoxState && hoverBoxState.type === type && hoverBoxState.index === i);
-
     if (showAllBoxes) {
-      allChunks.forEach((c, i) => draw(c, colors.chunk, isHighlighted('chunk', i)));
-      allTables.forEach((t, i) => draw(t, colors.table, isHighlighted('table', i)));
-      allImages.forEach((im, i) => draw(im, colors.image, isHighlighted('image', i)));
+      allChunks.forEach((c, i) => drawItem(c, 'chunk', i));
+      allTables.forEach((t, i) => drawItem(t, 'table', i));
+      allImages.forEach((im, i) => drawItem(im, 'image', i));
     } else {
-      // Draw active (locked) box, then hover on top if different
       if (activeBox) {
         const arr = activeBox.type === 'chunk' ? allChunks : activeBox.type === 'table' ? allTables : allImages;
         const item = arr[activeBox.index];
-        if (item) draw(item, colors[activeBox.type], true);
+        if (item && item.page === pageNum) drawItem(item, activeBox.type, activeBox.index);
       }
       if (hoverBoxState && (!activeBox || hoverBoxState.type !== activeBox.type || hoverBoxState.index !== activeBox.index)) {
         const arr = hoverBoxState.type === 'chunk' ? allChunks : hoverBoxState.type === 'table' ? allTables : allImages;
         const item = arr[hoverBoxState.index];
-        if (item) draw(item, colors[hoverBoxState.type], true);
+        if (item && item.page === pageNum) drawItem(item, hoverBoxState.type, hoverBoxState.index);
       }
     }
   }
 
+  // Compatibility shim — kept so other call sites (clearResults etc.) still work.
+  function drawOverlay() { drawAllOverlays(); }
+
   function hoverBox(type, index) {
-    if (type === null) {
-      hoverBoxState = null;
-    } else {
-      hoverBoxState = { type, index };
-    }
-    drawOverlay();
+    const prev = hoverBoxState;
+    hoverBoxState = type === null ? null : { type, index };
+    // Only redraw the affected page(s) for efficiency.
+    const touched = new Set();
+    const collect = (ref) => {
+      if (!ref) return;
+      const arr = ref.type === 'chunk' ? allChunks : ref.type === 'table' ? allTables : allImages;
+      const it = arr[ref.index];
+      if (it && it.page) touched.add(it.page);
+    };
+    collect(prev); collect(hoverBoxState);
+    if (showAllBoxes) { drawAllOverlays(); return; }
+    touched.forEach(p => drawPageOverlay(p));
   }
 
   function focusBox(type, index) {
     const arr = type === 'chunk' ? allChunks : type === 'table' ? allTables : allImages;
     const item = arr[index];
     if (!item) return;
+    const prev = activeBox;
     activeBox = { type, index };
-    if (item.page && item.page !== currentPage && pdfDoc) {
-      currentPage = item.page;
-      renderPage(); // drawOverlay will run after render completes
-    } else {
-      drawOverlay();
+    // Redraw any page whose highlight state may have changed.
+    const touched = new Set();
+    if (prev) {
+      const prevArr = prev.type === 'chunk' ? allChunks : prev.type === 'table' ? allTables : allImages;
+      const prevItem = prevArr[prev.index];
+      if (prevItem && prevItem.page) touched.add(prevItem.page);
     }
+    if (item.page) touched.add(item.page);
+    if (showAllBoxes) drawAllOverlays();
+    else touched.forEach(p => drawPageOverlay(p));
+
+    if (item.page && pdfDoc) scrollToPage(item.page);
+
     // Reflect active state in side panels
     if (type === 'chunk') {
-      // Make sure the active chunk is on the visible page of the chunk list
       const targetPage = Math.floor(index / CHUNK_PAGE_SIZE);
       if (targetPage !== chunkPage) { chunkPage = targetPage; renderChunkPage(); }
       else renderChunkPage();
