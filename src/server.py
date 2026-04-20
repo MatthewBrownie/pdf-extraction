@@ -35,6 +35,7 @@ sys.path.insert(0, str(_HERE))
 
 import extract as extractor_v1
 import extract_v2 as extractor_v2
+import warmup as _warmup
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -50,6 +51,20 @@ _OUTPUT.mkdir(parents=True, exist_ok=True)
 VERSIONS = ("v1", "v2", "v3", "v4")
 
 app = FastAPI(title="PDF Extraction POC")
+
+
+@app.on_event("startup")
+def _prewarm_heavy_models() -> None:
+    """Kick off v3/v4 model downloads in background threads at server start.
+
+    The first call to v3 (unstructured.io) or v4 (docling) otherwise downloads
+    several hundred MB of layout/OCR/IBM models on demand, hanging the request
+    for 30s–several minutes. Doing the downloads in the background here means
+    the first user-facing extraction is roughly as fast as subsequent ones.
+
+    Warmups are best-effort and never block server startup or raise.
+    """
+    _warmup.warmup_all_in_background()
 
 # Serve per-version output (images live under /images/<stem>/<version>/images/)
 app.mount("/images", StaticFiles(directory=str(_OUTPUT)), name="images")
