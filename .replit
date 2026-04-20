@@ -36,3 +36,7 @@ externalPort = 80
 [deployment]
 deploymentTarget = "autoscale"
 run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "-w", "2", "-k", "uvicorn.workers.UvicornWorker", "src.server:app"]
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 600000
