@@ -29,6 +29,38 @@ import time
 log = logging.getLogger("warmup")
 
 
+# ---------------------------------------------------------------------------
+# Per-version status tracking
+# ---------------------------------------------------------------------------
+# Status is one of:
+#   "pending"     — warmup hasn't been kicked off yet
+#   "in_progress" — warmup thread is running (downloading/loading models)
+#   "ready"       — models are downloaded/loaded and ready to use
+#   "failed"      — warmup tried but the optional dep is missing or downloads failed
+#
+# This is read by the FastAPI /api/warmup endpoint so the UI can show a
+# "Models still downloading…" banner on the v3/v4 tabs until ready.
+_status_lock = threading.Lock()
+_status: dict[str, dict[str, object]] = {
+    "v3": {"status": "pending", "started_at": None, "finished_at": None, "detail": None},
+    "v4": {"status": "pending", "started_at": None, "finished_at": None, "detail": None},
+}
+
+
+def _set_status(version: str, **fields) -> None:
+    with _status_lock:
+        if version not in _status:
+            _status[version] = {"status": "pending", "started_at": None, "finished_at": None, "detail": None}
+        _status[version].update(fields)
+
+
+def get_status() -> dict[str, dict[str, object]]:
+    """Return a snapshot of the current per-version warmup status."""
+    with _status_lock:
+        # Shallow copy each inner dict so callers can't mutate our state.
+        return {k: dict(v) for k, v in _status.items()}
+
+
 def warmup_v3() -> bool:
     """Pre-load unstructured.io models (YOLOX layout detector, etc.).
 
@@ -36,16 +68,19 @@ def warmup_v3() -> bool:
     download failed. Never raises.
     """
     t0 = time.time()
+    _set_status("v3", status="in_progress", started_at=t0, finished_at=None, detail=None)
     try:
         log.info("v3 warmup: importing unstructured.partition.pdf …")
         from unstructured.partition.pdf import partition_pdf  # noqa: F401
     except Exception as e:
         log.warning("v3 warmup skipped — unstructured not importable: %s", e)
+        _set_status("v3", status="failed", finished_at=time.time(), detail=f"unstructured not importable: {e}")
         return False
 
     # The hi_res strategy uses a YOLOX layout model that's downloaded on first
     # use. Pull it explicitly so the first real extraction is instant.
     yolox_ok = False
+    yolox_err: str | None = None
     try:
         from unstructured_inference.models.base import get_model
 
@@ -53,6 +88,7 @@ def warmup_v3() -> bool:
         get_model("yolox")
         yolox_ok = True
     except Exception as e:
+        yolox_err = str(e)
         log.warning("v3 warmup: could not pre-fetch yolox model: %s", e)
 
     # Tesseract OCR data is a system package; nothing to download here, but we
@@ -63,6 +99,12 @@ def warmup_v3() -> bool:
         pass
 
     log.info("v3 warmup %s in %.1fs", "complete" if yolox_ok else "partial", time.time() - t0)
+    _set_status(
+        "v3",
+        status="ready" if yolox_ok else "failed",
+        finished_at=time.time(),
+        detail=None if yolox_ok else f"yolox model fetch failed: {yolox_err}",
+    )
     return yolox_ok
 
 
@@ -72,11 +114,13 @@ def warmup_v4() -> bool:
     Returns True on success, False if docling isn't installed. Never raises.
     """
     t0 = time.time()
+    _set_status("v4", status="in_progress", started_at=t0, finished_at=None, detail=None)
     try:
         log.info("v4 warmup: importing docling …")
         from docling.document_converter import DocumentConverter
     except Exception as e:
         log.warning("v4 warmup skipped — docling not importable: %s", e)
+        _set_status("v4", status="failed", finished_at=time.time(), detail=f"docling not importable: {e}")
         return False
 
     # Preferred path: docling exposes an explicit model downloader.
@@ -98,14 +142,22 @@ def warmup_v4() -> bool:
             DocumentConverter()
         except Exception as e:
             log.warning("v4 warmup: DocumentConverter() failed: %s", e)
+            _set_status("v4", status="failed", finished_at=time.time(), detail=f"DocumentConverter() failed: {e}")
             return False
 
     log.info("v4 warmup done in %.1fs", time.time() - t0)
+    _set_status("v4", status="ready", finished_at=time.time(), detail=None)
     return True
 
 
 def warmup_all_in_background() -> list[threading.Thread]:
     """Run v3 and v4 warmups in daemon background threads. Returns the threads."""
+    # Mark as in_progress immediately so any /api/warmup poll between
+    # `warmup_all_in_background()` returning and the worker thread actually
+    # running still sees a non-pending status.
+    now = time.time()
+    _set_status("v3", status="in_progress", started_at=now, finished_at=None, detail=None)
+    _set_status("v4", status="in_progress", started_at=now, finished_at=None, detail=None)
     threads: list[threading.Thread] = []
     for name, fn in (("warmup-v3", warmup_v3), ("warmup-v4", warmup_v4)):
         t = threading.Thread(target=fn, name=name, daemon=True)

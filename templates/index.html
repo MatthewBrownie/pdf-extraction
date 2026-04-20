@@ -88,6 +88,28 @@
     }
     select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 
+    .warmup-banner {
+      padding: 8px 10px; background: rgba(255, 166, 87, 0.10);
+      border: 1px solid rgba(255, 166, 87, 0.35); border-radius: var(--radius);
+      color: var(--orange); font-size: 0.75rem; line-height: 1.45;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .warmup-banner.failed {
+      background: rgba(255, 107, 107, 0.10);
+      border-color: rgba(255, 107, 107, 0.35);
+      color: var(--red);
+    }
+    .warmup-banner .warmup-spinner {
+      width: 12px; height: 12px; flex-shrink: 0; margin-top: 2px;
+      border: 2px solid rgba(255, 166, 87, 0.3); border-top-color: var(--orange);
+      border-radius: 50%; animation: spin 0.9s linear infinite;
+    }
+    .warmup-banner .warmup-text { flex: 1; }
+    .warmup-banner .warmup-text strong { display: block; margin-bottom: 2px; }
+    .warmup-banner .warmup-elapsed {
+      font-family: var(--mono); font-size: 0.7rem; opacity: 0.8;
+    }
+
     .radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
     .radio-option {
       display: flex; align-items: center; justify-content: center;
@@ -629,6 +651,14 @@
         <label class="radio-option" data-version="v3"><input type="radio" name="version" value="v3" />v3 — unstructured</label>
         <label class="radio-option" data-version="v4"><input type="radio" name="version" value="v4" />v4 — docling</label>
       </div>
+      <div class="warmup-banner" id="warmup-banner" style="display:none">
+        <div class="warmup-spinner" id="warmup-spinner"></div>
+        <div class="warmup-text">
+          <strong id="warmup-title">Models still downloading</strong>
+          <span id="warmup-detail">First run may take a minute while v3/v4 models finish downloading.</span>
+          <div class="warmup-elapsed" id="warmup-elapsed"></div>
+        </div>
+      </div>
     </div>
 
     <div class="extract-row">
@@ -941,8 +971,81 @@
       radioOpts.forEach(l => l.classList.remove('selected'));
       label.classList.add('selected');
       label.querySelector('input').checked = true;
+      updateWarmupBanner();
     });
   });
+
+  // ── Warmup status polling ──
+  // The server kicks off v3/v4 model downloads in background threads at
+  // startup. While they're in flight, surface a friendly banner on the
+  // sidebar (only when v3 or v4 is the selected extractor) so the user
+  // knows the first run will take a moment instead of looking like a hang.
+  const warmupBanner = $('warmup-banner');
+  const warmupSpinner = $('warmup-spinner');
+  const warmupTitle = $('warmup-title');
+  const warmupDetail = $('warmup-detail');
+  const warmupElapsed = $('warmup-elapsed');
+  let warmupState = { v3: { status: 'pending' }, v4: { status: 'pending' } };
+  let warmupPollTimer = null;
+
+  function selectedVersion() {
+    const checked = document.querySelector('input[name="version"]:checked');
+    return checked ? checked.value : 'v2';
+  }
+
+  function updateWarmupBanner() {
+    const v = selectedVersion();
+    if (v !== 'v3' && v !== 'v4') {
+      warmupBanner.style.display = 'none';
+      return;
+    }
+    const info = warmupState[v] || { status: 'pending' };
+    if (info.status === 'ready') {
+      warmupBanner.style.display = 'none';
+      return;
+    }
+    warmupBanner.style.display = '';
+    if (info.status === 'failed') {
+      warmupBanner.classList.add('failed');
+      warmupSpinner.style.display = 'none';
+      warmupTitle.textContent = `${v} model warmup failed`;
+      warmupDetail.textContent = info.detail
+        ? `${info.detail}. The first extraction may still try and download on demand.`
+        : 'The first extraction will try to download models on demand.';
+      warmupElapsed.textContent = '';
+    } else {
+      warmupBanner.classList.remove('failed');
+      warmupSpinner.style.display = '';
+      warmupTitle.textContent = `Warming up ${v} models…`;
+      warmupDetail.textContent = 'First run may take a minute while models finish downloading.';
+      const e = typeof info.elapsed === 'number' ? info.elapsed : null;
+      warmupElapsed.textContent = e !== null ? `Elapsed: ${e.toFixed(1)}s` : '';
+    }
+  }
+
+  async function pollWarmup() {
+    try {
+      const res = await fetch('/api/warmup');
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.versions) warmupState = data.versions;
+      }
+    } catch {
+      // Network/fetch errors are non-fatal — keep last-known state and try again.
+    }
+    updateWarmupBanner();
+    const allReady = ['v3', 'v4'].every(v => {
+      const s = (warmupState[v] || {}).status;
+      return s === 'ready' || s === 'failed';
+    });
+    if (allReady) {
+      if (warmupPollTimer) { clearInterval(warmupPollTimer); warmupPollTimer = null; }
+    }
+  }
+
+  // Initial fetch + 3s poll until all versions settle.
+  pollWarmup();
+  warmupPollTimer = setInterval(pollWarmup, 3000);
 
   // ── Side tabs ──
   document.querySelectorAll('.tab').forEach(tab => {

@@ -188,6 +188,28 @@ def index():
     return HTMLResponse(content=html_path.read_text(encoding="utf-8"))
 
 
+@app.get("/api/warmup")
+def warmup_status():
+    """Return per-version model warmup status.
+
+    Used by the UI to show a "Models still downloading…" banner on the v3/v4
+    tabs while the background downloads kicked off at server startup are still
+    in flight. Each entry has a `status` of pending/in_progress/ready/failed.
+    """
+    status = _warmup.get_status()
+    out: dict[str, dict] = {}
+    for v, info in status.items():
+        entry = {"status": info.get("status", "pending"), "detail": info.get("detail")}
+        started = info.get("started_at")
+        finished = info.get("finished_at")
+        now = time.time()
+        if isinstance(started, (int, float)):
+            end = finished if isinstance(finished, (int, float)) else now
+            entry["elapsed"] = round(max(0.0, end - started), 1)
+        out[v] = entry
+    return {"versions": out}
+
+
 @app.get("/api/pdfs")
 def list_pdfs():
     if not _INPUT_DOCS.exists():
