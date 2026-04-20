@@ -444,6 +444,31 @@
     }
     .results-table tr:last-child td { border-bottom: none; }
     .results-table td:last-child, .results-table th:last-child { border-right: none; }
+    .col-warmup {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-left: 8px; padding: 2px 7px;
+      background: rgba(255, 166, 87, 0.12);
+      border: 1px solid rgba(255, 166, 87, 0.4);
+      border-radius: 999px;
+      color: var(--orange);
+      font-size: 0.62rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      vertical-align: middle;
+    }
+    .col-warmup.failed {
+      background: rgba(255, 107, 107, 0.12);
+      border-color: rgba(255, 107, 107, 0.4);
+      color: var(--red);
+    }
+    .col-warmup .col-warmup-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      border: 2px solid rgba(255, 166, 87, 0.3);
+      border-top-color: var(--orange);
+      animation: spin 0.9s linear infinite;
+    }
+    .col-warmup.failed .col-warmup-dot {
+      border: none; background: var(--red); animation: none;
+    }
     .pdf-name {
       font-family: var(--mono); font-size: 0.78rem; color: var(--text);
       max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
@@ -913,7 +938,7 @@
 
       <div class="stats-panel active" id="stats-panel-all">
         <table class="results-table" id="results-table">
-          <thead><tr><th>PDF</th><th>v1 — baseline</th><th>v2 — improved</th><th>v3 — unstructured</th><th>v4 — docling</th></tr></thead>
+          <thead><tr><th>PDF</th><th>v1 — baseline</th><th>v2 — improved</th><th id="results-th-v3">v3 — unstructured<span class="col-warmup" id="results-warmup-v3" style="display:none"></span></th><th id="results-th-v4">v4 — docling<span class="col-warmup" id="results-warmup-v4" style="display:none"></span></th></tr></thead>
           <tbody><tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr></tbody>
         </table>
       </div>
@@ -1079,6 +1104,35 @@
     return checked ? checked.value : 'v2';
   }
 
+  function updateResultsWarmupHeaders() {
+    ['v3', 'v4'].forEach(v => {
+      const el = document.getElementById(`results-warmup-${v}`);
+      if (!el) return;
+      const info = warmupState[v] || { status: 'pending' };
+      const s = info.status;
+      if (s === 'ready') {
+        el.style.display = 'none';
+        el.className = 'col-warmup';
+        el.innerHTML = '';
+        el.title = '';
+        return;
+      }
+      el.style.display = '';
+      if (s === 'failed') {
+        el.className = 'col-warmup failed';
+        el.innerHTML = '<span class="col-warmup-dot"></span>warmup failed';
+        el.title = info.detail
+          ? `${info.detail}. The first extraction may still try to download on demand.`
+          : 'Model warmup failed. The first extraction may still try to download on demand.';
+      } else {
+        el.className = 'col-warmup';
+        el.innerHTML = '<span class="col-warmup-dot"></span>warming up';
+        const e = typeof info.elapsed === 'number' ? ` (elapsed ${info.elapsed.toFixed(1)}s)` : '';
+        el.title = `${v} models are still downloading — first run may take a minute${e}.`;
+      }
+    });
+  }
+
   function updateWarmupBanner() {
     const v = selectedVersion();
     if (v !== 'v3' && v !== 'v4') {
@@ -1139,6 +1193,7 @@
       // Network/fetch errors are non-fatal — keep last-known state and try again.
     }
     updateWarmupBanner();
+    updateResultsWarmupHeaders();
     const allReady = ['v3', 'v4'].every(v => {
       const s = (warmupState[v] || {}).status;
       return s === 'ready' || s === 'failed';
