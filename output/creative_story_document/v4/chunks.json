@@ -1,0 +1,2059 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "The House at the Edge of the Map",
+    "font_size": 0.0,
+    "bbox": [
+      69.75,
+      78.75,
+      385.92,
+      98.54
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "An original long-form story designed to work as a PDF-ready Markdown document with images, bulleted lists, and tables.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      112.35,
+      533.25,
+      138.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 3,
+    "text": "This document is a complete sample that follows a practical Markdown structure for eventual PDF export, using standard headings, lists, tables, and local image references that are widely supported in Markdown and Pandoc-based workflows.[web:20][web:25][web:15] It is intentionally written as a standalone piece of creative nonfiction-style fantasy so it can serve both as a readable story and as a reusable formatting model.[web:15][web:3]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      154.35,
+      531.02,
+      227.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 4,
+    "text": "Preface",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      248.55,
+      112.11,
+      260.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 1,
+    "paragraph": 5,
+    "text": "On maps made for merchants, the coast north of Barrow Sound appeared clean and final, a hard blue edge where the engraver's tool stopped and the unknown began. On maps copied by sailors, however, there was always one more mark. Sometimes it was no more than a pencil dot. Sometimes it was a square shape like a house. Sometimes a word appeared beside it in cramped script: light .   Men argued over what it meant. Women who loaded herring at the wharf said it was a customs hut abandoned after a winter storm. Navigators swore it was a trick of copying, one error preserved by generations of frightened hands. Children, who understood mystery better than the adults who dismissed it, said a house stood at the edge of the world and kept the dark from spilling over.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      272.85,
+      542.96,
+      409.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 6,
+    "text": "Mira Bell had spent most of her life sorting the belongings of people who had gone missing at sea. She worked in the municipal archive of Lantern Harbor, a narrow building that smelled of salt, paste, and wool. The town kept ledgers for everything: tides, births, debt, catches, storms, repairs, prayers paid for by candle, and the names of ships that left with bells ringing and returned with flags hanging like wet sleeves. When a ship did not return, its effects were gathered. A box of letters, a knife with the handle polished by a thumb, a knitted scarf, a navigation almanac swollen by spray-these things went first to families and then, if nobody claimed them, to the archive. That is how Mira learned the weight of absence. It came folded in paper. It smelled like cedar and brine. It often fit inside a single hand.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      425.1,
+      536.29,
+      561.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 7,
+    "text": "Her father had been one of the missing. The official ledger described the event in the flat language of administration: brigantine Ashglass, overdue beyond recovery threshold, presumed lost with all hands in late autumn weather .   Mira was eleven when those words were entered. At thirty-two she still hated them, not because they were cruel but because they were neat. Grief, in her experience, was never neat. It dragged threads from every part of a life and knotted them together into shapes too tangled to name.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      577.35,
+      541.19,
+      666.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 8,
+    "text": "For years she believed the archive would eventually explain the sea to her. If enough records could be compared, enough routes studied, enough weather copied, then perhaps loss would become pattern and pattern would become law. Instead she discovered that records are only shadows of decisions made under pressure: a captain delaying one hour for cargo; a deckhand tying the wrong knot in rain; a harbor clerk misstamping a chart; a daughter deciding she would not cry in public and then discovering that silence hardens into habit. The archive did not answer the old question of why people vanished. It only taught her how many doors the question had.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      682.35,
+      542.92,
+      755.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 1,
+    "text": "The map arrived on a Thursday, wrapped in oilskin and tied with black sail thread. No return name was given. The package had been left before dawn on the stone step outside the archive door. Mira unwrapped it beside the inventory desk while gray light collected in the high windows. Inside she found a chart on rag paper, hand-colored in faded green and iron blue. Most of the coast was familiar. Lantern Harbor was there, and the shoals known to crack open careless hulls, and the watch-island where geese nested among the signal stones. But farther north, beyond the ordinary routes, a line had been added in ink so dark it seemed newer than the rest. It traced a current no official chart recorded. At the end of that line, on a scrap of coast otherwise left blank, stood the small square symbol of a house.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      90.6,
+      535.06,
+      227.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 2,
+    "text": "Under it was written: When the lamp fails, bring it a name.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      242.85,
+      357.59,
+      253.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 3,
+    "text": "Mira read the line three times before she noticed the second object hidden in the wrapping: a brass key no longer bright enough to reflect a face, and a narrow slip of paper on which a date had been written in the disciplined hand of a navigator. The date was her father's final day at sea.[web:20][web:21]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      269.1,
+      532.98,
+      326.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 4,
+    "text": "Harbor inventory",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      347.55,
+      167.2,
+      359.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 2,
+    "paragraph": 5,
+    "text": "Before she left, Mira did what any archivist would do: she made order. Lists, after all, are one way of refusing panic. Markdown documents handle bulleted and numbered lists cleanly, which makes them useful not only for technical reports but also for story documents that need embedded planning details.[web:21][web:15]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      372.6,
+      544.08,
+      430.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 6,
+    "text": "Items she packed before dawn:",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      445.99,
+      222.15,
+      456.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 2,
+    "paragraph": 7,
+    "text": "Her father's brass key, wrapped in cloth.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      472.24,
+      287.25,
+      482.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 8,
+    "text": "The anonymous map in a waxed tube.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      493.24,
+      277.09,
+      503.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 9,
+    "text": "A tide notebook, three pencils, and a folding rule.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      514.24,
+      335.63,
+      524.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 10,
+    "text": "A seal-oil lantern with a polished reflector.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      535.24,
+      301.2,
+      545.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 11,
+    "text": "One wool blanket and one oilskin cloak.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      556.24,
+      290.03,
+      566.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 12,
+    "text": "Hard bread, apples, smoked eel, and a tin cup.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      577.24,
+      314.44,
+      587.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 13,
+    "text": "The harbor skiff registry, copied by hand onto two pages in case proof was needed later.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      598.24,
+      523.17,
+      608.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 14,
+    "text": "Reasons she nearly stayed:",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      619.24,
+      202.69,
+      629.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 2,
+    "paragraph": 15,
+    "text": "The northern water had a reputation for sudden crosscurrents.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      645.49,
+      402.0,
+      656.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 16,
+    "text": "Small boats disappeared there without leaving wreckage behind.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      666.49,
+      411.49,
+      677.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 17,
+    "text": "Lantern Harbor had a long memory and a short patience for people chasing legends.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      687.49,
+      508.5,
+      698.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 18,
+    "text": "If the house on the map did not exist, then the journey would not merely be dangerous; it would be ridiculous.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      708.6,
+      532.48,
+      734.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 19,
+    "text": "Reasons she went anyway:",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      745.24,
+      202.47,
+      755.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 1,
+    "text": "The date on the paper was her father's last day alive, or the last day anyone believed he was alive.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      32.85,
+      541.09,
+      59.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 3,
+    "paragraph": 2,
+    "text": "No stranger could have known that date without access to records kept under lock.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      69.49,
+      502.5,
+      80.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 3,
+    "paragraph": 3,
+    "text": "People who live among ledgers eventually learn that anomalies are invitations.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      90.49,
+      482.29,
+      101.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 3,
+    "paragraph": 4,
+    "text": "Hope, once reawakened, is more disruptive than fear.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      111.49,
+      351.87,
+      122.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 3,
+    "paragraph": 5,
+    "text": "By noon the next day, rumors had already outrun her preparations. Lantern Harbor was too small for secrecy and too practical for subtlety. Old Bren, who repaired nets by the fish sheds, told her she was sailing toward a superstition and would come back with a cold and a lesson. Reverend Vale said, with an expression meant to appear neutral, that if she found any unclaimed dead she should record names before weather damaged them. Toma Reed, master of the tide pier and her oldest friend, said only this: 'If you do not return by the sixth night, I will come after you. I dislike stories that end in missing paperwork. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      132.6,
+      539.4,
+      237.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 6,
+    "text": "She laughed, because he intended the line as a joke, but after he walked her to the skiff she saw he had tucked a second lantern under the aft bench. Toma believed in preparation the way other people believed in luck. He also had the kind of face that looked stern even in affection, as if concern had been carved into him by a tool too blunt for delicacy.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      253.35,
+      541.6,
+      311.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 7,
+    "text": "'Do not follow the map if the water disagrees, ' he said.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      326.74,
+      339.57,
+      337.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "footnote"
+  },
+  {
+    "page": 3,
+    "paragraph": 8,
+    "text": "'The water always disagrees. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      352.99,
+      214.74,
+      363.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "footnote"
+  },
+  {
+    "page": 3,
+    "paragraph": 9,
+    "text": "'Then let it win, if necessary. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      379.24,
+      213.21,
+      389.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "footnote"
+  },
+  {
+    "page": 3,
+    "paragraph": 10,
+    "text": "Mira almost promised him. But she had learned, working in the archive, that promises made beside boats often belonged more to the listener than the speaker. So she touched his hand once, stepped in, and pushed off.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      405.6,
+      522.48,
+      447.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 11,
+    "text": "Route log",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      468.3,
+      124.94,
+      480.17
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 3,
+    "paragraph": 12,
+    "text": "Tables are one of the most useful elements in long documents because they let readers compare timing, place, and intent without breaking the narrative flow.[web:15][web:10] The structured route log below is part of the story, but it also demonstrates the kind of compact reference table that prints well in a PDF.[web:10][web:15]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      493.35,
+      543.26,
+      551.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 13,
+    "text": "The first two days proved disappointingly ordinary. Mira rowed when she had to, set a small patched sail when the wind aligned, and hugged the coast more closely than the anonymous map suggested. She stopped at dusk in coves where pebbles clicked all night under the wash of the tide. She kept notes as she traveled, partly from habit and partly because description gave her the illusion of command.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      710.85,
+      538.84,
+      752.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 1,
+    "text": "On the second afternoon she passed Kelp Reach, a place avoided by larger vessels because the undercurrent there behaved like a hand closing around an ankle. It was exactly where the dark line on the map indicated the hidden route began to pull northward. Mira tested it by lowering a strip of torn cloth on a weighted cord. The cloth streamed east while the skiff still drifted west. Two layers of water, moving against each other. She felt a small, involuntary thrill. The map was not fanciful after all. It knew something.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      74.85,
+      543.75,
+      164.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 2,
+    "text": "By the third day the familiar coast had changed character. Villages disappeared. Watch fires no longer marked the headlands. The rocks grew taller and more angular, as if the land had not been worn smooth by ordinary habitation. She found a section of mast drifting in a pocket of still water between two cliffs. No crest had been burned into the wood. It might have come from any boat in any decade. Y et when she pulled it alongside she saw three shallow cuts carved near one end, parallel and deliberate. Her father had used such marks in the margins of his notebooks to indicate a corrected heading. She stared until cold spray hit her face and forced her back into motion.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      179.85,
+      542.29,
+      300.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 3,
+    "text": "That night she dreamed of the archive. Every cabinet stood open. Drawers had been pulled free and stacked to the ceiling. The labels-storms, tariffs, baptisms, salvage, inquests-had all been peeled away, so every record looked important and none could be trusted. In the center of the room her father sat at the inventory desk with his cap in his hands. He was not drowned, not ghostly, not young. He looked exactly as she remembered him on the last winter he had lived: tired around the mouth, amused around the eyes, carrying a private weather she had never fully understood.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      316.35,
+      543.41,
+      421.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 4,
+    "text": "'You keep filing the same question, ' he told her.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      436.99,
+      306.15,
+      447.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 5,
+    "text": "'Because nobody answered it. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      463.24,
+      220.74,
+      473.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 6,
+    "text": "He tipped his head, considering. 'That is not the same thing. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      489.49,
+      369.58,
+      500.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 7,
+    "text": "When she woke, dawn had not yet reached the cove. Her lantern had gone out although oil remained in the basin. She relit it with fingers stiff from cold and found, for the first time in the voyage, that her hands were shaking.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      515.85,
+      535.91,
+      557.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 4,
+    "paragraph": 8,
+    "text": "Notes from the archive",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      578.55,
+      201.18,
+      590.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 4,
+    "paragraph": 9,
+    "text": "Some information is better presented in a looser, semi-structured format instead of a strict comparison grid. Pandoc and extended Markdown workflows support tables well, but prose notes around them are often the better choice when categories do not align perfectly.[web:15] [web:10]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      603.6,
+      534.12,
+      661.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 1,
+    "text": "Additional archive notes:",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      85.99,
+      193.95,
+      96.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 5,
+    "paragraph": 2,
+    "text": "The hand on the date slip matched no entry in Lantern Harbor's civic books.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      112.24,
+      465.08,
+      122.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 5,
+    "paragraph": 3,
+    "text": "The rag paper used for the chart was older than most commercial harbor copies.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      133.24,
+      483.79,
+      143.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 5,
+    "paragraph": 4,
+    "text": "The ink of the hidden route appeared newer than the coastline beneath it.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      154.24,
+      458.1,
+      164.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 5,
+    "paragraph": 5,
+    "text": "The package was tied with sail thread treated in tar and salt, indicating recent use aboard a working vessel.",
+    "font_size": 0.0,
+    "bbox": [
+      89.25,
+      175.35,
+      536.58,
+      201.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 5,
+    "paragraph": 6,
+    "text": "By the fourth evening she reached the North Shelf, where fog lifted in curtains and returned without warning. Her compass, reliable until then, began to hesitate. The needle did not spin wildly; it merely lingered between bearings as if reluctant to commit. Mira distrusted dramatic omens. She had seen too many ordinary causes behind supposedly supernatural events: mold mistaken for curses, theft described as fate, poor maintenance elevated into tragedy by people who hated embarrassment. Yet subtle anomalies unnerved her more than spectacle. They could not be dismissed so easily.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      212.1,
+      541.23,
+      317.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 7,
+    "text": "The map instructed her toward a narrow seam in the fog where the sea darkened from steel to ink. She followed for an hour, maybe two. Time at sea had a way of bending around concentration. Then, just as dusk thickened, she saw the light.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      332.85,
+      533.06,
+      374.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 8,
+    "text": "It did not sweep like a lighthouse beam. It did not flicker like a vessel in distress. It remained steady, small, and deliberate, a yellow-white point set low against the shore as if burning from a window. The coast there rose in a black wall, except for one inlet so slim it seemed cut by a blade. Mira rowed into it with the caution of someone entering both a harbor and an argument.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      390.6,
+      544.77,
+      448.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 9,
+    "text": "The water within was perfectly still.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      463.99,
+      245.55,
+      474.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 10,
+    "text": "At the end of the inlet stood a house.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      490.24,
+      252.04,
+      500.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 11,
+    "text": "Not a cottage half ruined by weather, not a guard station, not a fisher's hut. It was a true house of stone and dark timber, two stories high, with a steep slate roof and a lantern tower built not above it but into one corner like an afterthought that had grown important. No path led from it inland. No other structure stood nearby. The place looked less built than placed, as though it had been set there carefully by hands that expected it to remain long after those hands had vanished.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      516.6,
+      540.65,
+      605.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 12,
+    "text": "A lamp burned in the tower window.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      621.49,
+      249.34,
+      632.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 13,
+    "text": "Mira tied the skiff to an iron ring fixed in the quay. The stone beneath her boots was worn concave by generations of use. There had been traffic here, once. The air smelled not only of salt but of cedar smoke. Someone was tending a fire.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      647.85,
+      523.84,
+      689.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 5,
+    "paragraph": 14,
+    "text": "The front door bore no sign, crest, or knocker. Only a brass lock shaped for the key she had carried from Lantern Harbor.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      705.6,
+      517.46,
+      731.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 6,
+    "paragraph": 1,
+    "text": "She stood for a long moment with the key in her hand, aware of every small sound: water touching stone, wind sliding over roof slate, a rope tapping lightly against mast wood. She thought of turning back. She thought of Toma's second lantern under the bench. She thought of the many boxes in the archive labeled with names followed by the words effects returned . Then she inserted the key and turned it.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      32.85,
+      535.21,
+      106.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 6,
+    "paragraph": 2,
+    "text": "The lock opened with almost no resistance.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      121.99,
+      283.99,
+      132.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 6,
+    "paragraph": 3,
+    "text": "Interior register",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      153.3,
+      159.9,
+      165.17
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 6,
+    "paragraph": 4,
+    "text": "The interior was warmer than the shore. A fire burned in a cast-iron stove set inside the entry hall. Shelves lined the walls from floor to ceiling, each holding ledgers bound in oilcloth, bundles of letters, carved marker tokens, sextants, pipes, knives, lockets, rings, and objects Mira could not immediately identify. Dust lay on some surfaces, but not thickly. The house was maintained. On a central table stood three bowls, one empty, one full of smooth black pebbles, and one full of paper slips folded into narrow strips. There was no one in the entry, but a bell chimed once somewhere above her head, and footsteps approached at an unhurried pace. The woman who descended the stairs was so old that age had refined rather than diminished her. Her hair, silver and tightly braided, was coiled at the back of her head. Her face was lined not like crumpled paper but like carved wood polished by weather. She wore a dark dress under a canvas apron and carried a lamp that seemed unnecessary in the already lit room. 'You are late, ' the woman said. Mira's first impulse was irritation. 'I did not know I was expected. ' 'Nearly everyone says that. ' The woman set the lamp down. 'Name?' 'Mira Bell. ' The old woman nodded toward the bowl of folded slips. 'Living name, yes. But whose name did you bring?' Mira looked at the slips, then at the black pebbles, and understood only that the sentence had rules she did not yet know. 'I brought my father's, ' she said. 'Jonas Bell. He was lost seventeen years ago aboard the Ashglass . ' The old woman's expression changed by less than a degree, yet Mira felt that some internal ledger had been updated. 'Then the lamp was right to call you. ' 'Who are you?' 'The keeper. ' 'That is not a name. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      178.35,
+      542.83,
+      708.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 6,
+    "paragraph": 5,
+    "text": "'It is the one required for the work. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      724.24,
+      245.38,
+      734.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 1,
+    "text": "The answer was infuriating in the way only old, well-worn truths can be. Mira almost pressed harder, but the room around her demanded attention. Every shelf suggested systems; every object implied categories; every category hinted at an entire hidden bureaucracy of grief.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      32.85,
+      527.96,
+      74.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 2,
+    "text": "On the wall behind the table hung a board divided into narrow columns with handwritten headings. It resembled the shipping boards at the harbor, but stranger.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      90.6,
+      514.72,
+      116.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 3,
+    "text": "'This is absurd, ' Mira said, though quietly now.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      252.49,
+      300.42,
+      263.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "footnote"
+  },
+  {
+    "page": 7,
+    "paragraph": 4,
+    "text": "'Of course it is, ' said the keeper. 'Most necessary things are, until they are understood. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      278.74,
+      498.47,
+      289.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 5,
+    "text": "She explained, but not from the beginning. Houses like this, if the word like could be trusted, had once stood at dangerous margins all around the northern world. They were built where memory thinned-places where storms, currents, and fear conspired to tear the names from the dead before the living could finish speaking them. The keepers did not raise the drowned. They did not reverse loss. What they did, when called by a failing lamp, was hold a crossing place between memory and oblivion. When the names of the lost began to fade too rapidly in the communities that survived them, the lamp dimmed. Then someone had to come bearing a true name and a true token. The house would answer with whatever remained retrievable: a message, an object, a final witness, or sometimes only certainty.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      304.99,
+      543.03,
+      441.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 6,
+    "text": "Mira listened with the suspicion of an archivist and the hunger of a daughter. 'Y ou expect me to believe grief works by procedure?'",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      457.35,
+      540.75,
+      483.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 7,
+    "text": "The keeper gave the smallest shrug. 'Everything humans endure eventually develops procedure. That is one way to keep from drowning in it. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      499.35,
+      493.24,
+      525.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 8,
+    "text": "What the house kept",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      546.3,
+      189.94,
+      558.17
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 7,
+    "paragraph": 9,
+    "text": "The keeper led Mira through rooms arranged with unnerving logic. One held shelves of bottles, each containing a strip of paper on which a single name had been written. Another held drawers of weathered tags tied to fragments of rope, wood, and cloth. Another contained books that recorded not deaths but unfinished departures: voyages interrupted, letters unsent, apologies never delivered, questions left unanswered by sudden water.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      570.49,
+      542.1,
+      644.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 10,
+    "text": "In the upper hall stood a long table covered with maps. Some were official charts Mira recognized from the harbor office. Others showed coasts that seemed half remembered or perhaps not earthly at all. On one, the sea was marked not by depth soundings but by moods written in cramped script: resentful, patient, listening, withheld.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      659.85,
+      527.63,
+      717.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 7,
+    "paragraph": 11,
+    "text": "She almost smiled. 'Who catalogues emotion as geography?'",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      733.24,
+      372.39,
+      743.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 1,
+    "text": "'The people who survive it, ' said the keeper.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      32.74,
+      286.2,
+      43.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 2,
+    "text": "In the archive room, Mira finally found the first direct sign of her father. It was not his face or voice. It was a ledger, opened to a page dated the day the Ashglass vanished. Under several other names, all listed in brown ink, one line had been written darker, as if added later:",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      59.1,
+      526.24,
+      101.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 3,
+    "text": "Jonas Bell - carried beyond ordinary reach; answer delayed by divided remembrance.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      116.85,
+      485.1,
+      127.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 4,
+    "text": "She bristled. 'No family agrees perfectly on the dead. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      195.49,
+      333.92,
+      206.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 5,
+    "text": "'Divided remembrance?' Mira asked. 'Those left behind did not agree on him. ' 'Not family. Town. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      142.99,
+      272.34,
+      232.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 6,
+    "text": "That landed harder than she expected. Jonas Bell had been loved by some in Lantern Harbor and blamed by others. He had argued against sailing late in the season but sailed anyway when the owners insisted. After the loss, whispers spread that he had misread weather, or hesitated at the wrong channel, or pressed on from pride. Mira had spent years defending him in silence, which is another way of saying not at all.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      248.1,
+      538.38,
+      321.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 7,
+    "text": "'The house can only return what the living have not torn apart, ' said the keeper. 'Memory is a rope. Fray it enough and even truth slips through. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      337.24,
+      531.82,
+      363.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 8,
+    "text": "Mira placed both hands on the ledger page as if to steady the ink. 'Then why call me now?'",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      379.24,
+      519.73,
+      389.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 9,
+    "text": "'Because one memory remained undivided. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      405.49,
+      286.11,
+      416.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 10,
+    "text": "The keeper looked pointedly at the key.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      431.74,
+      265.28,
+      442.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 11,
+    "text": "Mira closed her eyes. She remembered her father at the kitchen table repairing the lock on a sea chest. He had let her hold the key while he worked. 'Every lock is an agreement, ' he had said. 'Metal promises shape to metal, and the door decides whether to honor it. ' At the time she had thought the statement delightfully odd. Only now did she understand that he had been speaking in the indirect manner of men who know their children are listening closely and wish to leave behind phrases that will age well.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      458.1,
+      541.05,
+      547.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 12,
+    "text": "Crossing",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      568.05,
+      119.2,
+      579.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 8,
+    "paragraph": 13,
+    "text": "To make the house answer, the keeper said, a witness had to carry the chosen name to the tower lamp at moonrise. Not speak it once, but keep speaking it until the light changed. If the memory brought was true enough, and held without vanity or invention, the sea would release something. The crossing was not physical in the crude sense. Mira would remain in the tower. Yet she must be prepared to meet what came with more honesty than comfort.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      593.1,
+      539.28,
+      666.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 14,
+    "text": "Instructions left by the keeper were simple, and simple things are often the most difficult to obey:[web:21][web:15]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      682.35,
+      522.52,
+      708.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 8,
+    "paragraph": 15,
+    "text": ".   Bring one true object tied to the lost person.",
+    "font_size": 0.0,
+    "bbox": [
+      79.54,
+      724.24,
+      308.44,
+      734.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 8,
+    "paragraph": 16,
+    "text": ".   Speak only what is known, not what is wished.",
+    "font_size": 0.0,
+    "bbox": [
+      79.54,
+      745.24,
+      321.45,
+      755.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 9,
+    "paragraph": 1,
+    "text": ".   Do not ask for the dead to return unchanged.",
+    "font_size": 0.0,
+    "bbox": [
+      79.54,
+      32.74,
+      314.97,
+      43.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 9,
+    "paragraph": 2,
+    "text": ".   Accept that an answer is not the same as restoration.",
+    "font_size": 0.0,
+    "bbox": [
+      79.54,
+      53.74,
+      351.6,
+      64.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 9,
+    "paragraph": 3,
+    "text": ".   When the lamp brightens, listen before speaking.",
+    "font_size": 0.0,
+    "bbox": [
+      79.54,
+      74.74,
+      337.17,
+      85.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 9,
+    "paragraph": 4,
+    "text": "Moonrise came through a veil of thin cloud. The tower room was spare: lamp, chair, narrow window, brass reflector polished by many hands. Mira set the key on the sill and lit the wick from the keeper's taper. The flame wavered, then steadied into a modest gold eye. 'Jonas Bell, ' she said. At first the act felt ceremonial and foolish. She repeated the name. Then again. Then she added what she knew. 'Jonas Bell, navigator. Father. Left-handed at the chart table. Pretended to dislike singing and knew every verse anyway. Repaired locks badly and nets well. Could not whistle. Feared waste more than storms. Loved quince jam and never admitted it. ' The flame leaned toward the window. She kept going, speaking details so small they would have embarrassed anyone still alive to hear them catalogued. The notch in his thumbnail from a block pulley accident. The way he folded letters into fourths rather than thirds. The habit of checking door latches twice on windy nights. The day he taught her to read weather from the color of water over distant rock. The argument he had with the harbor owners one week before the final voyage. The fact that he sailed despite believing the season too late. The fact that he sailed because refusing would have cost others wages. The fact that courage and compromise often wear the same coat until after the disaster. The lamp brightened. Outside the tower window the dark inlet no longer reflected the moon. It reflected another light entirely, rising from the water below as if a path of drowned stars had turned and begun climbing toward the house. Mira's skin went cold, though the room remained warm. Then she heard her father clear his throat. Not behind her. Not in the hall. In the light itself. 'Mira. ' Every story she had ever imagined collapsed at once. She had thought she would weep or call out or demand proof. Instead she gripped the window ledge until the wood pressed crescent marks into her palms. 'I am here, ' she whispered. 'I know. ' The voice sounded as she remembered and not as she remembered, like music heard through a wall that improves some notes and steals others. 'There is not much time. The house is generous, but not wasteful. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      101.1,
+      537.67,
+      704.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 10,
+    "paragraph": 1,
+    "text": "She laughed once, brokenly. 'That sounds like you. ' 'It is the part that held. ' He told her then what happened to the Ashglass .   Not heroism, not blunder, but a string of human choices crowded by weather. The owners pressed late departure. Cargo was overloaded. A warning buoy had drifted days earlier and not been reset. At dusk the ship avoided one hazard only to strike another. Jonas Bell had gotten most of the crew into the launch before the brigantine rolled. The launch was then pulled north by a current no chart carried. Some died quickly. Some did not. A light appeared on the coast, but the storm split the survivors. Jonas had seen the house and reached it with one other sailor. The sailor, delirious, refused his true name and was lost beyond recall. Jonas, half frozen, gave his own and asked the keeper to send word home. 'Why did no word come?' Mira asked. 'It was sent. ' The answer stunned her into silence. 'The house sends by memory when it cannot send by ship, ' he said. 'But memory requires harbor. Y ours held. Others did not. The town needed blame more than truth. Blame is easier to store. It stacks neatly. ' Mira shut her eyes against tears. It was such an archivist's line that she almost suspected the house of tailoring the voice to her. Y et even if it had, the meaning held. 'What am I supposed to do with this?' 'Record it properly. ' That, too, was terribly like him. 'But listen first. The house is failing because the coast no longer keeps these places. Routes changed. People forgot the old agreements. This keeper is likely the last. When she goes, the lamp goes with her unless someone chooses otherwise. ' Mira looked down the stairwell, where the warm glow from below barely touched the tower landing. 'Y ou are asking me to stay?' 'No,' he said. 'I am telling you there is a vacancy. ' Against everything, she smiled through tears.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      32.74,
+      543.22,
+      631.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 10,
+    "paragraph": 2,
+    "text": "Decision matrix",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      652.05,
+      159.59,
+      663.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 10,
+    "paragraph": 3,
+    "text": "Even stories can benefit from a compact decision table when a character faces several real options. Structured tables are useful whenever trade-offs need to be visible at a glance.[web:15] [web:10]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      677.1,
+      539.07,
+      719.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 11,
+    "paragraph": 1,
+    "text": "She wanted someone else to decide for her. This, more than grief or revelation, felt unbearable. People imagine that mystery culminates in knowledge, but knowledge often culminates in responsibility. To learn the truth is to inherit a task.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      167.74,
+      538.32,
+      209.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 11,
+    "paragraph": 2,
+    "text": "When she asked the keeper, later, whether the house needed her specifically, the old woman answered with admirable bluntness. 'Need is too strong. But you are suited. Y ou know records. You understand the weight of names. Y ou are stubborn enough to remain through lonely weather. Y our chief defects are impatience and a tendency to confuse restraint with strength. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      225.6,
+      536.1,
+      283.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 11,
+    "paragraph": 3,
+    "text": "'That is an impolite assessment. ' 'It is also free. ' Mira slept little before dawn. She walked the shoreline and watched the inlet turn silver. She thought of Lantern Harbor waking: gulls on rooflines, kettles on hooks, fish scales shining in the market gutters, Toma looking at the tide clock and trying not to imagine the worst. She thought of the archive, where cabinets waited with the faithful stillness of objects that know they will outlast all arguments. She thought of the rooms in the house and their accumulated cargo of unresolved love. At sunrise she made her choice. Not the final one-those belong less to mornings than stories imply-but the first necessary one. She would return to Lantern Harbor with the truth, correct the record, and come back before the sixth night. She would not accept guardianship under the pressure of wonder. If she chose the house, she would choose it awake. The keeper approved. ' A role taken reluctantly endures better than one seized dramatically. ' Before Mira left, the old woman gave her a sealed packet containing a transcript copied from the house ledger, a chart of the hidden current, and a small black pebble from the entry table. 'For what is this?' Mira asked. 'If anyone doubts your account, place it in their hand while they listen. ' ' And then?'",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      298.99,
+      537.75,
+      687.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 11,
+    "paragraph": 4,
+    "text": "'Then they may still doubt. But not comfortably. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      703.24,
+      311.49,
+      713.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "footnote"
+  },
+  {
+    "page": 12,
+    "paragraph": 1,
+    "text": "Return passage",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      32.55,
+      159.03,
+      44.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 12,
+    "paragraph": 2,
+    "text": "The sea on the way south seemed offended by her success. Wind worked against her in ragged bursts. Rain crossed the bow in silver sheets. Twice she thought she had lost the hidden current and once she nearly capsized at the mouth of Kelp Reach. Y et the skiff held. On the fifth evening Lantern Harbor rose from the mist exactly as ordinary as ever, which almost moved her more than the house had. Extraordinary things do not abolish the world that produced them. They send us back to it bearing difficult cargo.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      57.6,
+      541.14,
+      146.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 12,
+    "paragraph": 3,
+    "text": "Toma was waiting on the pier with that same stern-faced concern. He caught the line and looked at her only once before exhaling hard enough to count as prayer. 'Well, ' he said, 'you appear to have returned with all required paperwork. ' 'Not all, ' Mira said. 'Some of it is impossible. ' 'Good,' he replied. 'The possible paperwork is always worse. ' She laughed until she nearly cried again. The next days were not triumphant. Truth rarely enters a town like a parade. It arrives as revision. Mira took the packet to the municipal archive, then to Reverend Vale, then to the harbor board. She corrected the entry for the Ashglass , adding details of the buoy failure, the overloading, and the unrecorded northern current. She did not claim universal belief. Some townspeople accepted the account because they trusted her. Some because the details aligned too neatly with old unease. Some because holding the black pebble while she spoke made denial feel like standing on rotten timber. A few never accepted it at all. That, she discovered, no longer mattered in the same way. The point of a true record is not unanimous comfort. It is durable witness. She visited her father's old house on the hill and sat inside the empty kitchen until evening. For the first time since childhood, she did not imagine him walking back through the door. The absence remained, but it had changed shape. It no longer felt like an unfinished sentence. It felt like a closed ledger with one page preserved open for reference. On the sixth night Toma met her at the pier carrying a travel bag and looking furious in the formal, careful way of a man who already knows his objections have failed. 'You are going back, ' he said. 'Yes. ' 'For how long?' 'I do not know. ' 'That is a rude duration. ' She took a breath. 'There is a house north of the mapped coast. It keeps names from being lost.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      162.6,
+      543.61,
+      729.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 12,
+    "paragraph": 4,
+    "text": "The keeper is old. I think I may be meant to learn the work. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      734.74,
+      360.84,
+      745.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 1,
+    "text": "Toma stared at her. Gulls complained over the tide flats. Someone in the market lane dropped a crate. Ordinary sounds continued around a sentence that should have broken the day in half.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      32.85,
+      536.32,
+      59.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 2,
+    "text": "Finally he nodded once. 'Then you require better rope. '",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      74.74,
+      342.92,
+      85.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 3,
+    "text": "It was, in its way, the kindest declaration of loyalty she had ever heard.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      100.99,
+      417.34,
+      111.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 4,
+    "text": "Ledger of endings",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      132.3,
+      173.26,
+      144.17
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 13,
+    "paragraph": 5,
+    "text": "A final loose-format table can help close a long document by gathering emotional outcomes that are not purely factual. This approach works well when a document needs both structure and a more literary finish.[web:15][web:10]",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      157.35,
+      527.55,
+      199.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 6,
+    "text": "Mira left again before dawn, this time with better rope, better provisions, and a letter for the archive stating that she was accepting an extended field assignment of uncertain duration. Reverend Vale found the wording indecently dry for such a departure. Mira considered that a sign of professional excellence.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      336.6,
+      528.11,
+      394.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 7,
+    "text": "As the harbor receded behind her, the town bells marked the hour with their usual restrained authority. The coast opened northward in gray folds. She felt fear, certainly, and grief still, because truth does not erase love's wound. But beneath both was a steadier thing than hope. Hope depends on outcomes. This was commitment, which depends on chosen work.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      410.1,
+      530.96,
+      467.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 8,
+    "text": "The hidden current found her more quickly the second time. The skiff turned north almost of its own accord, as though memory in the water recognized memory in the passenger. By evening the seam in the fog opened and the fixed light shone ahead, modest and unwavering.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      483.6,
+      543.56,
+      525.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 9,
+    "text": "Years later, sailors would speak again of a lamp burning where maps frayed into uncertainty. Some would say a woman kept it there, one who asked for names before offering shelter. Some would report that if they lied about the dead, the house remained invisible no matter how closely they sailed the coast. Others would insist that the keeper of the northern light could place a black pebble in your hand and make you remember exactly what you had tried hardest to forget.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      541.24,
+      537.03,
+      630.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 13,
+    "paragraph": 10,
+    "text": "Lantern Harbor changed slowly, as all durable places do. The record of the Ashglass remained amended. New charts marked the buoy lines more carefully. Toma Reed married no one, though several people tried to arrange otherwise, and became unofficial courier of supplies that somehow disappeared from municipal inventory whenever the northern route required them. The archive received packets at irregular intervals in a hand Mira's assistant eventually recognized at a glance. Inside were corrected names, final sightings, coordinates of wrecks, and occasionally a note so plain it made the impossible seem administrative: One lamp trimmed. Two names settled. Send more graphite pencils.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      646.35,
+      540.67,
+      735.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 14,
+    "paragraph": 1,
+    "text": "That may be the truest ending available. Not that mystery vanished, and not that sorrow became beautiful, but that both were given useful work. The house remained at the edge of the map. The lamp did not fail. And whenever the sea tried to take a name too completely, there was still, somewhere beyond the last official line, a door that could be opened by someone willing to arrive carrying the truth.",
+    "font_size": 0.0,
+    "bbox": [
+      68.25,
+      74.85,
+      542.06,
+      148.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  }
+]

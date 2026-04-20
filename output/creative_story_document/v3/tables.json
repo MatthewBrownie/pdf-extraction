@@ -1,0 +1,233 @@
+[
+  {
+    "page": 3,
+    "table": [
+      [
+        "Day",
+        "Place",
+        "Observation",
+        "Risk"
+      ],
+      [
+        "",
+        "Lantern Harbor",
+        "Calm departure under overcast light",
+        "Low"
+      ],
+      [
+        "",
+        "Kelp Reach",
+        "Strong side-current not marked on civic charts",
+        "Moderate"
+      ],
+      [
+        "",
+        "Broken Spit",
+        "Found drifting spar with no maker’s mark",
+        "Moderate"
+      ],
+      [
+        "",
+        "North Shelf",
+        "Heavy fog; compass hesitation after dusk",
+        "High"
+      ],
+      [
+        "",
+        "Unnamed inlet",
+        "Sighted fixed light where no settlement was recorded",
+        "Severe"
+      ]
+    ],
+    "bbox": [
+      95.18,
+      564.01,
+      515.82,
+      699.19
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "unstructured"
+  },
+  {
+    "page": 4,
+    "table": [
+      [
+        "Artifact",
+        "Origin",
+        "Why it mattered to Mira"
+      ],
+      [
+        "Brass key",
+        "Wrapped with the map",
+        "Suggested a real lock and a real destination"
+      ],
+      [
+        "Anonymous chart",
+        "Left at archive door",
+        "Implied deliberate guidance, not rumor"
+      ]
+    ],
+    "bbox": [
+      84.18,
+      672.9,
+      519.41,
+      741.28
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "unstructured"
+  },
+  {
+    "page": 5,
+    "table": [
+      [
+        "Artifact",
+        "Origin",
+        "Why it mattered to Mira"
+      ],
+      [
+        "Final date slip",
+        "Written in navigator’'s hand",
+        "Linked the journey to her father's disappearance"
+      ]
+    ],
+    "bbox": [
+      96.21,
+      31.06,
+      507.23,
+      76.91
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "unstructured"
+  },
+  {
+    "page": 7,
+    "table": [
+      [
+        "Column",
+        "Meaning",
+        "Example entry"
+      ],
+      [
+        "Called",
+        "brought to the house",
+        "Jonas Bell"
+      ],
+      [
+        "Carried",
+        "or object used to anchor the name",
+        "Brass key"
+      ],
+      [
+        "Answered",
+        "lost could still be reached",
+        "Pending"
+      ],
+      [
+        "Returned",
+        "anything, could be carried back",
+        "Unknown"
+      ]
+    ],
+    "bbox": [
+      128.18,
+      129.69,
+      478.53,
+      242.87
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "unstructured"
+  },
+  {
+    "page": 11,
+    "table": [
+      [
+        "Choice",
+        "What Mira gains",
+        "What Mira loses",
+        "Moral cost"
+      ],
+      [
+        "Return home immediately",
+        "Safety, certainty, familiar life",
+        "The house, the unanswered coast",
+        "Moderate"
+      ],
+      [
+        "Stay as keeper",
+        "Purpose, continuity, guardianship",
+        "Home, ordinary future, Toma",
+        "High"
+      ],
+      [
+        "Return first, then choose",
+        "Time to record truth and decide freely",
+        "Risk the lamp failing in delay",
+        "Severe"
+      ]
+    ],
+    "bbox": [
+      68.82,
+      30.76,
+      545.38,
+      156.76
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "unstructured"
+  },
+  {
+    "page": 13,
+    "table": [
+      [
+        "Thread",
+        "Before the journey",
+        "After the journey"
+      ],
+      [
+        "Father",
+        "Missing, argued over, unreachable",
+        "Lost but witnessed, restored to truth"
+      ],
+      [
+        "Mira",
+        "Archivist of other people’s absences",
+        "Archivist with a calling beyond the harbor"
+      ],
+      [
+        "Lantern Harbor",
+        "Content with an incomplete record",
+        "Forced to live beside a corrected one"
+      ],
+      [
+        "The house",
+        "Rumor at the edge of maps",
+        "A real duty awaiting succession"
+      ]
+    ],
+    "bbox": [
+      88.36,
+      211.59,
+      512.89,
+      323.08
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "unstructured"
+  }
+]

@@ -86,7 +86,13 @@ All four extractors return the same shape so the frontend renders them identical
 ## Deployment
 Configured as an autoscale deployment using `gunicorn -k uvicorn.workers.UvicornWorker src.server:app`. Port 5000 is the sole application port.
 
+## System Dependencies (Nix)
+- `xorg.libxcb` — required by unstructured/onnx imports
+- `tesseract` — required by v3 (unstructured.io) hi_res OCR
+- `poppler` — provides `pdftoppm` used during PDF rasterization
+
 ## Recent Changes
+- 2026-04-20: Installed v3/v4 ML stacks (`unstructured[pdf]`, `docling`) plus system deps (`xorg.libxcb`, `tesseract`, `poppler`); both extractors now run end-to-end and produce chunks/tables.
 - 2026-04-20: Added v3 (unstructured.io) and v4 (docling) extractors.
 - 2026-04-20: Added `/api/upload` and in-browser PDF upload UI.
 - 2026-04-20: Added bounding-box overlays via PDF.js + SVG; added "Show all boxes" toggle.
