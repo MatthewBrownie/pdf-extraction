@@ -535,6 +535,21 @@
       border-bottom: 2px solid transparent; flex: 1; text-align: center;
     }
     .compare-col-tabs .ctab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .compare-col-actions {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 6px 10px; font-size: 11px; color: var(--text-dim);
+      border-bottom: 1px solid var(--border); background: var(--surface);
+    }
+    .compare-col-actions label { display: flex; gap: 6px; align-items: center; cursor: pointer; user-select: none; }
+    .compare-col-actions .legend { display: flex; gap: 8px; align-items: center; }
+    .match-badge {
+      display: inline-block; font-size: 10px; line-height: 1;
+      padding: 2px 5px; border-radius: 3px; margin-left: 6px;
+      border: 1px solid currentColor; vertical-align: middle; white-space: nowrap;
+    }
+    .match-badge.matched { color: rgba(62, 207, 142, 0.95); background: rgba(62, 207, 142, 0.08); }
+    .match-badge.only-a { color: rgba(255, 176, 92, 0.95); background: rgba(255, 176, 92, 0.08); }
+    .match-badge.only-b { color: rgba(108, 140, 255, 0.95); background: rgba(108, 140, 255, 0.08); }
     .compare-col-content { flex: 1; overflow-y: auto; padding: 10px; }
     .compare-col-content .cpanel { display: none; }
     .compare-col-content .cpanel.active { display: block; }
@@ -767,6 +782,10 @@
                 <div class="ctab" data-which="a" data-tab="tables">Tables <span id="compare-a-cnt-tables">0</span></div>
                 <div class="ctab" data-which="a" data-tab="images">Images <span id="compare-a-cnt-images">0</span></div>
               </div>
+              <div class="compare-col-actions">
+                <label><input type="checkbox" id="compare-a-filter-unmatched" /> Only unmatched</label>
+                <span class="legend"><span id="compare-a-match-summary">—</span></span>
+              </div>
               <div class="compare-col-content">
                 <div class="cpanel active" id="compare-a-panel-chunks"></div>
                 <div class="cpanel" id="compare-a-panel-tables"></div>
@@ -782,6 +801,10 @@
                 <div class="ctab active" data-which="b" data-tab="chunks">Chunks <span id="compare-b-cnt-chunks">0</span></div>
                 <div class="ctab" data-which="b" data-tab="tables">Tables <span id="compare-b-cnt-tables">0</span></div>
                 <div class="ctab" data-which="b" data-tab="images">Images <span id="compare-b-cnt-images">0</span></div>
+              </div>
+              <div class="compare-col-actions">
+                <label><input type="checkbox" id="compare-b-filter-unmatched" /> Only unmatched</label>
+                <span class="legend"><span id="compare-b-match-summary">—</span></span>
               </div>
               <div class="compare-col-content">
                 <div class="cpanel active" id="compare-b-panel-chunks"></div>
@@ -1676,14 +1699,14 @@
     viewport: null,
     render: null,
     available: [],            // list of versions that have data
-    a: { version: null, data: null, tab: 'chunks', show: true, active: null },
-    b: { version: null, data: null, tab: 'chunks', show: true, active: null },
+    a: { version: null, data: null, tab: 'chunks', show: true, active: null, filterUnmatched: false, matches: null },
+    b: { version: null, data: null, tab: 'chunks', show: true, active: null, filterUnmatched: false, matches: null },
   };
 
   async function openCompare(pdfName, vA, vB) {
     cmp.pdfName = pdfName;
-    cmp.a = { version: vA, data: null, tab: 'chunks', show: true, active: null };
-    cmp.b = { version: vB, data: null, tab: 'chunks', show: true, active: null };
+    cmp.a = { version: vA, data: null, tab: 'chunks', show: true, active: null, filterUnmatched: false, matches: null };
+    cmp.b = { version: vB, data: null, tab: 'chunks', show: true, active: null, filterUnmatched: false, matches: null };
     cmp.page = 1;
     cmp.zoom = 1.0;
     $('compare-pdf-name').textContent = pdfName;
@@ -1832,11 +1855,116 @@
     // Toggle visuals
     $('compare-toggle-a').classList.toggle('dim', !cmp.a.show);
     $('compare-toggle-b').classList.toggle('dim', !cmp.b.show);
+    // Compute matches between A and B
+    computeAllMatches();
+    // Reflect filter checkboxes
+    $('compare-a-filter-unmatched').checked = !!cmp.a.filterUnmatched;
+    $('compare-b-filter-unmatched').checked = !!cmp.b.filterUnmatched;
     // Lists + counts
     renderCompareSide('a');
     renderCompareSide('b');
     renderCompareSummary();
     drawCompareOverlay();
+  }
+
+  // ── Match A↔B items by IoU (with text fallback for chunks) ──
+  function bboxIoU(a, b) {
+    if (!a || !b) return 0;
+    const x0 = Math.max(a[0], b[0]);
+    const y0 = Math.max(a[1], b[1]);
+    const x1 = Math.min(a[2], b[2]);
+    const y1 = Math.min(a[3], b[3]);
+    const iw = x1 - x0, ih = y1 - y0;
+    if (iw <= 0 || ih <= 0) return 0;
+    const inter = iw * ih;
+    const aw = Math.max(0, a[2] - a[0]) * Math.max(0, a[3] - a[1]);
+    const bw = Math.max(0, b[2] - b[0]) * Math.max(0, b[3] - b[1]);
+    const uni = aw + bw - inter;
+    return uni > 0 ? inter / uni : 0;
+  }
+  function tokenize(s) {
+    return String(s || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]+/g, ' ')
+      .split(/\s+/)
+      .filter(t => t.length > 1);
+  }
+  function jaccard(aTokens, bTokens) {
+    if (!aTokens.length || !bTokens.length) return 0;
+    const A = new Set(aTokens), B = new Set(bTokens);
+    let inter = 0;
+    A.forEach(t => { if (B.has(t)) inter++; });
+    return inter / (A.size + B.size - inter);
+  }
+  function matchKind(aList, bList, opts) {
+    const IOU_THRESH = 0.5;
+    const TEXT_THRESH = (opts && opts.textThresh) || 0.6;
+    const useText = !!(opts && opts.useText);
+    const aRes = aList.map(() => ({ status: 'only', iou: 0, partner: -1 }));
+    const bRes = bList.map(() => ({ status: 'only', iou: 0, partner: -1 }));
+    // Group B indices by page for efficiency
+    const bByPage = {};
+    bList.forEach((it, i) => {
+      const p = it && it.page;
+      if (p == null) return;
+      (bByPage[p] = bByPage[p] || []).push(i);
+    });
+    // Collect candidate pairs
+    const pairs = [];
+    aList.forEach((aIt, i) => {
+      const p = aIt && aIt.page;
+      const candIdx = bByPage[p] || [];
+      candIdx.forEach(j => {
+        const bIt = bList[j];
+        const iou = bboxIoU(aIt && aIt.bbox, bIt && bIt.bbox);
+        let score = iou >= IOU_THRESH ? iou : 0;
+        let viaText = false;
+        if (!score && useText) {
+          const sim = jaccard(tokenize(aIt.text), tokenize(bIt.text));
+          if (sim >= TEXT_THRESH) { score = sim; viaText = true; }
+        }
+        if (score > 0) pairs.push({ i, j, score, viaText, iou });
+      });
+    });
+    pairs.sort((x, y) => y.score - x.score);
+    pairs.forEach(p => {
+      if (aRes[p.i].status === 'matched' || bRes[p.j].status === 'matched') return;
+      aRes[p.i] = { status: 'matched', iou: p.iou, partner: p.j, viaText: p.viaText, score: p.score };
+      bRes[p.j] = { status: 'matched', iou: p.iou, partner: p.i, viaText: p.viaText, score: p.score };
+    });
+    return { a: aRes, b: bRes };
+  }
+  function computeAllMatches() {
+    const A = cmp.a.data, B = cmp.b.data;
+    if (!A || !B) {
+      cmp.a.matches = cmp.b.matches = null;
+      return;
+    }
+    const out = { a: {}, b: {} };
+    const kinds = [
+      { k: 'chunks', useText: true },
+      { k: 'tables', useText: false },
+      { k: 'images', useText: false },
+    ];
+    kinds.forEach(({ k, useText }) => {
+      const aL = A[k] || [], bL = B[k] || [];
+      const m = matchKind(aL, bL, { useText });
+      out.a[k] = m.a;
+      out.b[k] = m.b;
+    });
+    cmp.a.matches = out.a;
+    cmp.b.matches = out.b;
+  }
+  function badgeHtml(which, matchInfo) {
+    if (!matchInfo) return '';
+    if (matchInfo.status === 'matched') {
+      const score = (matchInfo.viaText ? matchInfo.score : matchInfo.iou) || 0;
+      const label = matchInfo.viaText ? 'text' : 'IoU';
+      return `<span class="match-badge matched" title="Matched via ${label} ${score.toFixed(2)}">matched (${label} ${score.toFixed(2)})</span>`;
+    }
+    const cls = which === 'a' ? 'only-a' : 'only-b';
+    const txt = which === 'a' ? 'only A' : 'only B';
+    return `<span class="match-badge ${cls}" title="No counterpart in the other version">${txt}</span>`;
   }
 
   function renderCompareSide(which) {
@@ -1845,6 +1973,19 @@
     $(`compare-${which}-cnt-chunks`).textContent = (data.chunks || []).length;
     $(`compare-${which}-cnt-tables`).textContent = (data.tables || []).length;
     $(`compare-${which}-cnt-images`).textContent = (data.images || []).length;
+    // Match-summary line
+    const sumEl = $(`compare-${which}-match-summary`);
+    if (sumEl) {
+      const m = slot.matches;
+      if (!m) {
+        sumEl.textContent = 'no counterpart loaded';
+      } else {
+        const list = m[slot.tab] || [];
+        const matched = list.filter(x => x && x.status === 'matched').length;
+        const only = list.length - matched;
+        sumEl.textContent = `${matched} matched · ${only} unique`;
+      }
+    }
     // Reflect active tab
     document.querySelectorAll(`.ctab[data-which="${which}"]`).forEach(t => {
       t.classList.toggle('active', t.dataset.tab === slot.tab);
@@ -1861,33 +2002,50 @@
     const data = slot.data || {};
     const arr = data[tab] || [];
     const panel = $(`compare-${which}-panel-${tab}`);
+    const matches = (slot.matches && slot.matches[tab]) || null;
+    const filterUnmatched = !!slot.filterUnmatched;
     if (!arr.length) {
       panel.innerHTML = `<div class="mini-empty">No ${tab} extracted.</div>`;
       return;
     }
+    const indices = arr.map((_, i) => i).filter(i => {
+      if (!filterUnmatched) return true;
+      const m = matches && matches[i];
+      return !m || m.status !== 'matched';
+    });
+    if (!indices.length) {
+      panel.innerHTML = `<div class="mini-empty">All ${tab} are matched in the other version.</div>`;
+      return;
+    }
     if (tab === 'chunks') {
-      panel.innerHTML = arr.map((c, i) => {
+      panel.innerHTML = indices.map(i => {
+        const c = arr[i];
         const isActive = slot.active && slot.active.kind === 'chunk' && slot.active.index === i;
         const txt = (c.text || '').slice(0, 280);
+        const badge = badgeHtml(which, matches && matches[i]);
         return `<div class="mini-chunk ${isActive ? 'active' : ''}" data-which="${which}" data-kind="chunk" data-idx="${i}">
-          <span class="mini-meta">p${c.page}</span><span class="mini-text">${escHtml(txt)}${(c.text || '').length > 280 ? '…' : ''}</span>
+          <span class="mini-meta">p${c.page}</span><span class="mini-text">${escHtml(txt)}${(c.text || '').length > 280 ? '…' : ''}</span>${badge}
         </div>`;
       }).join('');
     } else if (tab === 'tables') {
-      panel.innerHTML = arr.map((t, i) => {
+      panel.innerHTML = indices.map(i => {
+        const t = arr[i];
         const isActive = slot.active && slot.active.kind === 'table' && slot.active.index === i;
         const rows = t.table || [];
         const header = rows[0] || [];
+        const badge = badgeHtml(which, matches && matches[i]);
         return `<div class="mini-table ${isActive ? 'active' : ''}" data-which="${which}" data-kind="table" data-idx="${i}">
-          <span class="mini-meta">p${t.page}</span>${rows.length} rows × ${header.length} cols${t.table_type ? ' · ' + escHtml(t.table_type) : ''}
+          <span class="mini-meta">p${t.page}</span>${rows.length} rows × ${header.length} cols${t.table_type ? ' · ' + escHtml(t.table_type) : ''}${badge}
         </div>`;
       }).join('');
     } else { // images
-      panel.innerHTML = arr.map((im, i) => {
+      panel.innerHTML = indices.map(i => {
+        const im = arr[i];
         const isActive = slot.active && slot.active.kind === 'image' && slot.active.index === i;
+        const badge = badgeHtml(which, matches && matches[i]);
         return `<div class="mini-image-card ${isActive ? 'active' : ''}" data-which="${which}" data-kind="image" data-idx="${i}">
           <img src="${escAttr(im.url || '')}" alt="" loading="lazy" />
-          <div><span class="mini-meta">p${im.page}</span>${escHtml(im.filename || '')}</div>
+          <div><span class="mini-meta">p${im.page}</span>${escHtml(im.filename || '')}${badge}</div>
         </div>`;
       }).join('');
     }
@@ -2013,6 +2171,15 @@
       cmp[which].tab = tab;
       renderCompareSide(which);
     });
+  });
+
+  $('compare-a-filter-unmatched').addEventListener('change', (e) => {
+    cmp.a.filterUnmatched = !!e.target.checked;
+    renderCompareSide('a');
+  });
+  $('compare-b-filter-unmatched').addEventListener('change', (e) => {
+    cmp.b.filterUnmatched = !!e.target.checked;
+    renderCompareSide('b');
   });
 
   $('compare-pagedelta-toggle').addEventListener('click', () => {
