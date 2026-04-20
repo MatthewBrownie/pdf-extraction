@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "This is a text document with terminology words.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      73.65,
+      305.98,
+      84.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "These words include analytics.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      102.74,
+      224.74,
+      113.74
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 3,
+    "text": "There is also ablation, action selection, and abstraction.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      131.83,
+      348.8,
+      142.83
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  }
+]

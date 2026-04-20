@@ -329,6 +329,13 @@ def run_extraction(req: ExtractRequest):
         result = extractor.extract_pdf(str(pdf_path), str(output_dir))
     except HTTPException:
         raise
+    except ModuleNotFoundError as e:
+        # v3/v4 lazy-import their heavy ML deps inside extract_pdf, so a
+        # missing module surfaces here rather than in _get_extractor.
+        raise HTTPException(
+            status_code=503,
+            detail=f"{req.version} requires an optional dependency that isn't installed: {e}",
+        )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Extraction failed: {e}")
 
