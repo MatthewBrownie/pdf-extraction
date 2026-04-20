@@ -74,7 +74,7 @@ All four extractors return the same shape so the frontend renders them identical
 ## Frontend Features
 - **Three top-level screens**
   - **Workspace** — the active extraction tools
-  - **Results** — a matrix of chunk/table/image counts for every PDF × version combination that's been run; rows with ≥2 versions extracted are clickable and open the Compare screen
+  - **Results / Stats** — dedicated stats page (deep-linkable at `#results`) with four panels: an **All metrics** combined matrix plus three focused per-metric tables (Chunks, Tables, Images), each with a per-version totals row. Includes a summary strip and `Download CSV` for the active panel (CSV cells starting with `=+-@` are prefixed with `'` to prevent spreadsheet formula-injection). Rows in All metrics are clickable and open the Compare screen.
   - **Compare** — a side-by-side comparison view: the PDF on the left with toggleable per-version bbox overlays (color-coded A vs B), a totals + per-page deltas summary panel, and two parallel chunks/tables/images columns (one per version). Reachable by clicking a row in Results; the version pickers can swap A/B to any extracted version on the fly.
 - **PDF viewer** (PDF.js): page navigation, zoom, canvas rendering
 - **Bounding-box overlay** (SVG on top of the canvas)

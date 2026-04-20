@@ -458,6 +458,50 @@
     .count-cell .row.images span:last-child { color: var(--accent); }
     .count-empty { color: var(--text-dim); font-style: italic; font-size: 0.78rem; }
 
+    /* ── Stats / Results tabs ── */
+    .stats-tabs {
+      display: flex; gap: 4px; margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-tab {
+      padding: 8px 16px; font-size: 0.82rem; font-weight: 500;
+      color: var(--text-dim); cursor: pointer; border-bottom: 2px solid transparent;
+      display: flex; align-items: center; gap: 8px; user-select: none;
+    }
+    .stats-tab:hover { color: var(--text); }
+    .stats-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .stats-tab .swatch {
+      width: 10px; height: 10px; border-radius: 2px; border: 2px solid transparent;
+    }
+
+    .stats-panel { display: none; }
+    .stats-panel.active { display: block; }
+
+    .stats-meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 12px; font-size: 0.78rem; color: var(--text-dim);
+    }
+    .stats-meta .grow { flex: 1; }
+
+    .single-metric-table td.metric-cell {
+      font-family: var(--mono); font-size: 0.88rem; text-align: right;
+      font-weight: 600;
+    }
+    .single-metric-table td.metric-cell.zero { color: var(--text-dim); font-weight: 400; }
+    .single-metric-table td.metric-cell.chunks { color: var(--green); }
+    .single-metric-table td.metric-cell.tables { color: var(--yellow); }
+    .single-metric-table td.metric-cell.images { color: var(--accent); }
+    .single-metric-table tr.totals-row td {
+      background: var(--surface2);
+      border-top: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .single-metric-table tr.totals-row td:first-child {
+      font-family: var(--font);
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--text-dim);
+    }
+
     .legend {
       display: flex; gap: 14px; align-items: center;
       font-size: 0.75rem; color: var(--text-dim);
@@ -848,17 +892,52 @@
       </div>
     </div>
 
-    <!-- Results screen -->
+    <!-- Results / Stats screen -->
     <div class="results-wrap" id="screen-results" style="display:none">
-      <h2>Results matrix</h2>
-      <div class="results-sub">Counts of chunks, tables, and images per document and extractor version. Empty cells haven't been run yet.</div>
-      <div class="results-actions">
-        <button class="btn secondary" id="refresh-results" style="width: auto; padding: 7px 14px;">Refresh</button>
+      <h2>Stats</h2>
+      <div class="results-sub">All numerical extraction results, persisted on disk under <code style="font-family:var(--mono); color:var(--text);">output/&lt;pdf&gt;/&lt;version&gt;/</code>. Click any row in the combined view to open the side-by-side comparison.</div>
+
+      <div class="stats-tabs" id="stats-tabs" role="tablist">
+        <div class="stats-tab active" data-stab="all" role="tab" tabindex="0" aria-selected="true">All metrics</div>
+        <div class="stats-tab" data-stab="chunks" role="tab" tabindex="0" aria-selected="false"><span class="swatch chunk"></span>Chunks</div>
+        <div class="stats-tab" data-stab="tables" role="tab" tabindex="0" aria-selected="false"><span class="swatch table"></span>Tables</div>
+        <div class="stats-tab" data-stab="images" role="tab" tabindex="0" aria-selected="false"><span class="swatch image"></span>Images</div>
       </div>
-      <table class="results-table" id="results-table">
-        <thead><tr><th>PDF</th><th>v1 — baseline</th><th>v2 — improved</th><th>v3 — unstructured</th><th>v4 — docling</th></tr></thead>
-        <tbody><tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr></tbody>
-      </table>
+
+      <div class="stats-meta">
+        <span id="stats-summary">—</span>
+        <span class="grow"></span>
+        <button class="btn secondary" id="refresh-results" style="width: auto; padding: 6px 12px;">Refresh</button>
+        <button class="btn secondary" id="download-csv" style="width: auto; padding: 6px 12px;">Download CSV</button>
+      </div>
+
+      <div class="stats-panel active" id="stats-panel-all">
+        <table class="results-table" id="results-table">
+          <thead><tr><th>PDF</th><th>v1 — baseline</th><th>v2 — improved</th><th>v3 — unstructured</th><th>v4 — docling</th></tr></thead>
+          <tbody><tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="stats-panel" id="stats-panel-chunks">
+        <table class="results-table single-metric-table" id="metric-table-chunks">
+          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="stats-panel" id="stats-panel-tables">
+        <table class="results-table single-metric-table" id="metric-table-tables">
+          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="stats-panel" id="stats-panel-images">
+        <table class="results-table single-metric-table" id="metric-table-images">
+          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
   </main>
 </div>
@@ -907,8 +986,13 @@
     if (screen === 'results') loadResults();
   }
   document.querySelectorAll('.top-tab').forEach(t => {
-    t.addEventListener('click', () => showScreen(t.dataset.screen));
+    t.addEventListener('click', () => {
+      showScreen(t.dataset.screen);
+      history.replaceState(null, '', t.dataset.screen === 'workspace' ? '#' : `#${t.dataset.screen}`);
+    });
   });
+  // Deep-link: opening #results (or #compare) takes you straight there on load.
+  if (location.hash === '#results') showScreen('results');
 
   $('refresh-results').addEventListener('click', loadResults);
 
@@ -1752,17 +1836,159 @@
     }
   }
 
-  // ── Results screen ──
+  // ── Results / Stats screen ──
+  let lastResults = null;            // most recent /api/results payload
+  let activeStatsTab = 'all';
+
+  function activateStatsTab(t) {
+    document.querySelectorAll('.stats-tab').forEach(x => {
+      x.classList.remove('active');
+      x.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.stats-panel').forEach(p => p.classList.remove('active'));
+    t.classList.add('active');
+    t.setAttribute('aria-selected', 'true');
+    activeStatsTab = t.dataset.stab;
+    $(`stats-panel-${activeStatsTab}`).classList.add('active');
+  }
+  document.querySelectorAll('.stats-tab').forEach(t => {
+    t.addEventListener('click', () => activateStatsTab(t));
+    t.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateStatsTab(t); }
+    });
+  });
+
+  $('download-csv').addEventListener('click', () => {
+    if (!lastResults) return;
+    const filename = activeStatsTab === 'all' ? 'extraction_stats_all.csv' : `extraction_stats_${activeStatsTab}.csv`;
+    const csv = activeStatsTab === 'all' ? buildCsvAll(lastResults) : buildCsvSingle(lastResults, activeStatsTab);
+    triggerDownload(csv, filename);
+  });
+
+  function buildCsvAll(data) {
+    const header = ['pdf'];
+    for (const v of data.versions) {
+      for (const m of ['chunks', 'tables', 'images']) header.push(`${v}_${m}`);
+    }
+    const lines = [header.join(',')];
+    for (const pdf of data.pdfs) {
+      const row = [csvEscape(pdf)];
+      const vrow = data.matrix[pdf] || {};
+      for (const v of data.versions) {
+        const c = vrow[v];
+        for (const m of ['chunks', 'tables', 'images']) row.push(c ? c[m] : '');
+      }
+      lines.push(row.join(','));
+    }
+    return lines.join('\n') + '\n';
+  }
+
+  function buildCsvSingle(data, metric) {
+    // Per-metric CSV: rows = PDFs, cols = versions, plus a totals row.
+    // We intentionally do NOT include a per-row total column because summing
+    // the same metric across different extractor versions would double-count
+    // the same document and isn't a meaningful number.
+    const header = ['pdf', ...data.versions];
+    const lines = [header.join(',')];
+    const totals = Object.fromEntries(data.versions.map(v => [v, 0]));
+    for (const pdf of data.pdfs) {
+      const row = [csvEscape(pdf)];
+      const vrow = data.matrix[pdf] || {};
+      for (const v of data.versions) {
+        const c = vrow[v];
+        if (c) { row.push(c[metric]); totals[v] += c[metric]; }
+        else { row.push(''); }
+      }
+      lines.push(row.join(','));
+    }
+    lines.push(['TOTAL', ...data.versions.map(v => totals[v])].join(','));
+    return lines.join('\n') + '\n';
+  }
+
+  function csvEscape(value) {
+    let s = String(value ?? '');
+    // Neutralize spreadsheet formula-injection: if a cell starts with =, +, -, @,
+    // prefix with a single quote so Excel/Sheets treats it as text.
+    if (/^[=+\-@]/.test(s)) s = "'" + s;
+    if (/[",\n\r]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  }
+
+  function triggerDownload(text, filename) {
+    const blob = new Blob([text], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 0);
+  }
+
+  function renderSingleMetric(data, metric) {
+    const tbody = document.querySelector(`#metric-table-${metric} tbody`);
+    if (!data.pdfs.length) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
+      return;
+    }
+    const totals = Object.fromEntries(data.versions.map(v => [v, 0]));
+    const rows = data.pdfs.map(name => {
+      const row = data.matrix[name] || {};
+      const cells = data.versions.map(v => {
+        const c = row[v];
+        if (!c) return '<td class="metric-cell zero">—</td>';
+        const n = c[metric];
+        totals[v] += n;
+        return `<td class="metric-cell ${metric}${n === 0 ? ' zero' : ''}">${n}</td>`;
+      }).join('');
+      return `<tr>
+        <td><div class="pdf-name" title="${escAttr(name)}">${escHtml(name)}</div></td>
+        ${cells}
+      </tr>`;
+    }).join('');
+    const totalsRow = `<tr class="totals-row">
+      <td>Total</td>
+      ${data.versions.map(v => `<td class="metric-cell ${metric}">${totals[v]}</td>`).join('')}
+    </tr>`;
+    tbody.innerHTML = rows + totalsRow;
+  }
+
+  function renderStatsSummary(data) {
+    const totalPdfs = data.pdfs.length;
+    let runs = 0;
+    let totalChunks = 0, totalTables = 0, totalImages = 0;
+    for (const pdf of data.pdfs) {
+      const row = data.matrix[pdf] || {};
+      for (const v of data.versions) {
+        const c = row[v];
+        if (c) { runs++; totalChunks += c.chunks; totalTables += c.tables; totalImages += c.images; }
+      }
+    }
+    const max = totalPdfs * data.versions.length;
+    $('stats-summary').innerHTML =
+      `<strong style="color:var(--text)">${totalPdfs}</strong> PDFs · ` +
+      `<strong style="color:var(--text)">${runs}</strong>/${max} runs · ` +
+      `<span style="color:var(--green)">${totalChunks.toLocaleString()} chunks</span> · ` +
+      `<span style="color:var(--yellow)">${totalTables.toLocaleString()} tables</span> · ` +
+      `<span style="color:var(--accent)">${totalImages.toLocaleString()} images</span>`;
+  }
+
   async function loadResults() {
     const tbody = document.querySelector('#results-table tbody');
     tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr>';
     try {
       const res = await fetch('/api/results');
       const data = await res.json();
+      lastResults = data;
       if (!data.pdfs.length) {
         tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
+        ['chunks', 'tables', 'images'].forEach(m => {
+          document.querySelector(`#metric-table-${m} tbody`).innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
+        });
+        $('stats-summary').textContent = 'No PDFs yet';
         return;
       }
+      renderStatsSummary(data);
+      ['chunks', 'tables', 'images'].forEach(m => renderSingleMetric(data, m));
       tbody.innerHTML = data.pdfs.map(name => {
         const row = data.matrix[name] || {};
         const ranVersions = data.versions.filter(v => row[v]);
