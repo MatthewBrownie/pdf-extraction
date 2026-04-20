@@ -1,0 +1,18 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "This is a text document with terminology words.    These words include analytics.    There is also ablation, action selection, and abstraction.",
+    "font_size": 11.0,
+    "bbox": [
+      72.0,
+      72.36,
+      348.8,
+      142.83
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ]
+  }
+]

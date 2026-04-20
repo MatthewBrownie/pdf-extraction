@@ -248,18 +248,29 @@ def _extract_tables_from_page(
         if not _is_valid_table(rows):
             continue
 
+        # Convert pdfplumber bbox (bottom-left origin) to fitz top-left origin
+        tx0, ty0, tx1, ty1 = table_obj.bbox
+        fitz_bbox = [tx0, page_height - ty1, tx1, page_height - ty0]
         results.append({
             'page': page_num,
             'table_type': table_type,
             'table': rows,
+            'bbox': [round(v, 2) for v in fitz_bbox],
+            'page_size': [round(plumber_page.width, 2), round(page_height, 2)],
         })
 
     return results
 
 
-def _build_chunk(page_num: int, para_num: int, lines: list[dict]) -> dict | None:
+def _build_chunk(
+    page_num: int,
+    para_num: int,
+    lines: list[dict],
+    page_size: tuple[float, float],
+) -> dict | None:
     line_texts: list[str] = []
     all_span_sizes: list[float] = []
+    xs0, ys0, xs1, ys1 = [], [], [], []
 
     for line in lines:
         span_texts = [span['text'] for span in line['spans']]
@@ -268,17 +279,22 @@ def _build_chunk(page_num: int, para_num: int, lines: list[dict]) -> dict | None
             size = span.get('size')
             if size:
                 all_span_sizes.append(size)
+        bx0, by0, bx1, by1 = line['bbox']
+        xs0.append(bx0); ys0.append(by0); xs1.append(bx1); ys1.append(by1)
 
     text = ' '.join(line_texts).strip()
     if len(text) < 3:
         return None
 
     font_size = statistics.median(all_span_sizes) if all_span_sizes else 0.0
+    bbox = [min(xs0), min(ys0), max(xs1), max(ys1)] if xs0 else [0, 0, 0, 0]
     return {
         'page': page_num,
         'paragraph': para_num,
         'text': text,
         'font_size': round(font_size, 2),
+        'bbox': [round(v, 2) for v in bbox],
+        'page_size': [round(page_size[0], 2), round(page_size[1], 2)],
     }
 
 
@@ -311,6 +327,7 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
 
     for page_index, fitz_page in enumerate(fitz_doc):
         page_num = page_index + 1
+        page_size = (fitz_page.rect.width, fitz_page.rect.height)
 
         # --- Text chunks ---
         page_dict = fitz_page.get_text('dict')
@@ -342,7 +359,7 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
                     if gap <= 1.5 * font_size:
                         continue
 
-                chunk = _build_chunk(page_num, para_num, current_para_lines)
+                chunk = _build_chunk(page_num, para_num, current_para_lines, page_size)
                 if chunk is not None:
                     chunks.append(chunk)
                     para_num += 1
@@ -359,7 +376,20 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
             img_path = os.path.join(images_dir, filename)
             with open(img_path, 'wb') as f:
                 f.write(image_bytes)
-            images.append({'page': page_num, 'filename': filename})
+            bbox = None
+            try:
+                rects = fitz_page.get_image_rects(xref)
+                if rects:
+                    r = rects[0]
+                    bbox = [round(r.x0, 2), round(r.y0, 2), round(r.x1, 2), round(r.y1, 2)]
+            except Exception:
+                bbox = None
+            images.append({
+                'page': page_num,
+                'filename': filename,
+                'bbox': bbox,
+                'page_size': [round(page_size[0], 2), round(page_size[1], 2)],
+            })
 
     # --- Tables via pdfplumber + PyMuPDF drawing inspection ---
     # Both files are opened independently — PyMuPDF is kept open above for
