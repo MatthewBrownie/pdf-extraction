@@ -657,6 +657,7 @@
           <strong id="warmup-title">Models still downloading</strong>
           <span id="warmup-detail">First run may take a minute while v3/v4 models finish downloading.</span>
           <div class="warmup-elapsed" id="warmup-elapsed"></div>
+          <button type="button" class="btn secondary warmup-retry-btn" id="warmup-retry-btn" style="display:none; margin-top:6px;">Retry warmup</button>
         </div>
       </div>
     </div>
@@ -985,6 +986,7 @@
   const warmupTitle = $('warmup-title');
   const warmupDetail = $('warmup-detail');
   const warmupElapsed = $('warmup-elapsed');
+  const warmupRetryBtn = $('warmup-retry-btn');
   let warmupState = { v3: { status: 'pending' }, v4: { status: 'pending' } };
   let warmupPollTimer = null;
 
@@ -1013,6 +1015,9 @@
         ? `${info.detail}. The first extraction may still try and download on demand.`
         : 'The first extraction will try to download models on demand.';
       warmupElapsed.textContent = '';
+      warmupRetryBtn.style.display = '';
+      warmupRetryBtn.disabled = false;
+      warmupRetryBtn.textContent = 'Retry warmup';
     } else {
       warmupBanner.classList.remove('failed');
       warmupSpinner.style.display = '';
@@ -1020,8 +1025,24 @@
       warmupDetail.textContent = 'First run may take a minute while models finish downloading.';
       const e = typeof info.elapsed === 'number' ? info.elapsed : null;
       warmupElapsed.textContent = e !== null ? `Elapsed: ${e.toFixed(1)}s` : '';
+      warmupRetryBtn.style.display = 'none';
     }
   }
+
+  warmupRetryBtn.addEventListener('click', async () => {
+    warmupRetryBtn.disabled = true;
+    warmupRetryBtn.textContent = 'Retrying…';
+    try {
+      await fetch('/api/warmup/retry', { method: 'POST' });
+    } catch {
+      // Non-fatal — pollWarmup will keep reflecting the real server state.
+    }
+    // Kick polling back on (it may have stopped when all versions were "failed"/"ready").
+    await pollWarmup();
+    if (!warmupPollTimer) {
+      warmupPollTimer = setInterval(pollWarmup, 3000);
+    }
+  });
 
   async function pollWarmup() {
     try {

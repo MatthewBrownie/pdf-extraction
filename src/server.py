@@ -210,6 +210,30 @@ def warmup_status():
     return {"versions": out}
 
 
+@app.post("/api/warmup/retry")
+def warmup_retry():
+    """Re-run warmup in background for any version currently in "failed" state.
+
+    Versions that are pending / in_progress / ready are left alone so a retry
+    click can't clobber an in-flight or already-successful warmup. Returns the
+    list of versions that were actually restarted.
+    """
+    import threading
+
+    fns = {"v3": _warmup.warmup_v3, "v4": _warmup.warmup_v4}
+    status = _warmup.get_status()
+    restarted: list[str] = []
+    now = time.time()
+    for v, fn in fns.items():
+        if status.get(v, {}).get("status") == "failed":
+            # Flip to in_progress immediately so a fast poll doesn't still see
+            # "failed" before the worker thread re-enters warmup_vX().
+            _warmup._set_status(v, status="in_progress", started_at=now, finished_at=None, detail=None)
+            threading.Thread(target=fn, name=f"warmup-{v}-retry", daemon=True).start()
+            restarted.append(v)
+    return {"restarted": restarted}
+
+
 @app.get("/api/pdfs")
 def list_pdfs():
     if not _INPUT_DOCS.exists():
