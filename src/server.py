@@ -365,6 +365,64 @@ def run_extraction_stream(req: ExtractRequest):
     return StreamingResponse(gen(), media_type="application/x-ndjson")
 
 
+@app.get("/api/extraction")
+def get_extraction(pdf_name: str, version: str):
+    """
+    Return persisted extraction data for a single PDF × version.
+
+    Reads chunks.json/tables.json/images.json from output/<stem>/<version>/.
+    Returns 404 if the version hasn't been run for that PDF.
+    """
+    pdf_name = Path(pdf_name).name
+    pdf_path = (_INPUT_DOCS / pdf_name).resolve()
+    try:
+        pdf_path.relative_to(_INPUT_DOCS.resolve())
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid PDF name")
+    if not pdf_path.exists():
+        raise HTTPException(status_code=404, detail=f"PDF not found: {pdf_name}")
+    if version not in VERSIONS:
+        raise HTTPException(status_code=400, detail=f"version must be one of {VERSIONS}")
+
+    stem = pdf_path.stem
+    vdir = _OUTPUT / stem / version
+    if not vdir.exists():
+        raise HTTPException(status_code=404, detail=f"No persisted output for {pdf_name} / {version}")
+
+    out: dict[str, list] = {"chunks": [], "tables": [], "images": []}
+    found_any = False
+    for key in ("chunks", "tables", "images"):
+        jf = vdir / f"{key}.json"
+        if jf.exists():
+            try:
+                with jf.open("r", encoding="utf-8") as fh:
+                    data = json.load(fh)
+                if isinstance(data, list):
+                    out[key] = data
+                    found_any = True
+            except Exception:
+                pass
+
+    if not found_any:
+        raise HTTPException(status_code=404, detail=f"No persisted output for {pdf_name} / {version}")
+
+    _attach_image_urls(out["images"], stem, version)
+
+    return {
+        "pdf": pdf_name,
+        "version": version,
+        "stats": {
+            "chunks": len(out["chunks"]),
+            "tables": len(out["tables"]),
+            "images": len(out["images"]),
+        },
+        "chunks": out["chunks"],
+        "tables": out["tables"],
+        "images": out["images"],
+        "pdf_url": f"/pdfs/{pdf_name}",
+    }
+
+
 @app.get("/api/results")
 def results_matrix():
     """

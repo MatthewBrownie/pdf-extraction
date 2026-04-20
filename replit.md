@@ -59,6 +59,7 @@ All four extractors return the same shape so the frontend renders them identical
 - `POST /api/upload`     — Multipart upload. Sanitizes the filename, auto-suffixes duplicates (`name_1.pdf`), and rejects non-PDFs via `%PDF` magic-byte check
 - `POST /api/extract`    — Runs extraction. Body: `{ "pdf_name": "...", "version": "v1|v2|v3|v4" }`. v3/v4 return HTTP 503 if their heavy deps aren't installed.
 - `GET  /api/results`    — Matrix of counts (chunks/tables/images) per PDF × version, read from persisted JSON
+- `GET  /api/extraction` — Query params `pdf_name`, `version`. Returns the full persisted chunks/tables/images for that combination (used by the side-by-side compare view). 404 if not yet run.
 - `GET  /pdfs/<name>`    — Static: source PDFs
 - `GET  /images/<stem>/<version>/images/<file>` — Static: extracted image files
 
@@ -71,9 +72,10 @@ All four extractors return the same shape so the frontend renders them identical
 > **First-run note for v3/v4:** both libraries may download ML models on first invocation (layout/OCR for unstructured; IBM docling models for docling). The first extraction per PDF can take 30s–several minutes; subsequent runs are much faster.
 
 ## Frontend Features
-- **Two top-level screens**
+- **Three top-level screens**
   - **Workspace** — the active extraction tools
-  - **Results** — a matrix of chunk/table/image counts for every PDF × version combination that's been run
+  - **Results** — a matrix of chunk/table/image counts for every PDF × version combination that's been run; rows with ≥2 versions extracted are clickable and open the Compare screen
+  - **Compare** — a side-by-side comparison view: the PDF on the left with toggleable per-version bbox overlays (color-coded A vs B), a totals + per-page deltas summary panel, and two parallel chunks/tables/images columns (one per version). Reachable by clicking a row in Results; the version pickers can swap A/B to any extracted version on the fly.
 - **PDF viewer** (PDF.js): page navigation, zoom, canvas rendering
 - **Bounding-box overlay** (SVG on top of the canvas)
   - Click a chunk, table, or image → page jumps and the matching box is outlined and filled
@@ -93,6 +95,7 @@ Configured as an autoscale deployment using `gunicorn -k uvicorn.workers.Uvicorn
 
 ## Recent Changes
 - 2026-04-20: Installed v3/v4 ML stacks (`unstructured[pdf]`, `docling`) plus system deps (`xorg.libxcb`, `tesseract`, `poppler`); both extractors now run end-to-end and produce chunks/tables.
+- 2026-04-20: Added side-by-side compare view (third top-level screen). Click a Results row to open it; A/B version pickers, toggleable color-coded overlays on a single PDF render, and totals + per-page deltas. Added `GET /api/extraction` endpoint that loads persisted chunks/tables/images for a given PDF × version.
 - 2026-04-20: Added v3 (unstructured.io) and v4 (docling) extractors.
 - 2026-04-20: Added `/api/upload` and in-browser PDF upload UI.
 - 2026-04-20: Added bounding-box overlays via PDF.js + SVG; added "Show all boxes" toggle.

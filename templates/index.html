@@ -410,6 +410,132 @@
     .swatch.chunk { border-color: rgba(62, 207, 142, 0.95); }
     .swatch.table { border-color: rgba(240, 192, 64, 0.95); }
     .swatch.image { border-color: rgba(108, 140, 255, 0.95); }
+
+    /* ── Compare screen ── */
+    .results-table tbody tr.clickable-row { cursor: pointer; }
+    .results-table tbody tr.clickable-row:hover td { background: rgba(108, 140, 255, 0.06); }
+
+    .compare-wrap { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .compare-toolbar {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--surface);
+      font-size: 0.82rem;
+    }
+    .compare-toolbar .pdf-label { font-family: var(--mono); color: var(--text-dim); }
+    .compare-toolbar .pdf-label strong { color: var(--text); }
+    .compare-toolbar .vsel { display: flex; align-items: center; gap: 6px; color: var(--text-dim); }
+    .compare-toolbar .vsel select {
+      width: auto; padding: 5px 26px 5px 10px; font-size: 0.78rem;
+    }
+    .compare-toolbar .vtoggle {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 6px; cursor: pointer; user-select: none;
+      border: 1px solid var(--border); background: var(--surface2); font-size: 0.78rem;
+    }
+    .compare-toolbar .vtoggle .swatch-pill {
+      width: 12px; height: 12px; border-radius: 3px; border: 2px solid currentColor;
+    }
+    .compare-toolbar .vtoggle.dim { opacity: 0.45; }
+    .compare-toolbar .compare-back {
+      padding: 5px 12px; background: var(--surface2); border: 1px solid var(--border);
+      color: var(--text); border-radius: 5px; cursor: pointer; font-size: 0.78rem;
+    }
+    .compare-toolbar .compare-back:hover { border-color: var(--accent); color: var(--accent); }
+    .compare-toolbar .pager-mini { display: inline-flex; align-items: center; gap: 6px; }
+    .compare-toolbar .pager-mini button {
+      padding: 4px 9px; background: var(--surface2); border: 1px solid var(--border);
+      color: var(--text); border-radius: 5px; cursor: pointer; font-size: 0.78rem;
+    }
+    .compare-toolbar .pager-mini button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    .compare-toolbar .pager-mini button:disabled { opacity: 0.4; cursor: default; }
+
+    .compare-body { flex: 1; display: flex; overflow: hidden; }
+    .compare-pdf { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #1f2230; border-right: 1px solid var(--border); }
+    .compare-canvas-wrap {
+      flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center;
+      padding: 20px; background: #14161e;
+    }
+    .compare-pdf-container {
+      position: relative; background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.4); line-height: 0;
+    }
+    .compare-pdf-container canvas { display: block; }
+    .compare-pdf-container svg { position: absolute; inset: 0; pointer-events: none; }
+
+    .compare-side {
+      width: 560px; flex-shrink: 0; display: flex; flex-direction: column; background: var(--bg);
+      overflow: hidden;
+    }
+    .compare-summary {
+      padding: 12px 14px; border-bottom: 1px solid var(--border); background: var(--surface);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .compare-summary h3 { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+    .summary-row {
+      display: grid; grid-template-columns: 80px 1fr 1fr 80px;
+      align-items: center; gap: 8px; font-size: 0.8rem; font-family: var(--mono);
+    }
+    .summary-row .lbl { color: var(--text-dim); font-family: var(--font); font-size: 0.78rem; }
+    .summary-row .delta { text-align: right; font-weight: 700; }
+    .summary-row .delta.pos { color: var(--green); }
+    .summary-row .delta.neg { color: var(--red); }
+    .summary-row .delta.zero { color: var(--text-dim); }
+    .summary-row .va, .summary-row .vb { padding: 2px 8px; border-radius: 4px; text-align: center; }
+
+    .compare-cols { flex: 1; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .compare-col { display: flex; flex-direction: column; overflow: hidden; border-right: 1px solid var(--border); }
+    .compare-col:last-child { border-right: none; }
+    .compare-col-header {
+      padding: 8px 12px; background: var(--surface2); border-bottom: 1px solid var(--border);
+      font-size: 0.75rem; display: flex; align-items: center; gap: 8px;
+      font-family: var(--mono);
+    }
+    .compare-col-header .swatch-pill { width: 10px; height: 10px; border-radius: 2px; border: 2px solid currentColor; }
+    .compare-col-tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--surface); }
+    .compare-col-tabs .ctab {
+      padding: 8px 10px; font-size: 0.74rem; color: var(--text-dim); cursor: pointer;
+      border-bottom: 2px solid transparent; flex: 1; text-align: center;
+    }
+    .compare-col-tabs .ctab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .compare-col-content { flex: 1; overflow-y: auto; padding: 10px; }
+    .compare-col-content .cpanel { display: none; }
+    .compare-col-content .cpanel.active { display: block; }
+
+    .mini-chunk, .mini-table, .mini-image-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+      padding: 7px 9px; margin-bottom: 6px; cursor: pointer; font-size: 0.74rem; line-height: 1.45;
+      word-break: break-word;
+    }
+    .mini-chunk:hover, .mini-table:hover, .mini-image-card:hover { border-color: var(--accent-dim); }
+    .mini-chunk.active, .mini-table.active, .mini-image-card.active { border-color: var(--accent); background: rgba(108, 140, 255, 0.06); }
+    .mini-meta {
+      display: inline-block; font-family: var(--mono); font-size: 0.65rem;
+      color: var(--accent); background: rgba(108, 140, 255, 0.12);
+      padding: 1px 5px; border-radius: 3px; margin-right: 6px;
+    }
+    .mini-text { white-space: pre-wrap; }
+    .mini-image-card { display: flex; gap: 8px; align-items: center; }
+    .mini-image-card img {
+      width: 56px; height: 56px; object-fit: contain; background: var(--surface2); border-radius: 4px;
+    }
+    .mini-empty { padding: 20px 10px; text-align: center; color: var(--text-dim); font-size: 0.78rem; }
+
+    /* per-page deltas */
+    .page-deltas { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+    .page-delta-row {
+      display: grid; grid-template-columns: 50px 1fr 1fr 60px;
+      gap: 6px; align-items: center; font-size: 0.72rem; font-family: var(--mono);
+      padding: 3px 6px; border-radius: 4px;
+    }
+    .page-delta-row.diff { background: rgba(255, 166, 87, 0.08); }
+    .page-delta-row .lbl { color: var(--text-dim); }
+    .page-delta-row .d { text-align: right; font-weight: 700; }
+    .page-delta-row .d.pos { color: var(--green); }
+    .page-delta-row .d.neg { color: var(--red); }
+    .page-delta-row .d.zero { color: var(--text-dim); }
+    .page-deltas-toggle {
+      font-size: 0.72rem; color: var(--accent); cursor: pointer; user-select: none;
+      margin-top: 2px; align-self: flex-start;
+    }
   </style>
 </head>
 <body>
@@ -542,6 +668,86 @@
       </div>
     </div>
 
+    <!-- Compare screen -->
+    <div class="compare-wrap" id="screen-compare" style="display:none">
+      <div class="compare-toolbar">
+        <button class="compare-back" id="compare-back">← Back to results</button>
+        <span class="pdf-label">PDF: <strong id="compare-pdf-name">—</strong></span>
+        <span class="vsel">A: <select id="compare-version-a"></select></span>
+        <span class="vsel">B: <select id="compare-version-b"></select></span>
+        <span class="vtoggle" id="compare-toggle-a" data-which="a" title="Toggle overlay A">
+          <span class="swatch-pill" style="color: rgba(62, 207, 142, 0.95)"></span>
+          Overlay A
+        </span>
+        <span class="vtoggle" id="compare-toggle-b" data-which="b" title="Toggle overlay B">
+          <span class="swatch-pill" style="color: rgba(108, 140, 255, 0.95)"></span>
+          Overlay B
+        </span>
+        <span class="pager-mini">
+          <button id="compare-page-prev">‹</button>
+          <span id="compare-page-info" style="font-family:var(--mono); color: var(--text-dim); min-width: 80px; text-align:center;">—</span>
+          <button id="compare-page-next">›</button>
+        </span>
+        <span class="pager-mini">
+          <button id="compare-zoom-out">−</button>
+          <span id="compare-zoom-info" style="font-family:var(--mono); color: var(--text-dim); min-width: 44px; text-align:center;">100%</span>
+          <button id="compare-zoom-in">+</button>
+        </span>
+      </div>
+      <div class="compare-body">
+        <div class="compare-pdf">
+          <div class="compare-canvas-wrap" id="compare-canvas-wrap">
+            <div class="compare-pdf-container" id="compare-pdf-container">
+              <canvas id="compare-canvas"></canvas>
+              <svg id="compare-overlay"></svg>
+            </div>
+          </div>
+        </div>
+        <div class="compare-side">
+          <div class="compare-summary" id="compare-summary">
+            <h3>Totals</h3>
+            <div id="compare-totals"></div>
+            <span class="page-deltas-toggle" id="compare-pagedelta-toggle">Show per-page deltas ▾</span>
+            <div class="page-deltas" id="compare-page-deltas" style="display:none"></div>
+          </div>
+          <div class="compare-cols">
+            <div class="compare-col" data-which="a">
+              <div class="compare-col-header">
+                <span class="swatch-pill" style="color: rgba(62, 207, 142, 0.95)"></span>
+                <span id="compare-col-a-label">A</span>
+              </div>
+              <div class="compare-col-tabs">
+                <div class="ctab active" data-which="a" data-tab="chunks">Chunks <span id="compare-a-cnt-chunks">0</span></div>
+                <div class="ctab" data-which="a" data-tab="tables">Tables <span id="compare-a-cnt-tables">0</span></div>
+                <div class="ctab" data-which="a" data-tab="images">Images <span id="compare-a-cnt-images">0</span></div>
+              </div>
+              <div class="compare-col-content">
+                <div class="cpanel active" id="compare-a-panel-chunks"></div>
+                <div class="cpanel" id="compare-a-panel-tables"></div>
+                <div class="cpanel" id="compare-a-panel-images"></div>
+              </div>
+            </div>
+            <div class="compare-col" data-which="b">
+              <div class="compare-col-header">
+                <span class="swatch-pill" style="color: rgba(108, 140, 255, 0.95)"></span>
+                <span id="compare-col-b-label">B</span>
+              </div>
+              <div class="compare-col-tabs">
+                <div class="ctab active" data-which="b" data-tab="chunks">Chunks <span id="compare-b-cnt-chunks">0</span></div>
+                <div class="ctab" data-which="b" data-tab="tables">Tables <span id="compare-b-cnt-tables">0</span></div>
+                <div class="ctab" data-which="b" data-tab="images">Images <span id="compare-b-cnt-images">0</span></div>
+              </div>
+              <div class="compare-col-content">
+                <div class="cpanel active" id="compare-b-panel-chunks"></div>
+                <div class="cpanel" id="compare-b-panel-tables"></div>
+                <div class="cpanel" id="compare-b-panel-images"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Results screen -->
     <div class="results-wrap" id="screen-results" style="display:none">
       <h2>Results matrix</h2>
@@ -587,17 +793,18 @@
   const errorBox = $('error-box');
   const radioOpts = document.querySelectorAll('.radio-option');
 
-  // ── Screens (Workspace / Results) ──
+  // ── Screens (Workspace / Results / Compare) ──
+  function showScreen(screen) {
+    document.querySelectorAll('.top-tab').forEach(x => x.classList.toggle('active', x.dataset.screen === screen));
+    $('screen-workspace').style.display = screen === 'workspace' ? '' : 'none';
+    $('screen-results').style.display = screen === 'results' ? '' : 'none';
+    $('screen-compare').style.display = screen === 'compare' ? 'flex' : 'none';
+    // Hide sidebar in non-workspace modes
+    $('layout').classList.toggle('results-mode', screen !== 'workspace');
+    if (screen === 'results') loadResults();
+  }
   document.querySelectorAll('.top-tab').forEach(t => {
-    t.addEventListener('click', () => {
-      document.querySelectorAll('.top-tab').forEach(x => x.classList.remove('active'));
-      t.classList.add('active');
-      const screen = t.dataset.screen;
-      $('screen-workspace').style.display = screen === 'workspace' ? '' : 'none';
-      $('screen-results').style.display = screen === 'results' ? '' : 'none';
-      $('layout').classList.toggle('results-mode', screen === 'results');
-      if (screen === 'results') loadResults();
-    });
+    t.addEventListener('click', () => showScreen(t.dataset.screen));
   });
 
   $('refresh-results').addEventListener('click', loadResults);
@@ -1103,7 +1310,11 @@
       }
       tbody.innerHTML = data.pdfs.map(name => {
         const row = data.matrix[name] || {};
-        return `<tr>
+        const ranVersions = data.versions.filter(v => row[v]);
+        const titleAttr = ranVersions.length >= 2
+          ? 'Click to compare versions side by side'
+          : 'Click to open the compare view (run another version to compare against)';
+        return `<tr class="clickable-row" data-pdf="${escAttr(name)}" data-versions="${escAttr(ranVersions.join(','))}" title="${escAttr(titleAttr)}">
           <td><div class="pdf-name" title="${escAttr(name)}">${escHtml(name)}</div></td>
           ${data.versions.map(v => {
             const c = row[v];
@@ -1118,10 +1329,390 @@
           }).join('')}
         </tr>`;
       }).join('');
+
+      tbody.querySelectorAll('tr.clickable-row').forEach(tr => {
+        tr.addEventListener('click', () => {
+          const name = tr.dataset.pdf;
+          const versions = (tr.dataset.versions || '').split(',').filter(Boolean);
+          // Pick sensible defaults: first two extracted versions if available;
+          // otherwise fall back so the screen still opens (user can pick / run more).
+          const vA = versions[0] || 'v1';
+          const vB = versions[1] || versions[0] || 'v2';
+          openCompare(name, vA, vB);
+        });
+      });
     } catch (err) {
       tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--red);">Failed to load results: ${escHtml(err.message || err)}</td></tr>`;
     }
   }
+
+  // ── Compare screen ──────────────────────────────────────────────────────
+  const VERSION_LABELS = {
+    v1: 'v1 — baseline',
+    v2: 'v2 — improved',
+    v3: 'v3 — unstructured',
+    v4: 'v4 — docling',
+  };
+  const CMP_COLORS = {
+    a: { stroke: 'rgba(62, 207, 142, 0.95)',  fill: 'rgba(62, 207, 142, 0.18)' },
+    b: { stroke: 'rgba(108, 140, 255, 0.95)', fill: 'rgba(108, 140, 255, 0.18)' },
+  };
+
+  // Compare-mode state (kept fully separate from workspace state)
+  let cmp = {
+    pdfName: null,
+    pdfDoc: null,
+    page: 1,
+    totalPages: 1,
+    zoom: 1.0,
+    viewport: null,
+    render: null,
+    available: [],            // list of versions that have data
+    a: { version: null, data: null, tab: 'chunks', show: true, active: null },
+    b: { version: null, data: null, tab: 'chunks', show: true, active: null },
+  };
+
+  async function openCompare(pdfName, vA, vB) {
+    cmp.pdfName = pdfName;
+    cmp.a = { version: vA, data: null, tab: 'chunks', show: true, active: null };
+    cmp.b = { version: vB, data: null, tab: 'chunks', show: true, active: null };
+    cmp.page = 1;
+    cmp.zoom = 1.0;
+    $('compare-pdf-name').textContent = pdfName;
+    showScreen('compare');
+
+    // Determine which versions have persisted data, populate selects
+    try {
+      const r = await fetch('/api/results');
+      const d = await r.json();
+      const row = (d.matrix && d.matrix[pdfName]) || {};
+      cmp.available = d.versions.filter(v => row[v]);
+    } catch {
+      cmp.available = [vA, vB];
+    }
+    // If our requested A/B aren't in the available list, prefer something
+    // that *is* available, but always keep them in the dropdown so the user
+    // can see what was picked.
+    if (cmp.available.length && !cmp.available.includes(cmp.a.version)) cmp.a.version = cmp.available[0];
+    if (cmp.available.length && !cmp.available.includes(cmp.b.version)) {
+      cmp.b.version = cmp.available[1] || cmp.available[0];
+    }
+    populateCompareSelects();
+
+    await Promise.all([
+      loadComparePdf(pdfName),
+      loadVersionData('a'),
+      loadVersionData('b'),
+    ]);
+    renderCompareAll();
+  }
+
+  function populateCompareSelects() {
+    // Show every known version (with an "(not run)" suffix for the ones
+    // that aren't yet extracted) so users can switch around freely.
+    const allVs = ['v1', 'v2', 'v3', 'v4'];
+    const opts = allVs.map(v => {
+      const ran = cmp.available.includes(v);
+      const label = (VERSION_LABELS[v] || v) + (ran ? '' : ' (not run)');
+      return `<option value="${v}">${escHtml(label)}</option>`;
+    }).join('');
+    $('compare-version-a').innerHTML = opts;
+    $('compare-version-b').innerHTML = opts;
+    $('compare-version-a').value = cmp.a.version;
+    $('compare-version-b').value = cmp.b.version;
+  }
+
+  async function loadVersionData(which) {
+    const slot = cmp[which];
+    if (!slot.version) { slot.data = null; return; }
+    try {
+      const url = `/api/extraction?pdf_name=${encodeURIComponent(cmp.pdfName)}&version=${encodeURIComponent(slot.version)}`;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      slot.data = await r.json();
+    } catch (e) {
+      slot.data = { chunks: [], tables: [], images: [], stats: { chunks: 0, tables: 0, images: 0 } };
+      console.warn(`Failed to load ${which} (${slot.version}):`, e);
+    }
+    slot.active = null;
+  }
+
+  async function loadComparePdf(pdfName) {
+    try {
+      const url = `/pdfs/${encodeURIComponent(pdfName)}`;
+      const task = pdfjsLib.getDocument(url);
+      cmp.pdfDoc = await task.promise;
+      cmp.totalPages = cmp.pdfDoc.numPages;
+      cmp.page = 1;
+      await renderComparePage();
+    } catch (e) {
+      console.error('compare PDF load failed', e);
+    }
+  }
+
+  async function renderComparePage() {
+    if (!cmp.pdfDoc) return;
+    if (cmp.render) { try { cmp.render.cancel(); } catch {} }
+    const page = await cmp.pdfDoc.getPage(cmp.page);
+    const viewport = page.getViewport({ scale: cmp.zoom * 1.5 });
+    cmp.viewport = viewport;
+    const canvas = $('compare-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    canvas.style.width = viewport.width + 'px';
+    canvas.style.height = viewport.height + 'px';
+    const container = $('compare-pdf-container');
+    container.style.width = viewport.width + 'px';
+    container.style.height = viewport.height + 'px';
+    const overlay = $('compare-overlay');
+    overlay.setAttribute('viewBox', `0 0 ${viewport.width} ${viewport.height}`);
+    overlay.setAttribute('width', viewport.width);
+    overlay.setAttribute('height', viewport.height);
+    cmp.render = page.render({ canvasContext: ctx, viewport });
+    try { await cmp.render.promise; } catch {}
+    $('compare-page-info').textContent = `Page ${cmp.page} / ${cmp.totalPages}`;
+    $('compare-zoom-info').textContent = Math.round(cmp.zoom * 100) + '%';
+    drawCompareOverlay();
+  }
+
+  function drawCompareOverlay() {
+    const overlay = $('compare-overlay');
+    if (!overlay) return;
+    overlay.innerHTML = '';
+    if (!cmp.viewport) return;
+
+    const drawSet = (which) => {
+      const slot = cmp[which];
+      if (!slot.show || !slot.data) return;
+      const colors = CMP_COLORS[which];
+      const drawItem = (item, isActive, kind) => {
+        if (!item || !item.bbox || !item.page_size) return;
+        if (item.page !== cmp.page) return;
+        const sx = cmp.viewport.width / item.page_size[0];
+        const sy = cmp.viewport.height / item.page_size[1];
+        const [x0, y0, x1, y1] = item.bbox;
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', x0 * sx);
+        rect.setAttribute('y', y0 * sy);
+        rect.setAttribute('width', Math.max((x1 - x0) * sx, 1));
+        rect.setAttribute('height', Math.max((y1 - y0) * sy, 1));
+        rect.setAttribute('fill', isActive ? colors.fill : 'none');
+        rect.setAttribute('stroke', colors.stroke);
+        rect.setAttribute('stroke-width', isActive ? 2.5 : 1);
+        rect.setAttribute('stroke-dasharray', kind === 'table' ? '4 3' : kind === 'image' ? '2 2' : '');
+        rect.setAttribute('vector-effect', 'non-scaling-stroke');
+        overlay.appendChild(rect);
+      };
+      ['chunks', 'tables', 'images'].forEach(kind => {
+        const arr = slot.data[kind] || [];
+        const akind = kind.slice(0, -1); // chunk/table/image
+        arr.forEach((item, i) => {
+          const isActive = slot.active && slot.active.kind === akind && slot.active.index === i;
+          drawItem(item, isActive, akind);
+        });
+      });
+    };
+    drawSet('a');
+    drawSet('b');
+  }
+
+  function renderCompareAll() {
+    // Header labels
+    $('compare-col-a-label').textContent = VERSION_LABELS[cmp.a.version] || cmp.a.version || '—';
+    $('compare-col-b-label').textContent = VERSION_LABELS[cmp.b.version] || cmp.b.version || '—';
+    // Toggle visuals
+    $('compare-toggle-a').classList.toggle('dim', !cmp.a.show);
+    $('compare-toggle-b').classList.toggle('dim', !cmp.b.show);
+    // Lists + counts
+    renderCompareSide('a');
+    renderCompareSide('b');
+    renderCompareSummary();
+    drawCompareOverlay();
+  }
+
+  function renderCompareSide(which) {
+    const slot = cmp[which];
+    const data = slot.data || { chunks: [], tables: [], images: [] };
+    $(`compare-${which}-cnt-chunks`).textContent = (data.chunks || []).length;
+    $(`compare-${which}-cnt-tables`).textContent = (data.tables || []).length;
+    $(`compare-${which}-cnt-images`).textContent = (data.images || []).length;
+    // Reflect active tab
+    document.querySelectorAll(`.ctab[data-which="${which}"]`).forEach(t => {
+      t.classList.toggle('active', t.dataset.tab === slot.tab);
+    });
+    document.querySelectorAll(`#screen-compare .compare-col[data-which="${which}"] .cpanel`).forEach(p => {
+      p.classList.remove('active');
+    });
+    $(`compare-${which}-panel-${slot.tab}`).classList.add('active');
+    renderCompareList(which, slot.tab);
+  }
+
+  function renderCompareList(which, tab) {
+    const slot = cmp[which];
+    const data = slot.data || {};
+    const arr = data[tab] || [];
+    const panel = $(`compare-${which}-panel-${tab}`);
+    if (!arr.length) {
+      panel.innerHTML = `<div class="mini-empty">No ${tab} extracted.</div>`;
+      return;
+    }
+    if (tab === 'chunks') {
+      panel.innerHTML = arr.map((c, i) => {
+        const isActive = slot.active && slot.active.kind === 'chunk' && slot.active.index === i;
+        const txt = (c.text || '').slice(0, 280);
+        return `<div class="mini-chunk ${isActive ? 'active' : ''}" data-which="${which}" data-kind="chunk" data-idx="${i}">
+          <span class="mini-meta">p${c.page}</span><span class="mini-text">${escHtml(txt)}${(c.text || '').length > 280 ? '…' : ''}</span>
+        </div>`;
+      }).join('');
+    } else if (tab === 'tables') {
+      panel.innerHTML = arr.map((t, i) => {
+        const isActive = slot.active && slot.active.kind === 'table' && slot.active.index === i;
+        const rows = t.table || [];
+        const header = rows[0] || [];
+        return `<div class="mini-table ${isActive ? 'active' : ''}" data-which="${which}" data-kind="table" data-idx="${i}">
+          <span class="mini-meta">p${t.page}</span>${rows.length} rows × ${header.length} cols${t.table_type ? ' · ' + escHtml(t.table_type) : ''}
+        </div>`;
+      }).join('');
+    } else { // images
+      panel.innerHTML = arr.map((im, i) => {
+        const isActive = slot.active && slot.active.kind === 'image' && slot.active.index === i;
+        return `<div class="mini-image-card ${isActive ? 'active' : ''}" data-which="${which}" data-kind="image" data-idx="${i}">
+          <img src="${escAttr(im.url || '')}" alt="" loading="lazy" />
+          <div><span class="mini-meta">p${im.page}</span>${escHtml(im.filename || '')}</div>
+        </div>`;
+      }).join('');
+    }
+    panel.querySelectorAll('[data-kind]').forEach(el => {
+      el.addEventListener('click', () => {
+        const w = el.dataset.which, kind = el.dataset.kind, idx = parseInt(el.dataset.idx, 10);
+        focusCompareItem(w, kind, idx);
+      });
+    });
+  }
+
+  function focusCompareItem(which, kind, idx) {
+    const slot = cmp[which];
+    const data = slot.data || {};
+    const list = data[kind + 's'] || [];
+    const item = list[idx];
+    if (!item) return;
+    slot.active = { kind, index: idx };
+    if (item.page && item.page !== cmp.page) {
+      cmp.page = item.page;
+      renderComparePage(); // overlay drawn after render
+    } else {
+      drawCompareOverlay();
+    }
+    // Re-render that one panel to update active styling
+    renderCompareList(which, slot.tab);
+  }
+
+  function renderCompareSummary() {
+    const totals = $('compare-totals');
+    const aS = (cmp.a.data && cmp.a.data.stats) || { chunks: 0, tables: 0, images: 0 };
+    const bS = (cmp.b.data && cmp.b.data.stats) || { chunks: 0, tables: 0, images: 0 };
+    const headerRow = `<div class="summary-row"><div></div><div class="va" style="color: rgba(62,207,142,0.95)">A</div><div class="vb" style="color: rgba(108,140,255,0.95)">B</div><div class="lbl" style="text-align:right">Δ</div></div>`;
+    totals.innerHTML = headerRow + ['chunks', 'tables', 'images'].map(k => {
+      const av = aS[k] || 0, bv = bS[k] || 0, d = bv - av;
+      const cls = d > 0 ? 'pos' : d < 0 ? 'neg' : 'zero';
+      const sign = d > 0 ? '+' : '';
+      return `<div class="summary-row">
+        <div class="lbl">${k}</div>
+        <div class="va">${av}</div>
+        <div class="vb">${bv}</div>
+        <div class="delta ${cls}">${sign}${d}</div>
+      </div>`;
+    }).join('');
+
+    // Per-page deltas
+    const deltas = computePageDeltas();
+    const pdEl = $('compare-page-deltas');
+    if (!deltas.length) {
+      pdEl.innerHTML = '<div class="mini-empty">No page-level data.</div>';
+    } else {
+      pdEl.innerHTML = `<div class="page-delta-row" style="background:transparent">
+          <div class="lbl">Page</div><div class="lbl">A (c/t/i)</div><div class="lbl">B (c/t/i)</div><div class="lbl" style="text-align:right">Δ total</div>
+        </div>` + deltas.map(d => {
+        const sign = d.delta > 0 ? '+' : '';
+        const dcls = d.delta > 0 ? 'pos' : d.delta < 0 ? 'neg' : 'zero';
+        return `<div class="page-delta-row ${d.delta !== 0 ? 'diff' : ''}" data-page="${d.page}">
+          <div class="lbl">p${d.page}</div>
+          <div>${d.a.chunks}/${d.a.tables}/${d.a.images}</div>
+          <div>${d.b.chunks}/${d.b.tables}/${d.b.images}</div>
+          <div class="d ${dcls}">${sign}${d.delta}</div>
+        </div>`;
+      }).join('');
+      pdEl.querySelectorAll('.page-delta-row[data-page]').forEach(el => {
+        el.addEventListener('click', () => {
+          const p = parseInt(el.dataset.page, 10);
+          if (!isNaN(p) && p !== cmp.page) { cmp.page = p; renderComparePage(); }
+        });
+      });
+    }
+  }
+
+  function computePageDeltas() {
+    const acc = {};
+    const add = (which, list, kind) => {
+      (list || []).forEach(it => {
+        if (!it || !it.page) return;
+        if (!acc[it.page]) acc[it.page] = { page: it.page, a: { chunks:0, tables:0, images:0 }, b: { chunks:0, tables:0, images:0 } };
+        acc[it.page][which][kind] += 1;
+      });
+    };
+    if (cmp.a.data) {
+      add('a', cmp.a.data.chunks, 'chunks');
+      add('a', cmp.a.data.tables, 'tables');
+      add('a', cmp.a.data.images, 'images');
+    }
+    if (cmp.b.data) {
+      add('b', cmp.b.data.chunks, 'chunks');
+      add('b', cmp.b.data.tables, 'tables');
+      add('b', cmp.b.data.images, 'images');
+    }
+    return Object.values(acc).sort((x, y) => x.page - y.page).map(r => {
+      const totA = r.a.chunks + r.a.tables + r.a.images;
+      const totB = r.b.chunks + r.b.tables + r.b.images;
+      return { ...r, delta: totB - totA };
+    });
+  }
+
+  // Compare event wiring
+  $('compare-back').addEventListener('click', () => showScreen('results'));
+  $('compare-page-prev').addEventListener('click', () => { if (cmp.page > 1) { cmp.page--; renderComparePage(); } });
+  $('compare-page-next').addEventListener('click', () => { if (cmp.page < cmp.totalPages) { cmp.page++; renderComparePage(); } });
+  $('compare-zoom-in').addEventListener('click', () => { cmp.zoom = Math.min(cmp.zoom + 0.25, 4); renderComparePage(); });
+  $('compare-zoom-out').addEventListener('click', () => { cmp.zoom = Math.max(cmp.zoom - 0.25, 0.25); renderComparePage(); });
+
+  $('compare-toggle-a').addEventListener('click', () => { cmp.a.show = !cmp.a.show; renderCompareAll(); });
+  $('compare-toggle-b').addEventListener('click', () => { cmp.b.show = !cmp.b.show; renderCompareAll(); });
+
+  $('compare-version-a').addEventListener('change', async (e) => {
+    cmp.a.version = e.target.value;
+    await loadVersionData('a');
+    renderCompareAll();
+  });
+  $('compare-version-b').addEventListener('change', async (e) => {
+    cmp.b.version = e.target.value;
+    await loadVersionData('b');
+    renderCompareAll();
+  });
+
+  document.querySelectorAll('.ctab').forEach(t => {
+    t.addEventListener('click', () => {
+      const which = t.dataset.which, tab = t.dataset.tab;
+      cmp[which].tab = tab;
+      renderCompareSide(which);
+    });
+  });
+
+  $('compare-pagedelta-toggle').addEventListener('click', () => {
+    const el = $('compare-page-deltas');
+    const open = el.style.display !== 'none';
+    el.style.display = open ? 'none' : '';
+    $('compare-pagedelta-toggle').textContent = open ? 'Show per-page deltas ▾' : 'Hide per-page deltas ▴';
+  });
 
   // ── Util ──
   function escHtml(str) {
