@@ -161,7 +161,7 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
                 "page_size": page_size_field,
                 "table_type": "unstructured",
             })
-        elif category in ("Image", "Figure", "FigureCaption", "PageBreak") and category in ("Image", "Figure"):
+        elif category in ("Image", "Figure"):
             image_counters[page_num] = image_counters.get(page_num, 0) + 1
             img_num = image_counters[page_num]
             filename = f"page_{page_num}_img_{img_num}.png"

@@ -532,6 +532,7 @@
   let currentRender = null;
   let lastRenderedViewport = null;
   let activeBox = null;          // { type, index } currently focused
+  let hoverBoxState = null;      // { type, index } currently hovered (transient)
   let showAllBoxes = false;
   const CHUNK_PAGE_SIZE = 50;
   let chunkPage = 0;
@@ -726,10 +727,10 @@
         </div>`;
     }).join('');
     list.querySelectorAll('.chunk').forEach(el => {
-      el.addEventListener('click', () => {
-        const idx = parseInt(el.dataset.idx, 10);
-        focusBox('chunk', idx);
-      });
+      const idx = parseInt(el.dataset.idx, 10);
+      el.addEventListener('click', () => focusBox('chunk', idx));
+      el.addEventListener('mouseenter', () => hoverBox('chunk', idx));
+      el.addEventListener('mouseleave', () => hoverBox(null));
     });
     $('chunk-page-info').textContent = `Page ${chunkPage + 1} / ${total}`;
     $('prev-btn').disabled = chunkPage === 0;
@@ -769,10 +770,10 @@
         </div>`;
     }).join('');
     list.querySelectorAll('.table-card').forEach(el => {
-      el.addEventListener('click', () => {
-        const idx = parseInt(el.dataset.idx, 10);
-        focusBox('table', idx);
-      });
+      const idx = parseInt(el.dataset.idx, 10);
+      el.addEventListener('click', () => focusBox('table', idx));
+      el.addEventListener('mouseenter', () => hoverBox('table', idx));
+      el.addEventListener('mouseleave', () => hoverBox(null));
     });
   }
 
@@ -789,11 +790,13 @@
       </div>
     `).join('');
     grid.querySelectorAll('.image-card').forEach(card => {
+      const idx = parseInt(card.dataset.idx, 10);
       card.addEventListener('click', () => {
-        const idx = parseInt(card.dataset.idx, 10);
         focusBox('image', idx);
         openLightbox(card.dataset.url);
       });
+      card.addEventListener('mouseenter', () => hoverBox('image', idx));
+      card.addEventListener('mouseleave', () => hoverBox(null));
     });
   }
 
@@ -913,15 +916,36 @@
       image: 'rgba(108, 140, 255, 0.95)',
     };
 
+    const isHighlighted = (type, i) =>
+      (activeBox && activeBox.type === type && activeBox.index === i) ||
+      (hoverBoxState && hoverBoxState.type === type && hoverBoxState.index === i);
+
     if (showAllBoxes) {
-      allChunks.forEach((c, i) => draw(c, colors.chunk, activeBox && activeBox.type === 'chunk' && activeBox.index === i));
-      allTables.forEach((t, i) => draw(t, colors.table, activeBox && activeBox.type === 'table' && activeBox.index === i));
-      allImages.forEach((im, i) => draw(im, colors.image, activeBox && activeBox.type === 'image' && activeBox.index === i));
-    } else if (activeBox) {
-      const arr = activeBox.type === 'chunk' ? allChunks : activeBox.type === 'table' ? allTables : allImages;
-      const item = arr[activeBox.index];
-      if (item) draw(item, colors[activeBox.type], true);
+      allChunks.forEach((c, i) => draw(c, colors.chunk, isHighlighted('chunk', i)));
+      allTables.forEach((t, i) => draw(t, colors.table, isHighlighted('table', i)));
+      allImages.forEach((im, i) => draw(im, colors.image, isHighlighted('image', i)));
+    } else {
+      // Draw active (locked) box, then hover on top if different
+      if (activeBox) {
+        const arr = activeBox.type === 'chunk' ? allChunks : activeBox.type === 'table' ? allTables : allImages;
+        const item = arr[activeBox.index];
+        if (item) draw(item, colors[activeBox.type], true);
+      }
+      if (hoverBoxState && (!activeBox || hoverBoxState.type !== activeBox.type || hoverBoxState.index !== activeBox.index)) {
+        const arr = hoverBoxState.type === 'chunk' ? allChunks : hoverBoxState.type === 'table' ? allTables : allImages;
+        const item = arr[hoverBoxState.index];
+        if (item) draw(item, colors[hoverBoxState.type], true);
+      }
     }
+  }
+
+  function hoverBox(type, index) {
+    if (type === null) {
+      hoverBoxState = null;
+    } else {
+      hoverBoxState = { type, index };
+    }
+    drawOverlay();
   }
 
   function focusBox(type, index) {
