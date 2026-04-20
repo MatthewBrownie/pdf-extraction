@@ -23,6 +23,7 @@ import re
 import sys
 import threading
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
@@ -148,6 +149,7 @@ def _load_cached_result(output_dir: Path) -> dict | None:
     exist and parse as JSON lists.
     """
     result: dict[str, list] = {}
+    mtimes: list[float] = []
     for key in ("chunks", "tables", "images"):
         jf = output_dir / f"{key}.json"
         if not jf.exists():
@@ -160,7 +162,17 @@ def _load_cached_result(output_dir: Path) -> dict | None:
         if not isinstance(data, list):
             return None
         result[key] = data
+        try:
+            mtimes.append(jf.stat().st_mtime)
+        except OSError:
+            pass
+    if mtimes:
+        result["__cached_at__"] = max(mtimes)
     return result
+
+
+def _iso_utc(ts: float) -> str:
+    return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat().replace("+00:00", "Z")
 
 
 # ---------------------------------------------------------------------------
@@ -259,6 +271,9 @@ def run_extraction(req: ExtractRequest):
             _attach_image_urls(cached["images"], stem, req.version)
             payload = _build_result_payload(req, cached)
             payload["cached"] = True
+            cached_at = cached.get("__cached_at__")
+            if cached_at is not None:
+                payload["cached_at"] = _iso_utc(cached_at)
             return payload
 
     extractor = _get_extractor(req.version)
@@ -292,6 +307,10 @@ def run_extraction_stream(req: ExtractRequest):
             _attach_image_urls(cached["images"], stem, req.version)
             payload = _build_result_payload(req, cached)
             payload["cached"] = True
+            cached_at_ts = cached.get("__cached_at__")
+            cached_at_iso = _iso_utc(cached_at_ts) if cached_at_ts is not None else None
+            if cached_at_iso:
+                payload["cached_at"] = cached_at_iso
 
             def cached_gen():
                 yield json.dumps({
@@ -300,12 +319,15 @@ def run_extraction_stream(req: ExtractRequest):
                     "message": f"Loaded cached {req.version} results.",
                     "elapsed": 0.0,
                 }) + "\n"
-                yield json.dumps({
+                done_evt = {
                     "event": "done",
                     "elapsed": 0.0,
                     "cached": True,
                     "result": payload,
-                }) + "\n"
+                }
+                if cached_at_iso:
+                    done_evt["cached_at"] = cached_at_iso
+                yield json.dumps(done_evt) + "\n"
 
             return StreamingResponse(cached_gen(), media_type="application/x-ndjson")
 

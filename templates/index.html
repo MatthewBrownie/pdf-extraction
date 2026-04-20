@@ -1059,9 +1059,21 @@
     const sourceNote = $('source-note');
     if (meta && meta.cached === true) {
       sourceRow.style.display = '';
-      sourceNote.textContent = `Loaded from previous ${meta.version || ''} run`.trim();
+      const cachedAt = data.cached_at;
+      let label = `Loaded from previous ${meta.version || ''} run`.trim();
+      let title = '';
+      if (cachedAt) {
+        const d = new Date(cachedAt);
+        if (!isNaN(d.getTime())) {
+          label = `Cached · ${formatRelativeTime(d)}`;
+          title = d.toLocaleString();
+        }
+      }
+      sourceNote.textContent = label;
+      sourceNote.title = title;
     } else {
       sourceRow.style.display = 'none';
+      sourceNote.title = '';
     }
     $('stat-chunks').textContent = data.stats.chunks;
     $('stat-tables').textContent = data.stats.tables;
@@ -1950,6 +1962,24 @@
     return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
   function escAttr(str) { return escHtml(str); }
+
+  function formatRelativeTime(date) {
+    const diffMs = Date.now() - date.getTime();
+    const future = diffMs < 0;
+    const abs = Math.abs(diffMs);
+    const sec = Math.round(abs / 1000);
+    if (sec < 45) return future ? 'in a few seconds' : 'just now';
+    const min = Math.round(sec / 60);
+    if (min < 60) return future ? `in ${min} minute${min === 1 ? '' : 's'}` : `${min} minute${min === 1 ? '' : 's'} ago`;
+    const hr = Math.round(min / 60);
+    if (hr < 24) return future ? `in ${hr} hour${hr === 1 ? '' : 's'}` : `${hr} hour${hr === 1 ? '' : 's'} ago`;
+    const day = Math.round(hr / 24);
+    if (day < 30) return future ? `in ${day} day${day === 1 ? '' : 's'}` : `${day} day${day === 1 ? '' : 's'} ago`;
+    const mo = Math.round(day / 30);
+    if (mo < 12) return future ? `in ${mo} month${mo === 1 ? '' : 's'}` : `${mo} month${mo === 1 ? '' : 's'} ago`;
+    const yr = Math.round(day / 365);
+    return future ? `in ${yr} year${yr === 1 ? '' : 's'}` : `${yr} year${yr === 1 ? '' : 's'} ago`;
+  }
 
   // ── Init ──
   loadPdfs();
