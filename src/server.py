@@ -63,6 +63,7 @@ app.mount("/pdfs", StaticFiles(directory=str(_INPUT_DOCS)), name="pdfs")
 class ExtractRequest(BaseModel):
     pdf_name: str
     version: str = "v2"
+    force: bool = False
 
 
 # ---------------------------------------------------------------------------
@@ -123,6 +124,28 @@ def _get_extractor(version: str):
 def _attach_image_urls(images: list[dict], stem: str, version: str) -> None:
     for img in images:
         img["url"] = f"/images/{stem}/{version}/images/{img['filename']}"
+
+
+def _load_cached_result(output_dir: Path) -> dict | None:
+    """Return a result dict loaded from persisted JSON, or None if incomplete.
+
+    A cache is considered valid only when all three files (chunks/tables/images)
+    exist and parse as JSON lists.
+    """
+    result: dict[str, list] = {}
+    for key in ("chunks", "tables", "images"):
+        jf = output_dir / f"{key}.json"
+        if not jf.exists():
+            return None
+        try:
+            with jf.open("r", encoding="utf-8") as fh:
+                data = json.load(fh)
+        except Exception:
+            return None
+        if not isinstance(data, list):
+            return None
+        result[key] = data
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -214,6 +237,15 @@ _EXTRACT_TIMEOUTS = {"v1": 120, "v2": 180, "v3": 600, "v4": 1200}
 @app.post("/api/extract")
 def run_extraction(req: ExtractRequest):
     pdf_path, stem, output_dir = _validate_extract_request(req)
+
+    if not req.force:
+        cached = _load_cached_result(output_dir)
+        if cached is not None:
+            _attach_image_urls(cached["images"], stem, req.version)
+            payload = _build_result_payload(req, cached)
+            payload["cached"] = True
+            return payload
+
     extractor = _get_extractor(req.version)
     try:
         result = extractor.extract_pdf(str(pdf_path), str(output_dir))
@@ -238,6 +270,30 @@ def run_extraction_stream(req: ExtractRequest):
       - {"event": "error", "error": str}
     """
     pdf_path, stem, output_dir = _validate_extract_request(req)
+
+    if not req.force:
+        cached = _load_cached_result(output_dir)
+        if cached is not None:
+            _attach_image_urls(cached["images"], stem, req.version)
+            payload = _build_result_payload(req, cached)
+            payload["cached"] = True
+
+            def cached_gen():
+                yield json.dumps({
+                    "event": "progress",
+                    "phase": "cache",
+                    "message": f"Loaded cached {req.version} results.",
+                    "elapsed": 0.0,
+                }) + "\n"
+                yield json.dumps({
+                    "event": "done",
+                    "elapsed": 0.0,
+                    "cached": True,
+                    "result": payload,
+                }) + "\n"
+
+            return StreamingResponse(cached_gen(), media_type="application/x-ndjson")
+
     extractor = _get_extractor(req.version)
     timeout = _EXTRACT_TIMEOUTS.get(req.version, 600)
 
