@@ -65,10 +65,17 @@ def _plumber_bbox_to_fitz(bbox, page_height):
     return [x0, page_height - bottom, x1, page_height - top]
 
 
-def extract_pdf(pdf_path: str, output_dir: str) -> dict:
+def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None) -> dict:
     """Extract text chunks, tables, and images from a digital PDF."""
     if not os.path.isfile(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
+
+    def _emit(**kw):
+        if progress_cb is not None:
+            try:
+                progress_cb(**kw)
+            except Exception:
+                pass
 
     images_dir = os.path.join(output_dir, "images")
     os.makedirs(images_dir, exist_ok=True)
@@ -78,9 +85,12 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
     images = []
 
     doc = fitz.open(pdf_path)
+    total_pages = doc.page_count
+    _emit(phase="text_and_images", message="Scanning text and images", page=0, total=total_pages)
 
     for page_index, page in enumerate(doc):
         page_num = page_index + 1
+        _emit(phase="text_and_images", message=f"Page {page_num}/{total_pages}: text + images", page=page_num, total=total_pages)
         page_size = (page.rect.width, page.rect.height)
 
         page_dict = page.get_text("dict")
@@ -147,9 +157,11 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
     doc.close()
 
     # Tables (with bbox)
+    _emit(phase="tables", message="Detecting tables", page=0, total=total_pages)
     with pdfplumber.open(pdf_path) as pdf:
         for page_index, page in enumerate(pdf.pages):
             page_num = page_index + 1
+            _emit(phase="tables", message=f"Page {page_num}/{total_pages}: tables", page=page_num, total=total_pages)
             page_height = page.height
             page_size = [round(page.width, 2), round(page_height, 2)]
             found = page.find_tables()

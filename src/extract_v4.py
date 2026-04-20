@@ -100,21 +100,32 @@ def _table_to_rows(table_item) -> list[list[str]]:
     return rows
 
 
-def extract_pdf(pdf_path: str, output_dir: str) -> dict:
+def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None) -> dict:
     if not os.path.isfile(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
+
+    def _emit(**kw):
+        if progress_cb is not None:
+            try:
+                progress_cb(**kw)
+            except Exception:
+                pass
 
     images_dir = os.path.join(output_dir, "images")
     os.makedirs(images_dir, exist_ok=True)
 
     # Lazy import — docling loads ML models the first time it runs
+    _emit(phase="loading_models", message="Loading docling (first run downloads layout + table models)…")
     from docling.document_converter import DocumentConverter
 
     page_sizes = _page_sizes(pdf_path)
+    total_pages = len(page_sizes)
 
+    _emit(phase="converting", message=f"Running docling on {total_pages}-page PDF — this can take a while", total=total_pages)
     converter = DocumentConverter()
     conv = converter.convert(pdf_path)
     doc = conv.document
+    _emit(phase="post_processing", message="Collecting text, tables, and pictures", total=total_pages)
 
     chunks: list[dict] = []
     tables: list[dict] = []

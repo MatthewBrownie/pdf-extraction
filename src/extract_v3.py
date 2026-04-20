@@ -96,21 +96,31 @@ def _table_html_to_rows(html: str) -> list[list[str]]:
     return parser.rows
 
 
-def extract_pdf(pdf_path: str, output_dir: str) -> dict:
+def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None) -> dict:
     if not os.path.isfile(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
+
+    def _emit(**kw):
+        if progress_cb is not None:
+            try:
+                progress_cb(**kw)
+            except Exception:
+                pass
 
     images_dir = os.path.join(output_dir, "images")
     os.makedirs(images_dir, exist_ok=True)
 
     # Lazy import — unstructured pulls heavy deps at import time
+    _emit(phase="loading_models", message="Loading unstructured.io (first run may download models)…")
     from unstructured.partition.pdf import partition_pdf
 
     page_sizes = _page_sizes(pdf_path)
+    total_pages = len(page_sizes)
 
     # `hi_res` strategy is needed to detect tables and images with bboxes.
     # If a model isn't available we fall back to `fast`, which still gives
     # us text + coordinates but no tables/images.
+    _emit(phase="partitioning", message=f"Partitioning {total_pages}-page PDF (hi_res)…", total=total_pages)
     try:
         elements = partition_pdf(
             filename=pdf_path,
@@ -119,10 +129,12 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
             extract_images_in_pdf=False,  # we'll crop ourselves with PyMuPDF
         )
     except Exception:
+        _emit(phase="partitioning", message="hi_res failed — falling back to fast strategy")
         elements = partition_pdf(
             filename=pdf_path,
             strategy="fast",
         )
+    _emit(phase="post_processing", message=f"Processing {len(elements)} elements", total=len(elements))
 
     chunks: list[dict] = []
     tables: list[dict] = []
@@ -133,7 +145,10 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
 
     fitz_doc = fitz.open(pdf_path)
 
-    for el in elements:
+    total_elements = len(elements)
+    for el_index, el in enumerate(elements):
+        if el_index % 25 == 0 or el_index == total_elements - 1:
+            _emit(phase="post_processing", message=f"Element {el_index + 1}/{total_elements}", page=el_index + 1, total=total_elements)
         category = type(el).__name__
         meta = getattr(el, "metadata", None)
         page_num = getattr(meta, "page_number", None) if meta else None

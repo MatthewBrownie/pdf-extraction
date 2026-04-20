@@ -142,6 +142,38 @@
       font-size: 0.8rem; color: var(--red); line-height: 1.5;
     }
 
+    .progress-box {
+      padding: 10px 12px; background: var(--surface2);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      font-size: 0.78rem; color: var(--text); line-height: 1.5;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .progress-box .progress-phase {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--accent);
+    }
+    .progress-box .progress-msg { color: var(--text); word-break: break-word; }
+    .progress-box .progress-meta {
+      display: flex; justify-content: space-between; gap: 8px;
+      font-family: var(--mono); font-size: 0.72rem; color: var(--text-dim);
+    }
+    .progress-bar {
+      height: 4px; background: var(--surface); border-radius: 4px; overflow: hidden;
+      position: relative;
+    }
+    .progress-bar .fill {
+      height: 100%; background: var(--accent); width: 0%;
+      transition: width 0.3s ease;
+    }
+    .progress-bar.indeterminate .fill {
+      width: 33%; background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: slide 1.4s linear infinite;
+    }
+    @keyframes slide {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(400%); }
+    }
+
     main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
 
     /* Workspace mode: PDF on the left, side panel (chunks/tables/images) on the right */
@@ -427,6 +459,16 @@
       <div class="stat"><span class="stat-label">Images</span><span class="stat-value accent" id="stat-images">—</span></div>
     </div>
 
+    <div class="progress-box" id="progress-box" style="display:none">
+      <div class="progress-phase" id="progress-phase">Starting…</div>
+      <div class="progress-msg" id="progress-msg"></div>
+      <div class="progress-bar indeterminate" id="progress-bar"><div class="fill"></div></div>
+      <div class="progress-meta">
+        <span id="progress-page"></span>
+        <span id="progress-elapsed">0.0s</span>
+      </div>
+    </div>
+
     <div class="error-box" id="error-box" style="display:none"></div>
   </aside>
 
@@ -632,28 +674,74 @@
     });
   });
 
-  // ── Extract ──
+  // ── Extract (streaming progress) ──
   extractBtn.addEventListener('click', async () => {
     const pdfName = pdfSelect.value;
     const version = document.querySelector('input[name="version"]:checked').value;
-    setLoading(true); hideError();
+    setLoading(true); hideError(); showProgress();
+    updateProgress({ phase: 'starting', message: `Starting ${version} extraction…`, elapsed: 0 });
+
+    let result = null;
+    let extractError = null;
     try {
-      const res = await fetch('/api/extract', {
+      const res = await fetch('/api/extract/stream', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pdf_name: pdfName, version }),
       });
-      if (!res.ok) {
-        const text = await res.text();
+      if (!res.ok || !res.body) {
         let detail = `HTTP ${res.status}`;
-        try { detail = JSON.parse(text).detail || detail; } catch {}
+        try {
+          const t = await res.text();
+          detail = JSON.parse(t).detail || detail;
+        } catch {}
         throw new Error(detail);
       }
-      const data = await res.json();
-      renderResults(data);
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buffer = '';
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        let nl;
+        while ((nl = buffer.indexOf('\n')) !== -1) {
+          const line = buffer.slice(0, nl).trim();
+          buffer = buffer.slice(nl + 1);
+          if (!line) continue;
+          let evt;
+          try { evt = JSON.parse(line); } catch { continue; }
+          if (evt.event === 'progress') {
+            updateProgress(evt);
+          } else if (evt.event === 'heartbeat') {
+            updateProgress({ elapsed: evt.elapsed });
+          } else if (evt.event === 'done') {
+            result = evt.result;
+            updateProgress({ phase: 'done', message: 'Done', elapsed: evt.elapsed, page: 1, total: 1 });
+          } else if (evt.event === 'error') {
+            extractError = evt.error || 'Extraction failed';
+          }
+        }
+      }
+      // Drain any final content left in the buffer
+      const tail = buffer.trim();
+      if (tail) {
+        try {
+          const evt = JSON.parse(tail);
+          if (evt.event === 'done') result = evt.result;
+          if (evt.event === 'error') extractError = evt.error;
+        } catch {}
+      }
+
+      if (extractError) throw new Error(extractError);
+      if (!result) throw new Error('Extraction ended without returning a result.');
+      renderResults(result);
     } catch (err) {
       showError(err.message || 'Extraction failed — check the server logs.');
     } finally {
       setLoading(false);
+      hideProgress();
     }
   });
 
@@ -670,6 +758,34 @@
   }
   function showError(msg) { errorBox.textContent = msg; errorBox.style.display = 'block'; }
   function hideError() { errorBox.style.display = 'none'; }
+
+  // ── Progress display ──
+  const progressBox = $('progress-box');
+  const progressBar = $('progress-bar');
+  let lastProgress = {};
+  function showProgress() { progressBox.style.display = ''; lastProgress = {}; }
+  function hideProgress() { progressBox.style.display = 'none'; }
+  function updateProgress(evt) {
+    lastProgress = { ...lastProgress, ...evt };
+    const { phase, message, page, total, elapsed } = lastProgress;
+    if (phase) $('progress-phase').textContent = String(phase).replace(/_/g, ' ');
+    if (message !== undefined) $('progress-msg').textContent = message || '';
+    if (page !== undefined && total) {
+      $('progress-page').textContent = `${page} / ${total}`;
+      const pct = Math.min(100, Math.max(0, (page / total) * 100));
+      progressBar.classList.remove('indeterminate');
+      progressBar.querySelector('.fill').style.width = pct + '%';
+    } else if (phase === 'done') {
+      $('progress-page').textContent = '';
+      progressBar.classList.remove('indeterminate');
+      progressBar.querySelector('.fill').style.width = '100%';
+    } else {
+      $('progress-page').textContent = '';
+      progressBar.classList.add('indeterminate');
+      progressBar.querySelector('.fill').style.width = '';
+    }
+    if (elapsed !== undefined) $('progress-elapsed').textContent = `${Number(elapsed).toFixed(1)}s`;
+  }
 
   function clearResults() {
     allChunks = []; allTables = []; allImages = []; activeBox = null; chunkPage = 0;

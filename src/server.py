@@ -18,12 +18,15 @@ from __future__ import annotations
 
 import importlib
 import json
+import queue
 import re
 import sys
+import threading
+import time
 from pathlib import Path
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -168,9 +171,8 @@ async def upload_pdf(file: UploadFile = File(...)):
     return {"pdf_name": target.name}
 
 
-@app.post("/api/extract")
-def run_extraction(req: ExtractRequest):
-    # Strip any path components to block traversal
+def _validate_extract_request(req: ExtractRequest) -> tuple[Path, str, Path]:
+    """Shared validation for /api/extract and /api/extract/stream."""
     pdf_name = Path(req.pdf_name).name
     pdf_path = (_INPUT_DOCS / pdf_name).resolve()
     try:
@@ -182,21 +184,13 @@ def run_extraction(req: ExtractRequest):
     if req.version not in VERSIONS:
         raise HTTPException(status_code=400, detail=f"version must be one of {VERSIONS}")
     req.pdf_name = pdf_name
-
     stem = pdf_path.stem
     output_dir = _OUTPUT / stem / req.version
     output_dir.mkdir(parents=True, exist_ok=True)
+    return pdf_path, stem, output_dir
 
-    extractor = _get_extractor(req.version)
-    try:
-        result = extractor.extract_pdf(str(pdf_path), str(output_dir))
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Extraction failed: {e}")
 
-    _attach_image_urls(result.get("images", []), stem, req.version)
-
+def _build_result_payload(req: ExtractRequest, result: dict) -> dict:
     return {
         "pdf": req.pdf_name,
         "version": req.version,
@@ -210,6 +204,109 @@ def run_extraction(req: ExtractRequest):
         "images": result["images"],
         "pdf_url": f"/pdfs/{req.pdf_name}",
     }
+
+
+# Per-version timeout (seconds) for streaming extraction. v3/v4 can be slow on
+# the first run because models are downloaded.
+_EXTRACT_TIMEOUTS = {"v1": 120, "v2": 180, "v3": 600, "v4": 1200}
+
+
+@app.post("/api/extract")
+def run_extraction(req: ExtractRequest):
+    pdf_path, stem, output_dir = _validate_extract_request(req)
+    extractor = _get_extractor(req.version)
+    try:
+        result = extractor.extract_pdf(str(pdf_path), str(output_dir))
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Extraction failed: {e}")
+
+    _attach_image_urls(result.get("images", []), stem, req.version)
+    return _build_result_payload(req, result)
+
+
+@app.post("/api/extract/stream")
+def run_extraction_stream(req: ExtractRequest):
+    """
+    Stream extraction progress as newline-delimited JSON.
+
+    Each line is a JSON object with an "event" field:
+      - {"event": "progress", "phase": str, "message": str, "page": int?, "total": int?, "elapsed": float}
+      - {"event": "heartbeat", "elapsed": float}                 — emitted every ~2s when the worker is busy
+      - {"event": "done", "result": {...full extraction payload...}}
+      - {"event": "error", "error": str}
+    """
+    pdf_path, stem, output_dir = _validate_extract_request(req)
+    extractor = _get_extractor(req.version)
+    timeout = _EXTRACT_TIMEOUTS.get(req.version, 600)
+
+    q: "queue.Queue[tuple[str, object]]" = queue.Queue()
+
+    def progress_cb(**evt):
+        q.put(("progress", evt))
+
+    def worker():
+        try:
+            result = extractor.extract_pdf(str(pdf_path), str(output_dir), progress_cb=progress_cb)
+            _attach_image_urls(result.get("images", []), stem, req.version)
+            q.put(("done", result))
+        except Exception as e:
+            q.put(("error", f"{type(e).__name__}: {e}"))
+
+    t = threading.Thread(target=worker, daemon=True)
+    t.start()
+    started = time.time()
+
+    def gen():
+        # Initial event so the client sees something immediately.
+        yield json.dumps({
+            "event": "progress",
+            "phase": "starting",
+            "message": f"Starting {req.version} extraction…",
+            "elapsed": 0.0,
+        }) + "\n"
+
+        while True:
+            try:
+                kind, data = q.get(timeout=2.0)
+            except queue.Empty:
+                elapsed = time.time() - started
+                if not t.is_alive():
+                    yield json.dumps({
+                        "event": "error",
+                        "error": "Extractor exited unexpectedly without producing a result.",
+                    }) + "\n"
+                    return
+                if elapsed > timeout:
+                    yield json.dumps({
+                        "event": "error",
+                        "error": f"Extraction timed out after {int(elapsed)}s "
+                                 f"(limit {timeout}s for {req.version}). "
+                                 f"The background job may still be running on the server.",
+                    }) + "\n"
+                    return
+                yield json.dumps({"event": "heartbeat", "elapsed": round(elapsed, 1)}) + "\n"
+                continue
+
+            elapsed = round(time.time() - started, 1)
+            if kind == "progress":
+                payload = {"event": "progress", "elapsed": elapsed}
+                if isinstance(data, dict):
+                    payload.update(data)
+                yield json.dumps(payload, default=str) + "\n"
+            elif kind == "done":
+                yield json.dumps({
+                    "event": "done",
+                    "elapsed": elapsed,
+                    "result": _build_result_payload(req, data),  # type: ignore[arg-type]
+                }) + "\n"
+                return
+            elif kind == "error":
+                yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"
+                return
+
+    return StreamingResponse(gen(), media_type="application/x-ndjson")
 
 
 @app.get("/api/results")

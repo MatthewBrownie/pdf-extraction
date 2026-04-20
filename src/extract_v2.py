@@ -298,7 +298,7 @@ def _build_chunk(
     }
 
 
-def extract_pdf(pdf_path: str, output_dir: str) -> dict:
+def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None) -> dict:
     """
     Extract text chunks, tables, and images from a digital PDF.
 
@@ -316,6 +316,13 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
     if not os.path.isfile(pdf_path):
         raise FileNotFoundError(f'PDF not found: {pdf_path}')
 
+    def _emit(**kw):
+        if progress_cb is not None:
+            try:
+                progress_cb(**kw)
+            except Exception:
+                pass
+
     images_dir = os.path.join(output_dir, 'images')
     os.makedirs(images_dir, exist_ok=True)
 
@@ -324,9 +331,12 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
     images: list[dict] = []
 
     fitz_doc = fitz.open(pdf_path)
+    total_pages = fitz_doc.page_count
+    _emit(phase="text_and_images", message="Scanning text and images", page=0, total=total_pages)
 
     for page_index, fitz_page in enumerate(fitz_doc):
         page_num = page_index + 1
+        _emit(phase="text_and_images", message=f"Page {page_num}/{total_pages}: text + images", page=page_num, total=total_pages)
         page_size = (fitz_page.rect.width, fitz_page.rect.height)
 
         # --- Text chunks ---
@@ -394,9 +404,11 @@ def extract_pdf(pdf_path: str, output_dir: str) -> dict:
     # --- Tables via pdfplumber + PyMuPDF drawing inspection ---
     # Both files are opened independently — PyMuPDF is kept open above for
     # image extraction; pdfplumber needs its own handle for table detection.
+    _emit(phase="tables", message="Detecting tables", page=0, total=total_pages)
     with pdfplumber.open(pdf_path) as pdf:
         for page_index, plumber_page in enumerate(pdf.pages):
             fitz_page = fitz_doc[page_index]
+            _emit(phase="tables", message=f"Page {page_index + 1}/{total_pages}: tables", page=page_index + 1, total=total_pages)
             page_tables = _extract_tables_from_page(plumber_page, fitz_page)
             tables.extend(page_tables)
 
