@@ -100,16 +100,28 @@ def _table_to_rows(table_item) -> list[list[str]]:
     return rows
 
 
-def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None) -> dict:
+class CancelledExtraction(Exception):
+    """Raised inside the extractor when the caller requests cancellation."""
+
+
+def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None, cancel_check=None) -> dict:
     if not os.path.isfile(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
 
+    def _check_cancel():
+        if cancel_check is not None and cancel_check():
+            raise CancelledExtraction()
+
     def _emit(**kw):
+        _check_cancel()
         if progress_cb is not None:
             try:
                 progress_cb(**kw)
+            except CancelledExtraction:
+                raise
             except Exception:
                 pass
+        _check_cancel()
 
     images_dir = os.path.join(output_dir, "images")
     os.makedirs(images_dir, exist_ok=True)
@@ -137,7 +149,9 @@ def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None) -> dict:
     fitz_doc = fitz.open(pdf_path)
 
     # --- Text items ---
-    for text_item in getattr(doc, "texts", []) or []:
+    for i, text_item in enumerate(getattr(doc, "texts", []) or []):
+        if i % 50 == 0:
+            _check_cancel()
         page_no, bbox_obj = _first_provenance(text_item)
         if page_no is None:
             continue

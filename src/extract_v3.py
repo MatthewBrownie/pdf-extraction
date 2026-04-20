@@ -96,16 +96,28 @@ def _table_html_to_rows(html: str) -> list[list[str]]:
     return parser.rows
 
 
-def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None) -> dict:
+class CancelledExtraction(Exception):
+    """Raised inside the extractor when the caller requests cancellation."""
+
+
+def extract_pdf(pdf_path: str, output_dir: str, progress_cb=None, cancel_check=None) -> dict:
     if not os.path.isfile(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
 
+    def _check_cancel():
+        if cancel_check is not None and cancel_check():
+            raise CancelledExtraction()
+
     def _emit(**kw):
+        _check_cancel()
         if progress_cb is not None:
             try:
                 progress_cb(**kw)
+            except CancelledExtraction:
+                raise
             except Exception:
                 pass
+        _check_cancel()
 
     images_dir = os.path.join(output_dir, "images")
     os.makedirs(images_dir, exist_ok=True)

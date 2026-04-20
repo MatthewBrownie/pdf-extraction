@@ -164,10 +164,24 @@
       font-size: 0.78rem; color: var(--text); line-height: 1.5;
       display: flex; flex-direction: column; gap: 6px;
     }
+    .progress-box .progress-header {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
     .progress-box .progress-phase {
       font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
       letter-spacing: 0.05em; color: var(--accent);
     }
+    .progress-box.cancelled .progress-phase { color: var(--text-dim); }
+    .progress-box .cancel-btn {
+      background: transparent; color: var(--text-dim);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 2px 8px; font-size: 0.7rem; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
+    }
+    .progress-box .cancel-btn:hover:not(:disabled) {
+      color: var(--red); border-color: var(--red);
+    }
+    .progress-box .cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
     .progress-box .progress-msg { color: var(--text); word-break: break-word; }
     .progress-box .progress-meta {
       display: flex; justify-content: space-between; gap: 8px;
@@ -618,7 +632,10 @@
     </div>
 
     <div class="progress-box" id="progress-box" style="display:none">
-      <div class="progress-phase" id="progress-phase">Starting…</div>
+      <div class="progress-header">
+        <div class="progress-phase" id="progress-phase">Starting…</div>
+        <button type="button" id="cancel-extract-btn" class="cancel-btn">Cancel</button>
+      </div>
       <div class="progress-msg" id="progress-msg"></div>
       <div class="progress-bar indeterminate" id="progress-bar"><div class="fill"></div></div>
       <div class="progress-meta">
@@ -918,6 +935,19 @@
   extractBtn.addEventListener('click', () => runExtract(false));
   rerunBtn.addEventListener('click', () => runExtract(true));
 
+  let extractAbortController = null;
+  let extractCancelledByUser = false;
+  let extractRunToken = 0;
+  const cancelExtractBtn = $('cancel-extract-btn');
+  cancelExtractBtn.addEventListener('click', () => {
+    if (!extractAbortController) return;
+    extractCancelledByUser = true;
+    cancelExtractBtn.disabled = true;
+    cancelExtractBtn.textContent = 'Cancelling…';
+    updateProgress({ phase: 'cancelling', message: 'Cancelling extraction…' });
+    try { extractAbortController.abort(); } catch {}
+  });
+
   async function runExtract(force) {
     const pdfName = pdfSelect.value;
     if (!pdfName) return;
@@ -929,13 +959,22 @@
       elapsed: 0,
     });
 
+    extractAbortController = new AbortController();
+    extractCancelledByUser = false;
+    const runToken = ++extractRunToken;
+    cancelExtractBtn.disabled = false;
+    cancelExtractBtn.textContent = 'Cancel';
+    progressBox.classList.remove('cancelled');
+
     let result = null;
     let cached;
     let extractError = null;
+    let cancelled = false;
     try {
       const res = await fetch('/api/extract/stream', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pdf_name: pdfName, version, force }),
+        signal: extractAbortController.signal,
       });
       if (!res.ok || !res.body) {
         let detail = `HTTP ${res.status}`;
@@ -969,6 +1008,9 @@
             result = evt.result;
             if ('cached' in evt) cached = !!evt.cached;
             updateProgress({ phase: 'done', message: cached ? 'Loaded from cache' : 'Done', elapsed: evt.elapsed, page: 1, total: 1 });
+          } else if (evt.event === 'cancelled') {
+            cancelled = true;
+            updateProgress({ phase: 'cancelled', message: evt.message || 'Extraction cancelled.', elapsed: evt.elapsed });
           } else if (evt.event === 'error') {
             extractError = evt.error || 'Extraction failed';
           }
@@ -980,18 +1022,41 @@
         try {
           const evt = JSON.parse(tail);
           if (evt.event === 'done') { result = evt.result; if ('cached' in evt) cached = !!evt.cached; }
+          if (evt.event === 'cancelled') cancelled = true;
           if (evt.event === 'error') extractError = evt.error;
         } catch {}
       }
 
+      if (cancelled || extractCancelledByUser) {
+        updateProgress({ phase: 'cancelled', message: 'Extraction cancelled.' });
+        return;
+      }
       if (extractError) throw new Error(extractError);
       if (!result) throw new Error('Extraction ended without returning a result.');
       renderResults(result, { cached, version });
     } catch (err) {
+      if (extractCancelledByUser || err.name === 'AbortError') {
+        updateProgress({ phase: 'cancelled', message: 'Extraction cancelled.' });
+        return;
+      }
       showError(err.message || 'Extraction failed — check the server logs.');
     } finally {
+      extractAbortController = null;
       setLoading(false);
-      hideProgress();
+      if (extractCancelledByUser) {
+        progressBox.classList.add('cancelled');
+        cancelExtractBtn.disabled = true;
+        cancelExtractBtn.textContent = 'Cancelled';
+        // Briefly show the cancelled state, then tear down — but only if no
+        // newer extraction has started in the meantime.
+        setTimeout(() => {
+          if (runToken !== extractRunToken) return;
+          progressBox.classList.remove('cancelled');
+          hideProgress();
+        }, 1800);
+      } else {
+        hideProgress();
+      }
     }
   }
 

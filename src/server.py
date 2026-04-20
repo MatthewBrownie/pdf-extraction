@@ -16,7 +16,9 @@ Run:
 
 from __future__ import annotations
 
+import asyncio
 import importlib
+import inspect
 import json
 import queue
 import re
@@ -26,7 +28,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.responses import HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -288,8 +290,12 @@ def run_extraction(req: ExtractRequest):
     return _build_result_payload(req, result)
 
 
+class _CancelledExtraction(Exception):
+    """Raised inside an extractor when the client cancels the request."""
+
+
 @app.post("/api/extract/stream")
-def run_extraction_stream(req: ExtractRequest):
+async def run_extraction_stream(req: ExtractRequest, request: Request):
     """
     Stream extraction progress as newline-delimited JSON.
 
@@ -335,23 +341,46 @@ def run_extraction_stream(req: ExtractRequest):
     timeout = _EXTRACT_TIMEOUTS.get(req.version, 600)
 
     q: "queue.Queue[tuple[str, object]]" = queue.Queue()
+    cancel_event = threading.Event()
+
+    def cancel_check() -> bool:
+        return cancel_event.is_set()
 
     def progress_cb(**evt):
+        if cancel_event.is_set():
+            raise _CancelledExtraction()
         q.put(("progress", evt))
+
+    # Only pass cancel_check to extractors whose extract_pdf accepts it
+    # (v3/v4). v1/v2 don't support it, so we omit the kwarg there.
+    extractor_kwargs: dict = {"progress_cb": progress_cb}
+    try:
+        if "cancel_check" in inspect.signature(extractor.extract_pdf).parameters:
+            extractor_kwargs["cancel_check"] = cancel_check
+    except (TypeError, ValueError):
+        pass
 
     def worker():
         try:
-            result = extractor.extract_pdf(str(pdf_path), str(output_dir), progress_cb=progress_cb)
+            result = extractor.extract_pdf(str(pdf_path), str(output_dir), **extractor_kwargs)
+            if cancel_event.is_set():
+                q.put(("cancelled", None))
+                return
             _attach_image_urls(result.get("images", []), stem, req.version)
             q.put(("done", result))
+        except _CancelledExtraction:
+            q.put(("cancelled", None))
         except Exception as e:
-            q.put(("error", f"{type(e).__name__}: {e}"))
+            if cancel_event.is_set():
+                q.put(("cancelled", None))
+            else:
+                q.put(("error", f"{type(e).__name__}: {e}"))
 
     t = threading.Thread(target=worker, daemon=True)
     t.start()
     started = time.time()
 
-    def gen():
+    async def gen():
         # Initial event so the client sees something immediately.
         yield json.dumps({
             "event": "progress",
@@ -360,44 +389,66 @@ def run_extraction_stream(req: ExtractRequest):
             "elapsed": 0.0,
         }) + "\n"
 
-        while True:
-            try:
-                kind, data = q.get(timeout=2.0)
-            except queue.Empty:
-                elapsed = time.time() - started
-                if not t.is_alive():
-                    yield json.dumps({
-                        "event": "error",
-                        "error": "Extractor exited unexpectedly without producing a result.",
-                    }) + "\n"
+        try:
+            last_heartbeat = time.time()
+            while True:
+                # If the client went away, signal cancellation and stop streaming.
+                if await request.is_disconnected():
+                    cancel_event.set()
                     return
-                if elapsed > timeout:
-                    yield json.dumps({
-                        "event": "error",
-                        "error": f"Extraction timed out after {int(elapsed)}s "
-                                 f"(limit {timeout}s for {req.version}). "
-                                 f"The background job may still be running on the server.",
-                    }) + "\n"
-                    return
-                yield json.dumps({"event": "heartbeat", "elapsed": round(elapsed, 1)}) + "\n"
-                continue
 
-            elapsed = round(time.time() - started, 1)
-            if kind == "progress":
-                payload = {"event": "progress", "elapsed": elapsed}
-                if isinstance(data, dict):
-                    payload.update(data)
-                yield json.dumps(payload, default=str) + "\n"
-            elif kind == "done":
-                yield json.dumps({
-                    "event": "done",
-                    "elapsed": elapsed,
-                    "result": _build_result_payload(req, data),  # type: ignore[arg-type]
-                }) + "\n"
-                return
-            elif kind == "error":
-                yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"
-                return
+                try:
+                    kind, data = await asyncio.to_thread(q.get, True, 0.5)
+                except queue.Empty:
+                    elapsed = time.time() - started
+                    if not t.is_alive():
+                        yield json.dumps({
+                            "event": "error",
+                            "error": "Extractor exited unexpectedly without producing a result.",
+                        }) + "\n"
+                        return
+                    if elapsed > timeout:
+                        cancel_event.set()
+                        yield json.dumps({
+                            "event": "error",
+                            "error": f"Extraction timed out after {int(elapsed)}s "
+                                     f"(limit {timeout}s for {req.version}). "
+                                     f"The background job may still be running on the server.",
+                        }) + "\n"
+                        return
+                    if time.time() - last_heartbeat >= 2.0:
+                        last_heartbeat = time.time()
+                        yield json.dumps({"event": "heartbeat", "elapsed": round(elapsed, 1)}) + "\n"
+                    continue
+
+                elapsed = round(time.time() - started, 1)
+                if kind == "progress":
+                    payload = {"event": "progress", "elapsed": elapsed}
+                    if isinstance(data, dict):
+                        payload.update(data)
+                    yield json.dumps(payload, default=str) + "\n"
+                elif kind == "done":
+                    yield json.dumps({
+                        "event": "done",
+                        "elapsed": elapsed,
+                        "result": _build_result_payload(req, data),  # type: ignore[arg-type]
+                    }) + "\n"
+                    return
+                elif kind == "cancelled":
+                    yield json.dumps({
+                        "event": "cancelled",
+                        "elapsed": elapsed,
+                        "message": "Extraction cancelled.",
+                    }) + "\n"
+                    return
+                elif kind == "error":
+                    yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"
+                    return
+        finally:
+            # Client disconnected mid-stream, or we're otherwise tearing down —
+            # tell the worker to bail at its next checkpoint so the next
+            # extraction can start immediately.
+            cancel_event.set()
 
     return StreamingResponse(gen(), media_type="application/x-ndjson")
 
