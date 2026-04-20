@@ -1,0 +1,869 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "Options for Queue Based Enrichment System",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      73.65,
+      294.0,
+      85.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "My thoughts on the requirements to discuss:",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      97.65,
+      287.74,
+      109.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 3,
+    "text": "Expected number of enrichments per minute/hour",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      122.29,
+      349.92,
+      134.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 4,
+    "text": "o Likely up to 100 per minute, like if we’re running 4 enrichments across 15 docs",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      138.15,
+      529.99,
+      150.48
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 5,
+    "text": "Ability to process enrichments simultaneously",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      155.17,
+      333.6,
+      167.28
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 6,
+    "text": "o I think this is necessary because it lets the system run at full capacity w/o",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      171.03,
+      497.77,
+      183.36
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 7,
+    "text": "worrying about enrichments  One enrichment type per enrichment request",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      187.2,
+      324.72,
+      216.02
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 8,
+    "text": "o If multiple per request, is sequential processing necessary? o I think we’re only dealing with one per request right now, but that could change in",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      219.77,
+      541.44,
+      248.18
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 9,
+    "text": "the future.",
+    "font_size": 0.0,
+    "bbox": [
+      144.05,
+      252.02,
+      196.27,
+      264.02
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 1,
+    "paragraph": 10,
+    "text": "Criticality of retry mechanisms, low",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      268.71,
+      284.62,
+      280.82
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 11,
+    "text": "o We just need to store that a job failed as we discussed Friday.",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      284.6,
+      440.93,
+      296.93
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 12,
+    "text": "Audit and job history trails are necessary",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      301.62,
+      307.68,
+      313.73
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 13,
+    "text": "o Make sure we know what happens with every job",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      317.48,
+      384.98,
+      329.81
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 14,
+    "text": "Persistence is not necessary across service restarts",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      334.5,
+      351.6,
+      346.61
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 15,
+    "text": "o We just need to know that the last job of the prior service’s life failed",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      350.36,
+      479.57,
+      362.69
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 16,
+    "text": "Job processing delays are not too big of a deal",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      367.16,
+      332.64,
+      379.27
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 17,
+    "text": "o This is a backend service behind a backend service, users can wait to access the",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      383.26,
+      528.78,
+      395.59
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 18,
+    "text": "embeddings of their docs  Are enrichments CPU bound? I/O bound?",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      399.43,
+      312.72,
+      428.23
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 19,
+    "text": "o Embeddings: I/O bound, has to wait for OpenAI o Date extraction: CPU-bound due to text parsing, pattern recognition o Glossary: mostly I/O due to Neo operations o Summary: I/O bound, uses OpenAI  What are the memory constraints of the system?  OpenAI gives external API rate limits",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      431.98,
+      473.33,
+      525.93
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 20,
+    "text": "o This slows us down some",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      529.68,
+      270.46,
+      542.01
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 21,
+    "text": "Job priority is a necessity",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      546.49,
+      236.14,
+      558.6
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 22,
+    "text": "o Do enrichments first because they are more important",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      562.59,
+      405.38,
+      574.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 23,
+    "text": "Is job scheduling necessary? I think not.",
+    "font_size": 0.0,
+    "bbox": [
+      108.05,
+      579.48,
+      304.08,
+      591.48
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 24,
+    "text": "o Jobs can be run ASAP, esp if push based queue system",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      595.23,
+      409.46,
+      607.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 25,
+    "text": "Do we need to be able to cancel jobs? I think not.",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      612.25,
+      351.36,
+      624.36
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 26,
+    "text": "o Have never spoken about this, seems unnecessary",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      628.13,
+      385.94,
+      640.46
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 27,
+    "text": "Real-time status monitoring is necessary",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      645.15,
+      305.76,
+      657.26
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 28,
+    "text": "o Need to have real time status of jobs",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      661.01,
+      322.08,
+      673.34
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 29,
+    "text": "We need metrics for things like queue depth, processing times, and failure rates",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      677.79,
+      492.07,
+      689.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 1,
+    "paragraph": 30,
+    "text": "o More data is more good",
+    "font_size": 0.0,
+    "bbox": [
+      126.05,
+      693.89,
+      261.82,
+      706.22
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 1,
+    "text": "Option 1: Current System",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      97.89,
+      208.51,
+      109.89
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 2,
+    "text": "Pros",
+    "font_size": 0.0,
+    "bbox": [
+      177.67,
+      122.16,
+      203.71,
+      134.16
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 3,
+    "text": "Cons",
+    "font_size": 0.0,
+    "bbox": [
+      409.82,
+      122.16,
+      438.77,
+      134.16
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 4,
+    "text": "Simple, currently functional Familiar codebase No new dependencies Low memory footprint",
+    "font_size": 0.0,
+    "bbox": [
+      77.78,
+      136.32,
+      215.71,
+      191.04
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 5,
+    "text": "No persistence Partial job history Limited monitoring Single threaded No rate limiting",
+    "font_size": 0.0,
+    "bbox": [
+      311.4,
+      136.32,
+      408.74,
+      205.44
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 6,
+    "text": "Option 2: Piscena as Queue and Worker Threads",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      232.1,
+      325.92,
+      244.1
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 7,
+    "text": "Pros",
+    "font_size": 0.0,
+    "bbox": [
+      177.67,
+      256.34,
+      203.71,
+      268.34
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 8,
+    "text": "Cons",
+    "font_size": 0.0,
+    "bbox": [
+      409.82,
+      256.34,
+      438.77,
+      268.34
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 9,
+    "text": "True parallelism Simple architecture Good for CPU bound work Low latency",
+    "font_size": 0.0,
+    "bbox": [
+      77.78,
+      270.5,
+      211.39,
+      325.49
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 10,
+    "text": "No persistence No native job history or audit trail No built-in monitoring No retry mechanism No priority handling No rate limiting",
+    "font_size": 0.0,
+    "bbox": [
+      311.4,
+      270.5,
+      478.37,
+      354.05
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 11,
+    "text": "Option 3: BullMQ without Worker Threads",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      380.71,
+      299.28,
+      392.71
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 12,
+    "text": "Pros",
+    "font_size": 0.0,
+    "bbox": [
+      177.67,
+      404.95,
+      203.71,
+      416.95
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 13,
+    "text": "Cons",
+    "font_size": 0.0,
+    "bbox": [
+      409.82,
+      404.95,
+      438.77,
+      416.95
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 14,
+    "text": "Full persistence Excellent job history, monitoring, and auditing Built in rate limiting Native support for priority queues",
+    "font_size": 0.0,
+    "bbox": [
+      77.78,
+      419.11,
+      262.24,
+      487.77
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 15,
+    "text": "Single threaded Redis dependency",
+    "font_size": 0.0,
+    "bbox": [
+      311.4,
+      419.11,
+      402.02,
+      445.51
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 16,
+    "text": "Slower for CPU tasks",
+    "font_size": 0.0,
+    "bbox": [
+      311.4,
+      461.61,
+      418.82,
+      473.61
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 17,
+    "text": "Option 4: BullMQ + Piscena Worker Threads",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      514.65,
+      308.4,
+      526.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 18,
+    "text": "Pros",
+    "font_size": 0.0,
+    "bbox": [
+      177.67,
+      538.92,
+      203.71,
+      550.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 19,
+    "text": "Cons",
+    "font_size": 0.0,
+    "bbox": [
+      409.82,
+      538.92,
+      438.77,
+      550.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 20,
+    "text": "All BullMQ pros Parallelism Best performance Flexible resource allocation",
+    "font_size": 0.0,
+    "bbox": [
+      77.78,
+      552.84,
+      214.03,
+      607.8
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 21,
+    "text": "More complex Higher memory usage More dependencies Debugging complexity",
+    "font_size": 0.0,
+    "bbox": [
+      311.4,
+      552.84,
+      424.85,
+      607.8
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  }
+]

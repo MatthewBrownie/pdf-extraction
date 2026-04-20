@@ -1,0 +1,3147 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "Halcyon",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      97.6,
+      153.17,
+      117.6
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "Halcyon is the capital of the empire of Apollyean. A wall-less city of 80,000, Halcyon sits beside the Crystal Falls, on the shore of the Lake of the Ancestors, and at the start of the Mirrorbrook. A common saying of Halcyon is to see your forebears in your own reﬂection. This may be in part due to the locality of the Reﬂections’ Crest, the cliff face that is the end of the El’drath’el Range. In this cliff, it's said one may see spirits ﬂoating through the throughways and streets. One day's walk from the ocean. Halcyon is there because it's the last navigable point on the Mirrorbrook.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      136.52,
+      538.61,
+      244.67
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 3,
+    "text": "Halcyon is very much a melting pot of the emperor. Many see it as a bastion of hope, a place to ﬁnd themselves anew in its crystalline cliffs and waters. Lorded over by the stalwart, stubborn, heirless King Appoleas Apollyean III, a human of 53 years, and by his side Evytte, his regal, fancy queen. The king and queen take a hands-on approach to Halcyon, often hearing the pleas of citizens and immigrants alike in their court. When they are unable, the Crystal Council will hear them instead. When there is trouble, Aylin’s Stalwarts will take care to clean it up. Named after their founding member who lost his life defending the cliffside from trolls.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      261.86,
+      537.19,
+      386.21
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 4,
+    "text": "A hub of trade and commerce, little is actually produced from within the boundaries of Halcyon. Food is mainly delivered through the trade routes along the cliffs, which Halcyon can afford with its moderately vast wealth and power. Life is largely good within Halcyon, though trouble may brew where the reﬂections cannot touch.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      403.4,
+      534.59,
+      462.98
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 5,
+    "text": "Daytime in Halcyon varies largely from district to district. City-wide, however, shop windows are glass, and they are not guarded during the night. Theft is an offense punishable by death within Halcyon, as to siege what does not belong to you is a direct refusal of what has been given by your ancestors.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      480.17,
+      517.22,
+      539.74
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 6,
+    "text": "Many in the Metamorphic peddle their wares on the street, work at the Docks, or travel across the Mirrorbrook to the Witio-Blessed Mines. At night, the Metamorphic District is silent, save for the footfalls of those brave few dark-seers who conduct business in shadow.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      556.94,
+      542.41,
+      600.32
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 7,
+    "text": "The Sedimentary appears neigh-uninhabited by night, as the lightless streets grant little protection to those who wander amongst them. Those who do travel at night often do so via the guidance of Illiard and Helwy, as it is customary that disciples of the Divine Marriage pray each night at high midnight.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      617.51,
+      542.68,
+      677.09
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 1,
+    "text": "The Igneous District is the only district wherein torches are permissible to be lit in the dark. Even so, dramatically few lights grace even these cobblestone streets. It is said that spirits and ghosts traverse those through ways when light doesn’t shine.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.08,
+      526.97,
+      118.46
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 2,
+    "text": "Events",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      143.06,
+      130.05,
+      159.06
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 3,
+    "text": "Weekly:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      177.21,
+      114.65,
+      188.21
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 4,
+    "text": "On the 7th day of the week, a coliseum event occurs ● On the 1st day of the week, the tithe collector visits the Metamorphic District ● On the 2nd day of the week, the tithe collector visits the Sedimentary District ● On the 3rd day of the week, the tithe collector visits the Igneous Disctrict ● On the 5th day, the sphinx comes to deal justice in the Sedimentary district ● Every other 5th day, the Metamorphic district hears civilian cases",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      204.72,
+      506.8,
+      297.36
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 5,
+    "text": "Daily:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      314.55,
+      103.27,
+      325.55
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 6,
+    "text": "At sundown, all lights are extinguished.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      342.06,
+      313.31,
+      353.74
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 7,
+    "text": "Quest",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      378.34,
+      120.76,
+      394.34
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 8,
+    "text": "Nine Shards of Halcyon",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      417.33,
+      227.71,
+      431.33
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 9,
+    "text": "1. 2. In the protection of the largest merchant in Halcyon 3. Held by the reigning victor of the Colosseum 4. Kept safe behind the crystal falls 5. Held by the mage who rules over the Sedimentary District 6. Kept safe in the artist who sees the realms 7. Deiﬁed by the underdwellers 8. In the king’s chambers 9. In the great hall of the School of Abjuration",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      448.46,
+      407.07,
+      589.63
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 10,
+    "text": "In the church of the dead",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      449.1,
+      240.16,
+      460.1
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 11,
+    "text": "The Three Districts of Halcyon",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      614.22,
+      304.3,
+      630.22
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 12,
+    "text": "The Igneous District",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      653.22,
+      208.24,
+      667.22
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 13,
+    "text": "This is where the nobles live and where the caste is. This is largely ruled by the King’s Counsel, and oftentimes by the King himself.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      684.98,
+      509.16,
+      712.18
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 1,
+    "text": "Within the Igneous District there are three boroughs:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.08,
+      347.72,
+      86.08
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 2,
+    "text": "The Magma Gate",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      105.55,
+      169.99,
+      117.55
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 3,
+    "text": "Heralded as the oldest district in Halcyon, the Magma gate is constructed from crimson stone and crystal that glows faintly at dusk. This borough is home to some of the oldest families in Halcyon and numerous torchlit parades.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      134.94,
+      521.85,
+      178.32
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 4,
+    "text": "Ashwall Promenade",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      197.79,
+      184.51,
+      209.79
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 5,
+    "text": "Known for clean, cobbled roads lined with polished obsidian statues, the Ashwall is for the most exclusive shopping in the entirety of Apollyean. Magic merchants often ﬁnd their way here, under the scrutinous eye of those who came before.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      227.18,
+      538.93,
+      270.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 6,
+    "text": "Pyroclast Yard",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      290.03,
+      155.77,
+      302.03
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 7,
+    "text": "The Sedimentary District",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      352.45,
+      239.52,
+      366.45
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 8,
+    "text": "This is where those who have lived in Halcyon for generations or plan to live in Halcyon for the rest of their lives choose to settle. The buildings here tend to be tall, oftentimes multiple stories, though not excessively broad. Many choose to have their common areas on the ﬁrst ﬂoor and their sleeping chambers on the upper stories.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      384.22,
+      538.19,
+      443.79
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 9,
+    "text": "The Sedentary District is looked after by the Great Mage, a largely benevolent ruler who it is said to have knowledge of the Collapse. It is also said that court is held once weekly in the presence of Indracus, the great Sphinx of El’drath’el.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      460.98,
+      542.77,
+      504.37
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 10,
+    "text": "Within the Sedentary District there are three boroughs:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      521.56,
+      359.37,
+      532.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 11,
+    "text": "Layerfall Commons",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      552.03,
+      183.0,
+      564.03
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 12,
+    "text": "Aside from the castle, the Layerfall Commons are the highest spot in Halcyon, offering unparalleled views of the city and the Lake of the Ancestors.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      581.42,
+      514.82,
+      608.61
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 13,
+    "text": "Fossil Walk",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      628.08,
+      136.85,
+      640.08
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 14,
+    "text": "Crowded with markets, shops, and shrines built into the bones of ancient beasts discovered, or slaughtered, during the city’s expansion.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      657.46,
+      483.22,
+      684.66
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 1,
+    "text": "Stratahearth",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.36,
+      145.58,
+      87.36
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 2,
+    "text": "Known for terraced roadhouses and intricate mosaics recounting the history of Halcyon, the Walk is known as a gathering place for storytellers and historians.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      104.74,
+      527.19,
+      131.94
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 3,
+    "text": "The Metamorphic District",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      153.97,
+      244.72,
+      167.97
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 4,
+    "text": "The life within the Metamorphic district is where the lower class folk tend to gather. Vagrants, immigrants, and tradesmen ﬁnd themselves within the winding streets leading towards the docs. Here, many ﬁnd their lives and work that will either lead them into the upper crust of Halcyon, or their way out of the Appollyean Kingdom.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      185.74,
+      527.76,
+      245.31
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 5,
+    "text": "The Metamorphic District is looked after by the Ancestors’ Counsel. This council is constituted by the Lord of Commerce, the Lord of Transit, the Lord of Justice, and the Ancestor, with the latter role being ﬁlled by a spirit of one of the Lords that has passed away.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      262.5,
+      516.27,
+      322.08
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 6,
+    "text": "Within the Metamorphic District there are three boroughs:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      339.27,
+      376.38,
+      350.27
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 7,
+    "text": "Marblemorph",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      369.74,
+      151.56,
+      381.74
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 8,
+    "text": "The Marblemorph is bustling with stonecarvers, blacksmiths, masons, and wandering laborers. The alleys of this borough are also lined with every-shifting grafﬁti, making it difﬁcult for those unfamiliar to ﬁnd their way.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      399.13,
+      516.7,
+      442.51
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 9,
+    "text": "Garnet Hollow",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      461.98,
+      156.34,
+      473.98
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 10,
+    "text": "The Hollow is known to be the city’s hub of trade, commerce, and the location of the airship dock.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      491.37,
+      505.47,
+      518.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 11,
+    "text": "Quartzshift",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      538.03,
+      139.08,
+      550.03
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 12,
+    "text": "Quartzshift is known for its deep alleys, pickpockets, and whispers that echo down the throughways of schemes, plots, and wishes. Many say the Shift leads to the underworld, though none say where.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      567.42,
+      522.51,
+      610.8
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 13,
+    "text": "Holy Places of Halcyon",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      635.39,
+      245.16,
+      651.39
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 14,
+    "text": "Halcyon is home to several religious temples, and a shrine to any god or goddess may be found throughout the city. The most prominent temples are as follows:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      669.54,
+      524.99,
+      696.74
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 1,
+    "text": "The Temple to Witio - The Font of Molten Wisdom",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.92,
+      404.22,
+      89.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 2,
+    "text": "Exterior: Black basalt columns crown the temple, veins of glowing, living crystal winding upward like molten rivers; at dusk, the entrance shimmers and pulses, promising secrets only revealed by wisdom and ﬁre.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      107.69,
+      525.87,
+      151.07
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 3,
+    "text": "Interior: Flickering braziers cast golden light onto groves of hanging scrolls and books; a low, eternal hum accompanies every step, scholars consulting illuminated manuscripts or whispering riddles to the god of knowledge.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      168.26,
+      530.88,
+      211.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 4,
+    "text": "Important People:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      228.84,
+      166.93,
+      239.84
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 5,
+    "text": "High Sage Calaxes Vedran: Robed in white and red, his eyes alight with learning, he",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      256.35,
+      533.55,
+      268.03
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 5,
+    "paragraph": 6,
+    "text": "interprets the cryptic wisdoms of Witio and oversees all initiates.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      273.22,
+      443.11,
+      284.22
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 7,
+    "text": "Dalae Draventh: Keeper of keys and riddles, angular-faced and soft-spoken, she",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      288.73,
+      516.24,
+      300.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 5,
+    "paragraph": 8,
+    "text": "guides guests through magical trials to prove their worth.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      305.61,
+      405.0,
+      316.61
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 9,
+    "text": "Archivist Loryn Feldspar: Elderly halﬂing, devoted to preserving every piece of knowledge; she ensures the temple’s archives are safe from vandalism or theft. ● Asherun Rhyll: Arcane prodigy who debates philosophy in the atrium, known for weaving spells into daily parables.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      321.12,
+      518.56,
+      381.38
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 5,
+    "paragraph": 10,
+    "text": "Garanth Solanar: Temple guardian, imposing but gentle, prefers meditation to",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      385.89,
+      507.27,
+      397.57
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 5,
+    "paragraph": 11,
+    "text": "violence—his ceremonial staff burnished with obsidian.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      402.76,
+      391.68,
+      413.76
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 12,
+    "text": "The Temple to Baerwu - Spire of the Unbound Wind",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      435.79,
+      414.43,
+      449.79
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 13,
+    "text": "Exterior: Towering, sky-blue spire, banners billowing in the perpetual breeze; the steps upwards are open and airy, granting panoramic views across Halcyon and the Ancestors' Lake below.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      467.56,
+      525.39,
+      510.94
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 14,
+    "text": "Interior: Wind chimes and cascading silks ﬂutter overhead, sunlight pouring through stained-glass stories on every wall; worshippers sing prayers to the wind, their voices harmonizing with the breeze that never stills.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      528.14,
+      511.21,
+      571.52
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 15,
+    "text": "Important People:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      588.71,
+      166.93,
+      599.71
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 16,
+    "text": "High Priestess Ythari Siltwind: With hair that ripples like rain, she leads morning",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      616.22,
+      520.46,
+      627.9
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 5,
+    "paragraph": 17,
+    "text": "ceremonies and reads omens from the movement of wind and silk.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      633.1,
+      449.75,
+      644.1
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 18,
+    "text": "Stormchanter Vellis Mossbrook: Youthful bard whose ballads evoke the strength and",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      648.61,
+      540.76,
+      660.29
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 5,
+    "paragraph": 19,
+    "text": "softness of wind; inspires citizens in festivals and troubles.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      665.48,
+      409.45,
+      676.48
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 20,
+    "text": "Keeper Tumla Ambervale: Persistent, elderly woman who tends the ﬂying garden",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      680.99,
+      522.87,
+      692.67
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 5,
+    "paragraph": 21,
+    "text": "and ensures the temple is open to all.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      697.86,
+      301.25,
+      708.86
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 1,
+    "text": "Skywatcher Greylin Mottle: Halﬂing seer who charts wind patterns and sometimes",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      74.4,
+      532.2,
+      86.08
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 6,
+    "paragraph": 2,
+    "text": "predicts fortune from dreams.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      91.27,
+      265.03,
+      102.27
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 3,
+    "text": "Novitiate Eliard Flint: Silent apprentice, tasked with cleaning and maintaining the",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      106.78,
+      524.43,
+      118.46
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 6,
+    "paragraph": 4,
+    "text": "high spire; rumored to commune with wild birds.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      123.66,
+      361.4,
+      134.66
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 5,
+    "text": "The Temple to Eawin - Veilkeepers Sepulcher",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      156.69,
+      370.97,
+      170.69
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 6,
+    "paragraph": 6,
+    "text": "Exterior: Carved from moonstone and jet, the sepulcher’s facade is adorned with motifs of veils and ﬂowing water, its entrance surrounded by murmuring, weeping willows; on dusk, soft candles gleam on every step.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      188.46,
+      535.61,
+      231.84
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 7,
+    "text": "Interior: Incense cloaks shadowed alcoves—each lined with memorials and silken veils; slow, haunting chants echo as worshippers honor the dead and pray to Eawin for memory, forgiveness, and safe passage.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      249.03,
+      534.71,
+      292.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 8,
+    "text": "Important People:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      309.61,
+      166.93,
+      320.61
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 6,
+    "paragraph": 9,
+    "text": "High Priestess Marina Idurin: Stern and empathetic, she guides the district’s rites for",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      337.12,
+      542.89,
+      348.8
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 6,
+    "paragraph": 10,
+    "text": "mourning and sacriﬁce; her gaze reads the soul of each confessor.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      353.99,
+      447.39,
+      364.99
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 11,
+    "text": "Ralphie Idurin: The inn’s gentle dog, bringing comfort and warmth to grieving",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      369.5,
+      505.33,
+      381.18
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 6,
+    "paragraph": 12,
+    "text": "mourners or lost children.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      386.38,
+      244.68,
+      397.38
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 13,
+    "text": "Mistress Sera Umberglass (Ancestor Spirit): Her pale presence ﬂoats during midnight prayer, sometimes offering wisdom to those in deepest need.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      401.89,
+      495.25,
+      429.76
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 6,
+    "paragraph": 14,
+    "text": "Soulkeeper Gersa Cottect: Tieﬂing whose voice is soft and slow, she records the",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      434.27,
+      518.29,
+      445.95
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 6,
+    "paragraph": 15,
+    "text": "stories of the departed and keeps the sepulcher’s torch lit.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      451.14,
+      407.98,
+      462.14
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 16,
+    "text": "Acolyte Pemble Truce: Young attendant who weaves and hangs new veils, always",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      466.65,
+      521.11,
+      478.34
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 6,
+    "paragraph": 17,
+    "text": "careful never to disturb the city’s ancestral peace.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      483.53,
+      364.89,
+      494.53
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 18,
+    "text": "The Temple to Altent - The Hall of Fallen Blades",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      516.56,
+      385.06,
+      530.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 6,
+    "paragraph": 19,
+    "text": "Located in The Below.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      548.33,
+      189.81,
+      559.33
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 6,
+    "paragraph": 20,
+    "text": "Houses of Halcyon",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      583.92,
+      214.56,
+      599.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 6,
+    "paragraph": 21,
+    "text": "House Apollyean: The ruling dynasty of Halcyon, with an unbroken bloodline. King Appoleas III and Queen Evytte oversee Halcyon’s unity, justice, and military.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      618.07,
+      495.86,
+      645.26
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 22,
+    "text": "House of Umberglass, the House of the Ancestors: House Umberglass is where those who deemed they still have work to do on the mortal realm have settled. These spirits oversee justice throughout the city, and nominate a head of the Ancestors Council.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      662.46,
+      535.74,
+      705.84
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 1,
+    "text": "The Noble Houses",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.92,
+      193.89,
+      89.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 2,
+    "text": "House Solanar: Ancient knights and warriors who are eternal protectors of the king and crown. The most powerful house in Halcyon.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      107.69,
+      523.36,
+      134.88
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 3,
+    "text": "House Vedran: The architects of the Igneous and Sedimentary districts, responsible for collecting tithes and managing the landscape of Halcyon.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      152.07,
+      520.02,
+      179.26
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 4,
+    "text": "House Draventh: The masters of trade and commerce within Halcyon. Goods rarely come in or out of Halcyon without their knowing. Their motto is “The Flame Endures.”",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      196.46,
+      532.72,
+      223.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 5,
+    "text": "The Old-Blood Houses",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      245.68,
+      222.67,
+      259.68
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 6,
+    "text": "House Feldspar: An ancient farming house, with their ancestors thought to build the ﬁrst terraces of Halcyon. This ﬁercely traditional, matriarchal house presents the high priestesses of the Harvest.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      277.45,
+      529.82,
+      320.83
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 7,
+    "text": "House Rhyll: The scholars of Halcyon, they are also the record-keepers and ofﬁcial historians of the city. Their archives contain lost magic and sealed family secrets.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      338.02,
+      497.74,
+      365.22
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 8,
+    "text": "House Siltwind: The community leaders of the city, the Siltwinds hold feasts and spiritual celebrations, and are generally beloved of the city. Known for their devotion to Baerwu.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      382.41,
+      532.55,
+      409.6
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 9,
+    "text": "The Merchant Guilds",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      431.63,
+      212.67,
+      445.63
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 10,
+    "text": "House Gemwright: Gemcutters and artiﬁcers, they are known to be jealous of the Igneous houses, tight-lipped, and secretive. Their sigil is the sapphire owl.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      463.4,
+      535.32,
+      490.59
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 11,
+    "text": "House Forgevein: The head of the masons and builders guild within Halcyon. They are responsible for building houses and maintaining the infrastructure of Halcyon.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      507.78,
+      513.95,
+      534.98
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 12,
+    "text": "House Mottle: Powerful traders and rumored smugglers, Mottle is known to have ﬁngers in every market across the city and operate a network of informants. (Secretly also houses the thieves’ guild)",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      552.17,
+      541.48,
+      595.55
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 13,
+    "text": "Information to be added:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      620.14,
+      260.64,
+      636.14
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 14,
+    "text": "The Death Bed Inn:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      659.14,
+      200.18,
+      673.14
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 15,
+    "text": "Outside: Lanterns dissolve into morning mist above its ancient timber door, bones engraved on the windowsill catch early sun.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      690.9,
+      493.99,
+      718.1
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 1,
+    "text": "Inside: Shelves crowded with curios and foodstuffs blend seamlessly into prayer shrines and backroom soup pots.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.08,
+      522.28,
+      102.27
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 2,
+    "text": "Run by Mateus and Marina Idurin, along with their dog Ralphie. The Death Bed Inn is connected to the temple to Eawin, as Marina is the head priestess of that temple. A punishment of those who are to be sent to the gallows is to be sent into Marina’s ﬂock, where they will be ritually sacriﬁced. Marina is also known for hosting crochet nights and community kitchen events for those who have come upon hard times in Halcyon. Mateus runs the Inn and the general store, where most non-magical items are sold at a reasonable price. Mateus is a follower of Munder, and as such he also operates the Inn on a barter system, knowledge for rooms or items. Mateus is bereft to magic.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      119.46,
+      536.91,
+      243.81
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 3,
+    "text": "The Below:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      265.84,
+      147.13,
+      279.84
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 4,
+    "text": "Underneath the city there is a vast maze of interconnected tunnels, cellars, sewers, and catacombs which form a sparsely connected dungeon underneath Halcyon. There is a temple to Altent down there, though that is known to nearly all of the populace.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      297.61,
+      521.31,
+      340.99
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 5,
+    "text": "The Arcanum of Astral Nexus:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      363.02,
+      268.3,
+      377.02
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 6,
+    "text": "The Reﬂections Crest was created by an ancient fallen city of the sky, that of Audopopadopolis. Underneath that once great city, lies the now forgotten college of Abjuration. The Arcanum of Astral Nexus: No one knows what befall the fortress of the Abjurers. What is known is that within those walls, students would gather to fabricate impervious defenses, both magical and physical.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      394.79,
+      514.45,
+      470.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 7,
+    "text": "The Coliseum: The Arena of Shattered Echoes",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      492.59,
+      373.2,
+      506.59
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 8,
+    "text": "On the border of the Sedimentary and Metamorphic districts sits a megalithic coliseum wherein ﬁghts to the death between gladiators, animals, and magical beasts alike take part. Within this coliseum, there is a weekly event, rotating each week between a ﬁght to the death, an epic play, and military exercises.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      524.36,
+      539.01,
+      583.94
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 9,
+    "text": "Exterior: Cyclopean stone arches loom over the border of the Metamorphic and Sedimentary Districts, banners snap in wind above thick iron gates; the roar inside seems to vibrate even the stillness outside, and the coliseum's shadow covers dozens of merchant carts and festival tents.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      601.13,
+      538.42,
+      660.7
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 1,
+    "text": "Interior: Tiered stands crowd with shouting crowds; the ﬁghting pit glows with enchanted sand, and an ancient mural recounts hundreds of years of gladiatorial triumphs—and tragedies.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.08,
+      535.32,
+      118.46
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 2,
+    "text": "Important People:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      135.66,
+      166.93,
+      146.66
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 3,
+    "text": "Palvo Jestil: Scarred, ﬂamboyant dwarf who runs sign-ups and event rosters—his",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      163.17,
+      521.12,
+      174.85
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 9,
+    "paragraph": 4,
+    "text": "stories and bets are near legendary.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      180.04,
+      292.8,
+      191.04
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 5,
+    "text": "Reigning Victor Kessyn Marblemorph: Surly, bronze-skinned champion of the",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      195.55,
+      505.4,
+      207.23
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 9,
+    "paragraph": 6,
+    "text": "current season, always hunting new challengers or rivals.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      212.42,
+      401.88,
+      223.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 7,
+    "text": "Mistress Nalan Siltwind: Overseer of dramatic plays and ceremonies, directing",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      227.93,
+      509.73,
+      239.62
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 9,
+    "paragraph": 8,
+    "text": "actors and gladiators alike.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      244.81,
+      247.52,
+      255.81
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 9,
+    "text": "Quartermaster Cardin Voss: One-eyed weapons master, ensures all arms and gear",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      260.32,
+      528.67,
+      272.0
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 9,
+    "paragraph": 10,
+    "text": "are ready for the combatants—he has the quiet authority of a storm about to break.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      277.19,
+      534.82,
+      288.19
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 11,
+    "text": "Beastmaster Greydus Pipe: Tall, stooped half-orc charged with caring for the",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      292.7,
+      502.63,
+      304.38
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 9,
+    "paragraph": 12,
+    "text": "coliseum’s stable of magical beasts and arena animals.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      309.58,
+      385.02,
+      320.58
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 13,
+    "text": "The Docks:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      342.61,
+      147.83,
+      356.61
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 14,
+    "text": "Halcyon’s medieval docks are a living tapestry stretched across the stony shore of the Lake of the Ancestors. Timber piers, some centuries old, jut into deep, ﬂickering waters where ﬁshing boats, merchant barges, and broad-hulled ferries sway at rest. The air smells of brine, pitch, and cured ﬁsh, mingled with the rich aromas of tallow lanterns burning at sundown. Stone steps descend from the market square, lined with grit and tangled ropes, where sailors and dockhands haggle and sing among crates marked with foreign runes and the city’s obsidian seal. At dawn, ﬁshermen mend their nets with practiced patience, children chase gulls for luck, and traders unload silks, salt, and iron by hand, piling goods in shadowy warehouses whose doors never sleep. Lanterns twinkle from masthead to mooring post, illuminating knots of travelers, scribes tallying manifests, and the slouching backs of local watchmen who eye the night’s business with silent vigilance.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      374.38,
+      540.85,
+      547.3
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 15,
+    "text": "Key People of Halcyon’s Medieval Docks",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      564.49,
+      278.22,
+      575.49
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 16,
+    "text": "Temra Garnet: The dockmaster. Broad-hipped, slate-gray hair tightly braided, cloak heavy from years of rain and spray. Her commands carry over the hubbub as she sorts berths and settles disputes with a voice that brooks no argument.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      592.0,
+      538.89,
+      636.06
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 9,
+    "paragraph": 17,
+    "text": "Barlo Fen: Chief labor foreman. Barrel-chested, bald with eyes like polished agate. Wears a patched jerkin and ﬁngerless gloves, quick with jokes but quicker to bark orders at loaﬁng hands or smugglers testing his patience.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      640.57,
+      528.72,
+      684.64
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 10,
+    "paragraph": 1,
+    "text": "Orik Slatehand: Head stevedore. Towering goliath, arms crisscrossed with faded runic tattoos and scars from decades hauling loads. Believes in fair pay and hard work, settling quarrels with his presence alone or an iron-stiff handshake.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      74.4,
+      521.26,
+      118.46
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 10,
+    "paragraph": 2,
+    "text": "Simi Ambervale: Street peddler and errand girl. Petite halﬂing with ﬁery hair tied in ribbons, bouncing from sailor to merchant with baskets of fresh bread, salted meats, and whispered news, always ready to help or hide depending on the hour.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      122.97,
+      540.96,
+      167.04
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 10,
+    "paragraph": 3,
+    "text": "Willa Peach: Herbalist and dockside healer. Magenta-braided gnome with an apron covered in green stains, known for her healing teas and poultices. Mends minor wounds from splintered decks and scufﬂes, and trades friendly counsel for gossip during the slow hours.",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      171.55,
+      534.46,
+      231.81
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 10,
+    "paragraph": 4,
+    "text": "Marn Crow: Scribe and tallyman. Gaunt human in ink-stained doublet, spectacles",
+    "font_size": 0.0,
+    "bbox": [
+      90.0,
+      236.32,
+      526.24,
+      248.0
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 10,
+    "paragraph": 5,
+    "text": "hanging by a thread. Keeps obsessive records of each ship’s manifest and is trusted by captains, for his memory is sharper than any blade in the city.",
+    "font_size": 0.0,
+    "bbox": [
+      108.0,
+      253.19,
+      533.07,
+      280.38
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 10,
+    "paragraph": 6,
+    "text": "Garnet Hollow Transfers (Airship & Goods Broker)",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      302.42,
+      399.75,
+      316.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 10,
+    "paragraph": 7,
+    "text": "Outside: Brass gears and ropes coil around a bustling dock platform, fumes and commotion thick as morning fog.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      334.18,
+      540.02,
+      361.38
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 10,
+    "paragraph": 8,
+    "text": "Inside: Ledgers and manifests spill across every surface, littered with tokens from far-off lands and ticking clocks.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      378.57,
+      527.3,
+      405.76
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 10,
+    "paragraph": 9,
+    "text": "Shopkeeper: Temra Garnet—broad-hipped, gray-braided, her gaze measuring more than goods in every glance.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      422.95,
+      525.71,
+      450.14
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 10,
+    "paragraph": 10,
+    "text": "Veins and Chains:",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      472.18,
+      189.98,
+      486.18
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 10,
+    "paragraph": 11,
+    "text": "A tattoo parlor and jewelry shop known by a mysterious woman from across the ocean.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      503.94,
+      522.02,
+      514.94
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 10,
+    "paragraph": 12,
+    "text": "Outside: Emerald glass and painted symbols glimmer across the dusk-soaked brick, mysterious voices heard within.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      532.14,
+      499.62,
+      559.33
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 10,
+    "paragraph": 13,
+    "text": "Inside: Flickering candles and sweet incense reveal a riot of vibrant inks, and shadowy jewelry glitters on velvet.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      576.52,
+      511.76,
+      603.71
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Text"
+  },
+  {
+    "page": 10,
+    "paragraph": 14,
+    "text": "Marblemorph Curiosity",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      625.74,
+      228.22,
+      639.74
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 10,
+    "paragraph": 15,
+    "text": "Outside: Pillars of swirling, painted marble frame a crooked doorway, colors ever-shifting in sunlight.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      657.51,
+      542.51,
+      684.7
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 1,
+    "text": "Inside: Trinket-ﬁlled shelves, odd artifacts on velvet, eccentric displays sculpted from stone and bone.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.08,
+      541.69,
+      102.27
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 2,
+    "text": "Shopkeeper: Vax Marblemorph—paint-spattered, wild-haired, eyes darting for inspiration, always ready for the next new story.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      119.46,
+      534.38,
+      146.66
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 3,
+    "text": "Siltwind Scrolls & Sundries",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      168.69,
+      250.42,
+      182.69
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 11,
+    "paragraph": 4,
+    "text": "Outside: Faded awning stamped with ancient glyphs, a bell chimes in fog as neighbors bustle past.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      200.46,
+      511.98,
+      227.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 5,
+    "text": "Inside: Walls lined with parchment and bundles of quills, air tinged with cedar and whispered rumors.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      244.84,
+      493.19,
+      272.03
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 6,
+    "text": "Shopkeeper: Theska Siltwind—short, round-faced, with ink-stained ﬁngers and a voice that carries wisdom through laughter.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      289.22,
+      539.59,
+      316.42
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 7,
+    "text": "Mossbrook Market",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      338.45,
+      197.62,
+      352.45
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 11,
+    "paragraph": 8,
+    "text": "Outside: Garlands of wildﬂowers dangle over a clutter of open carts, laughter and scents swirl in the lively street.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      370.22,
+      526.59,
+      397.41
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 9,
+    "text": "Inside: Checkerboard tiles, baskets overﬂowing with bread, roots, and herbs beneath a stained glass skylight.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      414.6,
+      514.97,
+      441.79
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 10,
+    "text": "Shopkeeper: Fio Mossbrook—rosy-cheeked cook, apron dusted with ﬂour, and eyes bright as fresh-baked morning.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      458.98,
+      533.43,
+      486.18
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 11,
+    "text": "Obsidian Armaments",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      508.21,
+      211.94,
+      522.21
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 11,
+    "paragraph": 12,
+    "text": "Outside: Smoky iron sign swings on blackened chains, blocky façade carved with runes, guarded by stern stone lions.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      539.98,
+      519.85,
+      567.17
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 13,
+    "text": "Inside: Shelves glimmer with sectioned blades, polished bucklers, and rare obsidian arrowheads, all bathed in cool torchlight.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      584.36,
+      499.09,
+      611.55
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 11,
+    "paragraph": 14,
+    "text": "Shopkeeper: Cardin Voss—tall, one-eyed, steel-gray hair in braids, his voice gravelly yet inviting.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      628.74,
+      519.86,
+      655.94
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 1,
+    "text": "Strata’s Thread",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.92,
+      173.18,
+      89.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 12,
+    "paragraph": 2,
+    "text": "Outside: Laundry lines crisscross the alley beside a painted door, colored fabrics ripple like banners in the breeze.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      107.69,
+      538.24,
+      134.88
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 3,
+    "text": "Inside: Spools of linen and velvet pile high, each corner buzzing with whispered gossip and the ﬂick of sewing needles.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      152.07,
+      536.91,
+      179.26
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 4,
+    "text": "Shopkeeper: Liala Strata—lean, sharp-eyed, her hands quick with needle or secrets passed in silk folds.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      196.46,
+      534.19,
+      223.65
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 5,
+    "text": "NPCs",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      248.24,
+      116.68,
+      264.24
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 12,
+    "paragraph": 6,
+    "text": "King Appoleas Apollyean III: The stalwart, stubborn, and heirless human king of Halcyon. Rules with pride in the city’s traditions and regularly hears the pleas of citizens.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      282.39,
+      531.12,
+      309.58
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 7,
+    "text": "Queen Evytte Apollyean: The regal and ﬂamboyant queen, renowned for her involvement in city affairs and elegant style.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      326.78,
+      530.48,
+      353.97
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 8,
+    "text": "Mateus Idurin: Broad-shouldered, slate-eyed, with stubble as rough as old cobbles and a perpetual smudge of ﬂour. Weathered hands cradle stories and secrets. Stout as an old oak, with salt-ﬂecked hair and a gaze like deep river stone.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      371.16,
+      538.03,
+      414.54
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 9,
+    "text": "Marina Idurin: Storm-gray hair in a tight bun, white skin framed by priestly robes; warm, crinkled eyes above a mouth set for grieving and encouragement. Silver-haired and cloaked in faded velvet, her eyes warm as dusk lanterns.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      431.74,
+      538.63,
+      475.12
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 10,
+    "text": "Ralphie Idurin: Curly haired family dog of the Idurins, beloved by all. With hair as black as night and a tail that sweeps like a broom through the travelers’ dust, he is often found comforting guests or livening up the inn’s evenings. Shaggy-furred, black as night, exuberant tail and soulful eyes that see kindness in all.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      492.31,
+      541.72,
+      551.89
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 11,
+    "text": "Lord Harrow Fenn: Grizzled dwarf merchant, sharp-tongued, runs Garnet Hollow’s trade hub; keeps an eye on market trends and under-the-table deals. Stocky, cinnamon-bearded, amber-skinned, eyes sharp as fresh-cut garnets beneath a battered merchant’s cap. Broad and bristling, with a cinnamon beard and merchant’s rings glittering in every gesture.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      569.08,
+      539.39,
+      628.66
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 12,
+    "paragraph": 12,
+    "text": "Mistress Ythari Siltwind: Tall half-elf woman, master of street routes and transit permits, renowned for her patience and encyclopedic memory of Halcyon's alleys and shortcuts. Tall, willowy, with river-stone hair and moon-bright irises—her robes trail like whispered",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      645.85,
+      534.41,
+      689.23
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 13,
+    "paragraph": 1,
+    "text": "secrets in dusk alleys. Graceful, tall as twilight, copper-skinned with river-water hair and robes sewn from night breezes.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.08,
+      524.33,
+      102.27
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 13,
+    "paragraph": 2,
+    "text": "Justice Caleos Obsidian: Retired city guard, stoic and slow to anger, trusted to arbitrate lesser disputes and take confessions after dark. Iron-jawed, silver-stubbled, clad in black magistrate’s leathers; hands like granite and a gaze weighing every soul’s truth. Chiseled features shadowed in gray, voice deep as the city’s old stone, eyes unwavering as a judge’s verdict.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      119.46,
+      526.66,
+      195.23
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 13,
+    "paragraph": 3,
+    "text": "The Ancestor—Specter of Sera Umberglass: Ghostly mentor to the council, visible only at midnight prayer; revered for insights from the spirit realm and connection to the district’s ancestral past. Diaphanous, luminous—her presence an echo of violet and pearl, drifting with a hush through candlelit mist. Pale violet mist shaped like a serene matron, her eyes soft moons, her form shifting in every candle’s glow.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      212.42,
+      540.56,
+      288.19
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 13,
+    "paragraph": 4,
+    "text": "Vax Marblemorph: Street artist known for ever-changing grafﬁti; eccentric, unpredictable, offers coded clues for those looking to contact the city's underworld. Spry, paint-splashed; angular features wreathed in wild green curls, ﬁngers stained in every pigment at sunrise. Spry frame, wild green hair, patchwork jacket speckled with paint and hinting of strange murals.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      305.38,
+      538.57,
+      381.15
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 13,
+    "paragraph": 5,
+    "text": "Luran Forgevein: Energetic young mason, always recruiting day-laborers for projects. Quick to gossip and always has a loose stone to ﬁx or story to tell. Sunburnt youth, freckles on a nose broken twice, chunky work boots, and arms ringed with dust-streaked muscle. Bronzed and broad-shouldered, dust-streaked, hammer-scarred hands always mid-gesture, quick grin under a freckled nose.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      398.34,
+      539.15,
+      474.11
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 13,
+    "paragraph": 6,
+    "text": "Drin Mottle: Wiry halﬂing trader with ties to much of the district's commerce—runs the busiest peddler cart, rumored to secretly broker deals for House Mottle. Lean, quick-eyed halﬂing, cheeks sharp and voice lilting, best coat stitched from ten markets’ worth of stolen fabric. Lean, wiry, with laughter lines and a hat festooned with haggled trinkets; eyes sparkle with mischief.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      491.3,
+      540.34,
+      567.07
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 13,
+    "paragraph": 7,
+    "text": "Anava \"Veins\" Chell: Foreign tattooist and jeweler who owns Veins and Chains. Her jewelry is said to carry protective blessings, and her tattoos are sought by those wishing to reinvent themselves upon arriving in Halcyon. White-skinned, with jet-black hair cropped close; arms inked in twisting runes, jewelry dangling like starlight on midnight velvet. Low-cut dress, bronze eyes. White-skinned, elegant, tattoos curling up sinewy arms; jewelry catching every mote of candlelight.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      584.26,
+      539.2,
+      676.22
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 14,
+    "paragraph": 1,
+    "text": "Temra Garnet: Airship dock supervisor, gruff middle-aged woman who ensures goods move smoothly through Garnet Hollow; will trade stories for favors and keeps a ledger of debts. Sturdy, broad-hipped, slate-gray hair braided and dotted with ship charms; her boots always splashed in oil and morning dew. Sturdy and stoic, short-cropped silver hair, deep-set brown eyes, deck boots still stained with dock oil.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      75.08,
+      527.97,
+      150.85
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 14,
+    "paragraph": 2,
+    "text": "Mira Quartzshift: Secretive pickpocket and information broker; offers dubious \"tours\" of the district’s shadowy backstreets for coin or secrets. Petite, hawk-nosed, eyes darting with glassy energy, palms nimble and stained with ink and coin dust. Petite but fox-eyed, nimble ﬁngers clad in ink, her cloak always ﬂowing and footsteps nearly silent.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      168.04,
+      542.42,
+      227.62
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 14,
+    "paragraph": 3,
+    "text": "Old Jerrik the Night-Seer: Blind prophet, guides travelers and late-night workers through the district at sundown; known for poetic riddles and warnings about restless spirits. Wrinkled as river driftwood, hair pale and unkempt, milky unseeing eyes over lips whispering secrets only stars remember. Ancient and hunched, milky eyes haunting his smile, skin crinkled like old parchment under starlit haze.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      244.81,
+      534.83,
+      320.58
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 14,
+    "paragraph": 4,
+    "text": "Fio Mossbrook: Street-corner cook, feeds hungry children and vagrants by day, moonlights as a supplier of rare herbs and local gossip. Round-cheeked, always smiling, ﬂour-dusted apron, eyes golden with hearthlight and curiosity. Round-faced, rosy-cheeked, apron dusted with ﬂour, gleaming teeth and eyes full of sunrise optimism.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      337.77,
+      539.79,
+      397.34
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 14,
+    "paragraph": 5,
+    "text": "Liala Strata: Laundry mistress, her business acts as a front for relaying message drops between districts and houses. Tall, wiry, ﬁngers deft with folded linen; eyes like smoky quartz, scanning for secrets as she works among billowing sheets. Tall and lean, eyes sharp as ﬂint, calloused hands dancing amid laundry lines and hushed secrets.",
+    "font_size": 0.0,
+    "bbox": [
+      72.0,
+      414.54,
+      534.95,
+      474.11
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "NarrativeText"
+  }
+]

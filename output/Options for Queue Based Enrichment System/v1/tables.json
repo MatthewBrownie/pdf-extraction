@@ -1,0 +1,154 @@
+[
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "Simple, currently functional",
+        "No persistence"
+      ],
+      [
+        "Familiar codebase",
+        "Partial job history"
+      ],
+      [
+        "No new dependencies",
+        "Limited monitoring"
+      ],
+      [
+        "Low memory footprint",
+        "Single threaded"
+      ],
+      [
+        "",
+        "No rate limiting"
+      ]
+    ],
+    "bbox": [
+      72.26,
+      586.03,
+      539.95,
+      671.74
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "True parallelism",
+        "No persistence"
+      ],
+      [
+        "Simple architecture",
+        "No native job history or audit trail"
+      ],
+      [
+        "Good for CPU bound work",
+        "No built-in monitoring"
+      ],
+      [
+        "Low latency",
+        "No retry mechanism"
+      ],
+      [
+        "",
+        "No priority handling"
+      ],
+      [
+        "",
+        "No rate limiting"
+      ]
+    ],
+    "bbox": [
+      72.26,
+      437.42,
+      539.95,
+      537.53
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "Full persistence",
+        "Single threaded"
+      ],
+      [
+        "Excellent job history, monitoring, and\nauditing",
+        "Redis dependency"
+      ],
+      [
+        "Built in rate limiting",
+        "Slower for CPU tasks"
+      ],
+      [
+        "Native support for priority queues",
+        ""
+      ]
+    ],
+    "bbox": [
+      72.26,
+      303.46,
+      539.95,
+      388.92
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "All BullMQ pros",
+        "More complex"
+      ],
+      [
+        "Parallelism",
+        "Higher memory usage"
+      ],
+      [
+        "Best performance",
+        "More dependencies"
+      ],
+      [
+        "Flexible resource allocation",
+        "Debugging complexity"
+      ]
+    ],
+    "bbox": [
+      72.26,
+      183.43,
+      539.95,
+      254.98
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  }
+]

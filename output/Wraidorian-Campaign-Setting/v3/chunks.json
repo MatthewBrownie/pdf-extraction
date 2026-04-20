@@ -1,0 +1,3742 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "The Lands of Wraidorian",
+    "font_size": 0.0,
+    "bbox": [
+      62.02,
+      162.14,
+      545.19,
+      349.14
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "A campaign setting for gameplay in the D&D 2024 system",
+    "font_size": 0.0,
+    "bbox": [
+      158.6,
+      419.65,
+      440.6,
+      430.65
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 3,
+    "text": "Players: Spencer as Goofer Goober (Rock!) Ben as Jan Martin as Tal Bawa Xx",
+    "font_size": 0.0,
+    "bbox": [
+      215.57,
+      452.65,
+      383.63,
+      529.65
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 1,
+    "paragraph": 4,
+    "text": "Game Master: Matthew Brown",
+    "font_size": 0.0,
+    "bbox": [
+      258.4,
+      551.65,
+      340.8,
+      579.15
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 1,
+    "paragraph": 5,
+    "text": "Real-world timing: October 09, 2025 - Ongoing",
+    "font_size": 0.0,
+    "bbox": [
+      230.43,
+      601.15,
+      366.65,
+      628.65
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 1,
+    "text": "Background History",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      61.51,
+      229.46,
+      128.96
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 2,
+    "text": "We live today in the Ninth Age, an age of peace and generalized prosperity. Throughout time, Wraidorian has been host to the rise and fall of good, evil, magic, and life itself. Time saw the development of Races, and from them Subraces and mixed races, and from them entire cultures, civilizations, empires and communities. Collectively, the beings of Wraidorian became known as the Sentient.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      132.23,
+      282.13,
+      226.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 3,
+    "text": "Ages of Wraidorian",
+    "font_size": 0.0,
+    "bbox": [
+      48.45,
+      253.01,
+      144.18,
+      264.01
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 4,
+    "text": "In the lands of Wraidorian, numbers carry the breath",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      69.23,
+      543.79,
+      79.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 5,
+    "text": "of divinity itself. As such, the Sacred Nine weaves through every aspect of existence, of sentience. The Nine winds through the mystical foundation upon which reality rests. The Sacred Nine represents completion, harmony, and cosmic balance. It is perfection through unity, as once nine great empires ruled the land, nine colleges of great magic preserved wisdom and furthered science, and the nine levels of magic stepped toward enlightenment.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      81.23,
+      542.46,
+      187.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 6,
+    "text": "Three holds deiﬁed power as the Foundation of the Nine. As such, the number three is the representation of growth, creation, and the trilogy of mind, body, and spirit. Eleven holds as the number of pure potential, the Divine Prime, a numerological representation of the sacred unknown and mysteries yet to unfold.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      192.98,
+      543.62,
+      262.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 7,
+    "text": "1. The Dispersion of Civilization: The birth of sentience and mortality.",
+    "font_size": 0.0,
+    "bbox": [
+      66.45,
+      270.22,
+      272.53,
+      292.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 8,
+    "text": "The chronology of Wraidorian follows the Hallowed",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      268.73,
+      540.26,
+      278.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 9,
+    "text": "Numerology, with eleven months in one year, three weeks in one month, and nine days per week.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      280.73,
+      526.51,
+      302.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Text"
+  },
+  {
+    "page": 2,
+    "paragraph": 10,
+    "text": "2. The Founding of Magic: Sentience gave way to exploration and creativity, and as such, Magic interwoven itself into Wraidorian.",
+    "font_size": 0.0,
+    "bbox": [
+      66.45,
+      303.97,
+      276.42,
+      337.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 11,
+    "text": "Civilization & Culture",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      319.46,
+      535.43,
+      341.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 12,
+    "text": "3. Hubris of Makador (The Age of Darkness): A great evil swept over the land, as well as famines, plagues, and war.",
+    "font_size": 0.0,
+    "bbox": [
+      66.45,
+      349.72,
+      272.33,
+      383.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 13,
+    "text": "4. Cities of the Skies: Out of the vanquishing of Makador came the most powerful magic to have graced the Sentient. Knowledge, architecture, and magecraft advanced rapidly.",
+    "font_size": 0.0,
+    "bbox": [
+      66.45,
+      395.47,
+      279.62,
+      453.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 14,
+    "text": "The races of D&D live largely in unity, though",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      345.23,
+      510.14,
+      355.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 15,
+    "text": "bastions of monocultures do exist where some races thrive more than others, such as dwarven under-mountain cities, or elvish villages of the trees, or Dragonborn volcano towns, or Tieﬂing canyon communes. Halﬂings tend to either co-locate with their clans either in prairies and grasslands, or ﬁnd their way to every market in the empire. The rare races disperse themselves betwixt the others, to no one’s complaint.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      357.23,
+      545.4,
+      452.4
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 16,
+    "text": "5. The Collapse (The Second Age of Darkness/The Age of Dusk): A powerful mage took too much magic for himself, allegedly going beyond the Ninth, and collapsed the Sentient into ruin for a millennia.",
+    "font_size": 0.0,
+    "bbox": [
+      66.45,
+      465.22,
+      260.57,
+      535.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 17,
+    "text": "6. The Ninth Age: The current age. Magic is granted to sentient folks with some regularity, with about half of folks knowing a cantrip, though leveled spellcasting is quite rare.",
+    "font_size": 0.0,
+    "bbox": [
+      66.45,
+      546.97,
+      278.18,
+      604.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 2,
+    "paragraph": 18,
+    "text": "Magic in Daily Life",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      464.71,
+      417.6,
+      477.72
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 19,
+    "text": "Most citizens know a cantrip or perhaps two, with base magic being as common as humming a tune. There are those which magic fully avoids, who are pitied similarly to those who cannot carry such a melody. In a parallel, those with great power are celebrated and watched carefully, much like the most talented of performers.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      480.23,
+      544.69,
+      562.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 20,
+    "text": "Blessings of Wraidorian",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      589.01,
+      433.29,
+      600.01
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 21,
+    "text": "“Nine Paths converge upon your doorstep” (Opportunity)",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      606.06,
+      533.22,
+      615.06
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 22,
+    "text": "“From Nine winds, may clarity ﬁnd you” (Indecision)",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      619.56,
+      511.3,
+      628.56
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 23,
+    "text": "You walk through the world of Wraidorian, a realm",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      637.73,
+      272.92,
+      647.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 24,
+    "text": "wherein magic ﬂows like song and the gods guide history with gentle hands. You ﬁnd yourselves within the Ninth Age, speciﬁcally 232 NA. This is an era of relative peace wherein knights and archers defend the land, while mages remain rare treasures on the battleﬁeld.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      649.73,
+      279.94,
+      719.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 25,
+    "text": "“Thrice blessed, thrice protected” (Journeys)",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      633.06,
+      484.71,
+      642.06
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 26,
+    "text": "“Three roots of one tree” (Partnership)",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      646.56,
+      461.06,
+      655.56
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 27,
+    "text": "Superstitions",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      687.26,
+      381.47,
+      698.26
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 28,
+    "text": "Counting to nine before important decisions",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      704.31,
+      483.78,
+      713.31
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 29,
+    "text": "Avoiding groups of precisely six",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      719.31,
+      433.87,
+      728.31
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 30,
+    "text": "Hallowed Numerology",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      736.46,
+      278.23,
+      758.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 2,
+    "paragraph": 31,
+    "text": "Arranging items in sets of three for luck",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      734.31,
+      464.84,
+      743.31
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 32,
+    "text": "Knocking three times before entry",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      749.31,
+      445.63,
+      758.31
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 33,
+    "text": "“May the Nine guide your path” - Common",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      762.23,
+      236.67,
+      772.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 2,
+    "paragraph": 34,
+    "text": "Wraidorian blessing of stability and safety.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      774.23,
+      228.78,
+      784.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 1,
+    "text": "Empires Xx",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      42.58,
+      100.39,
+      73.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 2,
+    "text": "closely with owning the magic and beauty of the cliffs and falls.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      37.73,
+      536.74,
+      59.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 3,
+    "text": "Halcyon is very much a melting pot of the emperor.",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      65.48,
+      535.01,
+      75.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 4,
+    "text": "Apollyean",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      85.21,
+      106.1,
+      98.22
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 5,
+    "text": "The Apollyean Empire stands as the preeminent",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      100.73,
+      261.02,
+      110.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 6,
+    "text": "power in Wraidorian during the Ninth Age, positioning itself as the beacon of stability following the catastrophic Collapse. Its identity is built upon an inherent tension: the desire for the control of ancient magic that its capital sits upon, balanced against the political necessity of secular, hands-on governance.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      112.73,
+      280.51,
+      182.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 7,
+    "text": "Helion",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      194.71,
+      87.36,
+      207.72
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 8,
+    "text": "A nomadic empire of desert-dwelling humans and Tieﬂings known for their powerful mounted cavalry, trade routes, and reverence for the sun and stars.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      210.23,
+      269.38,
+      244.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 9,
+    "text": "Many see it as a bastion of hope, a place to ﬁnd themselves anew in its crystalline cliffs and waters. Lorded over by the stalwart, stubborn, heirless King Appoleas Apollyean III, a human of 53 years, and by his side Evytte, his regal, fancy queen. The king and queen take a hands-on approach to Halcyon, often hearing the pleas of citizens and immigrants alike in their court. When they are unable, the Crystal Council will hear them instead. When there is trouble, Aylin’s Stalwarts will take care to clean it up. Named after their founding member who lost his life defending the cliffside from trolls.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      77.48,
+      546.49,
+      219.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 10,
+    "text": "Another Empire",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      256.21,
+      140.61,
+      269.22
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 11,
+    "text": "Lorem ipsum dolor sit amet, consete",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      271.73,
+      210.55,
+      281.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 12,
+    "text": "Districts of Halcyon",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      246.26,
+      412.87,
+      257.26
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 13,
+    "text": "The Igneous: (Pop. 3k) The noble sector which houses the castle and the aristocracy. Only district with torches.",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      263.48,
+      528.84,
+      297.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 3,
+    "paragraph": 14,
+    "text": "Geography",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      314.21,
+      156.88,
+      336.21
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 15,
+    "text": "The Sedimentary: (Pop. 6k) The home of lifelong Halcyons and established families. The district looks nearly empty at night.",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      302.48,
+      536.42,
+      336.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 3,
+    "paragraph": 16,
+    "text": "We in the northern hemisphere, temperate (think",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      339.98,
+      267.91,
+      349.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 17,
+    "text": "Ottawa).",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      351.98,
+      83.39,
+      361.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 18,
+    "text": "The Metamorphic: (Pop. 11k) Bustling district of immigrants, traders, and newcomers",
+    "font_size": 0.0,
+    "bbox": [
+      309.45,
+      341.48,
+      530.82,
+      363.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 3,
+    "paragraph": 19,
+    "text": "Notable Cities & Towns",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      372.58,
+      206.13,
+      387.58
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 20,
+    "text": "Halcyon",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      399.46,
+      96.65,
+      412.47
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 3,
+    "paragraph": 21,
+    "text": "A hub of trade and commerce, little is actually produced from within the boundaries of Halcyon by way of goods. Food is mainly delivered through the trade routes along the cliffs, which Halcyon can afford with its moderately vast wealth and power. As the capital city, swathes of gold are funneled in by means of taxes and political gifts, along with tourism and commerce.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      390.23,
+      545.57,
+      484.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 22,
+    "text": "Witio-Blessed mines are nearby.",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      489.98,
+      457.58,
+      499.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 23,
+    "text": "Life is largely good within Halcyon, though trouble",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      505.73,
+      533.09,
+      515.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 24,
+    "text": "may brew where the reﬂections cannot touch.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      517.73,
+      507.55,
+      527.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 3,
+    "paragraph": 25,
+    "text": "Halcyon is the capital of the empire of Apollyean. A wall-less city of 80,000, Halcyon sits beside the Crystal Falls, on the shore of the Lake of the Ancestors, and at the start of the Mirrorbrook. A common saying of Halcyon is to see your forebears in your own reﬂection. This may be in part due to the locality of the Reﬂections’ Crest, the cliff face that is the end of the El’drath’el Range. In this cliff, it's said one may see spirits ﬂoating through the throughways and streets. One day's walk from the ocean, it’s said that Halcyon is there because it is the last navigable point sailing upstream on the Mirrorbrook. Many believe, though, that the Apollyean empire had motives aligned more",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      618.23,
+      283.69,
+      772.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 1,
+    "text": "Haybrook",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      43.96,
+      103.96,
+      56.97
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 2,
+    "text": "Imperium is a military dictatorship led by the Emerald Emperor himself who reigns with an iron ﬁrst and cult-like status. The town produces high quality steel procured from the mines that surround the city in many directions. Its relation between other cities is stone cold, only meeting with foreigners for export and import. Citizens' lives are repeats of the same thing everyday, wake up, do your job, in your home by nightfall. The Imperium is under strict military control enforced by the military police. Curfew is by sun set. People either obey out of fear or out of admiration for the emperor. The law is strictly enforced, and most crimes either lead to death by hanging or sentenced to the prison labour camps located by the mines. The military is large and there are two cores, the military police and the military convoy. The military police patrol the city, enforce rule of law, all in servitude of the empire. The convoy core transports raw material between the mines and the city. The dead are burned as a tradition, no graves here.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      37.73,
+      546.82,
+      275.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 3,
+    "text": "Sunpetal Valley (Pop. 8-12k)",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      287.71,
+      466.35,
+      300.72
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 4,
+    "text": "Haybrook is a small town ﬁve days' travel from",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      316.73,
+      254.91,
+      326.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 5,
+    "text": "Halcyon. Sitting in the bottom of a mountain pass, this sleepy little town houses a base for the Apollyean Army. The 9th Dwarf is the local watering hole. Rowdy and quaint, the 9th Dwarf primarily supplies bread, soup, and ale, and is famous for their breadbowls. There is a temple of Storms and Harvest, led by the twin priests Ulder and Parkis, two human men who have lived in Haybrook their entire lives. The military base within Haybrook houses The Bastion of Defense, an object said to protect the Apollyean Empire. It is a common, unspoken belief that the Bastion is not physical, but instead the idea of the Bastion is in and of itself the Defender of the Empire.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      328.73,
+      280.51,
+      482.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 6,
+    "text": "Emerald Imperium (Pop 40k)",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      510.46,
+      206.87,
+      523.47
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 4,
+    "paragraph": 7,
+    "text": "Sunpetal Valley is the nesting ground of many followers of Daegher, Haerda, Dere, Idurh. Here, people get together to celebrate festivals, share stories and traditions, and for many, take a well-deserved vacation. The scent of freshly baked bread wafts from bustling bakeries, a perfect compliment to the abundance of sunﬂowers, where the town gets its name. Artisans set up shop to display and sell their wares. Laughter is the constant soundtrack of the city, echoing from public squares where festivities occur nearly year-round, to the lively chatter of friends sharing a meal at a cafe. Oil lamps, intricately designed and glowing with a soft, inviting light, illuminate the evenings, casting light and warmth over the joyous celebrations that extend well into the night.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      559.48,
+      545.96,
+      737.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 8,
+    "text": "A marvel to behold, but built on the backs of over a century’s worth of manual labour. The Emerald",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      774.23,
+      263.81,
+      796.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 4,
+    "paragraph": 9,
+    "text": "Life in Sunpetal Valley moves at a gentle, unhurried pace. The citizens, a testament to the city's benevolent atmosphere, are known for their kindness, generosity, and unwavering optimism. Children play freely in the",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      751.73,
+      542.55,
+      797.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 1,
+    "text": "many parks, while adults gather to share stories, skills, and songs. It’s a place where every day feels like a celebration ,and where the sun always seems to shine a little brighter. I sure hope it isn’t a cult. Or secretly a magic circle.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      37.73,
+      282.74,
+      95.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 2,
+    "text": "Another City or Town we may Visit",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      111.96,
+      251.07,
+      124.96
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 3,
+    "text": "Notable Geographical Features",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      133.82,
+      263.7,
+      148.82
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 4,
+    "text": "storms, ﬁre, lightning — now, it is lost.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      37.73,
+      470.29,
+      47.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 5,
+    "text": "The Verdant Aegis",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      75.46,
+      416.18,
+      88.47
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 6,
+    "text": "Within a dense, ever-shifting grove lies the Aegis, the nexus of Enchanters. Students within the Aegis learnt of how to charm and manipulate, how to pivot mortal enemies into the best of allies, and how to sway emotion on command.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      90.98,
+      545.07,
+      148.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 7,
+    "text": "The El’drath’el Range",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      160.96,
+      176.28,
+      173.97
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 8,
+    "text": "The Luminary Spire",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      160.96,
+      420.94,
+      173.97
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 9,
+    "text": "Another cool thing",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      198.46,
+      163.56,
+      211.47
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 10,
+    "text": "Atop Wraidorian there is said to be a gleaming white Spire whose crystal lenses focus the very fabric of fate. It is said Diviners practice prophecy, fate, and the future once ﬂocked here to commune with the stars, seek omens, or even peer into possible futures.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      176.48,
+      544.99,
+      234.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 11,
+    "text": "Wisdom of Ancients",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      240.71,
+      248.4,
+      262.71
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 12,
+    "text": "Throughout the world there were nine colleges, though their locations have since been lost to time.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      266.48,
+      264.33,
+      288.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 13,
+    "text": "Last Known Colleges & Locations",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      299.08,
+      276.12,
+      314.08
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 14,
+    "text": "The Infernal Sanctum",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      246.46,
+      438.72,
+      259.47
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 15,
+    "text": "It is said that in a rip between that which is and that which isn’t lies the Sanctum. Within the halls, Conjurers once gathered to call forth the magic of the planes, practicing summoning rituals precise enough to bend reality.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      261.98,
+      541.94,
+      319.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 16,
+    "text": "The Horizon Hall",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      325.96,
+      150.96,
+      338.97
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 17,
+    "text": "A place where those who seek knowledge bereft of magic may gather to study. Perched at the edge of the world, here scholars delve into philosophy, history, diplomacy, and the art of war.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      341.48,
+      274.96,
+      387.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 18,
+    "text": "The Arcanum of Astral Nexus",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      331.96,
+      482.32,
+      344.97
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 19,
+    "text": "No one knows what befell the fortress of the Abjurers.",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      347.48,
+      546.71,
+      357.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 20,
+    "text": "What is known is that within those walls, students would gather to fabricate impervious defenses, both magical and physical.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      359.48,
+      532.84,
+      393.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 21,
+    "text": "The Alcritous Forge",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      399.46,
+      166.12,
+      412.47
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 22,
+    "text": "Deep within a mountain said to be forged from pure iron lies the Forge, the College of Transmutation. It is said that here, transmitters learn to reshape the fabric of reality: turning lead to gold, stone to ﬂesh, and ﬁre into water.",
+    "font_size": 0.0,
+    "bbox": [
+      166.95,
+      414.98,
+      283.12,
+      532.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 23,
+    "text": "The Chimeric Dominion",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      544.96,
+      184.81,
+      557.97
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 24,
+    "text": "It is said that the Dominion lies within a city beyond",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      560.48,
+      276.2,
+      570.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 25,
+    "text": "mortal reach, wherein Necromancers are taught the cycles of both death and life, and manipulations of the soul.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      572.48,
+      277.05,
+      606.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 26,
+    "text": "The Tenebrous Hollow",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      618.46,
+      182.11,
+      631.47
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 5,
+    "paragraph": 27,
+    "text": "Said to be located beneath the roots of an ancient forest lies the subterranean labyrinth known as the Hollow. Here, Illusionists train to shape what the mind perceives, to shape and create realities, and how to stretch the boundaries of sight and thought.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      633.98,
+      275.27,
+      691.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 5,
+    "paragraph": 28,
+    "text": "The Tempest Citadel Atop the highest peak in the mortal realm, it is said the Citadel lies dormant. Once, great Evokers honed the raw forces of nature —",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      703.96,
+      165.88,
+      789.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 6,
+    "paragraph": 1,
+    "text": "Session 1",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      45.76,
+      177.79,
+      77.76
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 6,
+    "paragraph": 2,
+    "text": "Tal visits Haybrook after the desecration of his family",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      81.23,
+      276.56,
+      91.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 1,
+    "text": "Appendix",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      45.76,
+      183.33,
+      77.76
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 2,
+    "text": "A. Pantheon",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      91.21,
+      199.57,
+      113.21
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 3,
+    "text": "Each member of the Wraidorian pantheon will be depicted as any number of races, depending on the location of the depiction. Oftentimes, multiple depictions will be contained within the same space.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      116.48,
+      266.65,
+      162.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 4,
+    "text": "Each deity is also referred to by similar - though often",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      168.23,
+      285.1,
+      178.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 5,
+    "text": "not the same - name. Below are the names typical of Halcyon, alphabetically.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      180.23,
+      269.19,
+      202.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 6,
+    "text": "Major Deities",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      212.83,
+      138.73,
+      227.83
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 7,
+    "text": "confused. Helwy is known as the God of travellers, the dark, and sadness.",
+    "font_size": 0.0,
+    "bbox": [
+      340.95,
+      37.73,
+      514.31,
+      59.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 8,
+    "text": "Followers of Helwy tend to be neither good nor evil explicitly, and often are searching for something.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      66.97,
+      536.65,
+      100.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 9,
+    "text": "Helwy is depicted as an owl with crescent moon eyes.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      108.22,
+      522.31,
+      130.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 10,
+    "text": "Known as The Lost Child.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      137.47,
+      451.65,
+      147.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 11,
+    "text": "Illiard, Celestial of the Stars",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      159.96,
+      486.23,
+      172.96
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 12,
+    "text": "Illiard is not depicted very often, though when he is, he is depicted as a scholar-type ﬁgure. Illiard is the patron of hope, of dreams, of sleep, and of that which is forgotten.",
+    "font_size": 0.0,
+    "bbox": [
+      340.95,
+      174.98,
+      541.7,
+      220.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 13,
+    "text": "Baerwu, God of the Sky",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      239.71,
+      184.44,
+      252.72
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 14,
+    "text": "Baerwiu is classically depicted as a wingless dragon, though his color and design do tend to vary based upon depiction. Baerwiu is thought to lord over the domains of wind, indecision, expanses, and heights.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      255.22,
+      281.41,
+      313.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 15,
+    "text": "Followers of Illiard tend to be neutral aligned, though followers may interpret his teachings however they choose.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      228.22,
+      539.11,
+      262.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 16,
+    "text": "Illiard is symbolized by the interconnected Ovis constellation, or the sheep.",
+    "font_size": 0.0,
+    "bbox": [
+      340.95,
+      269.48,
+      526.24,
+      291.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 17,
+    "text": "Known as The Drifter.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      298.72,
+      437.84,
+      308.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 18,
+    "text": "Followers of Baerwiu tend to be chaotic in nature.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      320.47,
+      263.09,
+      342.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 19,
+    "text": "Baerwiu is symbolized as a wingless dragon.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      349.72,
+      270.22,
+      359.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 20,
+    "text": "Known as The Above.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      366.97,
+      176.05,
+      378.3
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 21,
+    "text": "Munder, God of Knowledge",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      321.21,
+      471.08,
+      334.21
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 22,
+    "text": "Munder is always depicted as an elderly, greying, bearded, and kind human man. He is known to lord over the domains of history, alchemy, science, and truth.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      336.22,
+      535.29,
+      382.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 23,
+    "text": "Ceolswy, Caretaker of Magic",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      389.46,
+      219.66,
+      402.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 24,
+    "text": "After the collapse, all depictions of Ceolswy have ceased to exist.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      404.47,
+      269.76,
+      426.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 25,
+    "text": "Ceolswy is known as the Great Mage, or the Fractured Mage, or the Arcane Architect",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      433.72,
+      270.52,
+      457.05
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 26,
+    "text": "Munder is typically good-aligned, as",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      389.47,
+      498.04,
+      399.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 27,
+    "text": "knowledge is virtuous in Wraidorian. To followers of Munder, a good truth is worth its weight in gold.",
+    "font_size": 0.0,
+    "bbox": [
+      340.95,
+      401.48,
+      538.26,
+      435.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 28,
+    "text": "Munder is symbolized as an open book, with a large eye in the centerfold.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      442.72,
+      540.28,
+      464.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 29,
+    "text": "Daegher, Goddess of the Harvest",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      468.21,
+      244.27,
+      481.21
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 30,
+    "text": "Known as The Father.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      471.97,
+      436.64,
+      481.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 31,
+    "text": "Daegher is the heart of the ﬁelds. Depicted as a beautiful woman with skin and hair the color of hay in the wind.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      483.22,
+      284.83,
+      517.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 32,
+    "text": "She is also used to symbolize growth,",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      524.47,
+      240.77,
+      534.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 33,
+    "text": "dedication, and workmanship. Daegher is also the matron of the farm.",
+    "font_size": 0.0,
+    "bbox": [
+      79.2,
+      536.48,
+      278.81,
+      558.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 7,
+    "paragraph": 34,
+    "text": "The symbol of Daegher is a hen with hay.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      565.72,
+      256.18,
+      575.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 35,
+    "text": "Ridoron, God of War",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      494.46,
+      431.22,
+      507.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 36,
+    "text": "Ridoran is depicted as a male ﬁgure, helmeted, but without armor. He is used to symbolize strategy, games, bloodshed, and conquest.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      509.47,
+      542.78,
+      543.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 37,
+    "text": "Followers of Aethboed may be be of any alignment, though most tend toward Evil.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      550.72,
+      522.96,
+      572.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 38,
+    "text": "She is known as the Golden Field.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      582.97,
+      224.75,
+      592.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 39,
+    "text": "Symbolized as a crossed sword and ﬂag",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      579.97,
+      512.51,
+      589.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 40,
+    "text": "Ehlsik, God of Storms",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      605.46,
+      176.21,
+      618.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 41,
+    "text": "Known as the Great Conqueror.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      597.22,
+      480.49,
+      607.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 42,
+    "text": "Elhlsik is typically depicted as a djinn-ﬁgure, and can be used to symbolize change, hope, and fear.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      620.47,
+      270.74,
+      654.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 43,
+    "text": "Typically understood to be a chaotic-aligned deity, aligning closely with Chaotic Neutral.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      661.72,
+      271.81,
+      683.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 44,
+    "text": "Witio, Goddess of the Earth",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      619.71,
+      476.04,
+      632.71
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 45,
+    "text": "Witio is always depicted as a dryad with Wraidorian in her grasp. Witio largely rules over the domains of nature, randomness and symmetry.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      634.72,
+      535.26,
+      680.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 46,
+    "text": "The symbol of Ehlsik is the sun shining over a storming cloud.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      690.97,
+      274.4,
+      712.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 47,
+    "text": "Witio is symbolized as a ﬂowering tree, as Wraidorian will always provide.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      687.97,
+      523.12,
+      709.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 48,
+    "text": "Also known as the Storm Lord.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      720.22,
+      212.6,
+      730.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 49,
+    "text": "Known as The Mother.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      717.22,
+      440.67,
+      727.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 7,
+    "paragraph": 50,
+    "text": "Helwy, Goddess of the Moon",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      742.71,
+      216.98,
+      755.71
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 7,
+    "paragraph": 51,
+    "text": "Helwy is typically depicted as a young man, ruddy in completion, clean shaven, bald, and",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      757.72,
+      270.91,
+      779.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 1,
+    "text": "Minor Deities",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      41.57,
+      141.61,
+      56.57
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 2,
+    "text": "Symbolized as an executioner's veil and scythe.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      37.72,
+      547.52,
+      47.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 3,
+    "text": "Known as The Unknowable",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      54.97,
+      461.22,
+      64.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 4,
+    "text": "Aelwoth, God of Water",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      68.46,
+      183.3,
+      81.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 5,
+    "text": "Commonly depicted as a young man with wild hair and sunburnt skin, Aelwoth is used to symbolize persistence, reﬂection, and impulsiveness.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      83.47,
+      278.31,
+      129.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 6,
+    "text": "Haerda, Goddess of Life & Birth",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      77.46,
+      497.07,
+      90.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 7,
+    "text": "Haerda is depicted as an older woman, gentle in her age. She is the matron of family, of all life on Wraidorian, and ﬁre.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      92.47,
+      544.34,
+      126.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 8,
+    "text": "Aelwoth is typically neutral aligned as erosion is ever present, and not considerate of humanity.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      136.72,
+      279.06,
+      170.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 9,
+    "text": "Haerda is typically a good-aligned deity, as are her followers.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      133.72,
+      542.18,
+      155.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 10,
+    "text": "Symbolized as a lit ﬂame",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      162.97,
+      448.7,
+      172.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 11,
+    "text": "Symbolized as a reﬂection in a wave.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      177.97,
+      238.12,
+      187.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 12,
+    "text": "Known as the Caretaker",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      180.22,
+      447.92,
+      190.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 13,
+    "text": "He is known as the Ever-Wave.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      195.22,
+      214.34,
+      205.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 14,
+    "text": "Idurh, Celestial of the Sun",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      202.71,
+      468.28,
+      215.71
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 15,
+    "text": "Altent, God of Punishment",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      217.71,
+      204.01,
+      230.71
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 16,
+    "text": "Altent is depicted as an executioner. It is said that Altent lords over the domains of justice, conﬁnement, and slaughter.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      232.72,
+      273.74,
+      266.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 17,
+    "text": "Idurh is commonly depicted as a kind farmer wearing a sun hat. Idurh lords over the day cycle, warmth, kindness, and happiness.",
+    "font_size": 0.0,
+    "bbox": [
+      340.95,
+      217.73,
+      533.99,
+      251.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 18,
+    "text": "Followers of Idurh tend to be good-aligned.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      258.97,
+      529.29,
+      268.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 19,
+    "text": "Altent is largely an evil-aligned deity, though Lawful followers of Altent are not exceedingly rare.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      273.97,
+      279.86,
+      307.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 20,
+    "text": "Altent is symbolized as the Winged Axe, as it is said that all who face his wrath may attempt to outrun him, though none have succeeded thus far.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      315.22,
+      282.47,
+      361.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 21,
+    "text": "Idurh is symbolized as the sun rising over shaking hands.",
+    "font_size": 0.0,
+    "bbox": [
+      340.95,
+      276.23,
+      519.67,
+      298.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 8,
+    "paragraph": 22,
+    "text": "Known as the Friend to All.",
+    "font_size": 0.0,
+    "bbox": [
+      322.95,
+      305.47,
+      459.24,
+      315.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 23,
+    "text": "Known as The Fallen Blade.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      368.47,
+      199.76,
+      378.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 24,
+    "text": "Bealda, Goddess of Reward",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      390.96,
+      207.76,
+      403.96
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 25,
+    "text": "Bealda is depicted as a bedazzled woman of inordinate gemstones and jewelry. Bealda is the patron of materialism, greed, perseverance, and success.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      405.97,
+      270.47,
+      451.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 26,
+    "text": "Due to the varying nature of being rewarded, followers of Bealda may be of any alignment, as long as they are rewarded for their services.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      459.22,
+      285.02,
+      493.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 27,
+    "text": "Bealda is not explicitly related to a symbol, but rather her followers ornament themselves in vast wealth.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      500.47,
+      281.7,
+      534.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 28,
+    "text": "She is known as The Temptress.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      541.72,
+      217.04,
+      551.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 29,
+    "text": "Dere, Goddess of Love",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      564.21,
+      176.86,
+      577.21
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 30,
+    "text": "Dere is depicted as a beautiful woman, her visage ever-shifting. Dere also rules over kinship, friendship, and passion.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      579.22,
+      264.38,
+      613.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 31,
+    "text": "Followers of Dere are typically good-aligned, or chaotic-aligned, as love is the chaotic uniﬁcation of souls.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      620.47,
+      274.84,
+      654.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 32,
+    "text": "Symbolized by a gemstone.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      661.72,
+      197.98,
+      671.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 33,
+    "text": "Known as the Fatespinner",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      678.97,
+      194.48,
+      688.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 34,
+    "text": "Eawin, Entity of Death",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      701.46,
+      181.41,
+      714.46
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 8,
+    "paragraph": 35,
+    "text": "Eawin is depicted as a veiled ﬁgure, always silent in nature. They are also used to symbolize the transition between life and death, the afterlife, and the unknown.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      716.47,
+      264.27,
+      762.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 8,
+    "paragraph": 36,
+    "text": "Followers of Eawin are typically neutral in alignment.",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      769.72,
+      261.9,
+      791.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "ListItem"
+  },
+  {
+    "page": 9,
+    "paragraph": 1,
+    "text": "B. Tal Bawa’s",
+    "font_size": 0.0,
+    "bbox": [
+      61.2,
+      47.71,
+      205.18,
+      69.71
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 2,
+    "text": "Village: Demsters",
+    "font_size": 0.0,
+    "bbox": [
+      79.2,
+      74.21,
+      264.32,
+      96.21
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 3,
+    "text": "students and 5 elders. Closed off to most. Built high up in the mountains, where the air was thin.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      37.73,
+      541.76,
+      59.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 4,
+    "text": "All students were taught by Master Gaoi, who taught",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      65.48,
+      544.55,
+      75.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 5,
+    "text": "the students to let go from their earthly attachments, and hone their bodies to be tools for the greater good.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      77.48,
+      539.98,
+      99.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 6,
+    "text": "Overview",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      121.33,
+      111.51,
+      136.33
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 7,
+    "text": "A small and quaint farming town, speciﬁcally a farming town that produces very high quality wheat. Which had a population of 80, everyone knew everyone. The town's nature has always been welcome, most people who live there stumble upon it and decide to settle. From all walks of life, veterans who left the ﬁelds of battles, dwarfs who quit the mines, prisoners looking for a clean slate, all creatures of all race, ethnicity, and gender had been invited for a night or a lifetime since the day the village ﬁrst started.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      141.98,
+      283.59,
+      259.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 8,
+    "text": "The village was run by old man Duncan, the man who",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      265.73,
+      281.83,
+      275.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 9,
+    "text": "The Demsters Burning",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      110.08,
+      462.03,
+      125.08
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 10,
+    "text": "While Tal was away training in the mountains. Demsters were attacked, there were no records of what happened on that day, the entire town was razed. Bodies of the dead had been piled and burned. No evidence left but the remains of burnt arrows and the trails of unknown beasts. No one was identiﬁable except for old man Duncan who had been strung up in such a way that his suffering was prolonged, presumably to witness the destruction of his village. The word of Demsters being burned traveled fast as travelers hoping to try Bawa’s Ramen came to visit days after, but only managed to see the grim sight.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      130.73,
+      546.64,
+      272.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 11,
+    "text": "with his friends, founded this town in the middle of nowhere, with a charter from a noble of the Apollyean to build a farm land. Originally he and his 5 friends were the counsel, but as they all passed to time, they had each chosen successors to take their place as was their decided tradition. Everyone had a voice, town hall meetings were monthly and productive. It was a little slice of bureaucratic heaven.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      277.73,
+      282.51,
+      371.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 12,
+    "text": "Along with the wheat, this village also grew and",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      377.48,
+      260.63,
+      387.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 13,
+    "text": "raised most of what it needed to survive, with additional bi weekly imports from other villages or cities.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      389.48,
+      263.0,
+      423.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 14,
+    "text": "It was a happy town where everyone had enough,",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      429.23,
+      266.98,
+      439.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 15,
+    "text": "funding from the occasional tourism and exports allowed for the town to ﬂourish.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      441.23,
+      254.63,
+      463.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 16,
+    "text": "The weather changes between hot summers and cold",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      468.98,
+      283.97,
+      478.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 17,
+    "text": "C. Jan’s Farm (Compound) Careful-Hand Farmstead",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      305.21,
+      480.37,
+      377.08
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 18,
+    "text": "Located to the south of Halycon, the Careful-Hand Farmstead is a farm-turned-rehabilitation compound for low-risk offenders to learn practical skills, discipline, and earn stable income to get themselves back on their feet. With the goal to produce contributing and productive members of society, it is run by the paladin of Daegher, Jan, and his familiar cat, Cheeto.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      382.73,
+      541.34,
+      476.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 19,
+    "text": "winters, it's a middle point between multiple larger towns and due to its large crop yield and even more importantly, its fantastic ramen shop, it was well known throughout the region.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      480.98,
+      284.3,
+      526.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 20,
+    "text": "The farmland is generational land tilled by servants of Daegher, but only recently in Jan’s generation has it started to adopt its second purpose as a rehabilitation center.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      482.48,
+      540.18,
+      528.48
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 21,
+    "text": "Bawa’s Ramen",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      537.58,
+      139.15,
+      552.58
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 22,
+    "text": "A small ramen shop in seemingly the middle of nowhere, yet nearly everyone has heard of it, many travel from afar just to try the famous Bawa Ramen.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      558.23,
+      268.2,
+      592.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 23,
+    "text": "Typically hosting nine convicts as farmhands (opportunity presents itself to grant a new life), the farm produces barley and apples and in the winter doubles as a carpentry workshop producing chairs and tables.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      534.23,
+      542.27,
+      592.23
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 24,
+    "text": "Started by Merlo Bawa, or Mer as he was known around town. He was a quiet man who stumbled upon this town. No one knew his backstory, and he was quite reserved, but what the people did know was his cooking was good, and with the proper ingredients his Ramen was surely the best.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      597.98,
+      282.38,
+      667.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 25,
+    "text": "“A simple life is a disciplined life.” This is deﬁnitely not",
+    "font_size": 0.0,
+    "bbox": [
+      313.95,
+      597.98,
+      545.26,
+      607.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 26,
+    "text": "the plot of Holes because I don’t remember anything about that movie.",
+    "font_size": 0.0,
+    "bbox": [
+      304.95,
+      609.98,
+      533.2,
+      631.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 27,
+    "text": "He soon met a woman and had a son, Tal Bawa, but",
+    "font_size": 0.0,
+    "bbox": [
+      52.2,
+      673.73,
+      271.96,
+      683.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 28,
+    "text": "shortly after he was born the mother left town suddenly.",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      685.73,
+      245.71,
+      707.73
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  },
+  {
+    "page": 9,
+    "paragraph": 29,
+    "text": "Soryuu Monastary",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      718.33,
+      173.1,
+      733.33
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "Title"
+  },
+  {
+    "page": 9,
+    "paragraph": 30,
+    "text": "A monastery located 48km, or a day's journey away from Demsters, where Tal ventured off to train in the ways of being a monk. A small monastery with about 20",
+    "font_size": 0.0,
+    "bbox": [
+      43.2,
+      738.98,
+      284.14,
+      772.98
+    ],
+    "page_size": [
+      596.0,
+      842.0
+    ],
+    "category": "NarrativeText"
+  }
+]

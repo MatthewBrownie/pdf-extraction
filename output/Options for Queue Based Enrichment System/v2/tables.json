@@ -1,0 +1,419 @@
+[
+  {
+    "page": 2,
+    "table_type": "full_grid",
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "Simple, currently functional",
+        "No persistence"
+      ],
+      [
+        "Familiar codebase",
+        "Partial job history"
+      ],
+      [
+        "No new dependencies",
+        "Limited monitoring"
+      ],
+      [
+        "Low memory footprint",
+        "Single threaded"
+      ],
+      [
+        "",
+        "No rate limiting"
+      ]
+    ],
+    "bbox": [
+      72.26,
+      586.03,
+      539.95,
+      671.74
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table_type": "full_grid",
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "True parallelism",
+        "No persistence"
+      ],
+      [
+        "Simple architecture",
+        "No native job history or audit trail"
+      ],
+      [
+        "Good for CPU bound work",
+        "No built-in monitoring"
+      ],
+      [
+        "Low latency",
+        "No retry mechanism"
+      ],
+      [
+        "",
+        "No priority handling"
+      ],
+      [
+        "",
+        "No rate limiting"
+      ]
+    ],
+    "bbox": [
+      72.26,
+      437.42,
+      539.95,
+      537.53
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table_type": "full_grid",
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "Full persistence",
+        "Single threaded"
+      ],
+      [
+        "Excellent job history, monitoring, and\nauditing",
+        "Redis dependency"
+      ],
+      [
+        "Built in rate limiting",
+        "Slower for CPU tasks"
+      ],
+      [
+        "Native support for priority queues",
+        ""
+      ]
+    ],
+    "bbox": [
+      72.26,
+      303.46,
+      539.95,
+      388.92
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table_type": "full_grid",
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "All BullMQ pros",
+        "More complex"
+      ],
+      [
+        "Parallelism",
+        "Higher memory usage"
+      ],
+      [
+        "Best performance",
+        "More dependencies"
+      ],
+      [
+        "Flexible resource allocation",
+        "Debugging complexity"
+      ]
+    ],
+    "bbox": [
+      72.26,
+      183.43,
+      539.95,
+      254.98
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table_type": "full_grid",
+    "table": [
+      [
+        "ption 1: Current",
+        "System",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "Pros",
+        "",
+        "",
+        "Cons"
+      ],
+      [
+        "Simple, currently",
+        "functional",
+        "",
+        "No persistence",
+        ""
+      ],
+      [
+        "Familiar codebase",
+        "",
+        "",
+        "Partial job history",
+        ""
+      ],
+      [
+        "No new dependen",
+        "cies",
+        "",
+        "Limited monitoring",
+        ""
+      ],
+      [
+        "Low memory foot",
+        "print",
+        "",
+        "Single threaded",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "No rate limiting",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ption 2: Piscena",
+        "as Queue a",
+        "nd Worker Threa",
+        "ds",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "Pros",
+        "",
+        "",
+        "Cons"
+      ],
+      [
+        "True parallelism",
+        "",
+        "",
+        "No persistence",
+        ""
+      ],
+      [
+        "Simple architectu",
+        "re",
+        "",
+        "No native job histor",
+        "y or a"
+      ],
+      [
+        "Good for CPU bo",
+        "und work",
+        "",
+        "No built-in monitori",
+        "ng"
+      ],
+      [
+        "Low latency",
+        "",
+        "",
+        "No retry mechanism",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "No priority handling",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "No rate limiting",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ption 3: BullMQ",
+        "without W",
+        "orker Threads",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "Pros",
+        "",
+        "",
+        "Cons"
+      ],
+      [
+        "Full persistence",
+        "",
+        "",
+        "Single threaded",
+        ""
+      ],
+      [
+        "Excellent job hist",
+        "ory, monitor",
+        "ing, and",
+        "Redis dependency",
+        ""
+      ],
+      [
+        "auditing",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Built in rate limiti",
+        "ng",
+        "",
+        "Slower for CPU task",
+        "s"
+      ],
+      [
+        "Native support for",
+        "priority qu",
+        "eues",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ption 4: BullMQ",
+        "+ Piscena",
+        "Worker Threads",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "Pros",
+        "",
+        "",
+        "Cons"
+      ],
+      [
+        "All BullMQ pros",
+        "",
+        "",
+        "More complex",
+        ""
+      ],
+      [
+        "Parallelism",
+        "",
+        "",
+        "Higher memory usag",
+        "e"
+      ],
+      [
+        "Best performance",
+        "",
+        "",
+        "More dependencies",
+        ""
+      ],
+      [
+        "Flexible resource",
+        "allocation",
+        "",
+        "Debugging complex",
+        "ity"
+      ]
+    ],
+    "bbox": [
+      77.78,
+      184.2,
+      435.82,
+      694.11
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  }
+]

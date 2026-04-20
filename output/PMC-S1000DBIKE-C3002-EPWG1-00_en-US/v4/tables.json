@@ -1,0 +1,7165 @@
+[
+  {
+    "page": 3,
+    "table": [
+      [
+        "Document title",
+        "Data module code",
+        "Issue date",
+        "No. of pages",
+        "Applicable to"
+      ],
+      [
+        "Bicycle - Description of how it is made",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-041A-A",
+        "2012-12-31",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Description of function",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-042A-A",
+        "2012-12-31",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Description attributed to crew",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-043A-A",
+        "2012-12-31",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Mountain bicycle - Applicability cross- reference table catalog",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-0A3A-D",
+        "2012-12-31",
+        "",
+        "All"
+      ],
+      [
+        "Bicycle - Pre-operation procedures (crew)",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-121A-A",
+        "2012-12-31",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Riding a bicycle",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-130A-A",
+        "2012-12-31",
+        "",
+        ""
+      ],
+      [
+        "Bicycle - Normal operation procedures (crew)",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-131A-A",
+        "2012-12-31",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Post-operation procedures (crew)",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-151A-A",
+        "2012-12-31",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Servicing: Attention",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-200A-T",
+        "2012-12-31",
+        "",
+        ""
+      ],
+      [
+        "Bicycle - Servicing: Attention",
+        "S1000DBIKE-AAA-D00-00-00-",
+        "2012-12-31",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.66,
+      127.17,
+      552.81,
+      707.63
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 4,
+    "table": [
+      [
+        "Bicycle - Other procedures to clean",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-258A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Other procedures to clean",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-258B-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Place on test stand",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-330A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Standard repair procedures",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-663A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Performance support",
+        "S1000DBIKE-AAA-D00-00-00- 00AA-952A-T",
+        "2011-01-31",
+        ""
+      ],
+      [
+        "Bicycle - Illustrated Parts Data - IPD",
+        "S1000DBIKE-AAA-D00-00-00- 01AA-941A-D",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Fork - Manual test",
+        "S1000DBIKE-AAA-D00-00-01- 00AA-341A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Fork - Remove procedures",
+        "S1000DBIKE-AAA-D00-00-01- 00AA-520A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Fork - Install procedures",
+        "S1000DBIKE-AAA-D00-00-01- 00AA-720A-A",
+        "2012-12-31",
+        "Mountain bicycle and Mountain storm Mk1"
+      ]
+    ],
+    "bbox": [
+      43.65,
+      90.74,
+      517.01,
+      690.35
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 5,
+    "table": [
+      [
+        "Bicycle - Service Bulletin - Replacement of standard forward fork by telescopic fork",
+        "S1000DBIKE-AAA-D00-00-01- 00AA-930A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Fork - Replacement procedure",
+        "S1000DBIKE-AAA-D00-00-01- 00AA-933A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle axis - Modification procedures",
+        "S1000DBIKE-AAA-D00-00-01- 00AA-93AA-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Fork - Install procedures",
+        "S1000DBIKE-AAA-D00-00-01- 00AB-720A-A",
+        "2012-12-31",
+        "Mountain bicycle and Brook trekker Mk9"
+      ],
+      [
+        "Bicycle - Time limits",
+        "S1000DBIKE-AAA-D05-10-00- 00AA-000A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Bicycle - Scheduled maintenance lists",
+        "S1000DBIKE-AAA-D05-20-00- 00AA-000A-A",
+        "2012-12-31",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ]
+    ],
+    "bbox": [
+      70.99,
+      82.14,
+      551.32,
+      528.46
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 7,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "",
+        "Description of how it is made..................................................................................................1",
+        "Description of how it is made..................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Description ...........................................................................................................................1",
+        "Description ...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Physical description of a bicycle ..........................................................................1",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Bicycle parts ......................................................................................................2",
+        ""
+      ],
+      [
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "Page"
+      ],
+      [
+        "1 Complete bicycle................................................................................................1",
+        "1 Complete bicycle................................................................................................1",
+        "1 Complete bicycle................................................................................................1",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.66,
+      147.77,
+      552.65,
+      325.53
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 8,
+    "table": [
+      [
+        "Item",
+        "Refer to",
+        "Definition"
+      ],
+      [
+        "Frame",
+        "Fig 1 [9]",
+        "A bicycle frame is made of metal tubes that are welded together."
+      ],
+      [
+        "Wheels",
+        "",
+        "The wheels include these parts: - Hub - Spokes - Metal rim"
+      ],
+      [
+        "- Rear wheel",
+        "Fig 1 [7]",
+        ""
+      ],
+      [
+        "- Front wheel",
+        "Fig 1 [3]",
+        ""
+      ],
+      [
+        "Seat and seat post",
+        "Fig 1 [8]",
+        "These install into the seat tube with a mechanism you can use to change the height."
+      ],
+      [
+        "Handle bars",
+        "Fig 1 [11]",
+        "A horizontal bar that attaches to the stem with grips at the ends that attach to the brake levers and the shifters."
+      ],
+      [
+        "Handle bar stem",
+        "Fig 1 [10]",
+        "This attaches the handle bar to the steering tube (head set)."
+      ],
+      [
+        "Cranks",
+        "Fig 1 [5]",
+        "A lever that extends from the bottom of the bracket to the pedal."
+      ],
+      [
+        "Pedals",
+        "Fig 1 [4]",
+        "The two platforms for the feet that attach to the crank."
+      ],
+      [
+        "Chain",
+        "Fig 1 [6]",
+        "A circular set of links that connect the chain ring to the cogs on the freewheel."
+      ],
+      [
+        "Gears",
+        "Fig 1 [2]",
+        "The gears include: - Front chain ring - Rear freewheel - Front and the rear derailleur - Shift lever on the handle bars - Cables"
+      ],
+      [
+        "Brakes",
+        "Fig 1 [1]",
+        "The brakes include: - Actuators on the handlebars - Brake cable - Brake callipers - Brake pads"
+      ]
+    ],
+    "bbox": [
+      97.76,
+      114.03,
+      524.95,
+      713.38
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 9,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "",
+        "Description of function ...........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Description ...........................................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "1 Functional description of a bicycle .......................................................................2",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "Page"
+      ]
+    ],
+    "bbox": [
+      69.75,
+      146.91,
+      552.99,
+      265.42
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 9,
+    "table": [
+      [
+        "Data module/Technical publication",
+        "Title"
+      ],
+      [
+        "S1000DBIKE-AAA-DA3-00-00-00AA-041A-A",
+        "Frame - Description of how it is made"
+      ],
+      [
+        "S1000DBIKE-AAA-DA0-00-00-00AA-041A-A",
+        "Wheel - Description of how it is made"
+      ],
+      [
+        "S1000DBIKE-AAA-DA2-20-00-00AA-720A-A",
+        "Handlebar - Install procedures"
+      ],
+      [
+        "S1000DBIKE-AAA-DA5-30-00-00AA-041A-A",
+        "Shifters - Description of how it is made"
+      ],
+      [
+        "S1000DBIKE-AAA-DA2-10-00-00AA-720A-A",
+        "Stem - Install procedures"
+      ],
+      [
+        "S1000DBIKE-AAA-DA2-10-00-00AA-520A-A",
+        "Stem - Remove procedures"
+      ],
+      [
+        "S1000DBIKE-AAA-DA5-00-00-00AA-041A-A",
+        "Gears - Description of how it is made"
+      ],
+      [
+        "S1000DBIKE-AAA-DA1-00-00-00AA-041A-A",
+        "Brake system - Description of how it is made"
+      ],
+      [
+        "S1000DBIKE-AAA-DA2-20-00-00AA-520A-A",
+        "Handlebar - Remove procedures"
+      ],
+      [
+        "S1000DBIKE-AAA-DA4-10-00-00AA-251B-A",
+        "Chain - Clean with chain cleaning fluid"
+      ],
+      [
+        "S1000DBIKE-AAA-DA5-10-00-00AA-041A-A",
+        "Mechs - Description of how it is made"
+      ]
+    ],
+    "bbox": [
+      70.24,
+      336.97,
+      552.92,
+      648.99
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 10,
+    "table": [
+      [
+        "Frame",
+        "The frame is the skeleton of the bicycle. Refer to S1000DBIKE-AAA-DA3-00-00-00AA-041A-A for a functional description of the frame system."
+      ],
+      [
+        "Wheel",
+        "The wheel is the point of contact between the bicycle and the road for the bicycle to have movement. Refer to S1000DBIKE- AAA-DA0-00-00-00AA-041A-A for a functional description of the wheel."
+      ],
+      [
+        "Spokes",
+        "The spokes are thick wires with tension applied that connect the hub to the rim. You can adjust the tension with the nipple on the rim side."
+      ],
+      [
+        "Hub",
+        "The hub attaches to the center of the wheel where the axle and the bearings are."
+      ],
+      [
+        "Metal rim",
+        "The metal rim is a metal ring that has a U-shaped cross section to hold the spokes on the inner side and the tire on the outer side."
+      ],
+      [
+        "Seat",
+        "The Seat, which is also known as the 'saddle', is used as the support platform for the person to sit on the bicycle."
+      ],
+      [
+        "Seat post",
+        "The Seat post is used as a support post for the seat and to change the height of the seat for the rider."
+      ],
+      [
+        "Handle bar",
+        "The handle bar is a horizontal bar with handles on each end. The handle bar is a steering mechanism that the rider uses to change the direction of the bicycle. The brake levers are also on the handle bar. Refer to S1000DBIKE-AAA-DA2-20-00- 00AA-720A-A for information on how to install the handle bar. Refer to S1000DBIKE-AAA-DA2-20-00-00AA-520A-A for information on removing the handlebar."
+      ],
+      [
+        "Handle bar stem",
+        "The handle bar stem (the stem) attaches the handle bar to the steering tube. Refer to S1000DBIKE-AAA-DA2-10-00-00AA- 720A-A for information on how to install a stem. Refer to S1000DBIKE-AAA-DA2-10-00-00AA-520A-A for information on how to remove the stem."
+      ]
+    ],
+    "bbox": [
+      97.4,
+      191.88,
+      522.43,
+      705.63
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 11,
+    "table": [
+      [
+        "Brake levers",
+        "When you operate the brake lever, the brake pads move against the wheel to decrease the speed. The brake lever on the left side operates the front brake. The brake lever on the right side operates the rear brake."
+      ],
+      [
+        "Brakes",
+        "When you operate the brakes, the brake pad moves against the wheel to decrease the speed of the bicycle. Refer to S1000DBIKE-AAA-DA1-00-00-00AA-041A-A for a description of the braking system."
+      ],
+      [
+        "Shifters",
+        "The shifters are the mechanisms that you use to change the gears on the bicycle. There are 7 different types of shifters that have been developed over the years, but they all have the same functionality. When you operate the shifters, they pull the control cable to move the derailleur towards a larger diameter chain ring. The shifters can also loosen the cable to let the derailleur move towards a smaller diameter chain ring. Refer to S1000DBIKE-AAA-DA5-30-00-00AA-041A-A for a functional description of the shifters."
+      ],
+      [
+        "Crank",
+        "The crank moves the power to the chain rings when the pedals operate."
+      ],
+      [
+        "Pedals",
+        "The pedals move the force of movement from the feet to the cranks."
+      ],
+      [
+        "Chain",
+        "The chain moves the power from the chain rings to the cogs on the freewheel. Refer to S1000DBIKE-AAA-DA4-10-00-00AA- 251B-A for the procedure on how to clean the chain."
+      ],
+      [
+        "Gears",
+        "The gears have different mechanisms that function together to change the speed of the bicycle. These mechanisms include: the sprockets the chain"
+      ],
+      [
+        "Chain rings",
+        "The chain rings (also known as the 'chain wheel') pull on the chain when the cranks turn."
+      ],
+      [
+        "Derailleur",
+        "A derailleur moves the chain from one sprocket to another to change the gears. There are two different types of derailleur, the front and the rear. The highest ratio (highest gear) is when the chain is on the largest sprocket on the front and the"
+      ]
+    ],
+    "bbox": [
+      124.0,
+      96.04,
+      553.03,
+      732.29
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 13,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "",
+        "Description attributed to crew.................................................................................................1",
+        "Description attributed to crew.................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Crew....................................................................................................................................1",
+        "Crew....................................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Introduction .......................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2.1",
+        "Controls ............................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2.2",
+        "Steering ............................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "2.3",
+        "Shifters..............................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "2.4",
+        "Brakes ..............................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "2.5",
+        "Pedals...............................................................................................................2",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "shifter correlation ...............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "brake lever correlation ........................................................................................2",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.84,
+      148.18,
+      552.5,
+      347.8
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 13,
+    "table": [
+      [
+        "Data module/Technical publication",
+        "Title"
+      ],
+      [
+        "S1000DBIKE-AAA-DA5-30-00-00AA-041A-A",
+        "Shifters - Description of how it is made"
+      ]
+    ],
+    "bbox": [
+      69.46,
+      419.52,
+      552.46,
+      472.82
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 14,
+    "table": [
+      [
+        "Shifter Location",
+        "Affected Gears"
+      ],
+      [
+        "Left",
+        "The buttons on the left shifter changes the gears on the front derailleur."
+      ],
+      [
+        "Right",
+        "The buttons on the right shifter changes the gears on the rear derailleur."
+      ]
+    ],
+    "bbox": [
+      97.89,
+      247.95,
+      524.89,
+      327.07
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 14,
+    "table": [
+      [
+        "Brake Lever Location",
+        "Affected Brake"
+      ],
+      [
+        "Left",
+        "This lever operates the front brake."
+      ],
+      [
+        "Right",
+        "This lever operates the rear brake."
+      ]
+    ],
+    "bbox": [
+      98.09,
+      475.99,
+      524.95,
+      529.73
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 15,
+    "table": [
+      [
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Applicability cross-reference table catalog...............................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1 References........................................................................................................1",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.66,
+      147.64,
+      552.14,
+      238.05
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 15,
+    "table": [
+      [
+        "Data Module/Technical Publication",
+        "Title"
+      ],
+      [
+        "None",
+        ""
+      ],
+      [
+        "Applicability cross- reference table reference:",
+        "S1000DBIKE-AAA-D00-00-00-00AA-00WA-D"
+      ],
+      [
+        "Applicability cross- reference table reference:",
+        "BRAKE-AAA-D00-00-00-00AA-00WA-D"
+      ],
+      [
+        "Applicability cross- reference table reference:",
+        "S1000DBIKE-AAA-D00-00-00-00AA-00WA-D"
+      ],
+      [
+        "Applicability cross- reference table reference:",
+        "BRAKE-AAA-D00-00-00-00AA-00WA-D"
+      ],
+      [
+        "Applicability cross- reference table reference:",
+        "S1000DBIKE-AAA-D00-00-00-00AA-00WA-D"
+      ],
+      [
+        "Applicability cross- reference table reference:",
+        "BRAKE-AAA-D00-00-00-00AA-00WA-D"
+      ]
+    ],
+    "bbox": [
+      69.57,
+      308.76,
+      552.23,
+      546.05
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 17,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Pre-operation",
+        "procedures (crew) ............................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Preliminary",
+        "requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "Procedure",
+        "............................................................................................................................3",
+        ""
+      ],
+      [
+        "Requirements",
+        "after job completion .........................................................................................4",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "3",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "4",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "5",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "6",
+        "Spares ..............................................................................................................2",
+        ""
+      ],
+      [
+        "7 Required conditions ...........................................................................................4 List of figures",
+        "7 Required conditions ...........................................................................................4 List of figures",
+        "Page"
+      ],
+      [
+        "1",
+        "Brake pad seating ..............................................................................................3",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.23,
+      147.18,
+      552.63,
+      407.67
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 18,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.8,
+      176.69,
+      524.63,
+      211.63
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 18,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man A",
+        "Basic user",
+        "",
+        "Operator",
+        "0,3 h"
+      ]
+    ],
+    "bbox": [
+      42.11,
+      277.78,
+      524.76,
+      330.65
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 18,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Tire pressure gauge",
+        "Part KZ666/BSK-TLST-001-01",
+        "1 EA",
+        ""
+      ],
+      [
+        "Specialist toolset",
+        "Part KZ666/BSK-TLST-001",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.36,
+      395.75,
+      524.74,
+      476.41
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 18,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "General lubricant",
+        "Part KZ222/LL-001",
+        "As required",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.99,
+      541.3,
+      524.71,
+      607.2
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 18,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference Quantity"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.89,
+      673.8,
+      524.7,
+      708.23
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 19,
+    "table": [
+      [
+        "None",
+        "Procedure"
+      ],
+      [
+        "1",
+        "Examine the condition of the brakes."
+      ],
+      [
+        "1.1",
+        "Open the brake quick release."
+      ],
+      [
+        "1.2",
+        "Examine the condition and the thickness of the brake pads."
+      ],
+      [
+        "1.2.1",
+        "Make sure that there is a large quantity of rubber left."
+      ],
+      [
+        "1.2.2",
+        "Make sure that the pad is not too hard."
+      ],
+      [
+        "1.3",
+        "Clean all the unwanted material."
+      ],
+      [
+        "2",
+        "Do an inspection of the installation of the brakes."
+      ],
+      [
+        "2.1",
+        "Check the hydraulic brake system function."
+      ],
+      [
+        "",
+        "Multimedia 1 Hydraulic brake function"
+      ],
+      [
+        "2.2",
+        "Make sure that there is sufficient clearance between the pad and the inner diameter of the brake surface."
+      ],
+      [
+        "",
+        "If the position of the pads is too low on the rim, as shown in Fig 1 , the pads can move. This could cause the separation of the spokes from their mountings., they could slip off causing the spokes to be torn out of their mountings."
+      ],
+      [
+        "",
+        "ICN-S1000DBIKE-AAA-DA10000-0-U8025-00515-A-04-1"
+      ],
+      [
+        "",
+        "Fig 1 Brake pad seating"
+      ],
+      [
+        "2.3",
+        "Make sure that the pads are correctly installed in the center of the inner diameter of the brake surface."
+      ],
+      [
+        "3",
+        "Do a check of the tire pressure."
+      ],
+      [
+        "3.1",
+        "Do a check of the tire pressure with the Tire pressure gauge ."
+      ],
+      [
+        "3.2",
+        "Compare the value you read with the recommended pressure that is shown into the sidewall of the tire."
+      ],
+      [
+        "3.3",
+        "Add the necessary air."
+      ],
+      [
+        "4",
+        "Examine the condition of the wheels."
+      ],
+      [
+        "4.1",
+        "Examine the rims for bulges and dents."
+      ],
+      [
+        "4.2",
+        "Examine for splits at the seam where an extruded rim is bonded."
+      ],
+      [
+        "5",
+        "Do a check of the headset bearings."
+      ],
+      [
+        "5.1",
+        "Straddle the bicycle."
+      ]
+    ],
+    "bbox": [
+      69.16,
+      125.96,
+      552.56,
+      748.23
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 20,
+    "table": [
+      [
+        "",
+        "Apply the front brakes and push the handle bars forward."
+      ],
+      [
+        "5.2",
+        "Make sure that the headset bearings are tight."
+      ],
+      [
+        "6",
+        "Do the checks on the chain."
+      ],
+      [
+        "6.1",
+        "Visually examine the chain."
+      ],
+      [
+        "",
+        "If the chain is too dirty, clean it as specified in the clean chain task (refer to S1000DBIKE-AAA- DA4-10-00-00AA-251B-A )."
+      ],
+      [
+        "6.1.1",
+        "Visually examine the chain for links that are frozen or that do not move easily."
+      ],
+      [
+        "6.1.2",
+        "Apply the necessary General lubricant ."
+      ],
+      [
+        "6.2",
+        "Do a check of the chain to make sure that it is tight."
+      ],
+      [
+        "6.2.1",
+        "Make sure that the play of the chain is not too much."
+      ],
+      [
+        "6.2.1.1",
+        "Move the chain on the largest chain ring."
+      ],
+      [
+        "6.2.1.2",
+        "Try to pull the chain away from the front of the chain ring."
+      ],
+      [
+        "",
+        "Make sure that the chain is not loose. Tighten the chain if, when you pull it away from the chain ring, you can see a full tooth."
+      ],
+      [
+        "6.2.2",
+        "Tighten the chain with the Allen wrench from the Specialist toolset."
+      ]
+    ],
+    "bbox": [
+      40.93,
+      91.96,
+      514.99,
+      384.6
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 20,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.72,
+      501.07,
+      524.36,
+      537.28
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 21,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Riding a",
+        "bicycle.....................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Applicability",
+        "..........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Prerequisities.....................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Introduction .......................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Did you really read the instructions? ....................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Wrong answer!...................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Correct! .............................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Practical part......................................................................................................2",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.93,
+      147.82,
+      552.82,
+      331.61
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 23,
+    "table": [
+      [
+        "1",
+        "Clean the bicycle from the dust."
+      ],
+      [
+        "1",
+        "Sit on the bike."
+      ],
+      [
+        "1",
+        "...and RIDE!"
+      ]
+    ],
+    "bbox": [
+      72.19,
+      86.84,
+      552.79,
+      144.63
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 26,
+    "table": [
+      [
+        "",
+        "2",
+        "Pads . . . . . . . . .",
+        "Acceptable pad width",
+        "Acceptable pad width",
+        "Acceptable pad width"
+      ],
+      [
+        "",
+        "3",
+        "Pads . . . . . . . . .",
+        "Acceptable pad clearance",
+        "Acceptable pad clearance",
+        "Acceptable pad clearance"
+      ],
+      [
+        "",
+        "Callipers",
+        "Callipers",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Link Wire . . . . .",
+        "Firmly attached",
+        "Firmly attached",
+        "Firmly attached"
+      ],
+      [
+        "",
+        "Levers",
+        "Levers",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Levers . . . . . . .",
+        "Approximately 1 inch of travel before engagement",
+        "Approximately 1 inch of travel before engagement",
+        "Approximately 1 inch of travel before engagement"
+      ],
+      [
+        "",
+        "2",
+        "Levers . . . . . . .",
+        "Space between lever and handlebar when fully pulled",
+        "Space between lever and handlebar when fully pulled",
+        "Space between lever and handlebar when fully pulled"
+      ],
+      [
+        "",
+        "Cables",
+        "Cables",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Cables . . . . . . .",
+        "No cuts or fraying",
+        "No cuts or fraying",
+        "No cuts or fraying"
+      ],
+      [
+        "Tires",
+        "Tires",
+        "Tires",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Pressure . . . . .",
+        "Table 2 Correlation of tire pressure and terrain",
+        "Table 2 Correlation of tire pressure and terrain",
+        "Table 2 Correlation of tire pressure and terrain"
+      ],
+      [
+        "",
+        "",
+        "",
+        "Tire Pres- sures",
+        "Min",
+        "Max"
+      ],
+      [
+        "",
+        "",
+        "",
+        "Off Road",
+        "35lbs",
+        "40lbs"
+      ],
+      [
+        "",
+        "",
+        "",
+        "On Road",
+        "55lbs",
+        "60lbs"
+      ],
+      [
+        "",
+        "2",
+        "Tires . . . . . . . . .",
+        "No cracks or splits",
+        "No cracks or splits",
+        "No cracks or splits"
+      ],
+      [
+        "Wheels",
+        "Wheels",
+        "Wheels",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Wheels . . . . . . .",
+        "No loose bearings",
+        "No loose bearings",
+        "No loose bearings"
+      ],
+      [
+        "",
+        "2",
+        "Wheels . . . . . . .",
+        "True",
+        "True",
+        "True"
+      ],
+      [
+        "",
+        "3",
+        "Spokes . . . . . . .",
+        "Not broken",
+        "Not broken",
+        "Not broken"
+      ],
+      [
+        "Spokes not broken",
+        "Spokes not broken",
+        "Spokes not broken",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Spokes . . . . . . .",
+        "Tight",
+        "Tight",
+        "Tight"
+      ],
+      [
+        "",
+        "5",
+        "Axel Nuts . . . . .",
+        "Tight",
+        "Tight",
+        "Tight"
+      ],
+      [
+        "Headset",
+        "Headset",
+        "Headset",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Headset bearings",
+        "Tight",
+        "Tight",
+        "Tight"
+      ]
+    ],
+    "bbox": [
+      39.41,
+      87.71,
+      523.16,
+      751.09
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 29,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Post-operation procedures (crew)...........................................................................................1",
+        "Post-operation procedures (crew)...........................................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "Procedure ............................................................................................................................2",
+        "Procedure ............................................................................................................................2",
+        ""
+      ],
+      [
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        ""
+      ],
+      [
+        "List of tables",
+        "",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "3",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "4",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "5",
+        "Spares ..............................................................................................................2",
+        ""
+      ],
+      [
+        "6",
+        "Required conditions ...........................................................................................3",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.38,
+      146.4,
+      552.72,
+      346.75
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 30,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.13,
+      176.7,
+      524.46,
+      211.74
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 30,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Specialist toolset",
+        "Part KZ666/BSK-TLST-001",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.96,
+      278.1,
+      524.71,
+      330.69
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 30,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "General lubricant",
+        "Part KZ222/LL-001",
+        "As required",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.01,
+      394.77,
+      524.73,
+      462.41
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 30,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.94,
+      528.14,
+      524.65,
+      564.09
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 30,
+    "table": [
+      [
+        "1",
+        "Clean the bicycle."
+      ],
+      [
+        "1.1",
+        "Clean the bicycle with water."
+      ],
+      [
+        "1.2",
+        "Use the brush from the Specialist toolset to clean the brakes, the shift levers, the sprockets and the tires."
+      ]
+    ],
+    "bbox": [
+      42.26,
+      656.3,
+      514.64,
+      722.99
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 31,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.14,
+      421.22,
+      552.7,
+      457.04
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 33,
+    "table": [
+      [
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Servicing: Attention ...............................................................................................................1",
+        "Servicing: Attention ...............................................................................................................1"
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1"
+      ],
+      [
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1"
+      ],
+      [
+        "List of figures",
+        "Page"
+      ],
+      [
+        "1 .........................................................................................................................1",
+        "1 .........................................................................................................................1"
+      ]
+    ],
+    "bbox": [
+      69.81,
+      147.34,
+      552.36,
+      282.86
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 35,
+    "table": [
+      [
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Servicing: Attention ...............................................................................................................1",
+        "Servicing: Attention ...............................................................................................................1"
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1"
+      ],
+      [
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1"
+      ],
+      [
+        "List of figures",
+        "Page"
+      ],
+      [
+        "1 .........................................................................................................................1",
+        "1 .........................................................................................................................1"
+      ]
+    ],
+    "bbox": [
+      69.81,
+      147.34,
+      552.36,
+      282.86
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 37,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "",
+        "Other procedures to clean......................................................................................................1",
+        "Other procedures to clean......................................................................................................1",
+        "Other procedures to clean......................................................................................................1",
+        "Other procedures to clean......................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "",
+        "Wash the Bike....................................................................................................4",
+        "Wash the Bike....................................................................................................4",
+        "Wash the Bike....................................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "",
+        "Wash the Bike....................................................................................................4",
+        "Wash the Bike....................................................................................................4",
+        "Wash the Bike....................................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "Requirements after job completion .........................................................................................5",
+        "Requirements after job completion .........................................................................................5",
+        "Requirements after job completion .........................................................................................5",
+        "Requirements after job completion .........................................................................................5",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Consumables, materials, and expendables ..........................................................3",
+        "Consumables, materials, and expendables ..........................................................3",
+        "Consumables, materials, and expendables ..........................................................3",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "Spares ..............................................................................................................3",
+        "Spares ..............................................................................................................3",
+        "Spares ..............................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Required conditions ...........................................................................................5",
+        "Required conditions ...........................................................................................5",
+        "Required conditions ...........................................................................................5",
+        ""
+      ],
+      [
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "Cleaning the bike ...............................................................................................4",
+        "Cleaning the bike ...............................................................................................4",
+        "Cleaning the bike ...............................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Degreasing the freehub ......................................................................................4",
+        "Degreasing the freehub ......................................................................................4",
+        "Degreasing the freehub ......................................................................................4",
+        ""
+      ],
+      [
+        "References",
+        "References",
+        "References",
+        "References",
+        "References",
+        "References"
+      ],
+      [
+        "",
+        "",
+        "",
+        "Table 1",
+        "References",
+        ""
+      ],
+      [
+        "Data module/Technical publication",
+        "Data module/Technical publication",
+        "Data module/Technical publication",
+        "",
+        "Title",
+        ""
+      ],
+      [
+        "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+        "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+        "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+        "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+        "Chain - Oil",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.01,
+      146.73,
+      552.87,
+      569.05
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 38,
+    "table": [
+      [
+        "Action/Condition",
+        "Data Module/Technical publication"
+      ],
+      [
+        "The bicycle is outdoors",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.89,
+      175.25,
+      524.65,
+      229.93
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 38,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man A",
+        "Chemical technician",
+        "Intermediate",
+        "Bike cleaner",
+        "1,0 h"
+      ]
+    ],
+    "bbox": [
+      41.68,
+      323.55,
+      524.79,
+      386.83
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 38,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man B",
+        "Operator",
+        "Intermediate",
+        "Bike rider",
+        "1,0 h"
+      ]
+    ],
+    "bbox": [
+      41.46,
+      441.77,
+      524.85,
+      495.59
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 38,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Water hose",
+        "Part KZ666/BSK-TLST-001-09",
+        "1 EA",
+        ""
+      ],
+      [
+        "Stiff bristle brush",
+        "Part KZ666/BSK-TLST-001-02",
+        "1 EA",
+        ""
+      ],
+      [
+        "Sponge",
+        "Part KZ666/BSK-TLST-001-11",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.66,
+      561.37,
+      524.75,
+      663.3
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 39,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Degreasing agent",
+        "Part KZ222/LL-004",
+        "1 L",
+        ""
+      ],
+      [
+        "Detergent A",
+        "Part KZ666/BSK-TLST-023-14",
+        "1 L",
+        ""
+      ],
+      [
+        "Detergent B",
+        "Part KZ666/BSK-TLST-001-15",
+        "1 L",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.35,
+      143.42,
+      552.6,
+      248.98
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 39,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.7,
+      314.74,
+      552.46,
+      350.19
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 41,
+    "table": [
+      [
+        "Action/Condition",
+        "Data Module/Technical publication"
+      ],
+      [
+        "Make sure the bicycle is dry",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.51,
+      176.33,
+      552.63,
+      229.88
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 43,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Other procedures to clean......................................................................................................1",
+        "Other procedures to clean......................................................................................................1",
+        "Other procedures to clean......................................................................................................1",
+        "Other procedures to clean......................................................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "Requirements after job completion .........................................................................................5",
+        "Requirements after job completion .........................................................................................5",
+        "Requirements after job completion .........................................................................................5",
+        "Requirements after job completion .........................................................................................5",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "3",
+        "",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Consumables, materials, and expendables ..........................................................3",
+        "Consumables, materials, and expendables ..........................................................3",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "Spares ..............................................................................................................3",
+        "Spares ..............................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Required conditions ...........................................................................................5",
+        "Required conditions ...........................................................................................5",
+        ""
+      ],
+      [
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "Page"
+      ],
+      [
+        "1",
+        "",
+        "Cleaning the bike ...............................................................................................4",
+        "Cleaning the bike ...............................................................................................4",
+        ""
+      ],
+      [
+        "2",
+        "Degreasing the freehub ......................................................................................4",
+        "Degreasing the freehub ......................................................................................4",
+        "Degreasing the freehub ......................................................................................4",
+        ""
+      ],
+      [
+        "References",
+        "References",
+        "References",
+        "References",
+        "References"
+      ],
+      [
+        "Table",
+        "Table",
+        "Table",
+        "1",
+        "References"
+      ],
+      [
+        "Data module/Technical publication",
+        "Data module/Technical publication",
+        "Data module/Technical publication",
+        "Title",
+        "Title"
+      ],
+      [
+        "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+        "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+        "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+        "Chain - Oil",
+        "Chain - Oil"
+      ]
+    ],
+    "bbox": [
+      68.57,
+      146.85,
+      552.82,
+      544.83
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 44,
+    "table": [
+      [
+        "Action/Condition",
+        "Data Module/Technical publication"
+      ],
+      [
+        "The bicycle is outdoors",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.89,
+      175.25,
+      524.65,
+      229.93
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 44,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man A",
+        "Chemical technician",
+        "Intermediate",
+        "Bike cleaner",
+        "1,0 h"
+      ]
+    ],
+    "bbox": [
+      41.68,
+      323.55,
+      524.79,
+      386.83
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 44,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man B",
+        "Operator",
+        "Intermediate",
+        "Bike rider",
+        "1,0 h"
+      ]
+    ],
+    "bbox": [
+      41.45,
+      441.77,
+      524.85,
+      495.59
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 44,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Water hose",
+        "Part KZ666/BSK-TLST-001-09",
+        "1 EA",
+        ""
+      ],
+      [
+        "Stiff bristle brush",
+        "Part KZ666/BSK-TLST-001-02",
+        "1 EA",
+        ""
+      ],
+      [
+        "Sponge",
+        "Part KZ666/BSK-TLST-001-11",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.66,
+      561.37,
+      524.75,
+      663.31
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 45,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Degreasing agent",
+        "Part KZ222/LL-004",
+        "1 L",
+        ""
+      ],
+      [
+        "Detergent A",
+        "Part KZ666/BSK-TLST-023-14",
+        "1 L",
+        ""
+      ],
+      [
+        "Detergent B",
+        "Part KZ666/BSK-TLST-001-15",
+        "1 L",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.35,
+      143.42,
+      552.6,
+      248.98
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 45,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.7,
+      314.74,
+      552.46,
+      350.19
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 47,
+    "table": [
+      [
+        "Action/Condition",
+        "Data Module/Technical publication"
+      ],
+      [
+        "Make sure the bicycle is dry",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.52,
+      176.34,
+      552.62,
+      229.87
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 49,
+    "table": [
+      [
+        "Bicycle",
+        "Bicycle",
+        "Bicycle",
+        "Bicycle",
+        "Bicycle",
+        "Bicycle"
+      ],
+      [
+        "Place on test stand",
+        "Place on test stand",
+        "Place on test stand",
+        "Place on test stand",
+        "Page",
+        ""
+      ],
+      [
+        "",
+        "Place on test stand................................................................................................................1",
+        "Place on test stand................................................................................................................1",
+        "Place on test stand................................................................................................................1",
+        "Place on test stand................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "Spares ..............................................................................................................2",
+        "Spares ..............................................................................................................2",
+        "Spares ..............................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Required conditions ...........................................................................................3",
+        "Required conditions ...........................................................................................3",
+        "Required conditions ...........................................................................................3",
+        ""
+      ],
+      [
+        "References",
+        "References",
+        "References",
+        "References",
+        "References",
+        "References"
+      ],
+      [
+        "",
+        "",
+        "",
+        "Table 1 References",
+        "",
+        ""
+      ],
+      [
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Title",
+        "",
+        ""
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.01,
+      85.27,
+      553.02,
+      462.62
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 50,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.2,
+      176.8,
+      524.4,
+      211.74
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 50,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man A",
+        "Basic user",
+        "",
+        "Operator",
+        "0,3 h"
+      ]
+    ],
+    "bbox": [
+      42.14,
+      277.95,
+      524.78,
+      330.49
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 50,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Test stand",
+        "Part KZ666/BSK-TLST-999-01",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.27,
+      396.21,
+      524.69,
+      448.56
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 50,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.89,
+      514.23,
+      524.53,
+      549.13
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 50,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.02,
+      615.83,
+      524.52,
+      651.19
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 51,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.36,
+      281.02,
+      552.44,
+      316.98
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 53,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Standard repair procedures ...................................................................................................1",
+        "Standard repair procedures ...................................................................................................1",
+        "Standard repair procedures ...................................................................................................1",
+        "Standard repair procedures ...................................................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "3",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "4",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "5",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "6",
+        "Spares ..............................................................................................................2",
+        "Spares ..............................................................................................................2",
+        "Spares ..............................................................................................................2",
+        ""
+      ],
+      [
+        "7",
+        "Required conditions ...........................................................................................4",
+        "Required conditions ...........................................................................................4",
+        "Required conditions ...........................................................................................4",
+        ""
+      ],
+      [
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "List of figures",
+        "Page"
+      ],
+      [
+        "1",
+        "Unseating the tire with a tire lever........................................................................3",
+        "Unseating the tire with a tire lever........................................................................3",
+        "Unseating the tire with a tire lever........................................................................3",
+        ""
+      ],
+      [
+        "2",
+        "Circle leak .........................................................................................................3",
+        "Circle leak .........................................................................................................3",
+        "Circle leak .........................................................................................................3",
+        ""
+      ],
+      [
+        "3",
+        "Sanding the application area...............................................................................3",
+        "Sanding the application area...............................................................................3",
+        "Sanding the application area...............................................................................3",
+        ""
+      ],
+      [
+        "4",
+        "Apply glue to application area..............................................................................3",
+        "Apply glue to application area..............................................................................3",
+        "Apply glue to application area..............................................................................3",
+        ""
+      ],
+      [
+        "5",
+        "Apply pressure to tube........................................................................................4",
+        "Apply pressure to tube........................................................................................4",
+        "Apply pressure to tube........................................................................................4",
+        ""
+      ],
+      [
+        "References",
+        "References",
+        "References",
+        "References",
+        "References"
+      ],
+      [
+        "",
+        "",
+        "Table 1",
+        "References",
+        ""
+      ],
+      [
+        "Data module/Technical publication",
+        "Data module/Technical publication",
+        "",
+        "Title",
+        ""
+      ],
+      [
+        "S1000DBIKE-AAA-DA0-20-00-00AA-520A-A",
+        "S1000DBIKE-AAA-DA0-20-00-00AA-520A-A",
+        "S1000DBIKE-AAA-DA0-20-00-00AA-520A-A",
+        "Rear wheel - Remove procedures",
+        ""
+      ]
+    ],
+    "bbox": [
+      68.57,
+      146.57,
+      552.92,
+      586.22
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 54,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.71,
+      176.7,
+      524.6,
+      211.68
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 54,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man A",
+        "Operator",
+        "Basic",
+        "Bike rider",
+        "0,5 h"
+      ]
+    ],
+    "bbox": [
+      42.03,
+      277.8,
+      524.84,
+      330.69
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 54,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Tire lever",
+        "Part KZ666/BSK-TLST-001-04",
+        "1 EA",
+        ""
+      ],
+      [
+        "Foot pump",
+        "Part KZ666/BSK-TLST-001-05",
+        "1 EA",
+        ""
+      ],
+      [
+        "Marker pen",
+        "Part KZ666/BSK-TLST-001-07",
+        "1 EA",
+        ""
+      ],
+      [
+        "Tube patch kit",
+        "Part KZ666/BSK-TLST-001-07",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      40.9,
+      396.14,
+      524.89,
+      526.25
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 54,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.86,
+      592.28,
+      524.68,
+      627.44
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 54,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Inner-tube",
+        "Part KT222/IT-001",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.88,
+      693.63,
+      524.65,
+      750.32
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 56,
+    "table": [
+      [
+        "13",
+        "Remove the thin cover from the patch."
+      ],
+      [
+        "14",
+        "Put a very thin layer of talcum powder on and around the patch."
+      ],
+      [
+        "15",
+        "Inflate (not fully) the repaired tube with the foot pump."
+      ],
+      [
+        "16",
+        "Start at the valve stem and install the tube again between the tire and the rim."
+      ],
+      [
+        "17",
+        "Push the valve stem through the hole in the rim."
+      ],
+      [
+        "18",
+        "Make sure that the valve stem is straight."
+      ],
+      [
+        "19",
+        "Install the remaining of the tire."
+      ]
+    ],
+    "bbox": [
+      42.24,
+      124.47,
+      435.49,
+      279.65
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 56,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      39.67,
+      394.22,
+      524.79,
+      432.57
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 57,
+    "table": [
+      [
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Performance support.............................................................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................2",
+        ""
+      ],
+      [
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1 References........................................................................................................2",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.72,
+      146.21,
+      552.31,
+      236.53
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 65,
+    "table": [
+      [
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Illustrated Parts Data - IPD.....................................................................................................1",
+        "Illustrated Parts Data - IPD.....................................................................................................1"
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1"
+      ],
+      [
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1"
+      ],
+      [
+        "List of figures",
+        "Page"
+      ],
+      [
+        "1",
+        "Bicycle ..............................................................................................................2"
+      ]
+    ],
+    "bbox": [
+      69.97,
+      144.52,
+      552.53,
+      278.51
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 65,
+    "table": [
+      [
+        "Data Module/Technical Publication",
+        "Title"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      70.04,
+      351.24,
+      553.03,
+      385.57
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 67,
+    "table": [
+      [
+        "Fig",
+        "Item",
+        "Units per assembly/ Unit of issue",
+        "CAGE",
+        "Part No. NATO Stock No.",
+        "Description",
+        "*Usable on code assy MV/Effect",
+        "ICY"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "",
+        "",
+        "REF",
+        "KZ999",
+        "BICYCLE-001",
+        "Bicycle",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "1 / EA",
+        "KZ999",
+        "BICYCLE-001/1",
+        "• Frame assembly",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "1 / EA",
+        "KZ999",
+        "BICYCLE-001/ 2A",
+        "• • Seat, assembly",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "1 / EA",
+        "KZ999",
+        "BICYCLE-001/ 2B",
+        "• • Cruiser Seat, assembly",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "1 / EA",
+        "KZ999",
+        "BICYCLE-001/3",
+        "• • Steering system",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "1 / EA",
+        "KZ999",
+        "BICYCLE-001/4",
+        "• • Drive train system",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "1 / EA",
+        "KZ999",
+        "BICYCLE-001/5",
+        "• • Brake sub-system",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "1 / EA",
+        "KZ777",
+        "LRU1001",
+        "• • Light system",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "1 / EA",
+        "KZ888",
+        "WH-001",
+        "• • Wheel, assembly rear",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "8",
+        "1 / EA",
+        "KZ888",
+        "WH-002",
+        "• • Wheel, assembly front",
+        "• MB",
+        ""
+      ],
+      [
+        "",
+        "9",
+        "1 / EA",
+        "KZ888",
+        "CP-001",
+        "• • Computer",
+        "• MB",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.46,
+      83.86,
+      552.99,
+      452.95
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 69,
+    "table": [
+      [
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork"
+      ],
+      [
+        "Manual test",
+        "contents",
+        "Manual test",
+        "Manual test",
+        "Manual test",
+        "Page"
+      ],
+      [
+        "",
+        "Manual test...........................................................................................................................1",
+        "Manual test...........................................................................................................................1",
+        "Manual test...........................................................................................................................1",
+        "Manual test...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "Spares ..............................................................................................................2",
+        "Spares ..............................................................................................................2",
+        "Spares ..............................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Required conditions ...........................................................................................3",
+        "Required conditions ...........................................................................................3",
+        "Required conditions ...........................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "",
+        "References",
+        "References",
+        "References",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "Table 1",
+        "References",
+        ""
+      ],
+      [
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "",
+        "Title",
+        ""
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.1,
+      84.56,
+      552.85,
+      458.86
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 70,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.36,
+      176.89,
+      524.44,
+      211.66
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 70,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "Man A",
+        "Basic user",
+        "",
+        "Operator",
+        "0,1 h"
+      ]
+    ],
+    "bbox": [
+      42.2,
+      278.02,
+      524.81,
+      330.44
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 70,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      40.91,
+      394.95,
+      524.43,
+      433.05
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 70,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.73,
+      498.77,
+      524.63,
+      534.57
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 70,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.95,
+      600.54,
+      524.54,
+      635.74
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 71,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.5,
+      597.05,
+      552.32,
+      633.49
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 73,
+    "table": [
+      [
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork"
+      ],
+      [
+        "Remove procedures contents",
+        "Remove procedures contents",
+        "Remove procedures contents",
+        "Remove procedures contents",
+        "Page"
+      ],
+      [
+        "",
+        "Remove procedures..............................................................................................................1",
+        "Remove procedures..............................................................................................................1",
+        "Remove procedures..............................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Required technical information ............................................................................2",
+        "Required technical information ............................................................................2",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Spares ..............................................................................................................3",
+        "Spares ..............................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "8",
+        "Required conditions ...........................................................................................3",
+        "Required conditions ...........................................................................................3",
+        ""
+      ],
+      [
+        "References",
+        "References",
+        "References",
+        "References",
+        "References"
+      ],
+      [
+        "",
+        "",
+        "",
+        "Table 1 References",
+        ""
+      ],
+      [
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Title",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.11,
+      84.74,
+      553.42,
+      477.35
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 74,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "As required",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.85,
+      277.62,
+      524.81,
+      330.04
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 74,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.99,
+      537.38,
+      524.71,
+      572.68
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 74,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.28,
+      638.61,
+      524.54,
+      674.43
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 75,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      70.12,
+      142.62,
+      552.39,
+      178.87
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 75,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.5,
+      625.95,
+      552.28,
+      662.5
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 77,
+    "table": [
+      [
+        "Install procedures",
+        "Install procedures",
+        "Install procedures",
+        "Install procedures",
+        "Install procedures",
+        "Install procedures"
+      ],
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page",
+        ""
+      ],
+      [
+        "",
+        "Install procedures..................................................................................................................1",
+        "Install procedures..................................................................................................................1",
+        "Install procedures..................................................................................................................1",
+        "Install procedures..................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Required technical information ............................................................................2",
+        "Required technical information ............................................................................2",
+        "Required technical information ............................................................................2",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Spares ..............................................................................................................3",
+        "Spares ..............................................................................................................3",
+        "Spares ..............................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "8",
+        "Required conditions ...........................................................................................4",
+        "Required conditions ...........................................................................................4",
+        "Required conditions ...........................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "References",
+        "References",
+        "References",
+        "References",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "1 References",
+        "",
+        ""
+      ],
+      [
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Title",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.3,
+      108.28,
+      553.05,
+      475.8
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 78,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.41,
+      176.58,
+      524.41,
+      211.8
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 78,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "As required",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.07,
+      278.06,
+      524.87,
+      330.38
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 78,
+    "table": [
+      [
+        "Document No.",
+        "Title"
+      ],
+      [
+        "S1000DBIKE-AAA-DA2-10-00-00AA- 720A-A S1000DBIKE-AAA-DA2-30-00-00AA- 720A-A S1000DBIKE-AAA-DA2-40-00-00AA- 720A-A",
+        ""
+      ]
+    ],
+    "bbox": [
+      40.59,
+      395.68,
+      525.25,
+      500.15
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 78,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.93,
+      564.45,
+      524.51,
+      600.83
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 78,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "General grease",
+        "Part KZ222/LL-005",
+        "As required",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.13,
+      666.85,
+      524.73,
+      731.92
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 79,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Fork set",
+        "Part KZ666/SPA-1000- 1S1000DBIKE-AAA-D00-00-01- 00AA-930A-A Issue No.: 001",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.99,
+      143.43,
+      552.57,
+      238.9
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 79,
+    "table": [
+      [
+        "Applicable to: Mountain bicycle and Mountain storm Mk1",
+        "Applicable to: Mountain bicycle and Mountain storm Mk1"
+      ],
+      [
+        "1",
+        "Apply grease (General grease) on the headset"
+      ],
+      [
+        "Applicable to: Mountain bicycle and Mountain storm Mk1",
+        "Applicable to: Mountain bicycle and Mountain storm Mk1"
+      ],
+      [
+        "2",
+        "Install the headset, refer to: S1000DBIKE-AAA-DA2-30-00-00AA-720A-A"
+      ],
+      [
+        "Applicable to: Mountain bicycle and Mountain storm Mk1",
+        "Applicable to: Mountain bicycle and Mountain storm Mk1"
+      ],
+      [
+        "3",
+        "To install the spacers, refer to: S1000DBIKE-AAA-DA2-40-00-00AA-720A-A"
+      ],
+      [
+        "Applicable to: Mountain bicycle and Mountain storm Mk1",
+        "Applicable to: Mountain bicycle and Mountain storm Mk1"
+      ],
+      [
+        "4",
+        "Install the stem, refer to: S1000DBIKE-AAA-DA2-10-00-00AA-720A-A"
+      ],
+      [
+        "Applicable to: Mountain bicycle and Mountain storm Mk1",
+        "Applicable to: Mountain bicycle and Mountain storm Mk1"
+      ],
+      [
+        "5",
+        "Install the fork ()"
+      ]
+    ],
+    "bbox": [
+      69.17,
+      346.58,
+      458.82,
+      638.72
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 80,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.58,
+      176.94,
+      524.56,
+      212.53
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 81,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "",
+        "Service Bulletin - Replacement of standard forward fork by telescopic fork ................................1",
+        "Service Bulletin - Replacement of standard forward fork by telescopic fork ................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Applicability ..........................................................................................................................1",
+        "Applicability ..........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Service Bulletin .....................................................................................................................2",
+        "Service Bulletin .....................................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "1",
+        "Compliance .......................................................................................................4",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Accomplishment time scale.................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "Material set list...................................................................................................6",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Material set list...................................................................................................7",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Support equipment set........................................................................................7",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "Individual supply ................................................................................................8",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Spare set...........................................................................................................8",
+        ""
+      ],
+      [
+        "",
+        "8",
+        "Individual spare..................................................................................................9",
+        ""
+      ],
+      [
+        "",
+        "9",
+        "Removed spare list...........................................................................................10",
+        ""
+      ],
+      [
+        "",
+        "10",
+        "Removed spare list...........................................................................................10",
+        ""
+      ],
+      [
+        "",
+        "11",
+        "Modified spare .................................................................................................10",
+        ""
+      ],
+      [
+        "",
+        "12",
+        "References......................................................................................................11",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.28,
+      163.84,
+      552.92,
+      442.0
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 83,
+    "table": [
+      [
+        "S1000DBIKE-AAA-D00-00-01-00AA-933A-A",
+        "S1000DBIKE-AAA-D00-00-01-00AA-933A-A"
+      ],
+      [
+        "Total workload",
+        ""
+      ],
+      [
+        "Estimated time",
+        ""
+      ]
+    ],
+    "bbox": [
+      13.41,
+      199.76,
+      553.36,
+      250.41
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 83,
+    "table": [
+      [
+        "S1000DBIKE-AAA-D00-00-01-00AA-933A-A",
+        "S1000DBIKE-AAA-D00-00-01-00AA-933A-A"
+      ],
+      [
+        "Total workload",
+        ""
+      ],
+      [
+        "Estimated time",
+        ""
+      ]
+    ],
+    "bbox": [
+      13.22,
+      256.52,
+      553.35,
+      307.35
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 83,
+    "table": [
+      [
+        "EVALUATION TABLE",
+        "EVALUATION TABLE"
+      ],
+      [
+        "Passenger comfort affected",
+        ""
+      ],
+      [
+        "Structural life extended",
+        ""
+      ],
+      [
+        "Bike operation affected",
+        ""
+      ]
+    ],
+    "bbox": [
+      13.94,
+      460.13,
+      553.28,
+      542.6
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 84,
+    "table": [
+      [
+        "Limit",
+        "Grace period"
+      ]
+    ],
+    "bbox": [
+      42.17,
+      706.85,
+      524.55,
+      741.28
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 85,
+    "table": [
+      [
+        "S1000DBIKE-AAA-D00-00-01-001A-933A-A",
+        "S1000DBIKE-AAA-D00-00-01-001A-933A-A"
+      ],
+      [
+        "Job Set-up",
+        "Time: 5 min"
+      ],
+      [
+        "Removal",
+        "Time: 20 min"
+      ],
+      [
+        "Install",
+        "Time: 60 min"
+      ],
+      [
+        "Testing",
+        "Time: 5 min"
+      ],
+      [
+        "Total workload",
+        ""
+      ],
+      [
+        "Estimated time",
+        ""
+      ]
+    ],
+    "bbox": [
+      13.53,
+      238.03,
+      553.16,
+      357.22
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 85,
+    "table": [
+      [
+        "S1000DBIKE-AAA-D00-00-01-00AA-933A-A",
+        "S1000DBIKE-AAA-D00-00-01-00AA-933A-A"
+      ],
+      [
+        "14:29 Job Set-up",
+        "Time: 5 min"
+      ],
+      [
+        "Removal",
+        "Time: 20 min"
+      ],
+      [
+        "2021-03-16 Install",
+        "Time: 30 min"
+      ],
+      [
+        "Testing",
+        "Time: 5 min"
+      ],
+      [
+        "Printed Total workload",
+        ""
+      ],
+      [
+        "Estimated time",
+        ""
+      ]
+    ],
+    "bbox": [
+      13.06,
+      363.54,
+      553.46,
+      482.78
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 85,
+    "table": [
+      [
+        "Effect on weight"
+      ],
+      [
+        "Effect on weight"
+      ]
+    ],
+    "bbox": [
+      13.42,
+      541.73,
+      553.22,
+      579.86
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 86,
+    "table": [
+      [
+        "Material category",
+        "Material name and reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Support equipment set",
+        "\"BSK-TLST-200\" (S1000DBIKEAAA- D00000100AA930AA-mat-0001)",
+        "1",
+        "Saw tool set"
+      ],
+      [
+        "Supply",
+        "(S1000DBIKEAAA- D00000100AA930AA-mat-0002)",
+        "",
+        "Supplies"
+      ],
+      [
+        "Spare set",
+        "\"SPA-1000-1\" (S1000DBIKEAAA- D00000100AA930AA-mat-0003)",
+        "1",
+        "Fork set"
+      ],
+      [
+        "Removed spare set",
+        "(S1000DBIKEAAA- D00000100AA930AA-mat-0005)",
+        "",
+        "Removed spare set"
+      ]
+    ],
+    "bbox": [
+      41.69,
+      500.37,
+      525.13,
+      702.41
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 87,
+    "table": [
+      [
+        "Material category",
+        "Material name and reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Modified spare",
+        "(S1000DBIKEAAA- D00000100AA930AA-mat-0007)",
+        "",
+        "Modified spare"
+      ]
+    ],
+    "bbox": [
+      69.53,
+      114.48,
+      552.64,
+      180.92
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 87,
+    "table": [
+      [
+        "Material category",
+        "Material name and reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Support equipment set",
+        "\"BSK-TLST-200\" (S1000DBIKEAAA- D00000100AA930AA-mat-0001)",
+        "1",
+        "Saw tool set"
+      ],
+      [
+        "Supply",
+        "(S1000DBIKEAAA- D00000100AA930AA-mat-0002)",
+        "",
+        "Supplies"
+      ],
+      [
+        "Spare",
+        "\"FK-TEL1002\" (S1000DBIKEAAA- D00000100AA930AA-mat-0004)",
+        "1",
+        "Fork"
+      ],
+      [
+        "Removed spare set",
+        "(S1000DBIKEAAA- D00000100AA930AA-mat-0006)",
+        "",
+        "Removed spare set"
+      ],
+      [
+        "Modified spare",
+        "(S1000DBIKEAAA- D00000100AA930AA-mat-0007)",
+        "",
+        "Modified spare"
+      ]
+    ],
+    "bbox": [
+      69.44,
+      231.98,
+      552.98,
+      483.84
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 87,
+    "table": [
+      [
+        "Name/Alternate name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Saw tool",
+        "BSK-TW-100",
+        "1",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.63,
+      698.72,
+      553.02,
+      752.88
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 89,
+    "table": [
+      [
+        "Name/Alternate name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Fork",
+        "FK-TEL1001",
+        "1",
+        ""
+      ],
+      [
+        "Spacer",
+        "SPC-200-12",
+        "2",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.43,
+      242.08,
+      553.51,
+      329.46
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 90,
+    "table": [
+      [
+        "Name/Alternate name",
+        "Removed/modified spare Identification/ Reference",
+        "Replacing/new spare Identification/Reference",
+        "Repla. code",
+        "Remark"
+      ],
+      [
+        "Fork",
+        "FK-1000",
+        "FK-TEL1001",
+        "02",
+        "Discarded"
+      ],
+      [
+        "Conical expansion washer",
+        "St-001-05",
+        "-",
+        "",
+        "Discarded"
+      ]
+    ],
+    "bbox": [
+      41.77,
+      168.32,
+      524.89,
+      281.82
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 90,
+    "table": [
+      [
+        "Name/Alternate name",
+        "Removed/modified spare Identification/ Reference",
+        "Replacing/new spare Identification/Reference",
+        "Repla. code",
+        "Remark"
+      ],
+      [
+        "Fork",
+        "FK-1000",
+        "FK-TEL1002",
+        "02",
+        "Discarded"
+      ],
+      [
+        "Conical expansion washer",
+        "St-001-05",
+        "-",
+        "",
+        "Discarded"
+      ]
+    ],
+    "bbox": [
+      41.41,
+      361.71,
+      525.11,
+      475.77
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 90,
+    "table": [
+      [
+        "Name/Alternate name",
+        "Removed/modified spare Identification/ Reference",
+        "Replacing/new spare Identification/Reference",
+        "Repla. code",
+        "Remark"
+      ],
+      [
+        "Wheel axis",
+        "BSK-AXS-2000",
+        "BSK-AXS-2001",
+        "",
+        "Modified to"
+      ]
+    ],
+    "bbox": [
+      41.72,
+      557.12,
+      524.73,
+      643.88
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 93,
+    "table": [
+      [
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork",
+        "Fork"
+      ],
+      [
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "",
+        "Replacement procedure ........................................................................................................1",
+        "Replacement procedure ........................................................................................................1",
+        "Replacement procedure ........................................................................................................1",
+        "Replacement procedure ........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "Procedure ............................................................................................................................4",
+        "Procedure ............................................................................................................................4",
+        "Procedure ............................................................................................................................4",
+        "Procedure ............................................................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "PREPARATION .................................................................................................4",
+        "PREPARATION .................................................................................................4",
+        "PREPARATION .................................................................................................4",
+        "PREPARATION .................................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "PROCEDURE....................................................................................................4",
+        "PROCEDURE....................................................................................................4",
+        "PROCEDURE....................................................................................................4",
+        "PROCEDURE....................................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "TEST ................................................................................................................4",
+        "TEST ................................................................................................................4",
+        "TEST ................................................................................................................4",
+        "TEST ................................................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        "Requirements after job completion .........................................................................................4",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "",
+        "1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "",
+        "3",
+        "Required technical information ............................................................................2",
+        "Required technical information ............................................................................2",
+        "Required technical information ............................................................................2",
+        ""
+      ],
+      [
+        "",
+        "4",
+        "Support equipment.............................................................................................3",
+        "Support equipment.............................................................................................3",
+        "Support equipment.............................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "5",
+        "Consumables, materials, and expendables ..........................................................3",
+        "Consumables, materials, and expendables ..........................................................3",
+        "Consumables, materials, and expendables ..........................................................3",
+        ""
+      ],
+      [
+        "",
+        "6",
+        "..............................................................................................................3",
+        "..............................................................................................................3",
+        "..............................................................................................................3",
+        ""
+      ],
+      [
+        "",
+        "",
+        "...........................................................................................4",
+        "...........................................................................................4",
+        "...........................................................................................4",
+        ""
+      ],
+      [
+        "",
+        "7",
+        "Required conditions",
+        "Required conditions",
+        "Required conditions",
+        ""
+      ],
+      [
+        "References",
+        "References",
+        "References",
+        "References",
+        "References",
+        "References"
+      ],
+      [
+        "",
+        "",
+        "",
+        "Table 1",
+        "References",
+        "References"
+      ],
+      [
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "Data Module/Technical Publication",
+        "",
+        "Title",
+        "Title"
+      ]
+    ],
+    "bbox": [
+      69.27,
+      85.87,
+      552.95,
+      499.25
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 94,
+    "table": [
+      [
+        "Maintenance task duration",
+        "Maintenance task duration"
+      ],
+      [
+        "Preliminary requirements",
+        "0 h"
+      ],
+      [
+        "Procedure",
+        "1,5 h"
+      ],
+      [
+        "Requirements after job completion",
+        "0 h"
+      ],
+      [
+        "Production maintenance data Maintenance task duration",
+        ""
+      ],
+      [
+        "Preliminary requirements",
+        "0 h"
+      ],
+      [
+        "Procedure",
+        "1 h"
+      ],
+      [
+        "Requirements after job completion",
+        "0 h"
+      ]
+    ],
+    "bbox": [
+      41.89,
+      155.91,
+      381.11,
+      345.95
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 94,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.65,
+      413.76,
+      524.6,
+      449.97
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 94,
+    "table": [
+      [
+        "Document No.",
+        "Title"
+      ],
+      [
+        "S1000DBIKE-AAA-DA0-30-00-00AA- 520A-A S1000DBIKE-AAA-DA1-20-00-00AA- 520A-A S1000DBIKE-AAA-D00-00-01-00AA- 520A-A S1000DBIKE-AAA-D00-00-01-00AA- 93AA-A S1000DBIKE-AAA-D00-00-01-00AA- 720A-A S1000DBIKE-AAA-D00-00-01-00AB- 720A-A S1000DBIKE-AAA-DA1-20-00-00AA- 720A-A",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.9,
+      515.29,
+      524.93,
+      731.73
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 95,
+    "table": [
+      [
+        "Table 3",
+        "Required technical information",
+        "(Continued)"
+      ],
+      [
+        "Document No.",
+        "Title",
+        ""
+      ],
+      [
+        "S1000DBIKE-AAA-DA0-30-00-00AA- 720A-A S1000DBIKE-AAA-D00-00-01-00AA- 341A-A BRAKE-AAA-DA1-00-00-00AA-341A-A",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.66,
+      83.26,
+      552.87,
+      204.97
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 95,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "S1000DBIKE-AAA-D00-00-01- 00AA-930A-A",
+        "",
+        "1 EA",
+        ""
+      ],
+      [
+        "Issue No.: 1",
+        "00-",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.72,
+      270.13,
+      552.58,
+      366.06
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 95,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "General grease",
+        "Part KZ222/LL-005",
+        "As required",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.48,
+      431.48,
+      552.59,
+      497.54
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 95,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference Quantity",
+        "Remark"
+      ],
+      [
+        "Fork setS1000DBIKE-AAA-D00- 00-01-00AA-930A-A",
+        "1 EA",
+        ""
+      ],
+      [
+        "Issue No.: 00- 1",
+        "1 EA",
+        ""
+      ],
+      [
+        "ForkS1000DBIKE-AAA-D00-00- 01-00AA-930A-A",
+        "",
+        ""
+      ],
+      [
+        "Issue No.: 1",
+        "00-",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.3,
+      562.45,
+      552.73,
+      727.13
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 96,
+    "table": [
+      [
+        "1",
+        "PREPARATION"
+      ],
+      [
+        "1.1",
+        "Remove the front wheel, refer to: S1000DBIKE-AAA-DA0-30-00-00AA-520A-A"
+      ],
+      [
+        "1.2",
+        "Remove the front brakes, refer to: S1000DBIKE-AAA-DA1-20-00-00AA-520A-A"
+      ],
+      [
+        "2",
+        "PROCEDURE"
+      ],
+      [
+        "2.1",
+        "Remove the fork, refer to: S1000DBIKE-AAA-D00-00-01-00AA-520A-A"
+      ],
+      [
+        "",
+        "Issue No.: 001"
+      ],
+      [
+        "2.2",
+        "Change the bike axis, refer to: S1000DBIKE-AAA-D00-00-01-00AA-93AA-A"
+      ],
+      [
+        "2.3",
+        "Install the new fork, refer to: S1000DBIKE-AAA-D00-00-01-00AA-720A-A"
+      ],
+      [
+        "2.3",
+        "Install the new fork, refer to: S1000DBIKE-AAA-D00-00-01-00AB-720A-A"
+      ],
+      [
+        "2.4",
+        "Install the front brakes, refer to: S1000DBIKE-AAA-DA1-20-00-00AA-720A-A"
+      ],
+      [
+        "2.5",
+        "Install the front wheel, refer to: S1000DBIKE-AAA-DA0-30-00-00AA-720A-A"
+      ],
+      [
+        "3",
+        "TEST"
+      ],
+      [
+        "3.1",
+        "Test that the fork is properly installed, refer to: S1000DBIKE-AAA-D00-00-01-00AA-341A-A"
+      ],
+      [
+        "3.2",
+        "Front brakes test, refer to: BRAKE-AAA-DA1-00-00-00AA-341A-A"
+      ]
+    ],
+    "bbox": [
+      41.23,
+      171.38,
+      497.44,
+      445.24
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 96,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.19,
+      560.53,
+      524.65,
+      597.53
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 97,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Modification procedures.........................................................................................................1",
+        "Modification procedures.........................................................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "3",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "4",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "5",
+        "Spares ..............................................................................................................3",
+        ""
+      ],
+      [
+        "6",
+        "Required conditions ...........................................................................................3",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.4,
+      146.5,
+      552.63,
+      346.08
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 98,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.74,
+      176.71,
+      524.61,
+      211.74
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 98,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Saw tool setS1000DBIKE-AAA- D00-00-01-00AA-930A-A Issue No.: 00- 1",
+        "Saw tool setS1000DBIKE-AAA- D00-00-01-00AA-930A-A Issue No.: 00- 1",
+        "1 EA Support equip- ment descrip- tion Name Saw tool Part KZ666 1 EA Support equip-",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.0,
+      277.58,
+      525.0,
+      624.26
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 98,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.65,
+      690.89,
+      524.61,
+      726.73
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 99,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Wheel axis",
+        "Part KZ666/BSK-AXS-2001",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      70.35,
+      143.76,
+      552.5,
+      194.8
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 99,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.65,
+      539.49,
+      552.67,
+      575.7
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 101,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Install procedures..................................................................................................................1",
+        "Install procedures..................................................................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Preliminary requirements.......................................................................................................2",
+        "Preliminary requirements.......................................................................................................2",
+        ""
+      ],
+      [
+        "Procedure ............................................................................................................................3",
+        "Procedure ............................................................................................................................3",
+        ""
+      ],
+      [
+        "Requirements after job completion .........................................................................................3",
+        "Requirements after job completion .........................................................................................3",
+        ""
+      ],
+      [
+        "List of tables",
+        "",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "Required conditions ...........................................................................................2",
+        ""
+      ],
+      [
+        "3",
+        "Required persons...............................................................................................2",
+        ""
+      ],
+      [
+        "4",
+        "Required technical information ............................................................................2",
+        ""
+      ],
+      [
+        "5",
+        "Support equipment.............................................................................................2",
+        ""
+      ],
+      [
+        "6",
+        "Consumables, materials, and expendables ..........................................................2",
+        ""
+      ],
+      [
+        "7",
+        "Spares ..............................................................................................................3",
+        ""
+      ],
+      [
+        "8",
+        "Required conditions ...........................................................................................3",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.19,
+      144.06,
+      552.52,
+      370.2
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 101,
+    "table": [
+      [
+        "Data Module/Technical Publication",
+        "Title"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.37,
+      444.1,
+      552.79,
+      477.82
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 102,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.54,
+      176.89,
+      524.37,
+      211.74
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 102,
+    "table": [
+      [
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade/Trade code",
+        "Estimated time"
+      ],
+      [
+        "As required",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.64,
+      277.98,
+      524.73,
+      330.08
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 102,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "None",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      41.84,
+      537.66,
+      524.73,
+      572.85
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 102,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "General grease",
+        "Part KZ222/LL-005",
+        "As required",
+        ""
+      ]
+    ],
+    "bbox": [
+      42.08,
+      638.97,
+      524.56,
+      703.73
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 103,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "ForkS1000DBIKE-AAA-D00-00- 01-00AA-930A-A",
+        "ForkS1000DBIKE-AAA-D00-00- 01-00AA-930A-A",
+        "1 EA",
+        ""
+      ],
+      [
+        "Issue No.: 1",
+        "00-",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.88,
+      143.46,
+      552.34,
+      239.0
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 103,
+    "table": [
+      [
+        "Applicable to: Mountain bicycle and Brook trekker Mk9",
+        "Applicable to: Mountain bicycle and Brook trekker Mk9"
+      ],
+      [
+        "1",
+        "Apply grease (General grease) on the headset"
+      ],
+      [
+        "Applicable to: Mountain bicycle and Brook trekker Mk9",
+        "Applicable to: Mountain bicycle and Brook trekker Mk9"
+      ],
+      [
+        "2",
+        "Install the headset, refer to: S1000DBIKE-AAA-DA2-30-00-00AA-720A-A"
+      ],
+      [
+        "Applicable to: Mountain bicycle and Brook trekker Mk9",
+        "Applicable to: Mountain bicycle and Brook trekker Mk9"
+      ],
+      [
+        "3",
+        "Install the stem, refer to: S1000DBIKE-AAA-DA2-10-00-00AA-720A-A"
+      ],
+      [
+        "Applicable to: Mountain bicycle and Brook trekker Mk9",
+        "Applicable to: Mountain bicycle and Brook trekker Mk9"
+      ],
+      [
+        "4",
+        "Install the fork (Fork)"
+      ]
+    ],
+    "bbox": [
+      69.29,
+      346.9,
+      446.9,
+      574.72
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 103,
+    "table": [
+      [
+        "Action/Condition",
+        "Data module/Technical publications"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.79,
+      689.95,
+      552.54,
+      753.05
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 105,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "Time limits ............................................................................................................................1",
+        "Time limits ............................................................................................................................1",
+        ""
+      ],
+      [
+        "References...........................................................................................................................1",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "Applicability ..........................................................................................................................1",
+        "Applicability ..........................................................................................................................1",
+        ""
+      ],
+      [
+        "Schedule..............................................................................................................................1",
+        "Schedule..............................................................................................................................1",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "Time Limits ........................................................................................................1",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.41,
+      143.44,
+      552.76,
+      271.3
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 105,
+    "table": [
+      [
+        "Data Module/Technical Publication",
+        "Title"
+      ],
+      [
+        "None",
+        ""
+      ]
+    ],
+    "bbox": [
+      69.8,
+      341.25,
+      552.75,
+      376.94
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 105,
+    "table": [
+      [
+        "Nomenclature",
+        "Part Number",
+        "CSN",
+        "Time Limit",
+        "Qty",
+        "Cat",
+        "Applicability"
+      ],
+      [
+        "Bicycle",
+        "Bicycle-001",
+        "",
+        "1(+1) Days 1 Days Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)",
+        "1 EA",
+        "",
+        ""
+      ],
+      [
+        "Brake pads",
+        "BR-PADS-001",
+        "",
+        "1 Months",
+        "4 EA",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ]
+    ],
+    "bbox": [
+      70.6,
+      496.59,
+      552.59,
+      730.67
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 106,
+    "table": [
+      [
+        "Nomenclature",
+        "Part Number",
+        "CSN",
+        "Time Limit",
+        "Qty",
+        "Cat",
+        "Applicability"
+      ],
+      [
+        "Chain",
+        "Ch-001",
+        "",
+        "1 Months",
+        "",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ],
+      [
+        "Hub bearings",
+        "HB-001",
+        "",
+        "6(+1) Months",
+        "2 EA",
+        "",
+        "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+      ]
+    ],
+    "bbox": [
+      42.04,
+      114.66,
+      524.99,
+      319.01
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 107,
+    "table": [
+      [
+        "Table of contents",
+        "Table of contents",
+        "Page"
+      ],
+      [
+        "",
+        "Scheduled maintenance lists..................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "References...........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Applicability ..........................................................................................................................1",
+        ""
+      ],
+      [
+        "",
+        "Schedule..............................................................................................................................1",
+        ""
+      ],
+      [
+        "List of tables",
+        "List of tables",
+        "Page"
+      ],
+      [
+        "1",
+        "References........................................................................................................1",
+        ""
+      ],
+      [
+        "2",
+        "Maintenance / Inspection tasks ...........................................................................1",
+        ""
+      ],
+      [
+        "Required conditions .........................................................................................",
+        "Required conditions .........................................................................................",
+        ""
+      ],
+      [
+        "Spares",
+        "Spares",
+        "............................................................................................................"
+      ],
+      [
+        "",
+        "",
+        "Spares ............................................................................................................"
+      ]
+    ],
+    "bbox": [
+      69.46,
+      144.52,
+      552.36,
+      313.6
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 107,
+    "table": [
+      [
+        "Data module/Technical publication",
+        "Title"
+      ],
+      [
+        "S1000DBIKE-AAA-D00-00-00-00AA-121A-A",
+        "Bicycle - Pre-operation procedures (crew)"
+      ],
+      [
+        "S1000DBIKE-AAA-D00-00-00-00AA-151A-A",
+        "Bicycle - Post-operation procedures (crew)"
+      ],
+      [
+        "S1000DBIKE-AAA-DA1-10-00-00AA-251A-A",
+        "Brake pads - Clean with rubbing alcohol"
+      ],
+      [
+        "S1000DBIKE-AAA-DA4-10-00-00AA-251B-A",
+        "Chain - Clean with chain cleaning fluid"
+      ],
+      [
+        "S1000DBIKE-AAA-DA0-20-00-00AA-520A-A",
+        "Rear wheel - Remove procedures"
+      ]
+    ],
+    "bbox": [
+      69.74,
+      386.05,
+      552.99,
+      543.04
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 107,
+    "table": [
+      [
+        "Reference",
+        "Nomenclature",
+        "Task",
+        "Check Interval",
+        "Applic"
+      ]
+    ],
+    "bbox": [
+      69.72,
+      665.26,
+      552.91,
+      699.42
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 108,
+    "table": [
+      [
+        "Reference",
+        "",
+        "Nomenclature",
+        "Task",
+        "",
+        "Check Interval",
+        "Applic"
+      ],
+      [
+        "",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons"
+      ],
+      [
+        "",
+        "Person",
+        "Category",
+        "Skill level",
+        "Trade code",
+        "Trade code",
+        "Estimated time"
+      ],
+      [
+        "",
+        "Man A",
+        "Basic user",
+        "",
+        "Operator",
+        "Operator",
+        "0,3 h"
+      ],
+      [
+        "",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment"
+      ],
+      [
+        "",
+        "Name",
+        "Identification/Reference",
+        "",
+        "",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "",
+        "Tire pressure gauge",
+        "",
+        "Pt. No: KZ666/BSK-TLST-001- 01",
+        "",
+        "1 EA",
+        ""
+      ],
+      [
+        "",
+        "Specialist toolset",
+        "",
+        "Pt. No: KZ666/BSK-TLST-001",
+        "",
+        "1 EA",
+        ""
+      ],
+      [
+        "",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables"
+      ],
+      [
+        "",
+        "Name",
+        "",
+        "Identification/Reference",
+        "",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "General",
+        "lubricant",
+        "Pt.",
+        "No: KZ222/LL-001",
+        "",
+        "As required",
+        ""
+      ],
+      [
+        "S1000DBIKE-AAA-D00-00- 00-00AA-121A-A Tire pres- sure gauge Spe- cialist",
+        "S1000DBIKE-AAA-D00-00- 00-00AA-121A-A Tire pres- sure gauge Spe- cialist",
+        "S1000DBIKE-AAA-D00-00- 00-00AA-121A-A Tire pres- sure gauge Spe- cialist",
+        "S1000DBIKE-AAA-D00-00- 00-00AA-121A-A Tire pres- sure gauge Spe- cialist",
+        "toolset Gener- To do the pre- ride chec- ks",
+        "1(+1)",
+        "Days"
+      ]
+    ],
+    "bbox": [
+      33.03,
+      113.16,
+      524.5,
+      537.51
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 109,
+    "table": [
+      [
+        "",
+        "Name",
+        "",
+        "Identification/Reference",
+        "",
+        "",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables"
+      ],
+      [
+        "",
+        "Name",
+        "",
+        "Identification/Reference",
+        "",
+        "",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "",
+        "General lubricant",
+        "",
+        "Pt. No: KZ222/LL-001",
+        "",
+        "",
+        "As required",
+        ""
+      ],
+      [
+        "S1000DBIKE-AAA-D00-00- 00-00AA-151A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9) al",
+        "S1000DBIKE-AAA-D00-00- 00-00AA-151A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9) al",
+        "S1000DBIKE-AAA-D00-00- 00-00AA-151A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9) al",
+        "S1000DBIKE-AAA-D00-00- 00-00AA-151A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9) al",
+        "Spe- cialist toolset Gener- lubri- cant Bicycle",
+        "To do the post- ride main- ten- ance",
+        "1(+1) Days",
+        "1(+1) Days"
+      ],
+      [
+        "",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons"
+      ],
+      [
+        "",
+        "Person",
+        "Category",
+        "Skill level",
+        "",
+        "Trade code",
+        "Trade code",
+        "Estimated time"
+      ],
+      [
+        "",
+        "Man A",
+        "Basic user",
+        "",
+        "",
+        "Operator",
+        "Operator",
+        "0,3 h"
+      ],
+      [
+        "",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables"
+      ],
+      [
+        "",
+        "Name",
+        "",
+        "Identification/Reference",
+        "Identification/Reference",
+        "",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "",
+        "Rubbing alcohol",
+        "",
+        "Pt. No: KZ222/LL-002",
+        "Pt. No: KZ222/LL-002",
+        "",
+        "As",
+        "As"
+      ],
+      [
+        "S1000DBIKE-AAA-DA1-10- 00-00AA-251A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9)",
+        "S1000DBIKE-AAA-DA1-10- 00-00AA-251A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9)",
+        "S1000DBIKE-AAA-DA1-10- 00-00AA-251A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9)",
+        "S1000DBIKE-AAA-DA1-10- 00-00AA-251A-A Mountain bicycle and (Moun- tain storm Mk1 or Brook trek- ker Mk9)",
+        "Rub- bing alcohol Brake pads",
+        "Clean brake pads",
+        "from 1 Months to 1 Months",
+        "from 1 Months to 1 Months"
+      ],
+      [
+        "",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons",
+        "Required Persons"
+      ],
+      [
+        "",
+        "Person",
+        "Category",
+        "Skill level",
+        "",
+        "Trade code",
+        "Trade code",
+        "Estimated time"
+      ],
+      [
+        "",
+        "Man A",
+        "Basic user",
+        "",
+        "",
+        "Operator",
+        "Operator",
+        "0,3 h"
+      ],
+      [
+        "",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment",
+        "Support equipment"
+      ],
+      [
+        "",
+        "Name",
+        "",
+        "Identification/Reference",
+        "Identification/Reference",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "",
+        "Stiff bristle brush Pt. 02",
+        "Stiff bristle brush Pt. 02",
+        "No: KZ666/BSK-TLST-001-",
+        "No: KZ666/BSK-TLST-001-",
+        "No: KZ666/BSK-TLST-001-",
+        "1 EA",
+        ""
+      ]
+    ],
+    "bbox": [
+      64.16,
+      113.29,
+      552.27,
+      712.71
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 110,
+    "table": [
+      [
+        "Name",
+        "Identification/Reference",
+        "",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Chain cleaning fluid",
+        "Pt. No: KZ222/LL-003",
+        "Pt. No: KZ222/LL-003",
+        "As required",
+        ""
+      ],
+      [
+        "Chain cleaning tool",
+        "Pt. No: KZ666/BSK-TLST-001- 03",
+        "Pt. No: KZ666/BSK-TLST-001- 03",
+        "1 EA",
+        ""
+      ],
+      [
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables",
+        "Consumables, materials, and expendables"
+      ],
+      [
+        "Name",
+        "Identification/Reference",
+        "Identification/Reference",
+        "Quantity",
+        "Remark"
+      ],
+      [
+        "Floor covering",
+        "Pt. No:",
+        "Pt. No:",
+        "As required",
+        ""
+      ],
+      [
+        "General lubricant",
+        "Pt. No: KZ222/LL-001",
+        "Pt. No: KZ222/LL-001",
+        "As required",
+        ""
+      ],
+      [
+        "S1000DBIKE-AAA-DA4-10- 00-00AA-251B-A S1000DBIKE- AAA-D00-00- 00-00AA- Bicycle - Pre- operation pro- cedures (crew) bicycle and (Moun- Mk1 or Brook trek-",
+        "S1000DBIKE-AAA-DA4-10- 00-00AA-251B-A S1000DBIKE- AAA-D00-00- 00-00AA- Bicycle - Pre- operation pro- cedures (crew) bicycle and (Moun- Mk1 or Brook trek-",
+        "Stiff bristle brush Chain clean- ing fluid Chain clean- ing tool Floor Clean the chain",
+        "1 Months",
+        "1 Months"
+      ],
+      [
+        "S1000DBIKE-AAA-D00-00- 00-00AA-121A-A",
+        "S1000DBIKE-AAA-D00-00- 00-00AA-121A-A",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      39.27,
+      114.1,
+      524.52,
+      584.07
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 110,
+    "table": [
+      [
+        "Required conditions",
+        "Required conditions"
+      ],
+      [
+        "Action/Condition",
+        "Data Module/Technical publication"
+      ],
+      [
+        "Rear wheel removed",
+        "S1000DBIKE-AAA-DA0-20-00-00AA-520A- A"
+      ]
+    ],
+    "bbox": [
+      99.4,
+      606.69,
+      523.7,
+      689.22
+    ],
+    "page_size": [
+      595.28,
+      841.89
+    ],
+    "table_type": "docling"
+  }
+]

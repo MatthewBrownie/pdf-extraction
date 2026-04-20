@@ -1,0 +1,158 @@
+[
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "Simple, currently functional",
+        "No persistence"
+      ],
+      [
+        "Familiar codebase",
+        "Partial job history"
+      ],
+      [
+        "No new dependencies",
+        "Limited monitoring"
+      ],
+      [
+        "Low memory footprint",
+        "Single threaded"
+      ],
+      [
+        "",
+        "No rate limiting"
+      ]
+    ],
+    "bbox": [
+      71.42,
+      119.4,
+      540.07,
+      206.04
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "True parallelism",
+        "No persistence"
+      ],
+      [
+        "Simple architecture",
+        "No native job history or audit trail"
+      ],
+      [
+        "Good for CPU bound work",
+        "No built-in monitoring"
+      ],
+      [
+        "Low latency",
+        "No retry mechanism"
+      ],
+      [
+        "",
+        "No priority handling"
+      ],
+      [
+        "",
+        "No rate limiting"
+      ]
+    ],
+    "bbox": [
+      71.32,
+      253.54,
+      539.9,
+      354.82
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "Full persistence",
+        "Single threaded"
+      ],
+      [
+        "Excellent job history, monitoring, and auditing",
+        "Redis dependency"
+      ],
+      [
+        "Built in rate limiting",
+        "Slower for CPU tasks"
+      ],
+      [
+        "Native support for priority",
+        "queues"
+      ]
+    ],
+    "bbox": [
+      71.34,
+      402.06,
+      540.04,
+      488.79
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Pros",
+        "Cons"
+      ],
+      [
+        "All BullMQ pros",
+        "More complex"
+      ],
+      [
+        "Parallelism",
+        "Higher memory usage"
+      ],
+      [
+        "Best performance",
+        "More dependencies"
+      ],
+      [
+        "Flexible resource allocation",
+        "Debugging complexity"
+      ]
+    ],
+    "bbox": [
+      71.45,
+      536.21,
+      540.11,
+      608.73
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  }
+]
