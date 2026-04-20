@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Extraction POC</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #6c8cff;
+      --accent-dim: #3d4fa8;
+      --text: #e2e4ef;
+      --text-dim: #8890b0;
+      --green: #3ecf8e;
+      --yellow: #f0c040;
+      --red: #ff6b6b;
+      --radius: 8px;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+    }
+
+    header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    header .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      width: 300px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+    }
+
+    select {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: var(--radius);
+      font-family: var(--font);
+      font-size: 0.875rem;
+      width: 100%;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238890b0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      cursor: pointer;
+    }
+
+    select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+    .radio-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .radio-option {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: var(--text-dim);
+      background: var(--surface2);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      user-select: none;
+    }
+
+    .radio-option input[type="radio"] { display: none; }
+
+    .radio-option.selected {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(108, 140, 255, 0.08);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 11px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, opacity 0.15s;
+    }
+
+    .btn:hover:not(:disabled) { background: #849cff; }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .btn.loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: var(--surface2);
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .stat-label { color: var(--text-dim); }
+
+    .stat-value {
+      font-weight: 700;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+    }
+
+    .stat-value.green { color: var(--green); }
+    .stat-value.yellow { color: var(--yellow); }
+    .stat-value.accent { color: var(--accent); }
+
+    .error-box {
+      padding: 12px;
+      background: rgba(255, 107, 107, 0.12);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      color: var(--red);
+      line-height: 1.5;
+    }
+
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      background: var(--surface);
+    }
+
+    .tab {
+      padding: 14px 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab:hover { color: var(--text); }
+
+    .tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .tab .count {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 20px;
+      background: var(--surface2);
+      color: var(--text-dim);
+    }
+
+    .tab.active .count {
+      background: rgba(108, 140, 255, 0.15);
+      color: var(--accent);
+    }
+
+    /* ── Content panel ── */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+    }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── Empty state ── */
+    .empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 320px;
+      gap: 12px;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    .empty-icon { font-size: 3rem; opacity: 0.3; }
+    .empty p { font-size: 0.875rem; max-width: 280px; line-height: 1.6; }
+
+    /* ── Chunks ── */
+    .chunk-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .chunk {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .chunk-meta {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 56px;
+    }
+
+    .chunk-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-family: var(--mono);
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .badge-page {
+      background: rgba(108, 140, 255, 0.12);
+      color: var(--accent);
+    }
+
+    .badge-size {
+      background: var(--surface2);
+      color: var(--text-dim);
+    }
+
+    .chunk-text {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--text);
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .page-btn {
+      padding: 6px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: border-color 0.15s;
+    }
+
+    .page-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    .page-btn:disabled { opacity: 0.35; cursor: default; }
+
+    /* ── Tables ── */
+    .table-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .table-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .table-card-header {
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+
+    .type-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .type-full_grid { background: rgba(62, 207, 142, 0.12); color: var(--green); }
+    .type-h_rules   { background: rgba(240, 192, 64, 0.12); color: var(--yellow); }
+    .type-unknown   { background: var(--surface2); color: var(--text-dim); }
+
+    .table-card-meta { color: var(--text-dim); }
+
+    .table-scroll { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+    }
+
+    thead tr { background: var(--surface2); }
+
+    th, td {
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      max-width: 300px;
+      overflow-wrap: break-word;
+      vertical-align: top;
+      line-height: 1.4;
+    }
+
+    th { font-weight: 600; color: var(--text-dim); font-size: 0.75rem; }
+    td:last-child, th:last-child { border-right: none; }
+    tr:last-child td { border-bottom: none; }
+    td:empty::after { content: '—'; color: var(--text-dim); }
+
+    /* ── Images ── */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .image-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+
+    .image-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+    .image-card img {
+      width: 100%;
+      display: block;
+      background: var(--surface2);
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    .image-card-footer {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-family: var(--mono);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: var(--radius);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 1.8rem;
+      color: var(--text-dim);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .lightbox-close:hover { color: var(--text); }
+
+    /* ── PDF panel ── */
+    /* Remove content padding and scrolling so the iframe fills edge-to-edge */
+    .content:has(#panel-pdf.active) {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #panel-pdf.active {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #panel-pdf iframe {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      border: none;
+      display: block;
+      background: var(--surface2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PDF Extraction POC</h1>
+  <span class="badge">PyMuPDF + pdfplumber</span>
+</header>
+
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <div class="form-group">
+      <label>Document</label>
+      <select id="pdf-select">
+        <option value="">Loading PDFs…</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Extractor version</label>
+      <div class="radio-group">
+        <label class="radio-option" id="opt-v1">
+          <input type="radio" name="version" value="v1" />
+          v1 — baseline
+        </label>
+        <label class="radio-option selected" id="opt-v2">
+          <input type="radio" name="version" value="v2" checked />
+          v2 — improved
+        </label>
+      </div>
+    </div>
+
+    <button class="btn" id="extract-btn" disabled>Extract</button>
+
+    <div class="stats" id="stats" style="display:none">
+      <div class="stat">
+        <span class="stat-label">Text chunks</span>
+        <span class="stat-value green" id="stat-chunks">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Tables</span>
+        <span class="stat-value yellow" id="stat-tables">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Images</span>
+        <span class="stat-value accent" id="stat-images">—</span>
+      </div>
+    </div>
+
+    <div class="error-box" id="error-box" style="display:none"></div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+    <div class="tabs" id="tabs">
+      <div class="tab" data-tab="pdf">
+        PDF
+      </div>
+      <div class="tab active" data-tab="chunks">
+        Chunks <span class="count" id="tab-count-chunks">0</span>
+      </div>
+      <div class="tab" data-tab="tables">
+        Tables <span class="count" id="tab-count-tables">0</span>
+      </div>
+      <div class="tab" data-tab="images">
+        Images <span class="count" id="tab-count-images">0</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- PDF panel -->
+      <div class="panel" id="panel-pdf">
+        <div class="empty" id="pdf-empty">
+          <div class="empty-icon">📋</div>
+          <p>Select a PDF from the dropdown to view it here.</p>
+        </div>
+        <iframe id="pdf-frame" src="" title="PDF viewer" style="display:none"></iframe>
+      </div>
+
+      <!-- Chunks panel -->
+      <div class="panel active" id="panel-chunks">
+        <div class="empty" id="chunks-empty">
+          <div class="empty-icon">📄</div>
+          <p>Select a PDF and click <strong>Extract</strong> to see text chunks.</p>
+        </div>
+        <div class="chunk-list" id="chunk-list" style="display:none"></div>
+        <div class="pagination" id="pagination" style="display:none">
+          <button class="page-btn" id="prev-btn">← Prev</button>
+          <span id="page-info"></span>
+          <button class="page-btn" id="next-btn">Next →</button>
+        </div>
+      </div>
+
+      <!-- Tables panel -->
+      <div class="panel" id="panel-tables">
+        <div class="empty" id="tables-empty">
+          <div class="empty-icon">🗂️</div>
+          <p>Tables will appear here after extraction.</p>
+        </div>
+        <div class="table-list" id="table-list" style="display:none"></div>
+      </div>
+
+      <!-- Images panel -->
+      <div class="panel" id="panel-images">
+        <div class="empty" id="images-empty">
+          <div class="empty-icon">🖼️</div>
+          <p>Extracted raster images will appear here.</p>
+        </div>
+        <div class="image-grid" id="image-grid" style="display:none"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+  // ── State ──
+  let allChunks = [];
+  const PAGE_SIZE = 50;
+  let currentPage = 0;
+
+  // ── DOM refs ──
+  const pdfSelect   = document.getElementById('pdf-select');
+  const extractBtn  = document.getElementById('extract-btn');
+  const statsEl     = document.getElementById('stats');
+  const errorBox    = document.getElementById('error-box');
+  const radioOpts   = document.querySelectorAll('.radio-option');
+
+  // ── Load PDFs ──
+  async function loadPdfs() {
+    try {
+      const res = await fetch('/api/pdfs');
+      const data = await res.json();
+      pdfSelect.innerHTML = data.pdfs.length
+        ? '<option value="">— choose a PDF —</option>' +
+          data.pdfs.map(p => `<option value="${p}">${p}</option>`).join('')
+        : '<option value="">No PDFs found in input/docs/</option>';
+    } catch {
+      pdfSelect.innerHTML = '<option value="">Failed to load PDFs</option>';
+    }
+  }
+
+  pdfSelect.addEventListener('change', () => {
+    extractBtn.disabled = !pdfSelect.value;
+    updatePdfViewer();
+  });
+
+  function updatePdfViewer() {
+    const name = pdfSelect.value;
+    const frame = document.getElementById('pdf-frame');
+    const empty = document.getElementById('pdf-empty');
+    if (name) {
+      frame.src = `/pdfs/${encodeURIComponent(name)}`;
+      frame.style.display = '';
+      empty.style.display = 'none';
+      // Switch to the PDF tab so the user can see the document straight away
+      switchTab('pdf');
+    } else {
+      frame.src = '';
+      frame.style.display = 'none';
+      empty.style.display = '';
+    }
+  }
+
+  function switchTab(name) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelector(`.tab[data-tab="${name}"]`).classList.add('active');
+    document.getElementById(`panel-${name}`).classList.add('active');
+  }
+
+  // ── Version radio toggle ──
+  radioOpts.forEach(label => {
+    label.addEventListener('click', () => {
+      radioOpts.forEach(l => l.classList.remove('selected'));
+      label.classList.add('selected');
+      label.querySelector('input').checked = true;
+    });
+  });
+
+  // ── Tab switching ──
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+  });
+
+  // ── Extraction ──
+  extractBtn.addEventListener('click', async () => {
+    const pdfName = pdfSelect.value;
+    const version = document.querySelector('input[name="version"]:checked').value;
+
+    setLoading(true);
+    hideError();
+    clearResults();
+
+    try {
+      const res = await fetch('/api/extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pdf_name: pdfName, version }),
+      });
+
+      if (!res.ok) {
+        const text = await res.text();
+        let detail = `HTTP ${res.status}`;
+        try { detail = JSON.parse(text).detail || detail; } catch {}
+        throw new Error(detail);
+      }
+
+      const data = await res.json();
+      renderResults(data);
+    } catch (err) {
+      showError(err.message || 'Extraction failed — check the server logs.');
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  function setLoading(on) {
+    extractBtn.disabled = on;
+    if (on) {
+      extractBtn.classList.add('loading');
+      extractBtn.innerHTML = '<div class="spinner"></div> Extracting…';
+    } else {
+      extractBtn.classList.remove('loading');
+      extractBtn.innerHTML = 'Extract';
+      extractBtn.disabled = !pdfSelect.value;
+    }
+  }
+
+  function showError(msg) {
+    errorBox.textContent = msg;
+    errorBox.style.display = 'block';
+  }
+
+  function hideError() {
+    errorBox.style.display = 'none';
+  }
+
+  function clearResults() {
+    allChunks = [];
+    currentPage = 0;
+
+    document.getElementById('chunk-list').style.display   = 'none';
+    document.getElementById('pagination').style.display   = 'none';
+    document.getElementById('table-list').style.display   = 'none';
+    document.getElementById('image-grid').style.display   = 'none';
+    document.getElementById('chunks-empty').style.display = '';
+    document.getElementById('tables-empty').style.display = '';
+    document.getElementById('images-empty').style.display = '';
+    document.getElementById('chunk-list').innerHTML        = '';
+    document.getElementById('table-list').innerHTML        = '';
+    document.getElementById('image-grid').innerHTML        = '';
+
+    setTabCount('chunks', 0);
+    setTabCount('tables', 0);
+    setTabCount('images', 0);
+    statsEl.style.display = 'none';
+  }
+
+  function setTabCount(tab, n) {
+    document.getElementById(`tab-count-${tab}`).textContent = n;
+  }
+
+  // ── Render ──
+  function renderResults(data) {
+    statsEl.style.display = '';
+    document.getElementById('stat-chunks').textContent = data.stats.chunks;
+    document.getElementById('stat-tables').textContent = data.stats.tables;
+    document.getElementById('stat-images').textContent = data.stats.images;
+
+    setTabCount('chunks', data.stats.chunks);
+    setTabCount('tables', data.stats.tables);
+    setTabCount('images', data.stats.images);
+
+    renderChunks(data.chunks);
+    renderTables(data.tables);
+    renderImages(data.images);
+  }
+
+  // ── Chunks ──
+  function renderChunks(chunks) {
+    allChunks = chunks;
+    currentPage = 0;
+    if (!chunks.length) return;
+
+    document.getElementById('chunks-empty').style.display = 'none';
+    document.getElementById('chunk-list').style.display   = '';
+    document.getElementById('pagination').style.display   = '';
+    renderChunkPage();
+  }
+
+  function renderChunkPage() {
+    const list  = document.getElementById('chunk-list');
+    const start = currentPage * PAGE_SIZE;
+    const slice = allChunks.slice(start, start + PAGE_SIZE);
+    const total = Math.ceil(allChunks.length / PAGE_SIZE);
+
+    list.innerHTML = slice.map(c => `
+      <div class="chunk">
+        <div class="chunk-meta">
+          <span class="chunk-badge badge-page">p${c.page}</span>
+          <span class="chunk-badge badge-size">${c.font_size}pt</span>
+        </div>
+        <div class="chunk-text">${escHtml(c.text)}</div>
+      </div>
+    `).join('');
+
+    document.getElementById('page-info').textContent = `Page ${currentPage + 1} / ${total}`;
+    document.getElementById('prev-btn').disabled = currentPage === 0;
+    document.getElementById('next-btn').disabled = currentPage >= total - 1;
+  }
+
+  document.getElementById('prev-btn').addEventListener('click', () => {
+    if (currentPage > 0) { currentPage--; renderChunkPage(); document.querySelector('.content').scrollTop = 0; }
+  });
+  document.getElementById('next-btn').addEventListener('click', () => {
+    if ((currentPage + 1) * PAGE_SIZE < allChunks.length) { currentPage++; renderChunkPage(); document.querySelector('.content').scrollTop = 0; }
+  });
+
+  // ── Tables ──
+  function renderTables(tables) {
+    if (!tables.length) return;
+    const list = document.getElementById('table-list');
+    document.getElementById('tables-empty').style.display = 'none';
+    list.style.display = '';
+
+    list.innerHTML = tables.map((t, i) => {
+      const typeLabel = t.table_type || 'unknown';
+      const rows = t.table || [];
+      const header = rows[0] || [];
+      const body   = rows.slice(1);
+      const rowCount = rows.length;
+      const colCount = header.length;
+
+      return `
+        <div class="table-card">
+          <div class="table-card-header">
+            <span class="type-badge type-${typeLabel}">${typeLabel.replace('_', ' ')}</span>
+            <span class="table-card-meta">p${t.page} · ${rowCount} rows × ${colCount} cols</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>${header.map(h => `<th>${escHtml(h ?? '')}</th>`).join('')}</tr>
+              </thead>
+              <tbody>
+                ${body.map(row => `<tr>${row.map(c => `<td>${escHtml(c ?? '')}</td>`).join('')}</tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ── Images ──
+  function renderImages(images) {
+    if (!images.length) return;
+    const grid = document.getElementById('image-grid');
+    document.getElementById('images-empty').style.display = 'none';
+    grid.style.display = '';
+
+    grid.innerHTML = images.map(img => `
+      <div class="image-card" data-url="${img.url}" title="Click to enlarge">
+        <img src="${img.url}" alt="Page ${img.page} image" loading="lazy" />
+        <div class="image-card-footer">p${img.page} · ${img.filename}</div>
+      </div>
+    `).join('');
+
+    grid.querySelectorAll('.image-card').forEach(card => {
+      card.addEventListener('click', () => openLightbox(card.dataset.url));
+    });
+  }
+
+  // ── Lightbox ──
+  function openLightbox(url) {
+    document.getElementById('lightbox-img').src = url;
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeLightbox();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.getElementById('lightbox-img').src = '';
+  }
+
+  // ── Util ──
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // ── Init ──
+  loadPdfs();
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+wordnv,acronym,posnv,tag,meaning,category,taxonomy_l1,taxonomy_l2,taxonomy_l3
+a* search,Nill,NOUN,TN,a graph traversal and pathfinding algorithm used in computer science due to its completeness optimality and optimal efficiency,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+abductive logic programming,ALP,NOUN,TN,a high-level knowledge-representation framework for solving problems declaratively based on abductive reasoning,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+abductive reasoning,Nill,NOUN,TN,a form of logical inference which starts with observations and seeks the simplest and most likely explanation,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+ablation,Nill,NOUN,TN,the removal of a component of an AI system to determine its contribution by analyzing resultant performance,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+abstract data type,ADT,NOUN,TN,a mathematical model for data types defined by behavior from the point of view of a user,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+abstraction,Nill,NOUN,TN,the process of removing details in the study of objects or systems to attend to other details of interest,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+accelerating change,Nill,NOUN,TN,a perceived increase in the rate of technological change throughout history,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+action language,Nill,NOUN,TN,a language for specifying state transition systems to create formal models of actions effects,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+action model learning,Nill,NOUN,TN,machine learning for creation and modification of agent knowledge about action effects and preconditions,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+action selection,Nill,NOUN,TN,the problem of intelligent systems determining what to do next,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+activation function,Nill,NOUN,TN,the function that defines a neural network nodes output given an input or set of inputs,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+adaptive algorithm,Nill,NOUN,TN,an algorithm that changes its behavior at runtime based on a reward mechanism or criterion,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+adaptive neuro fuzzy inference system,ANFIS,NOUN,TN,a neural network based on Takagi-Sugeno fuzzy inference integrating neural networks and fuzzy logic,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+admissible heuristic,Nill,NOUN,TN,a heuristic function that never overestimates the cost of reaching the goal in pathfinding,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+affective computing,Nill,NOUN,TN,development of systems that recognize interpret process and simulate human affects,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+agent architecture,Nill,NOUN,TN,a blueprint for software agents depicting the arrangement of components,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+ai accelerator,Nill,NOUN,TN,hardware designed for acceleration of artificial intelligence applications especially neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+ai-complete,Nill,NOUN,TN,the most difficult AI problems equivalent to making computers as intelligent as people,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+algorithm,Nill,NOUN,TN,an unambiguous specification of how to solve a class of problems,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+algorithmic efficiency,Nill,NOUN,TN,a property relating to the computational resources used by an algorithm,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+algorithmic probability,Nill,NOUN,TN,a method of assigning prior probability to observations invented by Ray Solomonoff,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+alphago,Nill,NOUN,TN,a computer program that plays Go developed by Google DeepMind,TN-11 Names of persons groups or organizations,Organizations,Research,General
+ambient intelligence,AmI,NOUN,TN,electronic environments sensitive and responsive to the presence of people,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+analysis of algorithms,Nill,NOUN,TN,determination of computational complexity including time and space complexity,TN-09 Metrics units and computational measures,Metrics,Evaluation,General
+analytics,Nill,NOUN,TN,the discovery interpretation and communication of meaningful patterns in data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+answer set programming,ASP,NOUN,TN,declarative programming for difficult search problems based on stable model semantics,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+ant colony optimization,ACO,NOUN,TN,a probabilistic technique for finding good paths through graphs,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+anytime algorithm,Nill,NOUN,TN,an algorithm that can return a valid solution even if interrupted before completion,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+application programming interface,API,NOUN,TN,a set of definitions protocols and tools for building software,TN-03 Names of tools and compute infrastructure their parts and configurations,Equipment,Software,General
+approximate string matching,Nill,NOUN,TN,finding strings that match a pattern approximately rather than exactly,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+approximation error,Nill,NOUN,TN,the discrepancy between an exact value and some approximation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+argumentation framework,Nill,NOUN,TN,a way to deal with contentious information and draw conclusions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+artificial general intelligence,AGI,NOUN,TN,AI that matches or surpasses human cognitive capabilities across a wide range of tasks,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+artificial immune system,AIS,NOUN,TN,rule-based machine learning systems inspired by the vertebrate immune system,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+artificial intelligence,AI,NOUN,TN,intelligence demonstrated by machines in contrast to natural intelligence,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+artificial intelligence markup language,AIML,NOUN,TN,an XML dialect for creating natural language software agents,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+association for the advancement of artificial intelligence,AAAI,NOUN,TN,an international nonprofit society promoting AI research,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+asymptotic computational complexity,Nill,NOUN,TN,using asymptotic analysis to estimate computational complexity commonly with big O notation,TN-09 Metrics units and computational measures,Metrics,Evaluation,General
+attention mechanism,Nill,NOUN,TN,a mechanism calculating soft weights for each word in a context window,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+attributional calculus,Nill,NOUN,TN,a logic system combining predicate logic propositional calculus and multi-valued logic,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+augmented reality,AR,NOUN,TN,an interactive experience where real-world objects are augmented by computer-generated information,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+autoencoder,Nill,NOUN,TN,a neural network for learning efficient codings of unlabeled data through unsupervised learning,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+automata theory,Nill,NOUN,TN,the study of abstract machines and computational problems that can be solved using them,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+automated machine learning,AutoML,NOUN,TN,automatically configuring ML systems to maximize performance,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+automated planning and scheduling,Nill,NOUN,TN,realization of strategies for execution by intelligent agents or robots,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+automated reasoning,Nill,NOUN,TN,computer science dedicated to producing programs that reason automatically,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+autonomic computing,AC,NOUN,TN,self-managing distributed computing resources adapting to changes,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+autonomous car,Nill,NOUN,TN,a vehicle capable of sensing its environment and moving with minimal human input,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+autonomous robot,Nill,NOUN,TN,a robot that performs tasks with a high degree of autonomy,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+backpropagation,Nill,NOUN,TN,a method to calculate gradients needed for updating neural network weights,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+backpropagation through structure,BPTS,NOUN,TN,gradient-based training technique for recurrent neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+backpropagation through time,BPTT,NOUN,TN,gradient-based training for certain recurrent neural networks like Elman networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+backward chaining,Nill,NOUN,TN,an inference method working backward from the goal used in theorem provers,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+bag-of-words model,BoW,NOUN,TN,a text representation as a multiset of words disregarding grammar and order,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+batch normalization,Nill,NOUN,TN,a technique for improving neural network performance with zero mean unit variance inputs,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+bayesian programming,Nill,NOUN,TN,a methodology for specifying probabilistic models with incomplete information,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+bees algorithm,Nill,NOUN,TN,a population-based search algorithm mimicking honey bee foraging behavior,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+behavior informatics,BI,NOUN,TN,informatics of behaviors to obtain behavior intelligence and insights,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+behavior tree,BT,NOUN,TN,a mathematical model of plan execution used in robotics and video games,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+belief-desire-intention software model,BDI,NOUN,TN,a model for programming intelligent agents with beliefs desires and intentions,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+bias-variance tradeoff,Nill,NOUN,TN,the property where lower bias leads to higher variance and vice versa,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+big data,Nill,NOUN,TN,data sets too large or complex for traditional data-processing software,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+big o notation,Nill,NOUN,TN,mathematical notation describing limiting behavior of functions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+binary tree,Nill,NOUN,TN,a tree structure where each node has at most two children,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+blackboard system,Nill,NOUN,TN,an AI approach with a knowledge base updated by specialist knowledge sources,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+boltzmann machine,Nill,NOUN,TN,a stochastic recurrent neural network and Markov random field,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+boolean satisfiability problem,SAT,NOUN,TN,determining if a Boolean formula can be satisfied,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+boosting,Nill,NOUN,TN,an ensemble method reducing bias by training models sequentially,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+bootstrap aggregating,Nill,NOUN,TN,an ensemble method reducing variance by training models independently,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+brain technology,Nill,NOUN,TN,technology employing neuroscience findings for robots and self-learning systems,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+branching factor,Nill,NOUN,TN,the number of children at each node in tree structures,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+brute-force search,Nill,NOUN,TN,systematically enumerating all possible solution candidates,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+capsule neural network,CapsNet,NOUN,TN,a neural network modeling hierarchical relationships like biological neurons,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+case-based reasoning,CBR,NOUN,TN,solving new problems based on solutions of similar past problems,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+chatbot,Nill,NOUN,TN,a program that conducts conversation via text or speech,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+cloud robotics,Nill,NOUN,TN,using cloud technologies for robotics computation and storage,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+cluster analysis,Nill,NOUN,TN,grouping objects so similar objects are in the same cluster,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+cobweb,Nill,NOUN,TN,an incremental system for hierarchical conceptual clustering,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+cognitive architecture,Nill,NOUN,TN,hypothesis about structures that provide a mind and yield intelligent behavior,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+cognitive computing,Nill,NOUN,TN,computing that mimics human brain functioning to improve decision-making,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+cognitive science,Nill,NOUN,TN,the interdisciplinary study of the mind and its processes,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+combinatorial optimization,Nill,NOUN,TN,finding an optimal object from a finite set of objects,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+committee machine,Nill,NOUN,TN,a neural network combining responses of multiple experts,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+commonsense knowledge,Nill,NOUN,TN,facts about everyday world that all humans know,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+commonsense reasoning,Nill,NOUN,TN,simulating human presumptions about ordinary situations,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computational chemistry,Nill,NOUN,TN,using computer simulation to solve chemical problems,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computational complexity theory,Nill,NOUN,TN,classifying problems by inherent difficulty,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computational creativity,Nill,NOUN,TN,a multidisciplinary field spanning AI psychology philosophy and arts,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computational cybernetics,Nill,NOUN,TN,integration of cybernetics and computational intelligence,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computational humor,Nill,NOUN,TN,using computers in humor research,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+computational intelligence,CI,NOUN,TN,the ability of computers to learn tasks from data or observation,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+computational learning theory,Nill,NOUN,TN,studying design and analysis of machine learning algorithms,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+computational linguistics,Nill,NOUN,TN,statistical or rule-based modeling of natural language,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+computational mathematics,Nill,NOUN,TN,mathematical research where computing plays an essential role,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+computational neuroscience,Nill,NOUN,TN,using mathematical models to understand the nervous system,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computational number theory,Nill,NOUN,TN,algorithms for number theoretic computations,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+computational problem,Nill,NOUN,TN,a collection of questions that computers might solve,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computational statistics,Nill,NOUN,TN,the interface between statistics and computer science,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computer audition,CA,NOUN,TN,machine listening for audio processing,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computer science,Nill,NOUN,TN,the theory and engineering of computer design and use,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+computer vision,Nill,NOUN,TN,gaining high-level understanding from digital images or videos,TN-14 Names of vision and perception tasks,Vision,Perception,General
+computer-automated design,CAutoD,NOUN,TN,extending CAD with automated design capabilities,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+concept drift,Nill,NOUN,TN,when target variable properties change over time affecting predictions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+connectionism,Nill,NOUN,TN,explaining mental phenomena using artificial neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+consistent heuristic,Nill,NOUN,TN,a heuristic where estimate is always less than distance to goal,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+constrained conditional model,CCM,NOUN,TN,ML framework augmenting conditional models with constraints,TN-03 Names of tools and compute infrastructure their parts and configurations,Equipment,Software,General
+constraint logic programming,Nill,NOUN,TN,logic programming extended with constraint satisfaction,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+constraint programming,Nill,NOUN,TN,programming where relations are stated as constraints,TN-03 Names of tools and compute infrastructure their parts and configurations,Equipment,Software,General
+constructed language,Nill,NOUN,TN,a language consciously devised rather than naturally developed,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+control theory,Nill,NOUN,TN,mathematics dealing with control of dynamical systems,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+convolutional neural network,CNN,NOUN,TN,a deep neural network for image analysis using convolutional layers,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+crossover,Nill,NOUN,TN,a genetic operator combining genetic information of two parents,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+darkforest,Nill,NOUN,TN,a computer Go program by Facebook using deep learning,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+dartmouth workshop,Nill,NOUN,TN,the 1956 seminal event for AI as a field,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+data augmentation,Nill,NOUN,TN,techniques to increase data and reduce overfitting,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+data fusion,Nill,NOUN,TN,integrating multiple data sources for better information,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+data integration,Nill,NOUN,TN,combining data from different sources into a unified view,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+data mining,Nill,NOUN,TN,discovering patterns in large data sets,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+data science,Nill,NOUN,TN,extracting knowledge from data using scientific methods,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+data set,Nill,NOUN,TN,a collection of data typically from a database table,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+data warehouse,DW,NOUN,TN,a system for reporting and data analysis,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+datalog,Nill,NOUN,TN,a declarative logic programming query language,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+dbscan,DBSCAN,NOUN,TN,density-based spatial clustering algorithm,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+decision boundary,Nill,NOUN,TN,the separation a neural network learns between classes,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+decision support system,DSS,NOUN,TN,a system supporting organizational decision-making,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+decision theory,Nill,NOUN,TN,study of reasoning underlying agent choices,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+decision tree learning,Nill,NOUN,TN,using decision trees as predictive models,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+declarative programming,Nill,NOUN,TN,expressing computation logic without control flow,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+deductive classifier,Nill,NOUN,TN,an AI inference engine using frame language declarations,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+deep blue,Nill,NOUN,TN,IBM chess computer that beat the world champion,TN-11 Names of persons groups or organizations,Organizations,Research,General
+deep learning,Nill,NOUN,TN,machine learning using multi-layer neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+deepmind technologies,Nill,NOUN,TN,British AI company known for AlphaGo owned by Alphabet,TN-11 Names of persons groups or organizations,Organizations,Research,General
+default logic,Nill,NOUN,TN,non-monotonic logic for reasoning with default assumptions,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+description logic,DL,NOUN,TN,formal knowledge representation languages,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+developmental robotics,DevRob,NOUN,TN,studying developmental mechanisms for lifelong learning in machines,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+diagnosis,Nill,NOUN,TN,algorithms determining whether system behavior is correct,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+dialogue system,Nill,NOUN,TN,a computer system for coherent conversation with humans,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+diffusion model,Nill,NOUN,TN,generative models learning latent structure through diffusion process,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+dijkstras algorithm,Nill,NOUN,TN,finding shortest paths between nodes in weighted graphs,TN-09 Metrics units and computational measures,Metrics,Evaluation,General
+dimensionality reduction,Nill,NOUN,TN,reducing random variables by obtaining principal variables,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+discrete system,Nill,NOUN,TN,any system with a countable number of states,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+distributed artificial intelligence,DAI,NOUN,TN,developing distributed solutions for AI problems,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+double descent,Nill,NOUN,TN,phenomenon where extreme parameter counts yield lower test error,TN-09 Metrics units and computational measures,Metrics,Evaluation,General
+dropout,Nill,NOUN,TN,regularization technique preventing co-adaptations in neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+dynamic epistemic logic,DEL,NOUN,TN,logical framework for knowledge and information change,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+eager learning,Nill,NOUN,TN,learning method constructing target function during training,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+early stopping,Nill,NOUN,TN,regularization technique stopping training before convergence,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+ebert test,Nill,NOUN,TN,test of whether a synthesized voice can tell jokes effectively,TN-09 Metrics units and computational measures,Metrics,Evaluation,General
+echo state network,ESN,NOUN,TN,a recurrent neural network with a sparsely connected hidden layer,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+edge computing,Nill,NOUN,TN,computation performed at the edge of a network near data sources,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+embedding,Nill,NOUN,TN,a dense vector representation of discrete entities in continuous space,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+embodied agent,Nill,NOUN,TN,an intelligent agent with a physical body interacting with environment,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+emergent behavior,Nill,NOUN,TN,complex behavior arising from simple rules in multi-agent systems,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+emotion recognition,Nill,NOUN,TN,identifying human emotions from various modalities,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+encoder-decoder,Nill,NOUN,TN,architecture mapping input to latent representation then to output,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+end-to-end learning,Nill,NOUN,TN,learning directly from raw inputs to final outputs,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+ensemble learning,Nill,NOUN,TN,combining multiple models to improve predictions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+entity extraction,Nill,NOUN,TN,identifying named entities in text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+entropy,Nill,NOUN,TN,measure of uncertainty or information content in data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+epoch,Nill,NOUN,TN,one complete pass through the entire training dataset,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+error function,Nill,NOUN,TN,a function measuring the difference between predicted and actual values,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+evolutionary algorithm,EA,NOUN,TN,population-based optimization inspired by biological evolution,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+evolutionary computation,Nill,NOUN,TN,family of algorithms inspired by biological evolution,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+expert system,Nill,NOUN,TN,a system emulating decision-making of a human expert,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+explainable ai,XAI,NOUN,TN,AI systems whose actions can be understood by humans,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+exploitation,Nill,NOUN,TN,using known information to maximize immediate reward,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+exploration,Nill,NOUN,TN,seeking new information about the environment,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+extrapolation,Nill,NOUN,TN,predicting beyond the range of training data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+facial recognition,Nill,NOUN,TN,identifying individuals from facial features,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+feature,Nill,NOUN,TN,an individual measurable property of observed data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+feature engineering,Nill,NOUN,TN,creating features from raw data for machine learning,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+feature extraction,Nill,NOUN,TN,deriving informative features from raw data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+feature learning,Nill,NOUN,TN,learning representations that discover useful features,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+feature selection,Nill,NOUN,TN,selecting a subset of relevant features for model building,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+federated learning,Nill,NOUN,TN,training models across decentralized data sources,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+feedforward neural network,FNN,NOUN,TN,neural network where connections do not form cycles,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+few-shot learning,Nill,NOUN,TN,learning from very few training examples,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+fine-tuning,Nill,NOUN,TN,adapting a pre-trained model to a specific task,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+fitness function,Nill,NOUN,TN,function evaluating solution quality in evolutionary algorithms,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+forward chaining,Nill,NOUN,TN,inference starting from known facts toward goals,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+forward propagation,Nill,NOUN,TN,computing outputs from inputs through network layers,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+frame problem,Nill,NOUN,TN,the challenge of representing what does not change during actions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+fuzzy logic,Nill,NOUN,TN,logic handling degrees of truth rather than binary values,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+fuzzy set,Nill,NOUN,TN,a set allowing membership degrees between zero and one,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+game theory,Nill,NOUN,TN,mathematical study of strategic interaction between agents,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+generalization,Nill,NOUN,TN,model ability to perform well on unseen data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+generative adversarial network,GAN,NOUN,TN,two networks competing to generate realistic data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+generative model,Nill,NOUN,TN,a model learning to generate new data similar to training data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+genetic algorithm,GA,NOUN,TN,optimization algorithm inspired by natural selection,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+genetic operator,Nill,NOUN,TN,operators like selection crossover and mutation in genetic algorithms,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+genetic programming,GP,NOUN,TN,evolving computer programs using genetic algorithms,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+gesture recognition,Nill,NOUN,TN,interpreting human gestures via algorithms,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+global optimization,Nill,NOUN,TN,finding the absolute best solution in the entire search space,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+google brain,Nill,NOUN,TN,deep learning AI research team at Google,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+gpu computing,Nill,NOUN,TN,using graphics processing units for general computation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+gradient descent,Nill,NOUN,TN,optimization algorithm finding minimum by following negative gradient,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+gradient vanishing,Nill,NOUN,TN,problem where gradients become too small during backpropagation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+grammar induction,Nill,NOUN,TN,learning a grammar from training data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+graph neural network,GNN,NOUN,TN,neural network operating on graph-structured data,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+greedy algorithm,Nill,NOUN,TN,algorithm making locally optimal choices at each step,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+ground truth,Nill,NOUN,TN,the correct or actual value used for training and evaluation,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+hallucination,Nill,NOUN,TN,when AI generates information not grounded in training data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+handwriting recognition,Nill,NOUN,TN,converting handwritten text to machine-encoded text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+heuristic,Nill,NOUN,TN,a practical method for problem solving that is not guaranteed optimal,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+hidden layer,Nill,NOUN,TN,neural network layer between input and output layers,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+hidden markov model,HMM,NOUN,TN,statistical model with hidden states following Markov process,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+hierarchical clustering,Nill,NOUN,TN,clustering building a hierarchy of clusters,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+hill climbing,Nill,NOUN,TN,optimization technique iteratively improving current solution,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+hopfield network,Nill,NOUN,TN,a recurrent neural network serving as associative memory,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+human-in-the-loop,Nill,NOUN,TN,systems requiring human interaction during operation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+hyperparameter,Nill,NOUN,TN,parameter set before training begins not learned from data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+hyperparameter optimization,Nill,NOUN,TN,searching for best hyperparameter values,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+hypothesis space,Nill,NOUN,TN,set of all possible hypotheses a learning algorithm can output,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+image recognition,Nill,NOUN,TN,identifying objects or features in digital images,TN-14 Names of vision and perception tasks,Vision,Perception,General
+image segmentation,Nill,NOUN,TN,partitioning an image into meaningful segments,TN-14 Names of vision and perception tasks,Vision,Perception,General
+imitation learning,Nill,NOUN,TN,learning by observing expert demonstrations,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+incremental learning,Nill,NOUN,TN,learning continuously from new data without forgetting,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+inductive bias,Nill,NOUN,TN,assumptions used by learners to generalize from training data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+inductive logic programming,ILP,NOUN,TN,machine learning using logic programming representations,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+inference,Nill,NOUN,TN,deriving conclusions from premises using reasoning,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+inference engine,Nill,NOUN,TN,component applying rules to knowledge base for conclusions,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+information extraction,Nill,NOUN,TN,extracting structured information from unstructured text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+information gain,Nill,NOUN,TN,measure of information obtained about a variable,TN-09 Metrics units and computational measures,Metrics,Evaluation,General
+information retrieval,Nill,NOUN,TN,obtaining relevant information from large collections,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+instance-based learning,Nill,NOUN,TN,learning by comparing new instances to stored examples,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+intelligent agent,Nill,NOUN,TN,an entity perceiving environment and acting to achieve goals,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+intelligent control,Nill,NOUN,TN,control systems using AI techniques,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+interpretability,Nill,NOUN,TN,degree to which humans can understand model decisions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+inverse reinforcement learning,IRL,NOUN,TN,inferring reward function from observed behavior,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+k-means clustering,Nill,NOUN,TN,partitioning n observations into k clusters,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+k-nearest neighbors,KNN,NOUN,TN,classification based on majority vote of k nearest training examples,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+kernel method,Nill,NOUN,TN,algorithms using kernel functions for pattern analysis,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+knowledge acquisition,Nill,NOUN,TN,extracting knowledge from human experts,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+knowledge base,Nill,NOUN,TN,a repository of complex structured and unstructured information,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+knowledge engineering,Nill,NOUN,TN,integrating knowledge into computer systems,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+knowledge graph,Nill,NOUN,TN,a graph representing knowledge as entities and relationships,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+knowledge representation,Nill,NOUN,TN,representing information for use by AI systems,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+language model,LM,NOUN,TN,probabilistic model assigning probabilities to word sequences,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+large language model,LLM,NOUN,TN,language model with billions of parameters trained on massive text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+latent space,Nill,NOUN,TN,a representation space capturing underlying data structure,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+latent variable,Nill,NOUN,TN,a variable not directly observed but inferred,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+lazy learning,Nill,NOUN,TN,deferring generalization until a query is made,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+learning rate,Nill,NOUN,TN,hyperparameter controlling step size in gradient descent,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+learning to rank,Nill,NOUN,TN,machine learning for ranking items,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+levenshtein distance,Nill,NOUN,TN,minimum edits needed to transform one string to another,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+linear regression,Nill,NOUN,TN,modeling relationship between variables with linear equation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+lisp,LISP,NOUN,TN,programming language favored historically for AI research,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+local minimum,Nill,NOUN,TN,a point lower than neighbors but not globally lowest,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+local search,Nill,NOUN,TN,optimization moving from solution to solution locally,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+logic programming,Nill,NOUN,TN,programming using formal logic,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+logical reasoning,Nill,NOUN,TN,deriving conclusions from premises using logic,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+long short-term memory,LSTM,NOUN,TN,RNN architecture capable of learning long-term dependencies,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+loss function,Nill,NOUN,TN,function measuring how well predictions match actual values,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+machine ethics,Nill,NOUN,TN,ensuring machines behave in morally acceptable ways,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+machine learning,ML,NOUN,TN,algorithms that improve automatically through experience,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+machine listening,Nill,NOUN,TN,analyzing and understanding audio signals,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+machine perception,Nill,NOUN,TN,ability of machines to interpret sensory data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+machine translation,MT,NOUN,TN,automatic translation between natural languages,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+machine vision,Nill,NOUN,TN,using cameras and computers for industrial inspection,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+markov chain,Nill,NOUN,TN,stochastic process with memoryless property,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+markov decision process,MDP,NOUN,TN,mathematical framework for sequential decision making,TN-03 Names of tools and compute infrastructure their parts and configurations,Equipment,Software,General
+mathematical optimization,Nill,NOUN,TN,selecting best element from a set of alternatives,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+maximum likelihood estimation,MLE,NOUN,TN,estimating parameters by maximizing likelihood,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+mean squared error,MSE,NOUN,TN,average of squared differences between predicted and actual,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+meta-learning,Nill,NOUN,TN,learning to learn improving learning algorithm itself,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+minimax algorithm,Nill,NOUN,TN,algorithm minimizing possible loss in worst case scenario,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+model compression,Nill,NOUN,TN,reducing model size while maintaining performance,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+model selection,Nill,NOUN,TN,choosing the best model from candidates,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+monte carlo method,Nill,NOUN,TN,computational algorithms relying on random sampling,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+monte carlo tree search,MCTS,NOUN,TN,heuristic search using random sampling for decisions,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+morphological analysis,Nill,NOUN,TN,analyzing word structure and forms,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+multi-agent system,MAS,NOUN,TN,system composed of multiple interacting intelligent agents,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+multi-layer perceptron,MLP,NOUN,TN,feedforward neural network with multiple hidden layers,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+multimodal learning,Nill,NOUN,TN,learning from multiple data modalities simultaneously,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+mutation,Nill,NOUN,TN,genetic operator introducing random changes,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+naive bayes classifier,Nill,NOUN,TN,probabilistic classifier based on Bayes theorem with independence,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+named entity recognition,NER,NOUN,TN,identifying named entities in text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+natural language generation,NLG,NOUN,TN,producing natural language text from data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+natural language processing,NLP,NOUN,TN,enabling computers to understand and process human language,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+natural language understanding,NLU,NOUN,TN,comprehending meaning in natural language,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+neural architecture search,NAS,NOUN,TN,automating the design of neural network architectures,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+neural machine translation,NMT,NOUN,TN,machine translation using neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+neural network,NN,NOUN,TN,computing system inspired by biological neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+neural turing machine,NTM,NOUN,TN,neural network with external memory for computation,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+neuromorphic computing,Nill,NOUN,TN,computing inspired by biological brain structure,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+node,Nill,NOUN,TN,basic unit in neural networks or graph structures,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+noise,Nill,NOUN,TN,random variation in data obscuring signal,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+non-monotonic logic,Nill,NOUN,TN,logic where adding information can reduce conclusions,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+normalization,Nill,NOUN,TN,scaling data to a standard range,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+object detection,Nill,NOUN,TN,detecting instances of objects in images,TN-14 Names of vision and perception tasks,Vision,Perception,General
+object recognition,Nill,NOUN,TN,identifying objects in images or videos,TN-14 Names of vision and perception tasks,Vision,Perception,General
+objective function,Nill,NOUN,TN,function to be optimized in machine learning,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+offline learning,Nill,NOUN,TN,learning from fixed dataset without updates,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+one-hot encoding,Nill,NOUN,TN,representing categorical variables as binary vectors,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+one-shot learning,Nill,NOUN,TN,learning from a single training example,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+online learning,Nill,NOUN,TN,learning incrementally as data becomes available,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+ontology,Nill,NOUN,TN,formal representation of knowledge as concepts and relationships,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+open-domain question answering,Nill,NOUN,TN,answering questions from any domain,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+openai,Nill,NOUN,TN,AI research laboratory aiming to develop safe AGI,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+optical character recognition,OCR,NOUN,TN,converting images of text to machine-encoded text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+optimization,Nill,NOUN,TN,finding best solution from all feasible solutions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+overfitting,Nill,NOUN,TN,model performing well on training but poorly on new data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+parameter,Nill,NOUN,TN,internal variable learned from training data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+part-of-speech tagging,POS,NOUN,TN,labeling words with their grammatical categories,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+particle swarm optimization,PSO,NOUN,TN,optimization inspired by bird flocking behavior,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+pattern recognition,Nill,NOUN,TN,identifying patterns in data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+perceptron,Nill,NOUN,TN,simplest type of artificial neural network,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+planning,Nill,NOUN,TN,generating action sequences to achieve goals,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+policy,Nill,NOUN,TN,mapping from states to actions in reinforcement learning,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+policy gradient,Nill,NOUN,TN,RL method optimizing policy directly using gradients,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+pooling,Nill,NOUN,TN,downsampling operation in convolutional neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+pre-training,Nill,NOUN,TN,training model on large dataset before fine-tuning,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+precision,Nill,NOUN,TN,ratio of true positives to all predicted positives,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+prediction,Nill,NOUN,TN,estimating future or unknown values from data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+predictive analytics,Nill,NOUN,TN,using data and statistics to predict future outcomes,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+principal component analysis,PCA,NOUN,TN,dimensionality reduction using orthogonal transformation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+probabilistic programming,Nill,NOUN,TN,programming with random variables and inference,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+prolog,PROLOG,NOUN,TN,logic programming language associated with AI,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+prompt engineering,Nill,NOUN,TN,designing input prompts to improve AI model outputs,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+pruning,Nill,NOUN,TN,removing unnecessary components to reduce model size,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+q-learning,Nill,NOUN,TN,model-free reinforcement learning algorithm,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+quantum computing,Nill,NOUN,TN,computation using quantum mechanical phenomena,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+quantum machine learning,QML,NOUN,TN,machine learning using quantum computers,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+question answering,QA,NOUN,TN,building systems that answer questions in natural language,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+radial basis function network,RBF,NOUN,TN,neural network using radial basis functions as activation,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+random forest,RF,NOUN,TN,ensemble of decision trees for classification and regression,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+recall,Nill,NOUN,TN,ratio of true positives to all actual positives,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+recognition,Nill,NOUN,TN,identifying objects or patterns from input data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+recommender system,Nill,NOUN,TN,system predicting user preferences for items,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+rectified linear unit,ReLU,NOUN,TN,activation function outputting input if positive else zero,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+recurrent neural network,RNN,NOUN,TN,neural network with connections forming directed cycles,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+regression,Nill,NOUN,TN,predicting continuous numerical values,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+regularization,Nill,NOUN,TN,techniques preventing overfitting by adding constraints,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+reinforcement learning,RL,NOUN,TN,learning through interaction with environment using rewards,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+representation learning,Nill,NOUN,TN,learning representations that make subsequent learning easier,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+reservoir computing,Nill,NOUN,TN,computation framework using fixed random recurrent network,TN-03 Names of tools and compute infrastructure their parts and configurations,Equipment,Software,General
+residual network,ResNet,NOUN,TN,neural network with skip connections,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+reward function,Nill,NOUN,TN,function specifying immediate reward for state-action pairs,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+robotics,Nill,NOUN,TN,engineering and science of designing robots,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+roc curve,Nill,NOUN,TN,plot showing true positive rate vs false positive rate,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+sample complexity,Nill,NOUN,TN,number of samples needed to learn a function accurately,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+sampling,Nill,NOUN,TN,selecting a subset of data for analysis,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+search algorithm,Nill,NOUN,TN,algorithm for finding solutions in a problem space,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+self-driving car,Nill,NOUN,TN,a vehicle capable of autonomous operation,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+self-supervised learning,SSL,NOUN,TN,learning from unlabeled data using pretext tasks,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+semantic analysis,Nill,NOUN,TN,analyzing meaning of text or code,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+semantic network,Nill,NOUN,TN,knowledge representation as nodes and semantic relations,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+semantic segmentation,Nill,NOUN,TN,classifying each pixel in an image,TN-14 Names of vision and perception tasks,Vision,Perception,General
+semi-supervised learning,Nill,NOUN,TN,learning using both labeled and unlabeled data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+sentiment analysis,Nill,NOUN,TN,determining emotional tone in text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+sequence-to-sequence,Seq2Seq,NOUN,TN,models converting input sequences to output sequences,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+simulated annealing,SA,NOUN,TN,probabilistic optimization inspired by metallurgical annealing,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+situated approach,Nill,NOUN,TN,AI emphasizing embodiment and environmental interaction,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+softmax function,Nill,NOUN,TN,function converting values to probability distribution,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+software agent,Nill,NOUN,TN,computer program acting autonomously for users,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+solomonoff induction,Nill,NOUN,TN,universal prediction method based on algorithmic probability,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+sparse representation,Nill,NOUN,TN,representing data using few active elements,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+speech recognition,Nill,NOUN,TN,converting spoken language to text,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+speech synthesis,Nill,NOUN,TN,generating artificial human speech,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+state space,Nill,NOUN,TN,set of all possible states in a problem,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+statistical learning,Nill,NOUN,TN,learning patterns from data using statistics,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+stochastic gradient descent,SGD,NOUN,TN,optimization using gradients of random data subsets,TN-05 Names of algorithms methods or procedures,Algorithms,Methods,General
+strong ai,Nill,NOUN,TN,AI with human-level general intelligence,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+supervised learning,Nill,NOUN,TN,learning from labeled training data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+support vector machine,SVM,NOUN,TN,classifier finding optimal hyperplane for separation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+swarm intelligence,Nill,NOUN,TN,collective behavior of decentralized self-organized systems,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+symbolic ai,Nill,NOUN,TN,AI using symbolic representations and logical rules,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+synthetic data,Nill,NOUN,TN,artificially generated data mimicking real data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+temporal difference learning,TD,NOUN,TN,RL method combining Monte Carlo and dynamic programming,TN-12 Names of agents and robotic systems,Systems,Robotics,General
+tensor,Nill,NOUN,TN,multidimensional array used in deep learning computations,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+tensorflow,Nill,NOUN,TN,open-source machine learning framework by Google,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+text mining,Nill,NOUN,TN,extracting information from textual data,TN-04 Names of data resources and unwanted artifacts,Data,Resources,General
+topic modeling,Nill,NOUN,TN,discovering abstract topics in document collections,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+training data,Nill,NOUN,TN,data used to train machine learning models,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+transfer learning,Nill,NOUN,TN,applying knowledge from one task to different task,TN-07 Names of mathematical or logical frameworks,Foundations,Logic,General
+transformer,Nill,NOUN,TN,architecture using self-attention for sequence modeling,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+turing machine,Nill,NOUN,TN,abstract mathematical model of computation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+turing test,Nill,NOUN,TN,test of machine ability to exhibit intelligent behavior,TN-09 Metrics units and computational measures,Metrics,Evaluation,General
+uncertainty quantification,UQ,NOUN,TN,characterizing and reducing uncertainties in predictions,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+underfitting,Nill,NOUN,TN,model too simple to capture underlying patterns,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+unsupervised learning,Nill,NOUN,TN,learning patterns from unlabeled data,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+utility function,Nill,NOUN,TN,function measuring the desirability of outcomes,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+validation,Nill,NOUN,TN,evaluating model on held-out data during training,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+vanishing gradient problem,Nill,NOUN,TN,gradients becoming too small during backpropagation,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+variational autoencoder,VAE,NOUN,TN,autoencoder learning latent distribution for generation,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+vector space model,Nill,NOUN,TN,representing text documents as vectors,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+vision transformer,ViT,NOUN,TN,transformer architecture applied to image recognition,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+weak ai,Nill,NOUN,TN,AI designed for specific narrow tasks,TN-01 General AI concepts and terminology,Concepts,General,Terminology
+weight,Nill,NOUN,TN,learnable parameter in neural networks,TN-02 Names of models or architectures and components on them,Models,Neural Networks,General
+word embedding,Nill,NOUN,TN,representing words as dense vectors in continuous space,TN-13 Names of NLP concepts and language tasks,NLP,Language,General
+word2vec,Nill,NOUN,TN,technique for learning word embeddings from text,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+xgboost,Nill,NOUN,TN,gradient boosting framework for efficient machine learning,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General
+zero-shot learning,Nill,NOUN,TN,recognizing objects without any training examples,TN-06 Names of learning paradigms and strategies,Learning,Paradigms,General

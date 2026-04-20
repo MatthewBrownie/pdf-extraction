@@ -1,0 +1,182 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "Options for Queue Based Enrichment System",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "My thoughts on the requirements to discuss:",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 3,
+    "text": " Expected number of enrichments per minute/hour",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 4,
+    "text": "o Likely up to 100 per minute, like if we’re running 4 enrichments across 15 docs   Ability to process enrichments simultaneously",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 5,
+    "text": "o I think this is necessary because it lets the system run at full capacity w/o",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 6,
+    "text": "worrying about enrichments   One enrichment type per enrichment request",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 7,
+    "text": "o If multiple per request, is sequential processing necessary?  o I think we’re only dealing with one per request right now, but that could change in",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 8,
+    "text": "the future.   Criticality of retry mechanisms, low",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 9,
+    "text": "o We just need to store that a job failed as we discussed Friday.   Audit and job history trails are necessary",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 10,
+    "text": "o Make sure we know what happens with every job   Persistence is not necessary across service restarts",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 11,
+    "text": "o We just need to know that the last job of the prior service’s life failed   Job processing delays are not too big of a deal",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 12,
+    "text": "o This is a backend service behind a backend service, users can wait to access the",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 13,
+    "text": "embeddings of their docs   Are enrichments CPU bound? I/O bound?",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 14,
+    "text": "o Embeddings: I/O bound, has to wait for OpenAI  o Date extraction: CPU-bound due to text parsing, pattern recognition  o Glossary: mostly I/O due to Neo operations  o Summary: I/O bound, uses OpenAI   What are the memory constraints of the system?   OpenAI gives external API rate limits",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 15,
+    "text": "o This slows us down some   Job priority is a necessity",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 16,
+    "text": "o Do enrichments first because they are more important   Is job scheduling necessary? I think not.",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 17,
+    "text": "o Jobs can be run ASAP, esp if push based queue system   Do we need to be able to cancel jobs? I think not.",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 18,
+    "text": "o Have never spoken about this, seems unnecessary   Real-time status monitoring is necessary",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 19,
+    "text": "o Need to have real time status of jobs   We need metrics for things like queue depth, processing times, and failure rates",
+    "font_size": 12.0
+  },
+  {
+    "page": 1,
+    "paragraph": 20,
+    "text": "o More data is more good",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 1,
+    "text": "Option 1: Current System",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 2,
+    "text": "Pros  Cons  Simple, currently functional  No persistence  Familiar codebase  Partial job history  No new dependencies  Limited monitoring  Low memory footprint  Single threaded    No rate limiting",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 3,
+    "text": "Option 2: Piscena as Queue and Worker Threads",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 4,
+    "text": "Pros  Cons  True parallelism  No persistence  Simple architecture  No native job history or audit trail  Good for CPU bound work  No built-in monitoring   Low latency  No retry mechanism    No priority handling    No rate limiting",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 5,
+    "text": "Option 3: BullMQ without Worker Threads",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 6,
+    "text": "Pros  Cons  Full persistence  Single threaded  Excellent job history, monitoring, and  auditing",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 7,
+    "text": "Redis dependency",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 8,
+    "text": "Built in rate limiting  Slower for CPU tasks  Native support for priority queues",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 9,
+    "text": "Option 4: BullMQ + Piscena Worker Threads",
+    "font_size": 12.0
+  },
+  {
+    "page": 2,
+    "paragraph": 10,
+    "text": "Pros  Cons  All BullMQ pros  More complex  Parallelism  Higher memory usage  Best performance  More dependencies  Flexible resource allocation  Debugging complexity",
+    "font_size": 12.0
+  }
+]
