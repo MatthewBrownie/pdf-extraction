@@ -1,0 +1,173 @@
+[
+  {
+    "page": 1,
+    "table": [
+      [
+        "Test",
+        "This table with border between"
+      ],
+      [
+        "and response",
+        "and response"
+      ],
+      [
+        "Label 1",
+        "This is response 1"
+      ],
+      [
+        "Label 2",
+        "This is response 2"
+      ],
+      [
+        "Label 3",
+        "This is response 3"
+      ]
+    ],
+    "bbox": [
+      71.32,
+      149.87,
+      540.38,
+      224.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 1,
+    "table": [
+      [
+        "Heading 1",
+        "Heading 2",
+        "Heading 3",
+        "Heading 4"
+      ],
+      [
+        "Subheading 1",
+        "Label 1",
+        "Label 2",
+        "Label 3"
+      ],
+      [
+        "Subheading 2",
+        "Label 4",
+        "Label 5",
+        "Label 6"
+      ],
+      [
+        "Subheading 3",
+        "Label 7",
+        "Label 8",
+        "Label 9"
+      ],
+      [
+        "Subheading 4",
+        "Label 10",
+        "Label 11",
+        "Label 12"
+      ]
+    ],
+    "bbox": [
+      70.87,
+      495.9,
+      540.22,
+      568.18
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 1,
+    "table": [
+      [
+        "First column and row",
+        "Second column first row",
+        "Third column first row"
+      ],
+      [
+        "First column second row",
+        "Second column and row",
+        "Third column second row"
+      ]
+    ],
+    "bbox": [
+      71.27,
+      686.27,
+      540.19,
+      717.46
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "First column third row",
+        "Second column third row",
+        "Third column and row"
+      ],
+      [
+        "First column fourth row",
+        "Second column fourth row",
+        "Third column fourth row"
+      ],
+      [
+        "First column fifth row",
+        "Second column fifth row",
+        "Third column fifth row"
+      ]
+    ],
+    "bbox": [
+      71.64,
+      71.75,
+      540.12,
+      118.05
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Namnoncommodoerat. Suspendisse consectetur dictum tempus."
+      ],
+      [
+        "Quisque id posuere dolor, in elementum libero. Donec id augue in mi pellentesque interdum",
+        "Namconvallis quamnondolor cursus volutpat."
+      ],
+      [
+        "Ut urna libero, laoreet ac feugiat vitae, commodonon mauris.",
+        "Namsuscipit lorem nec turpis porttitor efficitur."
+      ],
+      [
+        "Proin semmi, dictum eu orci vel, elementum finibus magna.",
+        "Aliquam sed pellentesque sapien."
+      ]
+    ],
+    "bbox": [
+      71.26,
+      331.35,
+      541.11,
+      451.53
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "table_type": "docling"
+  }
+]

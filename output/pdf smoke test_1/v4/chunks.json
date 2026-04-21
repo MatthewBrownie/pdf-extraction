@@ -1,0 +1,291 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "This is definitely some really real text. This text lies before a complex table. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      72.03,
+      536.37,
+      137.56
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "This is a bunch of text between two more intricate tables. There isn't a ton to say. Halcyon is the capital of the empire of Apollyean. A wall-less city of 80,000, Halcyon sits beside the Crystal Falls, on the shore of the Lake of the Ancestors, and at the start of the Mirrorbrook. A common saying of Halcyon is to see your forebears in your own reflection. This may be in part due to the locality of the Reflections' Crest, the cliff face that is the end of the El'drath'el Range. In this cliff, it's said one may see  spirits floating through the throughways and streets.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      250.26,
+      536.09,
+      366.81
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 3,
+    "text": "Here is a second text chunk that will live between the two tables. The 8th century BCE saw the rise of organized city-states along the coast. By 750 BCE, at least five fortified ports had emerged, each governed by a council of elders and a rotating magistrate whose term lasted one year. Records etched into clay tablets-dated paleographically to circa 700 BCE-describe grain shipments, naval patrol schedules, and treaty renewals.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      377.12,
+      542.23,
+      459.57
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 1,
+    "paragraph": 4,
+    "text": "Next will be a table that spans a page break. This table will be very simple in nature. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      593.63,
+      542.21,
+      676.22
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 1,
+    "text": "Great, that was a pretty basic table. After this list, there will be another basic table:",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      142.95,
+      495.34,
+      157.6
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 2,
+    "text": "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      168.75,
+      448.33,
+      183.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 3,
+    "text": "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      186.51,
+      522.74,
+      218.11
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 4,
+    "text": "Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      221.22,
+      529.39,
+      286.75
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 5,
+    "text": "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC.",
+    "font_size": 0.0,
+    "bbox": [
+      90.02,
+      289.98,
+      529.7,
+      321.55
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "list_item"
+  },
+  {
+    "page": 2,
+    "paragraph": 6,
+    "text": "Cool that was a pretty simple table filled with Loren Ipsum writing. Here is some more: Nulla fermentum lectus in justo rutrum varius. Duis non faucibus urna. Aliquam sed vestibulum tortor, et ultricies ex. Aenean eu leo dapibus, efficitur metus eu, lobortis dui. Phasellus nec felis commodo, tempus nibh interdum, rutrum risus. Mauris tincidunt dui dignissim iaculis vestibulum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce tempor lacinia orci, eget aliquam nisi. Nunc eu ligula interdum, sagittis dolor nec, gravida enim. Quisque lobortis erat sed metus consectetur, sed finibus enim efficitur. Curabitur iaculis ex eu tristique laoreet. Maecenas placerat, lectus quis hendrerit vulputate, lacus enim molestie justo, in bibendum est augue eu lectus.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      476.48,
+      541.74,
+      643.92
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 2,
+    "paragraph": 7,
+    "text": "The current paragraph will span over a page break so its really important to get the sentence to be in plain English when it comes to the page break. This is an exploration into PDF text, table, and image extraction. I am finding this pursuit to be interesting. I enjoy writing nonsensical text on plain paper and reflecting upon what that might mean. Who will read this text? Well, we've spanned the page gap. Thank you.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      654.25,
+      535.74,
+      702.86
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 1,
+    "text": "This paragraph is after the page break. Morbi fringilla scelerisque ante id semper. Nulla viverra odio ex, vel lacinia purus condimentum nec. Donec eget pharetra nibh. Pellentesque vestibulum sapien quis arcu consectetur dapibus. Suspendisse viverra nec neque in auctor. Mauris eu tincidunt tellus, id aliquet diam. Nulla porta turpis sem, sed vestibulum nisl ullamcorper sed. Praesent tristique pharetra quam, venenatis vestibulum turpis luctus eu.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      113.91,
+      531.19,
+      213.4
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 2,
+    "text": "Photo Time:",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      248.82,
+      133.39,
+      263.47
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "section_header"
+  },
+  {
+    "page": 3,
+    "paragraph": 3,
+    "text": "I am going to place some stock photos on this page with some description of what is going on in the photos.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      273.78,
+      535.0,
+      305.35
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 4,
+    "text": "Beside this text is a silly photo of a nun underwater with goggles observing what appears to be a goldfish. There are bubbles floating up past her. Nulla blandit sagittis tortor a imperdiet. Proin venenatis lorem nunc, eu egestas urna ornare nec. Pellentesque a feugiat arcu. Aliquam lobortis nibh mi, nec suscipit neque pretium quis. Sed in cursus nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas, odio vitae suscipit finibus, quam orci efficitur nulla, in laoreet erat dolor sed tortor. Ut lacinia ipsum nec libero interdum congue.",
+    "font_size": 0.0,
+    "bbox": [
+      184.1,
+      315.66,
+      529.99,
+      466.05
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 5,
+    "text": "Great above this text is the picture of the nun. Below this text is a stock photo of a bridge over stormy water. The bridge seems to lead somewhere hilly. The photo is very beautiful. The bridge seems to be some kind of suspension bridge.",
+    "font_size": 0.0,
+    "bbox": [
+      72.02,
+      476.36,
+      525.68,
+      525.0
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "text"
+  },
+  {
+    "page": 3,
+    "paragraph": 6,
+    "text": "shutterstock.com-2385803955",
+    "font_size": 0.0,
+    "bbox": [
+      258.33,
+      695.33,
+      353.33,
+      702.67
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "caption"
+  }
+]
