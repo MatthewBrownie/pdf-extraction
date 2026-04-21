@@ -1,0 +1,216 @@
+[
+  {
+    "page": 1,
+    "table": [
+      [
+        "Test",
+        null,
+        null,
+        "",
+        "This table with border between label",
+        "",
+        "",
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        "and response",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "",
+        "Label 1",
+        "",
+        "",
+        "This is response 1",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "Label 2",
+        "",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "",
+        "Label 3",
+        "",
+        "",
+        "This is response 3",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "bbox": [
+      72.12,
+      567.11,
+      539.72,
+      644.14
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 1,
+    "table": [
+      [
+        "",
+        "Subheading 1",
+        "",
+        "",
+        "Label 1",
+        "",
+        "",
+        "Label 2",
+        "",
+        "",
+        "Label 3",
+        ""
+      ]
+    ],
+    "bbox": [
+      72.12,
+      267.26,
+      539.72,
+      282.02
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 1,
+    "table": [
+      [
+        "",
+        "Subheading 3",
+        "",
+        "",
+        "Label 7",
+        "",
+        "",
+        "Label 8",
+        "",
+        "",
+        "Label 9",
+        ""
+      ]
+    ],
+    "bbox": [
+      72.12,
+      237.98,
+      539.72,
+      252.62
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 1,
+    "table": [
+      [
+        "First column and row",
+        "Second column first row",
+        "Third column first row"
+      ],
+      [
+        "First column second row",
+        "Second column and row",
+        "Third column second row"
+      ]
+    ],
+    "bbox": [
+      72.12,
+      75.0,
+      539.72,
+      105.24
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "First column third row",
+        "Second column third row",
+        "Third column and row"
+      ],
+      [
+        "First column fourth row",
+        "Second column fourth row",
+        "Third column fourth row"
+      ],
+      [
+        "First column fifth row",
+        "Second column fifth row",
+        "Third column fifth row"
+      ]
+    ],
+    "bbox": [
+      72.26,
+      674.26,
+      540.0,
+      719.74
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  },
+  {
+    "page": 2,
+    "table": [
+      [
+        "Lorem ipsum dolor sit amet, consectetur\nadipiscing elit.",
+        "Nam non commodo erat. Suspendisse\nconsectetur dictum tempus."
+      ],
+      [
+        "Quisque id posuere dolor, in elementum libero.\nDonec id augue in mi pellentesque interdum",
+        "Nam convallis quam non dolor cursus\nvolutpat."
+      ],
+      [
+        "Ut urna libero, laoreet ac feugiat vitae,\ncommodo non mauris.",
+        "Nam suscipit lorem nec turpis porttitor\nefficitur."
+      ],
+      [
+        "Proin sem mi, dictum eu orci vel, elementum\nfinibus magna.",
+        "Aliquam sed pellentesque sapien."
+      ]
+    ],
+    "bbox": [
+      72.26,
+      340.73,
+      540.0,
+      459.91
+    ],
+    "page_size": [
+      612,
+      792
+    ]
+  }
+]
