@@ -355,6 +355,57 @@
     .empty-icon { font-size: 2.5rem; opacity: 0.3; }
     .empty p { font-size: 0.85rem; max-width: 360px; line-height: 1.6; }
 
+    .about {
+      padding: 32px 40px; max-width: 760px; margin: 0 auto;
+      color: var(--text); font-size: 0.88rem; line-height: 1.65;
+    }
+    .about h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--text);
+      margin: 0 0 6px 0; letter-spacing: 0.2px;
+    }
+    .about .about-sub {
+      color: var(--text-dim); font-size: 0.8rem; margin: 0 0 22px 0;
+    }
+    .about h3 {
+      font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.6px; color: var(--text-dim);
+      margin: 22px 0 10px 0;
+    }
+    .about p { margin: 0 0 10px 0; color: var(--text-dim); }
+    .about p strong, .about li strong { color: var(--text); font-weight: 600; }
+    .about ul {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: 8px;
+    }
+    .about li {
+      padding: 10px 12px; border: 1px solid var(--border);
+      border-radius: 6px; background: var(--surface);
+      color: var(--text-dim); font-size: 0.83rem;
+    }
+    .about .about-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px; margin-top: 4px;
+    }
+    .about .pill {
+      display: inline-block; padding: 1px 7px; border-radius: 3px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3px;
+      background: rgba(108, 140, 255, 0.12); color: var(--accent);
+      border: 1px solid rgba(108, 140, 255, 0.3);
+      vertical-align: 1px; margin-left: 6px;
+    }
+    .about code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.78rem; padding: 1px 5px; border-radius: 3px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .about .about-cta {
+      margin-top: 22px; padding: 12px 14px; border-radius: 6px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-dim); font-size: 0.82rem;
+    }
+    .about .about-cta strong { color: var(--text); }
+
     footer.token-footer {
       border-top: 1px solid var(--border); background: var(--surface);
       padding: 10px 28px; font-size: 0.74rem; color: var(--text-dim);
@@ -422,11 +473,48 @@
 
   <main>
     <div class="results-wrap" id="results-wrap">
-      <div class="empty">
-        <div class="empty-icon">📄</div>
-        <p>Pick a PDF and click <strong>Run extraction</strong> to send it to Claude via OpenRouter.
-        Cached results load instantly; use <strong>Force</strong> to re-spend tokens.</p>
-      </div>
+      <section class="about" id="about-panel">
+        <h2>About this extractor <span class="pill">vision</span></h2>
+        <p class="about-sub">
+          A seventh extraction approach that hands each PDF page to Anthropic's Claude
+          vision-language models (via OpenRouter) instead of a deterministic parsing library.
+        </p>
+
+        <h3>How it differs from v1–v6</h3>
+        <p>
+          Versions v1–v6 on the <a href="/" class="header-link" style="margin:0">comparison page</a>
+          read PDFs with PyMuPDF, pdfplumber, unstructured.io, docling, pdfminer.six, and
+          Camelot — fast, free, and fully reproducible. This page renders each page to an
+          image and asks Claude to describe what it sees: useful for scanned, untagged, or
+          visually complex PDFs where the structural libraries miss content.
+        </p>
+
+        <h3>What you get back</h3>
+        <ul class="about-grid">
+          <li><strong>Per-page Markdown</strong> reconstructing the text in reading order, including headings and lists.</li>
+          <li><strong>Tables</strong> as 2-D arrays. Cells the model wasn't sure about are flagged with a yellow border and a tooltip.</li>
+          <li><strong>Figures</strong> as short natural-language descriptions of charts, diagrams, and images.</li>
+          <li><strong>Usage &amp; cost</strong> — input/output tokens and an estimated USD cost shown at the bottom of every run.</li>
+        </ul>
+
+        <h3>Choosing a model</h3>
+        <ul>
+          <li><strong>Haiku</strong> — bulk runs, faster and cheaper. Good default for first passes.</li>
+          <li><strong>Sonnet</strong> — slower and pricier, better at dense layouts, small fonts, and tricky tables.</li>
+        </ul>
+
+        <h3>Cost, caching &amp; control</h3>
+        <ul>
+          <li>The <strong>Estimated cost</strong> panel in the sidebar shows a low–high range per model before you spend anything. After your first few runs, the estimate is calibrated from your own usage history (prefers PDFs of similar length).</li>
+          <li>Results are cached on disk under <code>output/&lt;pdf&gt;/vision/</code>. Re-selecting the same PDF + model loads instantly with no API call. Use <strong>Force</strong> to re-spend tokens.</li>
+          <li><strong>Cancel</strong> a long run at any time — chunks already returned are saved as a partial result. Click <strong>Resume</strong> to continue from where it stopped without paying for completed chunks again.</li>
+        </ul>
+
+        <div class="about-cta">
+          <strong>Ready to try it?</strong> Pick a PDF on the left, choose a model, and click
+          <strong>Run extraction</strong>. The first run on a new PDF takes roughly a few seconds per page.
+        </div>
+      </section>
     </div>
     <footer class="token-footer" id="token-footer" style="display:none;">
       <span><span class="lbl">model</span> <span class="val" id="ft-model">—</span></span>
@@ -588,9 +676,15 @@ function showError(msg) {
 }
 function clearError() { errorBox.innerHTML = ''; }
 
+const ABOUT_PANEL_HTML = (() => {
+  const el = document.getElementById('about-panel');
+  return el ? el.outerHTML : '';
+})();
+
 function clearResults() {
-  resultsWrap.innerHTML = '<div class="empty"><div class="empty-icon">📄</div>'
-    + '<p>Pick a PDF and click <strong>Run extraction</strong> to send it to Claude via OpenRouter.</p></div>';
+  resultsWrap.innerHTML = ABOUT_PANEL_HTML
+    || '<div class="empty"><div class="empty-icon">📄</div>'
+       + '<p>Pick a PDF and click <strong>Run extraction</strong> to send it to Claude via OpenRouter.</p></div>';
   tokenFooter.style.display = 'none';
 }
 
