@@ -740,20 +740,35 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
             return StreamingResponse(cached_gen(), media_type="application/x-ndjson")
 
     q: "queue.Queue[tuple[str, object]]" = queue.Queue()
+    cancel_event = threading.Event()
+
+    def cancel_check() -> bool:
+        return cancel_event.is_set()
 
     def progress_cb(**evt):
+        if cancel_event.is_set():
+            raise extract_vision.CancelledExtraction("Extraction cancelled.")
         q.put(("progress", evt))
 
     def worker():
         try:
             result = extract_vision.extract_pdf(
-                str(pdf_path), model=model_id, progress_cb=progress_cb,
+                str(pdf_path), model=model_id,
+                progress_cb=progress_cb, cancel_check=cancel_check,
             )
+            if cancel_event.is_set():
+                q.put(("cancelled", None))
+                return
             standard = extract_vision.to_standard(result)
             native = _write_vision_outputs(stem, result, standard)
             q.put(("done", native))
+        except extract_vision.CancelledExtraction:
+            q.put(("cancelled", None))
         except Exception as e:
-            q.put(("error", f"{type(e).__name__}: {e}"))
+            if cancel_event.is_set():
+                q.put(("cancelled", None))
+            else:
+                q.put(("error", f"{type(e).__name__}: {e}"))
 
     t = threading.Thread(target=worker, daemon=True)
     t.start()
@@ -766,46 +781,58 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
             "message": "Starting Claude vision extraction…", "elapsed": 0.0,
         }) + "\n"
 
-        last_hb = time.time()
-        while True:
-            if await request.is_disconnected():
-                return
-            try:
-                kind, data = await asyncio.to_thread(q.get, True, 0.5)
-            except queue.Empty:
-                elapsed = time.time() - started
-                if not t.is_alive():
-                    yield json.dumps({
-                        "event": "error",
-                        "error": "Vision worker exited without producing a result.",
-                    }) + "\n"
+        try:
+            last_hb = time.time()
+            while True:
+                if await request.is_disconnected():
+                    cancel_event.set()
                     return
-                if elapsed > timeout:
-                    yield json.dumps({
-                        "event": "error",
-                        "error": f"Vision extraction timed out after {int(elapsed)}s.",
-                    }) + "\n"
-                    return
-                if time.time() - last_hb >= 2.0:
-                    last_hb = time.time()
-                    yield json.dumps({"event": "heartbeat", "elapsed": round(elapsed, 1)}) + "\n"
-                continue
+                try:
+                    kind, data = await asyncio.to_thread(q.get, True, 0.5)
+                except queue.Empty:
+                    elapsed = time.time() - started
+                    if not t.is_alive():
+                        yield json.dumps({
+                            "event": "error",
+                            "error": "Vision worker exited without producing a result.",
+                        }) + "\n"
+                        return
+                    if elapsed > timeout:
+                        cancel_event.set()
+                        yield json.dumps({
+                            "event": "error",
+                            "error": f"Vision extraction timed out after {int(elapsed)}s.",
+                        }) + "\n"
+                        return
+                    if time.time() - last_hb >= 2.0:
+                        last_hb = time.time()
+                        yield json.dumps({"event": "heartbeat", "elapsed": round(elapsed, 1)}) + "\n"
+                    continue
 
-            elapsed = round(time.time() - started, 1)
-            if kind == "progress":
-                payload = {"event": "progress", "elapsed": elapsed}
-                if isinstance(data, dict):
-                    payload.update(data)
-                yield json.dumps(payload, default=str) + "\n"
-            elif kind == "done":
-                yield json.dumps({
-                    "event": "done", "elapsed": elapsed,
-                    "result": _build_vision_payload(req.pdf_name, data),  # type: ignore[arg-type]
-                }) + "\n"
-                return
-            elif kind == "error":
-                yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"
-                return
+                elapsed = round(time.time() - started, 1)
+                if kind == "progress":
+                    payload = {"event": "progress", "elapsed": elapsed}
+                    if isinstance(data, dict):
+                        payload.update(data)
+                    yield json.dumps(payload, default=str) + "\n"
+                elif kind == "done":
+                    yield json.dumps({
+                        "event": "done", "elapsed": elapsed,
+                        "result": _build_vision_payload(req.pdf_name, data),  # type: ignore[arg-type]
+                    }) + "\n"
+                    return
+                elif kind == "cancelled":
+                    yield json.dumps({
+                        "event": "cancelled", "elapsed": elapsed,
+                        "message": "Extraction cancelled.",
+                    }) + "\n"
+                    return
+                elif kind == "error":
+                    yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"
+                    return
+        finally:
+            # Tell the worker to bail at its next checkpoint if we're tearing down.
+            cancel_event.set()
 
     return StreamingResponse(gen(), media_type="application/x-ndjson")
 

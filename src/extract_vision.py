@@ -287,11 +287,16 @@ def _call_claude(
     return {"data": data, "usage": usage}
 
 
+class CancelledExtraction(RuntimeError):
+    """Raised when a vision extraction is cancelled mid-run."""
+
+
 def extract_pdf(
     pdf_path: str | Path,
     *,
     model: str = MODEL_BULK,
     progress_cb=None,
+    cancel_check=None,
 ) -> ExtractionResult:
     path = Path(pdf_path)
     if not path.is_file():
@@ -318,16 +323,30 @@ def extract_pdf(
         if progress_cb:
             try:
                 progress_cb(**kw)
+            except CancelledExtraction:
+                raise
+            except Exception:
+                pass
+
+    def _check_cancel():
+        if cancel_check is not None:
+            try:
+                if cancel_check():
+                    raise CancelledExtraction("Extraction cancelled.")
+            except CancelledExtraction:
+                raise
             except Exception:
                 pass
 
     max_pages = MAX_PAGES_PER_CHUNK.get(model, 2)
     _emit(phase="chunking", message=f"Splitting PDF into chunks ({max_pages} pages each)…")
+    _check_cancel()
     chunks = _chunk_pdf(path, max_pages)
 
     result = ExtractionResult(model=model)
 
     for i, (chunk_bytes, page_start, num_pages) in enumerate(chunks):
+        _check_cancel()
         page_end = page_start + num_pages - 1
         _emit(
             phase="extracting",

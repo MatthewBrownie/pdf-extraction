@@ -149,6 +149,20 @@
       font-size: 0.78rem; color: var(--orange); line-height: 1.5;
     }
 
+    .progress-box.cancelled .progress-phase { color: var(--text-dim); }
+    .progress-box .progress-header {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .progress-box .cancel-btn {
+      background: transparent; color: var(--text-dim);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 2px 8px; font-size: 0.7rem; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
+    }
+    .progress-box .cancel-btn:hover:not(:disabled) {
+      color: var(--red); border-color: var(--red);
+    }
+    .progress-box .cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
     .progress-box {
       padding: 10px 12px; background: var(--surface2);
       border: 1px solid var(--border); border-radius: var(--radius);
@@ -724,6 +738,27 @@ function setExtracting(b) {
   uploadBtn.disabled = b;
 }
 
+let cancelledByUser = false;
+
+function setProgressCancelDisabled(disabled, label) {
+  const btn = document.getElementById('cancel-extract-btn');
+  if (!btn) return;
+  btn.disabled = !!disabled;
+  if (label) btn.textContent = label;
+}
+
+function attachCancelHandler() {
+  const btn = document.getElementById('cancel-extract-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    if (!abortController) return;
+    cancelledByUser = true;
+    setProgressCancelDisabled(true, 'Cancelling…');
+    setProgress('cancelling', 'Cancelling extraction…', null, { cancelling: true });
+    try { abortController.abort(); } catch (_) {}
+  });
+}
+
 function logRow(text, cls) {
   const div = document.createElement('div');
   div.className = 'row' + (cls ? ' ' + cls : '');
@@ -732,12 +767,24 @@ function logRow(text, cls) {
   streamLog.scrollTop = streamLog.scrollHeight;
 }
 
-function setProgress(phase, message, elapsed) {
-  progressBox.innerHTML = '<div class="progress-box">'
-    + '<div><span class="progress-phase">' + escapeHtml(phase || 'working') + '</span></div>'
+function setProgress(phase, message, elapsed, opts) {
+  opts = opts || {};
+  const showCancel = !!extracting && !opts.cancelled;
+  const cancelDisabled = !!opts.cancelling || !!opts.cancelled;
+  const cancelLabel = opts.cancelled ? 'Cancelled' : (opts.cancelling ? 'Cancelling…' : 'Cancel');
+  progressBox.innerHTML = '<div class="progress-box' + (opts.cancelled ? ' cancelled' : '') + '">'
+    + '<div class="progress-header">'
+    + '<span class="progress-phase">' + escapeHtml(phase || 'working') + '</span>'
+    + (showCancel
+        ? '<button type="button" id="cancel-extract-btn" class="cancel-btn"'
+          + (cancelDisabled ? ' disabled' : '') + '>'
+          + escapeHtml(cancelLabel) + '</button>'
+        : '')
+    + '</div>'
     + '<div class="progress-msg">' + escapeHtml(message || '') + '</div>'
     + '<div class="progress-meta"><span>Elapsed</span><span>' + (elapsed != null ? elapsed.toFixed(1) + 's' : '—') + '</span></div>'
     + '</div>';
+  if (showCancel && !cancelDisabled) attachCancelHandler();
 }
 function clearProgress() { progressBox.innerHTML = ''; }
 
@@ -747,6 +794,7 @@ async function runExtraction(force) {
   if (!pdf) { showError('Pick a PDF first.'); return; }
 
   clearError();
+  cancelledByUser = false;
   setExtracting(true);
   streamLog.style.display = '';
   streamLog.innerHTML = '';
@@ -759,6 +807,7 @@ async function runExtraction(force) {
   let lastElapsed = 0;
   let lastResult = null;
   let cached = false;
+  let cancelled = false;
 
   try {
     const res = await fetch('/api/vision/extract/stream', {
@@ -799,12 +848,20 @@ async function runExtraction(force) {
           lastResult = evt.result;
           cached = !!evt.cached;
           logRow('[' + lastElapsed.toFixed(1) + 's] done', 'done');
+        } else if (evt.event === 'cancelled') {
+          cancelled = true;
+          lastElapsed = evt.elapsed || lastElapsed;
+          logRow('[' + lastElapsed.toFixed(1) + 's] cancelled', 'err');
         } else if (evt.event === 'error') {
           throw new Error(evt.error || 'Extraction failed');
         }
       }
     }
 
+    if (cancelled || cancelledByUser) {
+      handleCancelledUI(lastElapsed);
+      return;
+    }
     if (lastResult) {
       renderResult(lastResult, { cached, elapsed: lastElapsed });
       clearProgress();
@@ -812,7 +869,10 @@ async function runExtraction(force) {
       throw new Error('Stream ended without a result.');
     }
   } catch (e) {
-    if (e.name === 'AbortError') return;
+    if (cancelledByUser || e.name === 'AbortError') {
+      handleCancelledUI(lastElapsed);
+      return;
+    }
     showError(e.message || String(e));
     clearProgress();
     logRow('error: ' + (e.message || e), 'err');
@@ -822,6 +882,17 @@ async function runExtraction(force) {
     setExtracting(false);
     abortController = null;
   }
+}
+
+function handleCancelledUI(elapsed) {
+  setProgress('cancelled', 'Extraction cancelled. Partial results discarded.',
+              elapsed || null, { cancelled: true });
+  resultsWrap.innerHTML = '<div class="empty"><div class="empty-icon">⏹</div>'
+    + '<p>Extraction cancelled. No results were saved.</p></div>';
+  setTimeout(() => {
+    if (extracting) return;
+    clearProgress();
+  }, 1800);
 }
 
 runBtn.addEventListener('click', () => runExtraction(false));
