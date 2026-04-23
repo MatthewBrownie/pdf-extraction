@@ -830,7 +830,11 @@
       <div class="pdf-pane">
         <div class="pdf-toolbar">
           <button id="page-prev">‹ Prev</button>
-          <span id="page-info" style="font-family:var(--mono); font-size: 0.78rem; color: var(--text-dim)">—</span>
+          <span id="page-info" style="font-family:var(--mono); font-size: 0.78rem; color: var(--text-dim); display:inline-flex; align-items:center; gap:4px;">
+            <span>Page</span>
+            <input id="page-jump" type="number" min="1" value="" title="Jump to page" style="width: 48px; font-family:var(--mono); font-size: 0.78rem; padding: 2px 4px; text-align:center; background: var(--bg, #111); color: inherit; border: 1px solid var(--border, #333); border-radius: 3px;" />
+            <span>/ <span id="page-total">—</span></span>
+          </span>
           <button id="page-next">Next ›</button>
           <button id="zoom-out">−</button>
           <span id="zoom-info" style="font-family:var(--mono); font-size: 0.78rem; color: var(--text-dim); min-width: 44px; text-align: center;">100%</span>
@@ -2007,7 +2011,9 @@
     $('pdf-pages').innerHTML = '';
     $('pdf-empty').style.display = '';
     $('pdf-pages').style.display = 'none';
-    $('page-info').textContent = '—';
+    $('page-jump').value = '';
+    $('page-jump').removeAttribute('max');
+    $('page-total').textContent = '—';
     $('zoom-info').textContent = '100%';
     $('page-prev').disabled = true;
     $('page-next').disabled = true;
@@ -2167,8 +2173,17 @@
   }
 
   function updatePageInfo() {
-    if (!pdfDoc) { $('page-info').textContent = '—'; return; }
-    $('page-info').textContent = `Page ${currentPage} / ${totalPages}`;
+    const jump = $('page-jump');
+    const total = $('page-total');
+    if (!pdfDoc) {
+      jump.value = '';
+      jump.removeAttribute('max');
+      total.textContent = '—';
+      return;
+    }
+    if (document.activeElement !== jump) jump.value = String(currentPage);
+    jump.max = String(totalPages);
+    total.textContent = String(totalPages);
     $('page-prev').disabled = currentPage <= 1;
     $('page-next').disabled = currentPage >= totalPages;
   }
@@ -2188,6 +2203,21 @@
 
   $('page-prev').addEventListener('click', () => { if (currentPage > 1) scrollToPage(currentPage - 1); });
   $('page-next').addEventListener('click', () => { if (currentPage < totalPages) scrollToPage(currentPage + 1); });
+  function commitPageJump() {
+    if (!pdfDoc) return;
+    const jump = $('page-jump');
+    const raw = parseInt(jump.value, 10);
+    if (!Number.isFinite(raw)) { jump.value = String(currentPage); return; }
+    const target = Math.max(1, Math.min(totalPages, raw));
+    jump.value = String(target);
+    if (target !== currentPage) scrollToPage(target);
+  }
+  $('page-jump').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); commitPageJump(); $('page-jump').blur(); }
+    else if (e.key === 'Escape') { $('page-jump').value = String(currentPage); $('page-jump').blur(); }
+  });
+  $('page-jump').addEventListener('blur', commitPageJump);
+  $('page-jump').addEventListener('focus', () => { $('page-jump').select(); });
   $('zoom-in').addEventListener('click', () => { zoom = Math.min(zoom + 0.25, 4); rerenderAllAtCurrentZoom(); });
   $('zoom-out').addEventListener('click', () => { zoom = Math.max(zoom - 0.25, 0.25); rerenderAllAtCurrentZoom(); });
   $('show-all-boxes').addEventListener('change', (e) => { showAllBoxes = e.target.checked; drawAllOverlays(); });
