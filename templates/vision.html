@@ -110,6 +110,13 @@
     }
     .estimate-row .er-name { color: var(--text-dim); font-weight: 600; }
     .estimate-row.active .er-name { color: var(--accent); }
+    .estimate-row .er-main {
+      display: flex; flex-direction: column; gap: 2px; min-width: 0;
+    }
+    .estimate-row .er-source {
+      font-size: 0.66rem; color: var(--text-dim); font-weight: 400;
+      text-transform: none; letter-spacing: 0;
+    }
     .estimate-row .er-cost {
       font-family: var(--mono); color: var(--green); font-weight: 600;
     }
@@ -450,8 +457,6 @@ function renderEstimate() {
   const est = lastEstimate.estimates || {};
   const order = ['haiku', 'sonnet'];
   let rows = '';
-  let maxSamples = 0;
-  let anyCalibrated = false;
   for (const k of order) {
     const e = est[k];
     if (!e) continue;
@@ -459,18 +464,19 @@ function renderEstimate() {
     const range = (e.low === e.high)
       ? fmtUsd(e.low)
       : (fmtUsd(e.low) + ' – ' + fmtUsd(e.high));
-    if (e.source === 'calibrated') {
-      anyCalibrated = true;
-      if ((e.samples || 0) > maxSamples) maxSamples = e.samples;
-    }
+    const samples = e.samples || 0;
+    const sourceLabel = (e.source === 'calibrated')
+      ? ('Calibrated from ' + samples + ' run' + (samples === 1 ? '' : 's'))
+      : 'Heuristic estimate';
     rows += '<div class="estimate-row' + active + '">'
+      + '<div class="er-main">'
       + '<span class="er-name">' + k.charAt(0).toUpperCase() + k.slice(1) + '</span>'
+      + '<span class="er-source">' + sourceLabel + '</span>'
+      + '</div>'
       + '<span class="er-cost">' + range + '</span>'
       + '</div>';
   }
-  const foot = anyCalibrated
-    ? 'Approximate — calibrated from ' + maxSamples + ' past run' + (maxSamples === 1 ? '' : 's') + '.'
-    : 'Approximate — actual cost depends on page complexity.';
+  const foot = 'Approximate — actual cost depends on page complexity.';
   estimateWrap.innerHTML = '<div class="estimate-box">'
     + '<div class="est-head"><span>Estimated cost</span>'
     + '<span class="est-pages">' + lastEstimate.pages + ' page(s)</span></div>'
