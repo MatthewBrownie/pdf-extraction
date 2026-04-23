@@ -952,6 +952,9 @@ async function runExtraction(force) {
     if (lastResult) {
       renderResult(lastResult, { cached, elapsed: lastElapsed });
       clearProgress();
+      if (!cached && pdfSelect.value === pdf) {
+        loadEstimate(pdf);
+      }
     } else {
       throw new Error('Stream ended without a result.');
     }
