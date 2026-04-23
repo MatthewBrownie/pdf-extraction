@@ -55,6 +55,39 @@ _COST = {
     MODEL_PRECISE: (3.0 / 1_000_000, 15.0 / 1_000_000),
 }
 
+EST_INPUT_TOKENS_PER_PAGE = (1800, 2600)
+EST_OUTPUT_TOKENS_PER_PAGE = (400, 1200)
+EST_PROMPT_OVERHEAD_PER_CHUNK = 250
+
+
+def estimate_cost(pages: int) -> dict:
+    """Approximate USD cost range for extracting a PDF of `pages` pages.
+
+    Returns a dict keyed by short model name (`haiku`, `sonnet`) with
+    `low`, `high`, `chunks`, `max_pages_per_chunk`, and `model` fields.
+    Estimates are heuristic — real cost depends on page complexity.
+    """
+    pages = max(0, int(pages))
+    out: dict = {}
+    for short, model in MODELS.items():
+        max_pp = MAX_PAGES_PER_CHUNK.get(model, 2)
+        chunks = (pages + max_pp - 1) // max_pp if pages else 0
+        in_lo = pages * EST_INPUT_TOKENS_PER_PAGE[0] + chunks * EST_PROMPT_OVERHEAD_PER_CHUNK
+        in_hi = pages * EST_INPUT_TOKENS_PER_PAGE[1] + chunks * EST_PROMPT_OVERHEAD_PER_CHUNK
+        out_lo = pages * EST_OUTPUT_TOKENS_PER_PAGE[0]
+        out_hi = pages * EST_OUTPUT_TOKENS_PER_PAGE[1]
+        in_rate, out_rate = _COST[model]
+        low = in_lo * in_rate + out_lo * out_rate
+        high = in_hi * in_rate + out_hi * out_rate
+        out[short] = {
+            "model": model,
+            "max_pages_per_chunk": max_pp,
+            "chunks": chunks,
+            "low": round(low, 4),
+            "high": round(high, 4),
+        }
+    return out
+
 SYSTEM_PROMPT = (
     "You extract structured content from PDFs for a downstream pipeline. "
     "Be faithful to the source. Never invent values. "

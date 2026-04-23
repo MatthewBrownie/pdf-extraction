@@ -671,6 +671,30 @@ def vision_page():
     return HTMLResponse(content=html_path.read_text(encoding="utf-8"))
 
 
+@app.get("/api/vision/estimate")
+def get_vision_estimate(pdf_name: str):
+    """Return page count and approximate USD cost ranges for both models."""
+    pdf_name = Path(pdf_name).name
+    pdf_path = (_INPUT_DOCS / pdf_name).resolve()
+    try:
+        pdf_path.relative_to(_INPUT_DOCS.resolve())
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid PDF name")
+    if not pdf_path.exists():
+        raise HTTPException(status_code=404, detail=f"PDF not found: {pdf_name}")
+    try:
+        import fitz  # PyMuPDF
+        with fitz.open(str(pdf_path)) as doc:
+            pages = doc.page_count
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Failed to read PDF: {exc}")
+    return {
+        "pdf": pdf_name,
+        "pages": pages,
+        "estimates": extract_vision.estimate_cost(pages),
+    }
+
+
 @app.get("/api/vision/extraction")
 def get_vision_extraction(pdf_name: str):
     pdf_name = Path(pdf_name).name

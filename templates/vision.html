@@ -85,6 +85,39 @@
       background: rgba(108, 140, 255, 0.08);
     }
 
+    .estimate-box {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 10px 12px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .estimate-box .est-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--text-dim); font-weight: 600;
+    }
+    .estimate-box .est-pages {
+      font-family: var(--mono); color: var(--text); text-transform: none;
+      letter-spacing: 0; font-weight: 400;
+    }
+    .estimate-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 6px 8px; border-radius: 6px; font-size: 0.78rem;
+      border: 1px solid transparent;
+    }
+    .estimate-row.active {
+      border-color: var(--accent-dim);
+      background: rgba(108, 140, 255, 0.08);
+    }
+    .estimate-row .er-name { color: var(--text-dim); font-weight: 600; }
+    .estimate-row.active .er-name { color: var(--accent); }
+    .estimate-row .er-cost {
+      font-family: var(--mono); color: var(--green); font-weight: 600;
+    }
+    .estimate-foot {
+      font-size: 0.68rem; color: var(--text-dim); line-height: 1.4;
+      font-style: italic;
+    }
+
     .btn {
       width: 100%; padding: 10px; background: var(--accent); color: #fff; border: none;
       border-radius: var(--radius); font-family: var(--font); font-size: 0.85rem;
@@ -326,6 +359,8 @@
       </div>
     </div>
 
+    <div id="estimate-wrap"></div>
+
     <div class="form-group">
       <div class="extract-row">
         <button class="btn" id="run-btn">Run extraction</button>
@@ -382,8 +417,57 @@ document.querySelectorAll('.radio-option').forEach(opt => {
     opt.classList.add('selected');
     currentModel = opt.dataset.model;
     opt.querySelector('input').checked = true;
+    renderEstimate();
   });
 });
+
+const estimateWrap = $('#estimate-wrap');
+let lastEstimate = null;
+
+function fmtUsd(v) {
+  if (v == null || isNaN(v)) return '—';
+  if (v < 0.01) return '<$0.01';
+  if (v < 1) return '$' + v.toFixed(3);
+  return '$' + v.toFixed(2);
+}
+
+function renderEstimate() {
+  if (!lastEstimate) { estimateWrap.innerHTML = ''; return; }
+  const est = lastEstimate.estimates || {};
+  const order = ['haiku', 'sonnet'];
+  let rows = '';
+  for (const k of order) {
+    const e = est[k];
+    if (!e) continue;
+    const active = (k === currentModel) ? ' active' : '';
+    const range = (e.low === e.high)
+      ? fmtUsd(e.low)
+      : (fmtUsd(e.low) + ' – ' + fmtUsd(e.high));
+    rows += '<div class="estimate-row' + active + '">'
+      + '<span class="er-name">' + k.charAt(0).toUpperCase() + k.slice(1) + '</span>'
+      + '<span class="er-cost">' + range + '</span>'
+      + '</div>';
+  }
+  estimateWrap.innerHTML = '<div class="estimate-box">'
+    + '<div class="est-head"><span>Estimated cost</span>'
+    + '<span class="est-pages">' + lastEstimate.pages + ' page(s)</span></div>'
+    + rows
+    + '<div class="estimate-foot">Approximate — actual cost depends on page complexity.</div>'
+    + '</div>';
+}
+
+async function loadEstimate(name) {
+  if (!name) { lastEstimate = null; renderEstimate(); return; }
+  try {
+    const res = await fetch('/api/vision/estimate?pdf_name=' + encodeURIComponent(name));
+    if (!res.ok) { lastEstimate = null; renderEstimate(); return; }
+    lastEstimate = await res.json();
+    renderEstimate();
+  } catch (_) {
+    lastEstimate = null;
+    renderEstimate();
+  }
+}
 
 async function loadPdfs(selectName) {
   try {
@@ -408,6 +492,7 @@ async function loadPdfs(selectName) {
 
 async function onPdfChange() {
   const name = pdfSelect.value;
+  loadEstimate(name);
   if (!name) return;
   // Try to auto-load cached result
   try {
