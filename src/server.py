@@ -38,6 +38,7 @@ sys.path.insert(0, str(_HERE))
 
 import extract as extractor_v1
 import extract_v2 as extractor_v2
+import extract_vision
 import warmup as _warmup
 
 # ---------------------------------------------------------------------------
@@ -578,6 +579,211 @@ def get_extraction(pdf_name: str, version: str):
         "images": out["images"],
         "pdf_url": f"/pdfs/{pdf_name}",
     }
+
+
+# ---------------------------------------------------------------------------
+# Claude Vision extractor (separate page at /vision)
+# ---------------------------------------------------------------------------
+class VisionExtractRequest(BaseModel):
+    pdf_name: str
+    model: str = "haiku"
+    force: bool = False
+
+
+def _vision_dir(stem: str) -> Path:
+    d = _OUTPUT / stem / "vision"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _load_vision_cache(stem: str) -> dict | None:
+    d = _OUTPUT / stem / "vision"
+    nf = d / "extraction.json"
+    if not nf.exists():
+        return None
+    try:
+        with nf.open("r", encoding="utf-8") as fh:
+            data = json.load(fh)
+        try:
+            data["__cached_at__"] = nf.stat().st_mtime
+        except OSError:
+            pass
+        return data
+    except Exception:
+        return None
+
+
+def _write_vision_outputs(stem: str, result, standard: dict) -> dict:
+    d = _vision_dir(stem)
+    native = result.to_dict()
+    with (d / "extraction.json").open("w", encoding="utf-8") as f:
+        json.dump(native, f, indent=2, ensure_ascii=False)
+    with (d / "chunks.json").open("w", encoding="utf-8") as f:
+        json.dump(standard["chunks"], f, indent=2, ensure_ascii=False)
+    with (d / "tables.json").open("w", encoding="utf-8") as f:
+        json.dump(standard["tables"], f, indent=2, ensure_ascii=False)
+    with (d / "images.json").open("w", encoding="utf-8") as f:
+        json.dump(standard["images"], f, indent=2, ensure_ascii=False)
+    return native
+
+
+def _build_vision_payload(pdf_name: str, data: dict) -> dict:
+    payload = {
+        "pdf": pdf_name,
+        "pages": data.get("pages", 0),
+        "model": data.get("model", ""),
+        "usage": data.get("usage", {"input_tokens": 0, "output_tokens": 0}),
+        "estimated_cost_usd": data.get("estimated_cost_usd", 0),
+        "text_by_page": data.get("text_by_page", []),
+        "tables": data.get("tables", []),
+        "figures": data.get("figures", []),
+        "pdf_url": f"/pdfs/{pdf_name}",
+    }
+    cached_at = data.get("__cached_at__")
+    if cached_at is not None:
+        payload["cached_at"] = _iso_utc(cached_at)
+    return payload
+
+
+def _validate_vision_request(req: VisionExtractRequest) -> tuple[Path, str, str]:
+    pdf_name = Path(req.pdf_name).name
+    pdf_path = (_INPUT_DOCS / pdf_name).resolve()
+    try:
+        pdf_path.relative_to(_INPUT_DOCS.resolve())
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid PDF name")
+    if not pdf_path.exists():
+        raise HTTPException(status_code=404, detail=f"PDF not found: {pdf_name}")
+    if req.model not in extract_vision.MODELS:
+        raise HTTPException(
+            status_code=400,
+            detail=f"model must be one of {list(extract_vision.MODELS)}",
+        )
+    req.pdf_name = pdf_name
+    return pdf_path, pdf_path.stem, extract_vision.MODELS[req.model]
+
+
+@app.get("/vision", response_class=HTMLResponse)
+def vision_page():
+    html_path = _TEMPLATES / "vision.html"
+    if not html_path.exists():
+        raise HTTPException(status_code=404, detail="vision.html not found")
+    return HTMLResponse(content=html_path.read_text(encoding="utf-8"))
+
+
+@app.get("/api/vision/extraction")
+def get_vision_extraction(pdf_name: str):
+    pdf_name = Path(pdf_name).name
+    pdf_path = (_INPUT_DOCS / pdf_name).resolve()
+    try:
+        pdf_path.relative_to(_INPUT_DOCS.resolve())
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid PDF name")
+    cached = _load_vision_cache(pdf_path.stem)
+    if cached is None:
+        raise HTTPException(status_code=404, detail=f"No cached vision extraction for {pdf_name}")
+    return _build_vision_payload(pdf_name, cached)
+
+
+@app.post("/api/vision/extract/stream")
+async def vision_extract_stream(req: VisionExtractRequest, request: Request):
+    pdf_path, stem, model_id = _validate_vision_request(req)
+
+    if not extract_vision.get_api_key():
+        raise HTTPException(
+            status_code=503,
+            detail="OpenRouter API key not configured. Set OPENROUTER_API_KEY (or OPENAI_API_KEY).",
+        )
+
+    if not req.force:
+        cached = _load_vision_cache(stem)
+        if cached is not None and cached.get("model") == model_id:
+            payload = _build_vision_payload(req.pdf_name, cached)
+
+            def cached_gen():
+                yield json.dumps({
+                    "event": "progress", "phase": "cache",
+                    "message": "Loaded cached vision result.", "elapsed": 0.0,
+                }) + "\n"
+                done_evt = {
+                    "event": "done", "elapsed": 0.0,
+                    "cached": True, "result": payload,
+                }
+                if "cached_at" in payload:
+                    done_evt["cached_at"] = payload["cached_at"]
+                yield json.dumps(done_evt) + "\n"
+
+            return StreamingResponse(cached_gen(), media_type="application/x-ndjson")
+
+    q: "queue.Queue[tuple[str, object]]" = queue.Queue()
+
+    def progress_cb(**evt):
+        q.put(("progress", evt))
+
+    def worker():
+        try:
+            result = extract_vision.extract_pdf(
+                str(pdf_path), model=model_id, progress_cb=progress_cb,
+            )
+            standard = extract_vision.to_standard(result)
+            native = _write_vision_outputs(stem, result, standard)
+            q.put(("done", native))
+        except Exception as e:
+            q.put(("error", f"{type(e).__name__}: {e}"))
+
+    t = threading.Thread(target=worker, daemon=True)
+    t.start()
+    started = time.time()
+    timeout = 1800
+
+    async def gen():
+        yield json.dumps({
+            "event": "progress", "phase": "starting",
+            "message": "Starting Claude vision extraction…", "elapsed": 0.0,
+        }) + "\n"
+
+        last_hb = time.time()
+        while True:
+            if await request.is_disconnected():
+                return
+            try:
+                kind, data = await asyncio.to_thread(q.get, True, 0.5)
+            except queue.Empty:
+                elapsed = time.time() - started
+                if not t.is_alive():
+                    yield json.dumps({
+                        "event": "error",
+                        "error": "Vision worker exited without producing a result.",
+                    }) + "\n"
+                    return
+                if elapsed > timeout:
+                    yield json.dumps({
+                        "event": "error",
+                        "error": f"Vision extraction timed out after {int(elapsed)}s.",
+                    }) + "\n"
+                    return
+                if time.time() - last_hb >= 2.0:
+                    last_hb = time.time()
+                    yield json.dumps({"event": "heartbeat", "elapsed": round(elapsed, 1)}) + "\n"
+                continue
+
+            elapsed = round(time.time() - started, 1)
+            if kind == "progress":
+                payload = {"event": "progress", "elapsed": elapsed}
+                if isinstance(data, dict):
+                    payload.update(data)
+                yield json.dumps(payload, default=str) + "\n"
+            elif kind == "done":
+                yield json.dumps({
+                    "event": "done", "elapsed": elapsed,
+                    "result": _build_vision_payload(req.pdf_name, data),  # type: ignore[arg-type]
+                }) + "\n"
+                return
+            elif kind == "error":
+                yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"
+                return
+
+    return StreamingResponse(gen(), media_type="application/x-ndjson")
 
 
 @app.get("/api/results")
