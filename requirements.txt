@@ -6,3 +6,4 @@ pydantic>=2.0.0
 python-multipart>=0.0.9
 unstructured[pdf]>=0.14.0
 docling>=2.0.0
+camelot-py[cv]

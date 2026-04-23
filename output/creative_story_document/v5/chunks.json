@@ -1,0 +1,134 @@
+[
+  {
+    "page": 1,
+    "paragraph": 1,
+    "text": "The House at the Edge of the Map",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H1"
+  },
+  {
+    "page": 1,
+    "paragraph": 2,
+    "text": "Preface",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 2,
+    "paragraph": 1,
+    "text": "Harbor inventory",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 3,
+    "paragraph": 1,
+    "text": "Route log",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 4,
+    "paragraph": 1,
+    "text": "Notes from the archive",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 6,
+    "paragraph": 1,
+    "text": "Interior register",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 7,
+    "paragraph": 1,
+    "text": "What the house kept",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 8,
+    "paragraph": 1,
+    "text": "Crossing",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 10,
+    "paragraph": 1,
+    "text": "Decision matrix",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 12,
+    "paragraph": 1,
+    "text": "Return passage",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  },
+  {
+    "page": 13,
+    "paragraph": 1,
+    "text": "Ledger of endings",
+    "font_size": 0.0,
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "category": "H2"
+  }
+]

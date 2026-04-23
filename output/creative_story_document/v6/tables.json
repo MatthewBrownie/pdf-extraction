@@ -1,0 +1,217 @@
+[
+  {
+    "page": 3,
+    "table_type": "camelot_lattice",
+    "table": [
+      [
+        "Day",
+        "Place",
+        "Observation",
+        "Risk"
+      ],
+      [
+        "1",
+        "Lantern Harbor",
+        "Calm departure under overcast light",
+        "Low"
+      ],
+      [
+        "2",
+        "Kelp Reach",
+        "Strong side-current not marked on civic charts",
+        "Moderate"
+      ],
+      [
+        "3",
+        "Broken Spit",
+        "Found drifting spar with no maker’s mark",
+        "Moderate"
+      ],
+      [
+        "4",
+        "North Shelf",
+        "Heavy fog; compass hesitation after dusk",
+        "High"
+      ],
+      [
+        "5",
+        "Unnamed inlet",
+        "Sighted fixed light where no settlement was recorded",
+        "Severe"
+      ]
+    ],
+    "bbox": [
+      107.52,
+      564.29,
+      504.84,
+      697.59
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "camelot_accuracy": 100.0,
+    "camelot_whitespace": 0.0
+  },
+  {
+    "page": 4,
+    "table_type": "camelot_lattice",
+    "table": [
+      [
+        "Artifact",
+        "Origin",
+        "Why it mattered to Mira"
+      ],
+      [
+        "Brass key",
+        "Wrapped with the map",
+        "Suggested a real lock and a real destination"
+      ],
+      [
+        "Anonymous chart",
+        "Left at archive door",
+        "Implied deliberate guidance, not rumor"
+      ]
+    ],
+    "bbox": [
+      95.49,
+      674.65,
+      516.84,
+      741.02
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "camelot_accuracy": 100.0,
+    "camelot_whitespace": 0.0
+  },
+  {
+    "page": 7,
+    "table_type": "camelot_lattice",
+    "table": [
+      [
+        "Column",
+        "Meaning",
+        "Example entry"
+      ],
+      [
+        "Called",
+        "The name brought to the house",
+        "Jonas Bell"
+      ],
+      [
+        "Carried",
+        "The memory or object used to anchor the name",
+        "Brass key"
+      ],
+      [
+        "Answered",
+        "Whether the lost could still be reached",
+        "Pending"
+      ],
+      [
+        "Returned",
+        "What, if anything, could be carried back",
+        "Unknown"
+      ]
+    ],
+    "bbox": [
+      136.79,
+      130.01,
+      475.56,
+      241.49
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "camelot_accuracy": 100.0,
+    "camelot_whitespace": 0.0
+  },
+  {
+    "page": 11,
+    "table_type": "camelot_lattice",
+    "table": [
+      [
+        "Choice",
+        "What Mira gains",
+        "What Mira loses",
+        "Moral\ncost"
+      ],
+      [
+        "Return home\nimmediately",
+        "Safety, certainty, familiar life",
+        "The house, the unanswered\ncoast",
+        "Moderate"
+      ],
+      [
+        "Stay as keeper",
+        "Purpose, continuity, guardianship",
+        "Home, ordinary future, Toma",
+        "High"
+      ],
+      [
+        "Return first, then choose",
+        "Time to record truth and decide\nfreely",
+        "Risk the lamp failing in delay",
+        "Severe"
+      ]
+    ],
+    "bbox": [
+      68.62,
+      30.46,
+      543.72,
+      156.79
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "camelot_accuracy": 100.0,
+    "camelot_whitespace": 0.0
+  },
+  {
+    "page": 13,
+    "table_type": "camelot_lattice",
+    "table": [
+      [
+        "Thread",
+        "Before the journey",
+        "After the journey"
+      ],
+      [
+        "Father",
+        "Missing, argued over, unreachable",
+        "Lost but witnessed, restored to truth"
+      ],
+      [
+        "Mira",
+        "Archivist of other people’s absences",
+        "Archivist with a calling beyond the harbor"
+      ],
+      [
+        "Lantern Harbor",
+        "Content with an incomplete record",
+        "Forced to live beside a corrected one"
+      ],
+      [
+        "The house",
+        "Rumor at the edge of maps",
+        "A real duty awaiting succession"
+      ]
+    ],
+    "bbox": [
+      97.91,
+      212.55,
+      514.44,
+      323.3
+    ],
+    "page_size": [
+      612.0,
+      792.0
+    ],
+    "camelot_accuracy": 100.0,
+    "camelot_whitespace": 0.0
+  }
+]

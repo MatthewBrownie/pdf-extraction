@@ -778,6 +778,8 @@
         <label class="radio-option selected" data-version="v2"><input type="radio" name="version" value="v2" checked />v2 — improved</label>
         <label class="radio-option" data-version="v3"><input type="radio" name="version" value="v3" />v3 — unstructured</label>
         <label class="radio-option" data-version="v4"><input type="radio" name="version" value="v4" />v4 — docling</label>
+        <label class="radio-option" data-version="v5"><input type="radio" name="version" value="v5" />v5 — tagged tree</label>
+        <label class="radio-option" data-version="v6"><input type="radio" name="version" value="v6" />v6 — Camelot lattice</label>
       </div>
       <div class="warmup-banner" id="warmup-banner" style="display:none">
         <div class="warmup-spinner" id="warmup-spinner"></div>
@@ -997,28 +999,28 @@
 
       <div class="stats-panel active" id="stats-panel-all">
         <table class="results-table" id="results-table">
-          <thead><tr><th>PDF</th><th>v1 — baseline</th><th>v2 — improved</th><th id="results-th-v3">v3 — unstructured<span class="col-warmup" id="results-warmup-v3" style="display:none"></span></th><th id="results-th-v4">v4 — docling<span class="col-warmup" id="results-warmup-v4" style="display:none"></span></th></tr></thead>
-          <tbody><tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr></tbody>
+          <thead><tr><th>PDF</th><th>v1 — baseline</th><th>v2 — improved</th><th id="results-th-v3">v3 — unstructured<span class="col-warmup" id="results-warmup-v3" style="display:none"></span></th><th id="results-th-v4">v4 — docling<span class="col-warmup" id="results-warmup-v4" style="display:none"></span></th><th>v5 — tagged tree</th><th>v6 — Camelot</th></tr></thead>
+          <tbody><tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr></tbody>
         </table>
       </div>
 
       <div class="stats-panel" id="stats-panel-chunks">
         <table class="results-table single-metric-table" id="metric-table-chunks">
-          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th></tr></thead>
+          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th><th style="text-align:right">v5</th><th style="text-align:right">v6</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
 
       <div class="stats-panel" id="stats-panel-tables">
         <table class="results-table single-metric-table" id="metric-table-tables">
-          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th></tr></thead>
+          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th><th style="text-align:right">v5</th><th style="text-align:right">v6</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
 
       <div class="stats-panel" id="stats-panel-images">
         <table class="results-table single-metric-table" id="metric-table-images">
-          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th></tr></thead>
+          <thead><tr><th>PDF</th><th style="text-align:right">v1</th><th style="text-align:right">v2</th><th style="text-align:right">v3</th><th style="text-align:right">v4</th><th style="text-align:right">v5</th><th style="text-align:right">v6</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -2408,7 +2410,7 @@
   function renderSingleMetric(data, metric) {
     const tbody = document.querySelector(`#metric-table-${metric} tbody`);
     if (!data.pdfs.length) {
-      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
       return;
     }
     const totals = Object.fromEntries(data.versions.map(v => [v, 0]));
@@ -2455,15 +2457,15 @@
 
   async function loadResults() {
     const tbody = document.querySelector('#results-table tbody');
-    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-dim);">Loading…</td></tr>';
     try {
       const res = await fetch('/api/results');
       const data = await res.json();
       lastResults = data;
       if (!data.pdfs.length) {
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
         ['chunks', 'tables', 'images'].forEach(m => {
-          document.querySelector(`#metric-table-${m} tbody`).innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
+          document.querySelector(`#metric-table-${m} tbody`).innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-dim);">No PDFs found.</td></tr>';
         });
         $('stats-summary').textContent = 'No PDFs yet';
         return;
@@ -2504,7 +2506,7 @@
         });
       });
     } catch (err) {
-      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--red);">Failed to load results: ${escHtml(err.message || err)}</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--red);">Failed to load results: ${escHtml(err.message || err)}</td></tr>`;
     }
   }
 
@@ -2514,6 +2516,8 @@
     v2: 'v2 — improved',
     v3: 'v3 — unstructured',
     v4: 'v4 — docling',
+    v5: 'v5 — tagged tree',
+    v6: 'v6 — Camelot lattice',
   };
   const CMP_COLORS = {
     a: { stroke: 'rgba(62, 207, 142, 0.95)',  fill: 'rgba(62, 207, 142, 0.18)' },
@@ -2572,7 +2576,9 @@
   function populateCompareSelects() {
     // Show every known version (with an "(not run)" suffix for the ones
     // that aren't yet extracted) so users can switch around freely.
-    const allVs = ['v1', 'v2', 'v3', 'v4'];
+    const allVs = (lastResults && lastResults.versions && lastResults.versions.length)
+      ? lastResults.versions
+      : Object.keys(VERSION_LABELS);
     const opts = allVs.map(v => {
       const ran = cmp.available.includes(v);
       const label = (VERSION_LABELS[v] || v) + (ran ? '' : ' (not run)');

@@ -1,0 +1,160 @@
+[
+  {
+    "page": 3,
+    "table_type": "tagged",
+    "table": [
+      [
+        "1",
+        "Lantern Harbor",
+        "Calm departure under overcast light",
+        "Low"
+      ],
+      [
+        "2",
+        "Kelp Reach",
+        "Strong side-current not marked on civic charts",
+        "Moderate"
+      ],
+      [
+        "3",
+        "Broken Spit",
+        "Found drifting spar with no maker’s mark",
+        "Moderate"
+      ],
+      [
+        "4",
+        "North Shelf",
+        "Heavy fog; compass hesitation after dusk",
+        "High"
+      ],
+      [
+        "5",
+        "Unnamed inlet",
+        "Sighted fixed light where no settlement was recorded",
+        "Severe"
+      ]
+    ],
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ]
+  },
+  {
+    "page": 4,
+    "table_type": "tagged",
+    "table": [
+      [
+        "Brass key",
+        "Wrapped with the map",
+        "Suggested a real lock and a real destination"
+      ],
+      [
+        "Anonymous chart",
+        "Left at archive door",
+        "Implied deliberate guidance, not rumor"
+      ],
+      [
+        "Final date slip",
+        "Written in navigator’s hand",
+        "Linked the journey to her father’s disappearance"
+      ]
+    ],
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ]
+  },
+  {
+    "page": 7,
+    "table_type": "tagged",
+    "table": [
+      [
+        "Called",
+        "The name brought to the house",
+        "Jonas Bell"
+      ],
+      [
+        "Carried",
+        "The memory or object used to anchor the name",
+        "Brass key"
+      ],
+      [
+        "Answered",
+        "Whether the lost could still be reached",
+        "Pending"
+      ],
+      [
+        "Returned",
+        "What, if anything, could be carried back",
+        "Unknown"
+      ]
+    ],
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ]
+  },
+  {
+    "page": 11,
+    "table_type": "tagged",
+    "table": [
+      [
+        "Return homeimmediately",
+        "Safety, certainty, familiar life",
+        "The house, the unansweredcoast",
+        "Moderate"
+      ],
+      [
+        "Stay as keeper",
+        "Purpose, continuity, guardianship",
+        "Home, ordinary future, Toma",
+        "High"
+      ],
+      [
+        "Return first, then choose",
+        "Time to record truth and decidefreely",
+        "Risk the lamp failing in delay",
+        "Severe"
+      ]
+    ],
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ]
+  },
+  {
+    "page": 13,
+    "table_type": "tagged",
+    "table": [
+      [
+        "Father",
+        "Missing, argued over, unreachable",
+        "Lost but witnessed, restored to truth"
+      ],
+      [
+        "Mira",
+        "Archivist of other people’s absences",
+        "Archivist with a calling beyond the harbor"
+      ],
+      [
+        "Lantern Harbor",
+        "Content with an incomplete record",
+        "Forced to live beside a corrected one"
+      ],
+      [
+        "The house",
+        "Rumor at the edge of maps",
+        "A real duty awaiting succession"
+      ]
+    ],
+    "bbox": null,
+    "page_size": [
+      612.0,
+      792.0
+    ]
+  }
+]
