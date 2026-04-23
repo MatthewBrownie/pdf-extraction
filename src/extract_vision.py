@@ -236,6 +236,10 @@ class ExtractionResult:
     pages: int = 0
     model: str = ""
     usage: dict = field(default_factory=lambda: {"input_tokens": 0, "output_tokens": 0})
+    partial: bool = False
+    chunks_done: int = 0
+    chunks_total: int = 0
+    pages_done: int = 0
 
     def estimated_cost_usd(self) -> float:
         in_cost, out_cost = _COST.get(self.model, (0.0, 0.0))
@@ -253,6 +257,10 @@ class ExtractionResult:
             "model": self.model,
             "usage": self.usage,
             "estimated_cost_usd": round(self.estimated_cost_usd(), 6),
+            "partial": self.partial,
+            "chunks_done": self.chunks_done,
+            "chunks_total": self.chunks_total,
+            "pages_done": self.pages_done,
         }
 
 
@@ -348,7 +356,15 @@ def _call_claude(
 
 
 class CancelledExtraction(RuntimeError):
-    """Raised when a vision extraction is cancelled mid-run."""
+    """Raised when a vision extraction is cancelled mid-run.
+
+    When raised from within :func:`extract_pdf`, the partial
+    :class:`ExtractionResult` collected so far is attached as ``result``.
+    """
+
+    def __init__(self, message: str = "Extraction cancelled.", result: "ExtractionResult | None" = None):
+        super().__init__(message)
+        self.result = result
 
 
 def extract_pdf(
@@ -404,25 +420,34 @@ def extract_pdf(
     chunks = _chunk_pdf(path, max_pages)
 
     result = ExtractionResult(model=model)
+    result.chunks_total = len(chunks)
 
-    for i, (chunk_bytes, page_start, num_pages) in enumerate(chunks):
-        _check_cancel()
-        page_end = page_start + num_pages - 1
-        _emit(
-            phase="extracting",
-            message=f"Extracting pages {page_start}–{page_end} (chunk {i + 1}/{len(chunks)})…",
-            page=i + 1,
-            total=len(chunks),
-        )
-        chunk_result = _call_claude(
-            chunk_bytes, path.name, page_start, page_end, model, client
-        )
-        data = chunk_result["data"]
-        result.text_by_page.extend(data.get("text_by_page", []))
-        result.tables.extend(data.get("tables", []))
-        result.figures.extend(data.get("figures", []))
-        result.usage["input_tokens"] += chunk_result["usage"]["input_tokens"]
-        result.usage["output_tokens"] += chunk_result["usage"]["output_tokens"]
+    try:
+        for i, (chunk_bytes, page_start, num_pages) in enumerate(chunks):
+            _check_cancel()
+            page_end = page_start + num_pages - 1
+            _emit(
+                phase="extracting",
+                message=f"Extracting pages {page_start}–{page_end} (chunk {i + 1}/{len(chunks)})…",
+                page=i + 1,
+                total=len(chunks),
+            )
+            chunk_result = _call_claude(
+                chunk_bytes, path.name, page_start, page_end, model, client
+            )
+            data = chunk_result["data"]
+            result.text_by_page.extend(data.get("text_by_page", []))
+            result.tables.extend(data.get("tables", []))
+            result.figures.extend(data.get("figures", []))
+            result.usage["input_tokens"] += chunk_result["usage"]["input_tokens"]
+            result.usage["output_tokens"] += chunk_result["usage"]["output_tokens"]
+            result.chunks_done = i + 1
+            result.pages_done += num_pages
+    except CancelledExtraction as exc:
+        result.partial = True
+        result.pages = result.pages_done
+        exc.result = result
+        raise
 
     result.pages = sum(n for _, _, n in chunks)
     return result

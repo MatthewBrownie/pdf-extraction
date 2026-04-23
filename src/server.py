@@ -657,6 +657,23 @@ def _write_vision_outputs(stem: str, result, standard: dict) -> dict:
     return native
 
 
+def _delete_vision_cache(stem: str) -> bool:
+    """Remove cached vision extraction artefacts. Returns True if anything was removed."""
+    d = _OUTPUT / stem / "vision"
+    if not d.exists():
+        return False
+    removed = False
+    for name in ("extraction.json", "chunks.json", "tables.json", "images.json"):
+        p = d / name
+        if p.exists():
+            try:
+                p.unlink()
+                removed = True
+            except OSError:
+                pass
+    return removed
+
+
 def _build_vision_payload(pdf_name: str, data: dict) -> dict:
     payload = {
         "pdf": pdf_name,
@@ -668,6 +685,10 @@ def _build_vision_payload(pdf_name: str, data: dict) -> dict:
         "tables": data.get("tables", []),
         "figures": data.get("figures", []),
         "pdf_url": f"/pdfs/{pdf_name}",
+        "partial": bool(data.get("partial", False)),
+        "chunks_done": int(data.get("chunks_done", 0) or 0),
+        "chunks_total": int(data.get("chunks_total", 0) or 0),
+        "pages_done": int(data.get("pages_done", 0) or 0),
     }
     cached_at = data.get("__cached_at__")
     if cached_at is not None:
@@ -741,6 +762,18 @@ def get_vision_extraction(pdf_name: str):
     return _build_vision_payload(pdf_name, cached)
 
 
+@app.delete("/api/vision/extraction")
+def delete_vision_extraction(pdf_name: str):
+    pdf_name = Path(pdf_name).name
+    pdf_path = (_INPUT_DOCS / pdf_name).resolve()
+    try:
+        pdf_path.relative_to(_INPUT_DOCS.resolve())
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid PDF name")
+    removed = _delete_vision_cache(pdf_path.stem)
+    return {"deleted": removed, "pdf": pdf_name}
+
+
 @app.post("/api/vision/extract/stream")
 async def vision_extract_stream(req: VisionExtractRequest, request: Request):
     pdf_path, stem, model_id = _validate_vision_request(req)
@@ -753,7 +786,11 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
 
     if not req.force:
         cached = _load_vision_cache(stem)
-        if cached is not None and cached.get("model") == model_id:
+        if (
+            cached is not None
+            and cached.get("model") == model_id
+            and not cached.get("partial")
+        ):
             payload = _build_vision_payload(req.pdf_name, cached)
 
             def cached_gen():
@@ -782,6 +819,22 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
             raise extract_vision.CancelledExtraction("Extraction cancelled.")
         q.put(("progress", evt))
 
+    def _persist_partial(partial_result) -> dict | None:
+        if partial_result is None or getattr(partial_result, "chunks_done", 0) <= 0:
+            return None
+        try:
+            # If everything actually finished, persist as a complete cache so
+            # subsequent loads don't force a re-run.
+            chunks_done = getattr(partial_result, "chunks_done", 0)
+            chunks_total = getattr(partial_result, "chunks_total", 0)
+            partial_result.partial = bool(
+                chunks_total <= 0 or chunks_done < chunks_total
+            )
+            standard = extract_vision.to_standard(partial_result)
+            return _write_vision_outputs(stem, partial_result, standard)
+        except Exception:
+            return None
+
     def worker():
         try:
             result = extract_vision.extract_pdf(
@@ -789,13 +842,15 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
                 progress_cb=progress_cb, cancel_check=cancel_check,
             )
             if cancel_event.is_set():
-                q.put(("cancelled", None))
+                # Cancel arrived after the run finished — keep whatever we have.
+                # _persist_partial decides whether it's truly partial or complete.
+                q.put(("cancelled", _persist_partial(result)))
                 return
             standard = extract_vision.to_standard(result)
             native = _write_vision_outputs(stem, result, standard)
             q.put(("done", native))
-        except extract_vision.CancelledExtraction:
-            q.put(("cancelled", None))
+        except extract_vision.CancelledExtraction as exc:
+            q.put(("cancelled", _persist_partial(getattr(exc, "result", None))))
         except Exception as e:
             if cancel_event.is_set():
                 q.put(("cancelled", None))
@@ -854,10 +909,17 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
                     }) + "\n"
                     return
                 elif kind == "cancelled":
-                    yield json.dumps({
+                    cancelled_evt = {
                         "event": "cancelled", "elapsed": elapsed,
                         "message": "Extraction cancelled.",
-                    }) + "\n"
+                    }
+                    if isinstance(data, dict):
+                        partial_payload = _build_vision_payload(req.pdf_name, data)
+                        cancelled_evt["partial"] = True
+                        cancelled_evt["result"] = partial_payload
+                        cancelled_evt["chunks_done"] = partial_payload.get("chunks_done", 0)
+                        cancelled_evt["chunks_total"] = partial_payload.get("chunks_total", 0)
+                    yield json.dumps(cancelled_evt, default=str) + "\n"
                     return
                 elif kind == "error":
                     yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"

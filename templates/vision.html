@@ -221,6 +221,31 @@
     .pill .v { color: var(--text); font-family: var(--mono); font-weight: 600; }
     .pill.cost .v { color: var(--green); }
     .pill.cache .v { color: var(--orange); }
+    .pill.partial { background: rgba(255, 166, 87, 0.12); border-color: rgba(255, 166, 87, 0.4); }
+    .pill.partial .v { color: var(--orange); }
+
+    .partial-banner {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+      padding: 10px 14px; margin-bottom: 16px;
+      background: rgba(255, 166, 87, 0.10);
+      border: 1px solid rgba(255, 166, 87, 0.35);
+      border-radius: var(--radius);
+      font-size: 0.8rem; color: var(--orange); line-height: 1.5;
+    }
+    .partial-banner .pb-msg { flex: 1; min-width: 200px; color: var(--text); }
+    .partial-banner .pb-msg strong { color: var(--orange); }
+    .partial-banner button {
+      background: var(--surface2); border: 1px solid var(--border); color: var(--text);
+      padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;
+      cursor: pointer; font-family: var(--font);
+    }
+    .partial-banner button:hover:not(:disabled) {
+      border-color: var(--orange); color: var(--orange);
+    }
+    .partial-banner button.discard:hover:not(:disabled) {
+      border-color: var(--red); color: var(--red);
+    }
+    .partial-banner button:disabled { opacity: 0.5; cursor: not-allowed; }
 
     .section-title {
       font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
@@ -652,6 +677,10 @@ function renderResult(payload, opts) {
   const usage = payload.usage || {};
   const cost = payload.estimated_cost_usd || 0;
 
+  const isPartial = !!payload.partial;
+  const chunksDone = payload.chunks_done || 0;
+  const chunksTotal = payload.chunks_total || 0;
+
   let html = '';
   html += '<h2>' + escapeHtml(payload.pdf || '') + '</h2>';
   const subBits = [];
@@ -661,13 +690,29 @@ function renderResult(payload, opts) {
   if (payload.cached_at) subBits.push('cached ' + escapeHtml(payload.cached_at));
   html += '<div class="results-sub">' + subBits.join(' · ') + '</div>';
 
+  if (isPartial) {
+    const chunkInfo = chunksTotal
+      ? 'chunk ' + chunksDone + '/' + chunksTotal
+      : chunksDone + ' chunk(s)';
+    html += '<div class="partial-banner">'
+      + '<div class="pb-msg"><strong>Partial — cancelled at ' + escapeHtml(chunkInfo) + '.</strong> '
+      + 'Showing ' + (payload.pages_done || pages.length) + ' page(s) extracted before the run was stopped.</div>'
+      + '<button type="button" id="resume-btn">Resume extraction</button>'
+      + '<button type="button" class="discard" id="discard-btn">Discard partial</button>'
+      + '</div>';
+  }
+
   html += '<div class="summary">'
+    + (isPartial
+        ? '<span class="pill partial">Partial — cancelled at chunk <span class="v">'
+          + chunksDone + '/' + (chunksTotal || '?') + '</span></span>'
+        : '')
     + '<span class="pill">Pages <span class="v">' + (payload.pages || pages.length) + '</span></span>'
     + '<span class="pill">Markdown blocks <span class="v">' + pages.length + '</span></span>'
     + '<span class="pill">Tables <span class="v">' + tables.length + '</span></span>'
     + '<span class="pill">Figures <span class="v">' + figures.length + '</span></span>'
     + '<span class="pill cost">Est. cost <span class="v">$' + Number(cost).toFixed(4) + '</span></span>'
-    + (opts.cached ? '<span class="pill cache">From cache <span class="v">✓</span></span>' : '')
+    + (opts.cached && !isPartial ? '<span class="pill cache">From cache <span class="v">✓</span></span>' : '')
     + '</div>';
 
   if (pages.length) {
@@ -733,6 +778,28 @@ function renderResult(payload, opts) {
   }
 
   resultsWrap.innerHTML = html;
+
+  if (isPartial) {
+    const resumeBtn = document.getElementById('resume-btn');
+    const discardBtn = document.getElementById('discard-btn');
+    if (resumeBtn) resumeBtn.addEventListener('click', () => {
+      if (extracting) return;
+      runExtraction(true);
+    });
+    if (discardBtn) discardBtn.addEventListener('click', async () => {
+      if (extracting) return;
+      const pdf = pdfSelect.value;
+      if (!pdf) return;
+      discardBtn.disabled = true;
+      const resumeBtn2 = document.getElementById('resume-btn');
+      if (resumeBtn2) resumeBtn2.disabled = true;
+      try {
+        await fetch('/api/vision/extraction?pdf_name=' + encodeURIComponent(pdf), { method: 'DELETE' });
+      } catch (_) {}
+      clearResults();
+      clearProgress();
+    });
+  }
 
   // Footer
   $('#ft-model').textContent = payload.model || '—';
@@ -823,6 +890,7 @@ async function runExtraction(force) {
   let lastResult = null;
   let cached = false;
   let cancelled = false;
+  let partialResult = null;
 
   try {
     const res = await fetch('/api/vision/extract/stream', {
@@ -866,7 +934,11 @@ async function runExtraction(force) {
         } else if (evt.event === 'cancelled') {
           cancelled = true;
           lastElapsed = evt.elapsed || lastElapsed;
-          logRow('[' + lastElapsed.toFixed(1) + 's] cancelled', 'err');
+          if (evt.result) partialResult = evt.result;
+          const partTag = evt.partial
+            ? ' (partial saved: ' + (evt.chunks_done || 0) + '/' + (evt.chunks_total || '?') + ')'
+            : '';
+          logRow('[' + lastElapsed.toFixed(1) + 's] cancelled' + partTag, 'err');
         } else if (evt.event === 'error') {
           throw new Error(evt.error || 'Extraction failed');
         }
@@ -874,7 +946,7 @@ async function runExtraction(force) {
     }
 
     if (cancelled || cancelledByUser) {
-      handleCancelledUI(lastElapsed);
+      handleCancelledUI(lastElapsed, partialResult);
       return;
     }
     if (lastResult) {
@@ -885,7 +957,7 @@ async function runExtraction(force) {
     }
   } catch (e) {
     if (cancelledByUser || e.name === 'AbortError') {
-      handleCancelledUI(lastElapsed);
+      handleCancelledUI(lastElapsed, partialResult);
       return;
     }
     showError(e.message || String(e));
@@ -899,15 +971,54 @@ async function runExtraction(force) {
   }
 }
 
-function handleCancelledUI(elapsed) {
-  setProgress('cancelled', 'Extraction cancelled. Partial results discarded.',
-              elapsed || null, { cancelled: true });
-  resultsWrap.innerHTML = '<div class="empty"><div class="empty-icon">⏹</div>'
-    + '<p>Extraction cancelled. No results were saved.</p></div>';
+function handleCancelledUI(elapsed, partial) {
+  const havePartial = partial && (partial.chunks_done || 0) > 0;
+  const msg = havePartial
+    ? 'Extraction cancelled. Partial results saved.'
+    : 'Extraction cancelled. No partial results to save.';
+  setProgress('cancelled', msg, elapsed || null, { cancelled: true });
+  if (havePartial) {
+    renderResult(partial, { elapsed: elapsed || 0 });
+  } else {
+    // The worker may not have finished flushing the partial cache yet
+    // (e.g. when the client aborted the stream). Retry a few times before
+    // giving up.
+    const pdf = pdfSelect.value;
+    const fallbackEmpty = () => {
+      resultsWrap.innerHTML = '<div class="empty"><div class="empty-icon">⏹</div>'
+        + '<p>Extraction cancelled. No results were saved.</p></div>';
+    };
+    if (!pdf) { fallbackEmpty(); }
+    else {
+      const tryFetch = async (attempt) => {
+        try {
+          const res = await fetch('/api/vision/extraction?pdf_name=' + encodeURIComponent(pdf));
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.partial) {
+              renderResult(data, { elapsed: elapsed || 0, cached: true });
+              setProgress('cancelled', 'Extraction cancelled. Partial results saved.',
+                          elapsed || null, { cancelled: true });
+              return true;
+            }
+          }
+        } catch (_) {}
+        return false;
+      };
+      (async () => {
+        const delays = [0, 350, 800];
+        for (let i = 0; i < delays.length; i++) {
+          if (delays[i]) await new Promise(r => setTimeout(r, delays[i]));
+          if (await tryFetch(i)) return;
+        }
+        fallbackEmpty();
+      })();
+    }
+  }
   setTimeout(() => {
     if (extracting) return;
     clearProgress();
-  }, 1800);
+  }, 2200);
 }
 
 runBtn.addEventListener('click', () => runExtraction(false));
