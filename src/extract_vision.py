@@ -391,12 +391,57 @@ class CancelledExtraction(RuntimeError):
         self.result = result
 
 
+def _coerce_resume(
+    resume_from: "ExtractionResult | dict | None", model: str
+) -> "ExtractionResult | None":
+    """Build an ExtractionResult seeded from prior partial output.
+
+    Accepts either an existing ExtractionResult or its persisted dict form.
+    Returns None if `resume_from` is empty / has no completed chunks. Raises
+    ValueError if the prior run used a different model (chunk boundaries
+    depend on `MAX_PAGES_PER_CHUNK[model]` so we can't safely splice).
+    """
+    if resume_from is None:
+        return None
+    if isinstance(resume_from, ExtractionResult):
+        prior = resume_from
+    elif isinstance(resume_from, dict):
+        usage = resume_from.get("usage") or {}
+        prior = ExtractionResult(
+            text_by_page=list(resume_from.get("text_by_page") or []),
+            tables=list(resume_from.get("tables") or []),
+            figures=list(resume_from.get("figures") or []),
+            pages=int(resume_from.get("pages") or 0),
+            model=str(resume_from.get("model") or ""),
+            usage={
+                "input_tokens": int(usage.get("input_tokens") or 0),
+                "output_tokens": int(usage.get("output_tokens") or 0),
+            },
+            partial=bool(resume_from.get("partial", False)),
+            chunks_done=int(resume_from.get("chunks_done") or 0),
+            chunks_total=int(resume_from.get("chunks_total") or 0),
+            pages_done=int(resume_from.get("pages_done") or 0),
+        )
+    else:
+        raise TypeError("resume_from must be ExtractionResult or dict")
+    if prior.chunks_done <= 0:
+        return None
+    if prior.model and prior.model != model:
+        raise ValueError(
+            f"Cannot resume: prior run used model {prior.model!r}, "
+            f"current request is {model!r}."
+        )
+    prior.model = model
+    return prior
+
+
 def extract_pdf(
     pdf_path: str | Path,
     *,
     model: str = MODEL_BULK,
     progress_cb=None,
     cancel_check=None,
+    resume_from: "ExtractionResult | dict | None" = None,
 ) -> ExtractionResult:
     path = Path(pdf_path)
     if not path.is_file():
@@ -439,15 +484,43 @@ def extract_pdf(
                 pass
 
     max_pages = MAX_PAGES_PER_CHUNK.get(model, 2)
+    prior = _coerce_resume(resume_from, model)
     _emit(phase="chunking", message=f"Splitting PDF into chunks ({max_pages} pages each)…")
     _check_cancel()
     chunks = _chunk_pdf(path, max_pages)
 
-    result = ExtractionResult(model=model)
-    result.chunks_total = len(chunks)
+    if prior is not None:
+        result = prior
+        result.chunks_total = len(chunks)
+        # If the prior run reported more chunks done than we now see (e.g.
+        # the PDF on disk changed), refuse to splice — safer to start fresh.
+        if result.chunks_done > len(chunks):
+            raise ValueError(
+                f"Cannot resume: prior run completed {result.chunks_done} "
+                f"chunks but PDF now produces only {len(chunks)}."
+            )
+        if result.chunks_done == len(chunks):
+            # Everything was already done — nothing to do but mark complete.
+            result.partial = False
+            result.pages = sum(n for _, _, n in chunks)
+            return result
+        skip = result.chunks_done
+        _emit(
+            phase="resuming",
+            message=f"Resuming from chunk {skip + 1}/{len(chunks)} "
+                    f"(reusing {skip} chunk(s) from cache)…",
+            page=skip,
+            total=len(chunks),
+        )
+    else:
+        result = ExtractionResult(model=model)
+        result.chunks_total = len(chunks)
+        skip = 0
 
     try:
         for i, (chunk_bytes, page_start, num_pages) in enumerate(chunks):
+            if i < skip:
+                continue
             _check_cancel()
             page_end = page_start + num_pages - 1
             _emit(
@@ -474,6 +547,7 @@ def extract_pdf(
         raise
 
     result.pages = sum(n for _, _, n in chunks)
+    result.partial = False
     return result
 
 

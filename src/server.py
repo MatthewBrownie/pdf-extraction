@@ -588,6 +588,7 @@ class VisionExtractRequest(BaseModel):
     pdf_name: str
     model: str = "haiku"
     force: bool = False
+    resume: bool = False
 
 
 def _vision_dir(stem: str) -> Path:
@@ -784,7 +785,21 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
             detail="OpenRouter API key not configured. Set OPENROUTER_API_KEY (or OPENAI_API_KEY).",
         )
 
-    if not req.force:
+    resume_from: dict | None = None
+    if req.resume:
+        cached = _load_vision_cache(stem)
+        if (
+            cached is None
+            or cached.get("model") != model_id
+            or not cached.get("partial")
+            or int(cached.get("chunks_done") or 0) <= 0
+        ):
+            raise HTTPException(
+                status_code=409,
+                detail="No partial vision result available to resume for this PDF/model.",
+            )
+        resume_from = cached
+    elif not req.force:
         cached = _load_vision_cache(stem)
         if (
             cached is not None
@@ -840,6 +855,7 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
             result = extract_vision.extract_pdf(
                 str(pdf_path), model=model_id,
                 progress_cb=progress_cb, cancel_check=cancel_check,
+                resume_from=resume_from,
             )
             if cancel_event.is_set():
                 # Cancel arrived after the run finished — keep whatever we have.

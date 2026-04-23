@@ -784,7 +784,7 @@ function renderResult(payload, opts) {
     const discardBtn = document.getElementById('discard-btn');
     if (resumeBtn) resumeBtn.addEventListener('click', () => {
       if (extracting) return;
-      runExtraction(true);
+      runExtraction(false, true);
     });
     if (discardBtn) discardBtn.addEventListener('click', async () => {
       if (extracting) return;
@@ -870,7 +870,7 @@ function setProgress(phase, message, elapsed, opts) {
 }
 function clearProgress() { progressBox.innerHTML = ''; }
 
-async function runExtraction(force) {
+async function runExtraction(force, resume) {
   if (extracting) return;
   const pdf = pdfSelect.value;
   if (!pdf) { showError('Pick a PDF first.'); return; }
@@ -896,7 +896,7 @@ async function runExtraction(force) {
     const res = await fetch('/api/vision/extract/stream', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pdf_name: pdf, model: currentModel, force: !!force }),
+      body: JSON.stringify({ pdf_name: pdf, model: currentModel, force: !!force, resume: !!resume }),
       signal: abortController.signal,
     });
     if (!res.ok) {
