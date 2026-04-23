@@ -91,6 +91,26 @@ def _calibrated_per_page_range(
     return min(rates), max(rates)
 
 
+SIMILAR_PAGES_LO_RATIO = 0.5
+SIMILAR_PAGES_HI_RATIO = 2.0
+
+
+def _filter_samples_by_pages(
+    samples: list[dict], target_pages: int
+) -> list[dict]:
+    """Restrict samples to runs whose page count is within 0.5x–2x target.
+
+    Returns the close-match subset when non-empty, otherwise the original
+    list so callers transparently fall back to the broader pool.
+    """
+    if target_pages <= 0 or not samples:
+        return samples
+    lo = target_pages * SIMILAR_PAGES_LO_RATIO
+    hi = target_pages * SIMILAR_PAGES_HI_RATIO
+    close = [s for s in samples if lo <= (s.get("pages") or 0) <= hi]
+    return close if close else samples
+
+
 def estimate_cost(pages: int, history: dict | None = None) -> dict:
     """Approximate USD cost range for extracting a PDF of `pages` pages.
 
@@ -103,8 +123,11 @@ def estimate_cost(pages: int, history: dict | None = None) -> dict:
     (e.g. `"anthropic/claude-haiku-4.5"`) to a list of past-run summaries
     `{"pages": int, "input_tokens": int, "output_tokens": int}`. Per-page
     token rates are derived per model from those samples and used in place
-    of the static heuristic. If no usable samples exist for a model the
-    static heuristic is used for that model.
+    of the static heuristic. To keep the displayed range tracking the
+    document at hand, calibration prefers historical runs whose page
+    count is within 0.5x–2x of `pages`; when no close matches exist it
+    falls back to all usable samples for that model, and finally to the
+    static heuristic when there are none.
     """
     pages = max(0, int(pages))
     history = history or {}
@@ -112,12 +135,13 @@ def estimate_cost(pages: int, history: dict | None = None) -> dict:
     for short, model in MODELS.items():
         max_pp = MAX_PAGES_PER_CHUNK.get(model, 2)
         chunks = (pages + max_pp - 1) // max_pp if pages else 0
-        samples = [
+        all_samples = [
             s for s in (history.get(model) or [])
             if (s.get("pages") or 0) > 0
             and (s.get("input_tokens") or 0) > 0
             and (s.get("output_tokens") or 0) > 0
         ]
+        samples = _filter_samples_by_pages(all_samples, pages)
         in_per_lo, in_per_hi = _calibrated_per_page_range(
             samples, EST_INPUT_TOKENS_PER_PAGE[0], EST_INPUT_TOKENS_PER_PAGE[1],
             "input_tokens",
