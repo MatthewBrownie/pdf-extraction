@@ -681,16 +681,75 @@
       font-size: 0.72rem; color: var(--accent); cursor: pointer; user-select: none;
       margin-top: 2px; align-self: flex-start;
     }
+
+    /* ── Versions screen ── */
+    .versions-wrap {
+      flex: 1; overflow-y: auto; padding: 36px 48px;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .versions-wrap h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+    .versions-sub {
+      font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; max-width: 820px;
+      margin-bottom: 8px;
+    }
+    .version-cards { display: flex; flex-direction: column; gap: 20px; max-width: 900px; }
+    .version-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 28px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .version-card-header {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .version-badge {
+      font-size: 0.95rem; font-weight: 700; font-family: var(--mono);
+      padding: 4px 12px; border-radius: 6px;
+      background: var(--accent-dim); color: var(--accent);
+      white-space: nowrap;
+    }
+    .version-title { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .version-lib {
+      font-size: 0.78rem; font-family: var(--mono); color: var(--text-dim);
+      padding: 3px 9px; background: var(--surface2); border-radius: 4px;
+      border: 1px solid var(--border); white-space: nowrap;
+    }
+    .version-section { display: flex; flex-direction: column; gap: 6px; }
+    .version-section-label {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--text-dim);
+    }
+    .version-section p {
+      font-size: 0.875rem; color: var(--text); line-height: 1.7; margin: 0;
+    }
+    .version-section ul {
+      margin: 0; padding-left: 20px;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .version-section li { font-size: 0.875rem; color: var(--text); line-height: 1.6; }
+    .version-section li code, .version-section p code {
+      font-family: var(--mono); font-size: 0.82em;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 3px; padding: 1px 5px; color: var(--text);
+    }
+    .version-tag {
+      font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 4px;
+      border: 1px solid; display: inline-block; margin-right: 6px;
+    }
+    .version-tag.new { border-color: var(--green); color: var(--green); }
+    .version-tag.changed { border-color: var(--yellow); color: var(--yellow); }
+    .version-tag.same { border-color: var(--text-dim); color: var(--text-dim); }
+    .version-tag.removed { border-color: var(--red); color: var(--red); }
+    .version-divider { border: none; border-top: 1px solid var(--border); margin: 4px 0; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>PDF Extraction POC</h1>
-  <span class="badge">v1·v2·v3·v4</span>
+  <span class="badge">v1–v6</span>
   <div class="top-tabs">
     <div class="top-tab active" data-screen="workspace">Workspace</div>
     <div class="top-tab" data-screen="results">Results</div>
+    <div class="top-tab" data-screen="versions">Versions</div>
   </div>
 </header>
 
@@ -964,6 +1023,371 @@
         </table>
       </div>
     </div>
+
+    <!-- Versions reference screen -->
+    <div class="versions-wrap" id="screen-versions" style="display:none">
+      <h2>Extractor Versions</h2>
+      <div class="versions-sub">
+        Each version extracts the same three content types — text chunks, tables, and images — but uses a different underlying approach.
+        Reading these descriptions top-to-bottom traces the full design progression from a naïve baseline to ML-backed and structure-aware extractors.
+      </div>
+
+      <div class="version-cards">
+
+        <!-- ── v1 ── -->
+        <div class="version-card">
+          <div class="version-card-header">
+            <span class="version-badge">v1</span>
+            <span class="version-title">Baseline — pdfplumber defaults</span>
+            <span class="version-lib">PyMuPDF + pdfplumber</span>
+          </div>
+          <hr class="version-divider" />
+
+          <div class="version-section">
+            <div class="version-section-label">How it works</div>
+            <p>
+              <strong>Text:</strong> PyMuPDF reads every page as a dictionary of blocks, lines, and spans.
+              Lines within a block are merged into a paragraph unless the gap between them exceeds 1.5× the current font size — that gap heuristic is the only paragraph-splitting logic.
+              Blocks are sorted by a coarse y-bucket (rounded to the nearest 20 pts) then by x, which gives a roughly left-to-right, top-to-bottom reading order without any column detection.
+            </p>
+            <p>
+              <strong>Tables:</strong> pdfplumber's default <code>find_tables()</code> is called once per page with no custom settings.
+              Internally this uses a line-based strategy: it looks for ruling lines (drawn line segments) in the PDF and infers cell boundaries from their intersections.
+              Every table pdfplumber finds is kept — there is no filtering, no deduplication, and no classification.
+            </p>
+            <p>
+              <strong>Images:</strong> PyMuPDF's <code>get_images(full=True)</code> returns all image XRefs on the page.
+              Each is extracted as raw bytes, written to <code>images/</code>, and its on-page rectangle is resolved via <code>get_image_rects()</code>.
+            </p>
+          </div>
+
+          <div class="version-section">
+            <div class="version-section-label">Limitations</div>
+            <ul>
+              <li>Multi-column layouts are not detected — text from adjacent columns can interleave depending on block order.</li>
+              <li>Tables with only horizontal ruling lines (no vertical lines) are typically missed entirely, because pdfplumber's line strategy needs both axes to anchor cells.</li>
+              <li>Whitespace-only tables (e.g. S1000D data modules with tab-aligned columns) are also missed.</li>
+              <li>No filtering of false positives — pdfplumber occasionally detects decorative borders as tables.</li>
+              <li>No cancellation support; no per-table metadata in the output.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── v2 ── -->
+        <div class="version-card">
+          <div class="version-card-header">
+            <span class="version-badge">v2</span>
+            <span class="version-title">Dual-pass table detection + geometry classification</span>
+            <span class="version-lib">PyMuPDF + pdfplumber</span>
+          </div>
+          <hr class="version-divider" />
+
+          <div class="version-section">
+            <div class="version-section-label">What changed from v1</div>
+            <ul>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Two-pass table discovery.</strong>
+                pdfplumber's line-based <code>find_tables()</code> runs first; a second pass with a text-based strategy (<code>vertical_strategy: "text"</code>) follows to catch tables that only have horizontal ruling lines.
+                Results from both passes are merged and deduplicated by IoU (intersection-over-union on bboxes) at a 0.5 threshold — if two detections overlap more than 50%, only the first is kept.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Drawing-aware table classification (<code>_classify_table</code>).</strong>
+                Before extracting a candidate table, v2 inspects the PyMuPDF drawing paths that fall inside its bounding box.
+                If filled rectangles or vertical line segments are present → <code>full_grid</code>.
+                If only horizontal lines → <code>h_rules</code>.
+                If nothing → <code>whitespace</code>, and the candidate is silently discarded.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Per-type extraction strategy.</strong>
+                <code>full_grid</code> tables are extracted with <code>x_tolerance=5</code>.
+                <code>h_rules</code> tables are cropped to their safe bbox and re-extracted via <code>extract_tables()</code> with a text-based vertical strategy, which gives better cell alignment when there are no vertical lines to anchor on.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Validity filter (<code>_is_valid_table</code>).</strong>
+                Extractions that produce fewer than 2 rows, or whose widest row has fewer than 2 columns, are dropped. This eliminates the most common false positives (single-cell decorative borders, lone header rows).
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <code>table_type</code> field added to every table in the output, carrying the classification label.
+              </li>
+              <li>
+                <span class="version-tag same">SAME</span>
+                Text and image extraction are identical to v1.
+              </li>
+            </ul>
+          </div>
+
+          <div class="version-section">
+            <div class="version-section-label">Remaining limitations</div>
+            <ul>
+              <li>Whitespace-only tables are still discarded — v2 explicitly documents this as intentional (accuracy too low without an ML model).</li>
+              <li>The IoU dedup threshold of 0.5 is too low for dense S1000D documents, causing some real tables to be dropped as duplicates when detections partially overlap.</li>
+              <li>The validity filter rejects single-column tables, which are legitimate in some document types.</li>
+              <li>False positives on prose still occur when the text-strategy second pass fires on documents with no tables at all.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── v3 ── -->
+        <div class="version-card">
+          <div class="version-card-header">
+            <span class="version-badge">v3</span>
+            <span class="version-title">Neural layout detection via unstructured.io</span>
+            <span class="version-lib">unstructured.io (YOLOX + Tesseract) + PyMuPDF</span>
+          </div>
+          <hr class="version-divider" />
+
+          <div class="version-section">
+            <div class="version-section-label">What changed from v2</div>
+            <ul>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Completely different text and table pipeline.</strong>
+                v3 delegates all content detection to <code>unstructured.partition_pdf()</code> with the <code>hi_res</code> strategy.
+                Under the hood, unstructured renders each page at high resolution and runs a YOLOX object-detection model to locate layout regions (titles, text, tables, figures, etc.).
+                This means layout understanding is learned from training data, not derived from PDF drawing commands.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Table structure from HTML.</strong>
+                unstructured returns each detected table as an HTML string (stored in <code>metadata.text_as_html</code>).
+                v3 parses this with a stdlib <code>HTMLParser</code> to produce the standard <code>list[list[str]]</code> row format.
+                If no HTML is present, it falls back to splitting the plain text by newlines.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Semantic chunk categories.</strong>
+                Each chunk carries a <code>category</code> field from the unstructured element type: <code>Title</code>, <code>NarrativeText</code>, <code>ListItem</code>, <code>Header</code>, etc.
+                v1/v2 produced no such labels.
+              </li>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>Image extraction is still done by PyMuPDF</strong>, not by unstructured.
+                When unstructured detects an <code>Image</code> or <code>Figure</code> element, v3 uses its bbox to crop and render that region from the source page at 150 DPI via <code>fitz.Page.get_pixmap(clip=…)</code>.
+              </li>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>Coordinate rescaling.</strong>
+                unstructured returns pixel coordinates at the layout-detection resolution.
+                v3 reads the pixel canvas dimensions from <code>metadata.coordinates.system</code> and rescales to PDF points using the page's actual width/height.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                Lazy import — unstructured and its heavy ML deps are imported inside the function body, not at module load. Startup cost is deferred to first use.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                Cancellation support via <code>cancel_check</code> callback.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                Automatic fallback: if <code>hi_res</code> fails (e.g. model not available), v3 retries with the <code>fast</code> strategy, which loses table detection but still provides text.
+              </li>
+            </ul>
+          </div>
+
+          <div class="version-section">
+            <div class="version-section-label">Tradeoffs</div>
+            <ul>
+              <li><strong>Much slower</strong> — rendering every page at high DPI and running object detection is order-of-magnitude slower than reading PDF drawing commands. Timeout is 600 s vs 180 s for v2.</li>
+              <li>Can detect tables with no ruling lines at all (whitespace tables) — the model learned what tables look like visually.</li>
+              <li><code>font_size</code> is always <code>0.0</code> — unstructured doesn't expose per-span font metadata.</li>
+              <li>Requires system packages: Tesseract OCR, Poppler, libxcb. First run downloads YOLOX and Detectron2 model weights.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── v4 ── -->
+        <div class="version-card">
+          <div class="version-card-header">
+            <span class="version-badge">v4</span>
+            <span class="version-title">IBM Docling — layout + table structure models</span>
+            <span class="version-lib">docling (IBM models) + PyMuPDF</span>
+          </div>
+          <hr class="version-divider" />
+
+          <div class="version-section">
+            <div class="version-section-label">What changed from v3</div>
+            <ul>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>Different ML backend.</strong>
+                v4 uses IBM's <code>docling</code> library instead of unstructured.
+                Docling runs its own layout model plus a dedicated table-structure recognition model (separate from YOLOX/Tesseract).
+                The table-structure model predicts row/column spans at the cell level, not just the outer bbox — this tends to produce more accurate multi-column and merged-cell tables.
+              </li>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>Structured table access.</strong>
+                Rather than parsing HTML, v4 reads tables directly from docling's object model: <code>table_item.data.grid</code> is a 2D list of cell objects each carrying a <code>text</code> field.
+                A fallback walks <code>table_cells</code> by row/column offset if the grid is absent.
+              </li>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>Different semantic labels.</strong>
+                Chunk categories come from docling's <code>label</code> field (e.g. <code>text</code>, <code>section_header</code>, <code>list_item</code>, <code>caption</code>).
+                These map to docling's own taxonomy, not unstructured's.
+              </li>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>Coordinate origin handling.</strong>
+                Docling BoundingBox objects carry an explicit <code>coord_origin</code> attribute (<code>BOTTOMLEFT</code> or <code>TOPLEFT</code>).
+                v4's <code>_docling_bbox_to_fitz</code> checks this and flips y-coordinates only when the origin is bottom-left — making it robust to format changes across docling versions.
+              </li>
+              <li>
+                <span class="version-tag same">SAME</span>
+                Image extraction: PyMuPDF crops detected picture regions at 150 DPI, same approach as v3.
+              </li>
+              <li>
+                <span class="version-tag same">SAME</span>
+                Lazy import, cancellation support, <code>font_size = 0.0</code>.
+              </li>
+            </ul>
+          </div>
+
+          <div class="version-section">
+            <div class="version-section-label">Tradeoffs</div>
+            <ul>
+              <li><strong>Slowest extractor</strong> — docling does more work per table (structure recognition is a second model pass). Timeout is 1200 s.</li>
+              <li>Does not require Tesseract; uses its own OCR pipeline. Separate model weights from v3.</li>
+              <li>Generally the most accurate at table structure on complex layouts (merged cells, row/column spans).</li>
+              <li><code>font_size</code> always <code>0.0</code> for the same reason as v3.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── v5 ── -->
+        <div class="version-card">
+          <div class="version-card-header">
+            <span class="version-badge">v5</span>
+            <span class="version-title">PDF logical structure tree (tagged PDFs only)</span>
+            <span class="version-lib">pdfminer.six + PyMuPDF</span>
+          </div>
+          <hr class="version-divider" />
+
+          <div class="version-section">
+            <div class="version-section-label">What changed from v4</div>
+            <ul>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Completely different extraction philosophy — no visual analysis at all.</strong>
+                A PDF can optionally contain a <em>logical structure tree</em> (<code>StructTreeRoot</code>) that the authoring tool embeds to describe the document's semantic layout: headings, paragraphs, tables, list items, etc.
+                v5 reads this tree directly using pdfminer.six instead of looking at rendering output.
+                This is the only version that extracts the document author's <em>intended</em> structure rather than inferring it from appearance.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Tagged PDF detection gate.</strong>
+                v5 checks <code>MarkInfo.Marked</code> and the presence of <code>StructTreeRoot</code> in the PDF catalog before doing any work.
+                If the PDF is not tagged, the extractor returns empty chunks and tables immediately — there is no visual fallback.
+                This is intentional: the empty result is data, not an error.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>MCID text map.</strong>
+                The structure tree references content via Marked Content IDs (MCIDs) rather than carrying raw text itself.
+                v5 runs the full pdfminer page interpreter over every page to collect each MCID's rendered text, using <code>font.decode()</code> and <code>font.to_unichr()</code> for correct handling of CID-mapped and glyph-remapped fonts.
+                This produces a <code>(page_index, mcid) → text</code> lookup table.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Structure tree walk.</strong>
+                The tree is walked recursively.
+                Nodes with heading roles (<code>H1</code>–<code>H6</code>) or text roles (<code>P</code>, <code>Caption</code>, <code>Quote</code>, <code>Note</code>, etc.) produce chunks with a <code>category</code> matching the role.
+                <code>Table</code> nodes trigger a table extraction that traverses <code>THead</code>/<code>TBody</code>/<code>TFoot</code> → <code>TR</code> → <code>TH</code>/<code>TD</code> to build rows.
+                Container roles (<code>Sect</code>, <code>Div</code>, <code>L</code>, <code>LI</code>, etc.) are recursed into without producing output themselves.
+                A <code>RoleMap</code> is applied at each node to resolve custom roles to their standard equivalents.
+              </li>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>No bboxes on chunks or tables.</strong>
+                The standard StructTreeRoot does not carry bounding-box coordinates — those live in the content stream, not the tag tree.
+                All chunk and table <code>bbox</code> fields are <code>null</code> in v5 output.
+                Overlay rendering on the frontend is not possible for these elements.
+              </li>
+              <li>
+                <span class="version-tag same">SAME</span>
+                Image extraction: PyMuPDF XRef scan, identical to v1.
+              </li>
+            </ul>
+          </div>
+
+          <div class="version-section">
+            <div class="version-section-label">Tradeoffs</div>
+            <ul>
+              <li>Requires a tagged PDF — only a minority of PDFs in the wild carry a well-formed structure tree. Scanned PDFs, many older exports, and most programmatically-generated reports are untagged.</li>
+              <li>When it works, it is the most semantically faithful extraction: heading levels are exact, table rows and cells are structurally correct, and there is no risk of detection false positives.</li>
+              <li>No ML dependencies — runs on pdfminer.six alone. Fast on well-tagged documents.</li>
+              <li>Quality depends entirely on how carefully the PDF was authored. Poorly tagged PDFs can produce garbled or empty results even when technically "marked".</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── v6 ── -->
+        <div class="version-card">
+          <div class="version-card-header">
+            <span class="version-badge">v6</span>
+            <span class="version-title">Camelot lattice — OpenCV morphological line detection</span>
+            <span class="version-lib">Camelot (camelot-py[cv]) + PyMuPDF</span>
+          </div>
+          <hr class="version-divider" />
+
+          <div class="version-section">
+            <div class="version-section-label">What changed from v5</div>
+            <ul>
+              <li>
+                <span class="version-tag changed">CHANGED</span>
+                <strong>Different table detection mechanism — image processing, not PDF commands or ML.</strong>
+                Camelot's <em>lattice</em> flavour renders each page to a bitmap (via Ghostscript) and then applies OpenCV morphological operations to detect horizontal and vertical line segments.
+                Cells are formed from the intersections of those detected lines — the algorithm never looks at PDF drawing commands, only at pixel-level line geometry.
+                This makes it robust to PDFs where lines are embedded as rasterised images rather than as vector path commands.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                <strong>Per-table accuracy score.</strong>
+                Camelot's <code>parsing_report</code> exposes an <code>accuracy</code> value (0–100) and a <code>whitespace</code> value for each detected table.
+                v6 stores both as <code>camelot_accuracy</code> and <code>camelot_whitespace</code> on every table record.
+                The intent is to use this as a <em>selection signal</em>: a routing layer could pick, per-table, whichever extractor version reported the highest accuracy.
+              </li>
+              <li>
+                <span class="version-tag new">NEW</span>
+                All pages are processed in a single <code>camelot.read_pdf(pages="all", flavor="lattice")</code> call rather than page-by-page, which is how Camelot's batch API works.
+              </li>
+              <li>
+                <span class="version-tag removed">OMITTED</span>
+                <strong>Stream flavour is deliberately excluded.</strong>
+                Camelot's <code>stream</code> mode silently corrupts results on pages with multiple tables, so it is not offered.
+                The newer <em>network</em>/<em>hybrid</em> flavours are not yet battle-tested.
+              </li>
+              <li>
+                <span class="version-tag same">SAME</span>
+                Text extraction: PyMuPDF with the same block-sort and line-gap heuristic as v1.
+              </li>
+              <li>
+                <span class="version-tag same">SAME</span>
+                Image extraction: PyMuPDF XRef scan, identical to v1.
+              </li>
+            </ul>
+          </div>
+
+          <div class="version-section">
+            <div class="version-section-label">Tradeoffs</div>
+            <ul>
+              <li>Requires Ghostscript installed as a system binary — not a Python package. If Ghostscript is missing, table extraction raises immediately.</li>
+              <li>Only works for tables with visible border lines. Whitespace-delimited tables are not detected.</li>
+              <li>The accuracy score is self-reported by Camelot based on the ratio of cells it managed to cleanly separate — it is a quality signal, not ground truth. A score below ~80 usually indicates cell-merge problems.</li>
+              <li>Can be slower than v1/v2 because every page must be rendered to a bitmap by Ghostscript, but faster than v3/v4 because no neural inference is involved.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /.version-cards -->
+    </div><!-- /#screen-versions -->
+
   </main>
 </div>
 
@@ -1006,6 +1430,7 @@
     $('screen-workspace').style.display = screen === 'workspace' ? '' : 'none';
     $('screen-results').style.display = screen === 'results' ? '' : 'none';
     $('screen-compare').style.display = screen === 'compare' ? 'flex' : 'none';
+    $('screen-versions').style.display = screen === 'versions' ? '' : 'none';
     // Hide sidebar in non-workspace modes
     $('layout').classList.toggle('results-mode', screen !== 'workspace');
     if (screen === 'results') loadResults();
@@ -1018,6 +1443,7 @@
   });
   // Deep-link: opening #results (or #compare) takes you straight there on load.
   if (location.hash === '#results') showScreen('results');
+  if (location.hash === '#versions') showScreen('versions');
 
   $('refresh-results').addEventListener('click', loadResults);
 

@@ -51,7 +51,7 @@ _TEMPLATES = _ROOT / "templates"
 _INPUT_DOCS.mkdir(parents=True, exist_ok=True)
 _OUTPUT.mkdir(parents=True, exist_ok=True)
 
-VERSIONS = ("v1", "v2", "v3", "v4")
+VERSIONS = ("v1", "v2", "v3", "v4", "v5", "v6")
 
 app = FastAPI(title="PDF Extraction POC")
 
@@ -135,6 +135,22 @@ def _get_extractor(version: str):
             raise HTTPException(
                 status_code=503,
                 detail=f"v4 (docling) is not available in this environment: {e}",
+            )
+    if version == "v5":
+        try:
+            return importlib.import_module("extract_v5")
+        except Exception as e:
+            raise HTTPException(
+                status_code=503,
+                detail=f"v5 (tagged structure tree) is not available: {e}",
+            )
+    if version == "v6":
+        try:
+            return importlib.import_module("extract_v6")
+        except Exception as e:
+            raise HTTPException(
+                status_code=503,
+                detail=f"v6 (Camelot lattice) is not available in this environment: {e}",
             )
     raise HTTPException(status_code=400, detail=f"Unknown version: {version}")
 
@@ -306,7 +322,7 @@ def _build_result_payload(req: ExtractRequest, result: dict) -> dict:
 
 # Per-version timeout (seconds) for streaming extraction. v3/v4 can be slow on
 # the first run because models are downloaded.
-_EXTRACT_TIMEOUTS = {"v1": 120, "v2": 180, "v3": 600, "v4": 1200}
+_EXTRACT_TIMEOUTS = {"v1": 120, "v2": 180, "v3": 600, "v4": 1200, "v5": 300, "v6": 180}
 
 
 @app.post("/api/extract")
