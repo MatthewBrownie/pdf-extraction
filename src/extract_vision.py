@@ -60,22 +60,80 @@ EST_OUTPUT_TOKENS_PER_PAGE = (400, 1200)
 EST_PROMPT_OVERHEAD_PER_CHUNK = 250
 
 
-def estimate_cost(pages: int) -> dict:
+def _calibrated_per_page_range(
+    samples: list[dict],
+    static_lo: int,
+    static_hi: int,
+    field: str,
+) -> tuple[float, float]:
+    """Compute (low, high) per-page tokens from historical samples.
+
+    Each sample is a dict with at least `pages` and the requested `field`
+    (e.g. `input_tokens`). Samples with non-positive pages or usage are
+    skipped. With one usable sample, returns ±15% around its per-page rate.
+    With two or more, returns (min, max) per-page rates across samples.
+    Falls back to (static_lo, static_hi) when nothing usable is provided.
+    """
+    rates: list[float] = []
+    for s in samples:
+        try:
+            pg = int(s.get("pages") or 0)
+            tok = int(s.get(field) or 0)
+        except (TypeError, ValueError):
+            continue
+        if pg > 0 and tok > 0:
+            rates.append(tok / pg)
+    if not rates:
+        return float(static_lo), float(static_hi)
+    if len(rates) == 1:
+        r = rates[0]
+        return r * 0.85, r * 1.15
+    return min(rates), max(rates)
+
+
+def estimate_cost(pages: int, history: dict | None = None) -> dict:
     """Approximate USD cost range for extracting a PDF of `pages` pages.
 
     Returns a dict keyed by short model name (`haiku`, `sonnet`) with
-    `low`, `high`, `chunks`, `max_pages_per_chunk`, and `model` fields.
-    Estimates are heuristic — real cost depends on page complexity.
+    `low`, `high`, `chunks`, `max_pages_per_chunk`, `model`, `source`
+    (`"calibrated"` or `"heuristic"`), and `samples` (count of past runs
+    used) fields. Estimates remain approximate.
+
+    When `history` is provided, it should be a dict mapping model id
+    (e.g. `"anthropic/claude-haiku-4.5"`) to a list of past-run summaries
+    `{"pages": int, "input_tokens": int, "output_tokens": int}`. Per-page
+    token rates are derived per model from those samples and used in place
+    of the static heuristic. If no usable samples exist for a model the
+    static heuristic is used for that model.
     """
     pages = max(0, int(pages))
+    history = history or {}
     out: dict = {}
     for short, model in MODELS.items():
         max_pp = MAX_PAGES_PER_CHUNK.get(model, 2)
         chunks = (pages + max_pp - 1) // max_pp if pages else 0
-        in_lo = pages * EST_INPUT_TOKENS_PER_PAGE[0] + chunks * EST_PROMPT_OVERHEAD_PER_CHUNK
-        in_hi = pages * EST_INPUT_TOKENS_PER_PAGE[1] + chunks * EST_PROMPT_OVERHEAD_PER_CHUNK
-        out_lo = pages * EST_OUTPUT_TOKENS_PER_PAGE[0]
-        out_hi = pages * EST_OUTPUT_TOKENS_PER_PAGE[1]
+        samples = [
+            s for s in (history.get(model) or [])
+            if (s.get("pages") or 0) > 0
+            and (s.get("input_tokens") or 0) > 0
+            and (s.get("output_tokens") or 0) > 0
+        ]
+        in_per_lo, in_per_hi = _calibrated_per_page_range(
+            samples, EST_INPUT_TOKENS_PER_PAGE[0], EST_INPUT_TOKENS_PER_PAGE[1],
+            "input_tokens",
+        )
+        out_per_lo, out_per_hi = _calibrated_per_page_range(
+            samples, EST_OUTPUT_TOKENS_PER_PAGE[0], EST_OUTPUT_TOKENS_PER_PAGE[1],
+            "output_tokens",
+        )
+        calibrated = bool(samples)
+        # Historical usage already includes the per-chunk prompt overhead;
+        # only add it when falling back to the static heuristic.
+        overhead = 0 if calibrated else chunks * EST_PROMPT_OVERHEAD_PER_CHUNK
+        in_lo = pages * in_per_lo + overhead
+        in_hi = pages * in_per_hi + overhead
+        out_lo = pages * out_per_lo
+        out_hi = pages * out_per_hi
         in_rate, out_rate = _COST[model]
         low = in_lo * in_rate + out_lo * out_rate
         high = in_hi * in_rate + out_hi * out_rate
@@ -85,6 +143,8 @@ def estimate_cost(pages: int) -> dict:
             "chunks": chunks,
             "low": round(low, 4),
             "high": round(high, 4),
+            "source": "calibrated" if calibrated else "heuristic",
+            "samples": len(samples),
         }
     return out
 

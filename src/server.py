@@ -596,6 +596,36 @@ def _vision_dir(stem: str) -> Path:
     return d
 
 
+def _collect_vision_history() -> dict[str, list[dict]]:
+    """Scan cached vision runs and group their token usage by model id.
+
+    Returns a dict mapping model id to a list of
+    `{"pages": int, "input_tokens": int, "output_tokens": int}` summaries
+    drawn from every `output/<stem>/vision/extraction.json` on disk.
+    Used to calibrate the pre-run cost estimate against real history.
+    """
+    history: dict[str, list[dict]] = {}
+    if not _OUTPUT.exists():
+        return history
+    for nf in _OUTPUT.glob("*/vision/extraction.json"):
+        try:
+            with nf.open("r", encoding="utf-8") as fh:
+                data = json.load(fh)
+        except Exception:
+            continue
+        model = data.get("model")
+        usage = data.get("usage") or {}
+        pages = data.get("pages") or 0
+        if not model or not pages:
+            continue
+        history.setdefault(model, []).append({
+            "pages": pages,
+            "input_tokens": usage.get("input_tokens") or 0,
+            "output_tokens": usage.get("output_tokens") or 0,
+        })
+    return history
+
+
 def _load_vision_cache(stem: str) -> dict | None:
     d = _OUTPUT / stem / "vision"
     nf = d / "extraction.json"
@@ -691,7 +721,9 @@ def get_vision_estimate(pdf_name: str):
     return {
         "pdf": pdf_name,
         "pages": pages,
-        "estimates": extract_vision.estimate_cost(pages),
+        "estimates": extract_vision.estimate_cost(
+            pages, history=_collect_vision_history()
+        ),
     }
 
 
