@@ -697,6 +697,46 @@ def _build_vision_payload(pdf_name: str, data: dict) -> dict:
     return payload
 
 
+_VISION_JOB_STORE: dict[str, dict] = {}
+_VISION_JOB_LOCK = threading.Lock()
+
+
+def _write_vision_job(stem: str, **kw) -> None:
+    with _VISION_JOB_LOCK:
+        current = _VISION_JOB_STORE.get(stem, {})
+        current.update(kw)
+        _VISION_JOB_STORE[stem] = current
+        try:
+            d = _vision_dir(stem)
+            with (d / "job.json").open("w", encoding="utf-8") as f:
+                json.dump(current, f, indent=2)
+        except Exception:
+            pass
+
+
+def _read_vision_job(stem: str) -> dict | None:
+    with _VISION_JOB_LOCK:
+        if stem in _VISION_JOB_STORE:
+            return dict(_VISION_JOB_STORE[stem])
+    jp = _vision_dir(stem) / "job.json"
+    if jp.exists():
+        try:
+            with jp.open("r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return None
+
+
+def _cancel_vision_job(stem: str) -> bool:
+    with _VISION_JOB_LOCK:
+        job = _VISION_JOB_STORE.get(stem)
+        if job and job.get("status") == "running":
+            job["cancel_requested"] = True
+            return True
+    return False
+
+
 def _validate_vision_request(req: VisionExtractRequest) -> tuple[Path, str, str]:
     pdf_name = Path(req.pdf_name).name
     pdf_path = (_INPUT_DOCS / pdf_name).resolve()
@@ -775,8 +815,9 @@ def delete_vision_extraction(pdf_name: str):
     return {"deleted": removed, "pdf": pdf_name}
 
 
-@app.post("/api/vision/extract/stream")
-async def vision_extract_stream(req: VisionExtractRequest, request: Request):
+@app.post("/api/vision/extract")
+def vision_extract_start(req: VisionExtractRequest):
+    """Start a background vision extraction job. Returns immediately; poll /api/vision/jobs."""
     pdf_path, stem, model_id = _validate_vision_request(req)
 
     if not extract_vision.get_api_key():
@@ -788,11 +829,11 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
     resume_from: dict | None = None
     if req.resume:
         cached = _load_vision_cache(stem)
-        if (
-            cached is None
-            or cached.get("model") != model_id
-            or not cached.get("partial")
-            or int(cached.get("chunks_done") or 0) <= 0
+        if not (
+            cached
+            and cached.get("model") == model_id
+            and cached.get("partial")
+            and int(cached.get("chunks_done") or 0) > 0
         ):
             raise HTTPException(
                 status_code=409,
@@ -801,150 +842,136 @@ async def vision_extract_stream(req: VisionExtractRequest, request: Request):
         resume_from = cached
     elif not req.force:
         cached = _load_vision_cache(stem)
-        if (
-            cached is not None
-            and cached.get("model") == model_id
-            and not cached.get("partial")
-        ):
-            payload = _build_vision_payload(req.pdf_name, cached)
+        if cached and cached.get("model") == model_id and not cached.get("partial"):
+            _write_vision_job(
+                stem,
+                status="done",
+                pdf_name=req.pdf_name,
+                model=model_id,
+                cached=True,
+                message="Loaded from cache.",
+                phase="done",
+                elapsed=0.0,
+                completed_chunks=0,
+                total_chunks=0,
+            )
+            return {"status": "cached", "pdf_name": req.pdf_name}
 
-            def cached_gen():
-                yield json.dumps({
-                    "event": "progress", "phase": "cache",
-                    "message": "Loaded cached vision result.", "elapsed": 0.0,
-                }) + "\n"
-                done_evt = {
-                    "event": "done", "elapsed": 0.0,
-                    "cached": True, "result": payload,
-                }
-                if "cached_at" in payload:
-                    done_evt["cached_at"] = payload["cached_at"]
-                yield json.dumps(done_evt) + "\n"
+    existing = _read_vision_job(stem)
+    if existing and existing.get("status") == "running":
+        return {"status": "already_running", "pdf_name": req.pdf_name}
 
-            return StreamingResponse(cached_gen(), media_type="application/x-ndjson")
+    started = time.time()
+    _write_vision_job(
+        stem,
+        status="running",
+        pdf_name=req.pdf_name,
+        model=model_id,
+        started_at=started,
+        phase="starting",
+        message="Starting extraction…",
+        elapsed=0.0,
+        completed_chunks=0,
+        total_chunks=0,
+        cancel_requested=False,
+        partial=False,
+        chunks_done=0,
+        chunks_total=0,
+    )
 
-    q: "queue.Queue[tuple[str, object]]" = queue.Queue()
-    cancel_event = threading.Event()
+    def progress_cb(**kw):
+        with _VISION_JOB_LOCK:
+            job = _VISION_JOB_STORE.get(stem, {})
+            if job.get("cancel_requested"):
+                raise extract_vision.CancelledExtraction("Extraction cancelled.")
+        _write_vision_job(
+            stem,
+            status="running",
+            elapsed=round(time.time() - started, 1),
+            completed_chunks=kw.get("page", 0),
+            total_chunks=kw.get("total", 0),
+            **kw,
+        )
 
     def cancel_check() -> bool:
-        return cancel_event.is_set()
-
-    def progress_cb(**evt):
-        if cancel_event.is_set():
-            raise extract_vision.CancelledExtraction("Extraction cancelled.")
-        q.put(("progress", evt))
-
-    def _persist_partial(partial_result) -> dict | None:
-        if partial_result is None or getattr(partial_result, "chunks_done", 0) <= 0:
-            return None
-        try:
-            # If everything actually finished, persist as a complete cache so
-            # subsequent loads don't force a re-run.
-            chunks_done = getattr(partial_result, "chunks_done", 0)
-            chunks_total = getattr(partial_result, "chunks_total", 0)
-            partial_result.partial = bool(
-                chunks_total <= 0 or chunks_done < chunks_total
-            )
-            standard = extract_vision.to_standard(partial_result)
-            return _write_vision_outputs(stem, partial_result, standard)
-        except Exception:
-            return None
+        with _VISION_JOB_LOCK:
+            return bool(_VISION_JOB_STORE.get(stem, {}).get("cancel_requested"))
 
     def worker():
         try:
             result = extract_vision.extract_pdf(
-                str(pdf_path), model=model_id,
-                progress_cb=progress_cb, cancel_check=cancel_check,
+                str(pdf_path),
+                model=model_id,
+                progress_cb=progress_cb,
+                cancel_check=cancel_check,
                 resume_from=resume_from,
             )
-            if cancel_event.is_set():
-                # Cancel arrived after the run finished — keep whatever we have.
-                # _persist_partial decides whether it's truly partial or complete.
-                q.put(("cancelled", _persist_partial(result)))
-                return
             standard = extract_vision.to_standard(result)
-            native = _write_vision_outputs(stem, result, standard)
-            q.put(("done", native))
+            _write_vision_outputs(stem, result, standard)
+            _write_vision_job(
+                stem,
+                status="done",
+                elapsed=round(time.time() - started, 1),
+                message="Extraction complete.",
+                phase="done",
+                partial=result.partial,
+                chunks_done=result.chunks_done,
+                chunks_total=result.chunks_total,
+            )
         except extract_vision.CancelledExtraction as exc:
-            q.put(("cancelled", _persist_partial(getattr(exc, "result", None))))
-        except Exception as e:
-            if cancel_event.is_set():
-                q.put(("cancelled", None))
+            partial = getattr(exc, "result", None)
+            if partial and getattr(partial, "chunks_done", 0) > 0:
+                partial.partial = True
+                standard = extract_vision.to_standard(partial)
+                _write_vision_outputs(stem, partial, standard)
+                _write_vision_job(
+                    stem,
+                    status="cancelled",
+                    elapsed=round(time.time() - started, 1),
+                    message="Extraction cancelled. Partial results saved.",
+                    phase="cancelled",
+                    partial=True,
+                    chunks_done=partial.chunks_done,
+                    chunks_total=partial.chunks_total,
+                )
             else:
-                q.put(("error", f"{type(e).__name__}: {e}"))
+                _write_vision_job(
+                    stem,
+                    status="cancelled",
+                    elapsed=round(time.time() - started, 1),
+                    message="Extraction cancelled. No partial results.",
+                    phase="cancelled",
+                    partial=False,
+                )
+        except Exception as e:
+            _write_vision_job(
+                stem,
+                status="error",
+                elapsed=round(time.time() - started, 1),
+                error=f"{type(e).__name__}: {e}",
+                phase="error",
+            )
 
-    t = threading.Thread(target=worker, daemon=True)
-    t.start()
-    started = time.time()
-    timeout = 1800
+    threading.Thread(target=worker, daemon=True).start()
+    return {"status": "started", "pdf_name": req.pdf_name}
 
-    async def gen():
-        yield json.dumps({
-            "event": "progress", "phase": "starting",
-            "message": "Starting Claude vision extraction…", "elapsed": 0.0,
-        }) + "\n"
 
-        try:
-            last_hb = time.time()
-            while True:
-                if await request.is_disconnected():
-                    cancel_event.set()
-                    return
-                try:
-                    kind, data = await asyncio.to_thread(q.get, True, 0.5)
-                except queue.Empty:
-                    elapsed = time.time() - started
-                    if not t.is_alive():
-                        yield json.dumps({
-                            "event": "error",
-                            "error": "Vision worker exited without producing a result.",
-                        }) + "\n"
-                        return
-                    if elapsed > timeout:
-                        cancel_event.set()
-                        yield json.dumps({
-                            "event": "error",
-                            "error": f"Vision extraction timed out after {int(elapsed)}s.",
-                        }) + "\n"
-                        return
-                    if time.time() - last_hb >= 2.0:
-                        last_hb = time.time()
-                        yield json.dumps({"event": "heartbeat", "elapsed": round(elapsed, 1)}) + "\n"
-                    continue
+@app.get("/api/vision/jobs")
+def get_vision_job(pdf_name: str):
+    """Poll for vision extraction job status."""
+    stem = Path(pdf_name).stem
+    job = _read_vision_job(stem)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"No job found for {pdf_name}")
+    return job
 
-                elapsed = round(time.time() - started, 1)
-                if kind == "progress":
-                    payload = {"event": "progress", "elapsed": elapsed}
-                    if isinstance(data, dict):
-                        payload.update(data)
-                    yield json.dumps(payload, default=str) + "\n"
-                elif kind == "done":
-                    yield json.dumps({
-                        "event": "done", "elapsed": elapsed,
-                        "result": _build_vision_payload(req.pdf_name, data),  # type: ignore[arg-type]
-                    }) + "\n"
-                    return
-                elif kind == "cancelled":
-                    cancelled_evt = {
-                        "event": "cancelled", "elapsed": elapsed,
-                        "message": "Extraction cancelled.",
-                    }
-                    if isinstance(data, dict):
-                        partial_payload = _build_vision_payload(req.pdf_name, data)
-                        cancelled_evt["partial"] = True
-                        cancelled_evt["result"] = partial_payload
-                        cancelled_evt["chunks_done"] = partial_payload.get("chunks_done", 0)
-                        cancelled_evt["chunks_total"] = partial_payload.get("chunks_total", 0)
-                    yield json.dumps(cancelled_evt, default=str) + "\n"
-                    return
-                elif kind == "error":
-                    yield json.dumps({"event": "error", "elapsed": elapsed, "error": str(data)}) + "\n"
-                    return
-        finally:
-            # Tell the worker to bail at its next checkpoint if we're tearing down.
-            cancel_event.set()
 
-    return StreamingResponse(gen(), media_type="application/x-ndjson")
+@app.delete("/api/vision/jobs")
+def cancel_vision_job_endpoint(pdf_name: str):
+    """Request cancellation of a running vision extraction job."""
+    stem = Path(pdf_name).stem
+    cancelled = _cancel_vision_job(stem)
+    return {"cancel_requested": cancelled}
 
 
 @app.get("/api/results")

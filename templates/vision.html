@@ -543,7 +543,9 @@ const tokenFooter = $('#token-footer');
 
 let currentModel = 'haiku';
 let extracting = false;
-let abortController = null;
+let _pollInterval = null;
+let _pollPdf = null;
+let _cancelRequested = false;
 
 document.querySelectorAll('.radio-option').forEach(opt => {
   opt.addEventListener('click', () => {
@@ -914,8 +916,6 @@ function setExtracting(b) {
   uploadBtn.disabled = b;
 }
 
-let cancelledByUser = false;
-
 function setProgressCancelDisabled(disabled, label) {
   const btn = document.getElementById('cancel-extract-btn');
   if (!btn) return;
@@ -926,12 +926,14 @@ function setProgressCancelDisabled(disabled, label) {
 function attachCancelHandler() {
   const btn = document.getElementById('cancel-extract-btn');
   if (!btn) return;
-  btn.addEventListener('click', () => {
-    if (!abortController) return;
-    cancelledByUser = true;
+  btn.addEventListener('click', async () => {
+    if (_cancelRequested) return;
+    _cancelRequested = true;
     setProgressCancelDisabled(true, 'Cancelling…');
     setProgress('cancelling', 'Cancelling extraction…', null, { cancelling: true });
-    try { abortController.abort(); } catch (_) {}
+    try {
+      await fetch('/api/vision/jobs?pdf_name=' + encodeURIComponent(_pollPdf || pdfSelect.value), { method: 'DELETE' });
+    } catch (_) {}
   });
 }
 
@@ -964,107 +966,97 @@ function setProgress(phase, message, elapsed, opts) {
 }
 function clearProgress() { progressBox.innerHTML = ''; }
 
+function stopPolling() {
+  if (_pollInterval) { clearInterval(_pollInterval); _pollInterval = null; }
+}
+
+async function pollJob(pdf) {
+  try {
+    const res = await fetch('/api/vision/jobs?pdf_name=' + encodeURIComponent(pdf));
+    if (!res.ok) return;
+    const job = await res.json();
+    const elapsed = job.elapsed || 0;
+
+    if (job.status === 'running') {
+      setProgress(job.phase || 'extracting', job.message || 'Working…', elapsed);
+      logRow('[' + elapsed.toFixed(1) + 's] ' + (job.phase || '') + ': ' + (job.message || ''));
+      return;
+    }
+
+    stopPolling();
+
+    if (job.status === 'done') {
+      logRow('[' + elapsed.toFixed(1) + 's] done', 'done');
+      const cachedRes = await fetch('/api/vision/extraction?pdf_name=' + encodeURIComponent(pdf));
+      if (cachedRes.ok) {
+        const payload = await cachedRes.json();
+        renderResult(payload, { cached: !!job.cached, elapsed });
+        clearProgress();
+        if (!job.cached) loadEstimate(pdf);
+      }
+      setExtracting(false);
+    } else if (job.status === 'cancelled') {
+      logRow('[' + elapsed.toFixed(1) + 's] cancelled', 'err');
+      const cachedRes = await fetch('/api/vision/extraction?pdf_name=' + encodeURIComponent(pdf));
+      let partial = null;
+      if (cachedRes.ok) { try { partial = await cachedRes.json(); } catch (_) {} }
+      handleCancelledUI(elapsed, partial && partial.partial ? partial : null);
+      setExtracting(false);
+    } else if (job.status === 'error') {
+      const msg = job.error || 'Extraction failed.';
+      showError(msg);
+      clearProgress();
+      logRow('error: ' + msg, 'err');
+      resultsWrap.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div>'
+        + '<p>' + escapeHtml(msg) + '</p></div>';
+      setExtracting(false);
+    }
+  } catch (_) {}
+}
+
+function startPolling(pdf) {
+  _pollPdf = pdf;
+  stopPolling();
+  pollJob(pdf);
+  _pollInterval = setInterval(() => pollJob(pdf), 2000);
+}
+
 async function runExtraction(force, resume) {
   if (extracting) return;
   const pdf = pdfSelect.value;
   if (!pdf) { showError('Pick a PDF first.'); return; }
 
   clearError();
-  cancelledByUser = false;
+  _cancelRequested = false;
   setExtracting(true);
   streamLog.style.display = '';
   streamLog.innerHTML = '';
-  setProgress('starting', 'Connecting…', 0);
+  setProgress('starting', 'Starting extraction…', 0);
   resultsWrap.innerHTML = '<div class="empty"><div class="empty-icon">⏳</div>'
     + '<p>Extracting <strong>' + escapeHtml(pdf) + '</strong> with <strong>'
     + escapeHtml(currentModel) + '</strong>…</p></div>';
 
-  abortController = new AbortController();
-  let lastElapsed = 0;
-  let lastResult = null;
-  let cached = false;
-  let cancelled = false;
-  let partialResult = null;
-
   try {
-    const res = await fetch('/api/vision/extract/stream', {
+    const res = await fetch('/api/vision/extract', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ pdf_name: pdf, model: currentModel, force: !!force, resume: !!resume }),
-      signal: abortController.signal,
     });
     if (!res.ok) {
       let detail = res.statusText;
       try { detail = (await res.json()).detail || detail; } catch (_) {}
       throw new Error(detail);
     }
-
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-    let buf = '';
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      buf += decoder.decode(value, { stream: true });
-      let idx;
-      while ((idx = buf.indexOf('\n')) >= 0) {
-        const line = buf.slice(0, idx).trim();
-        buf = buf.slice(idx + 1);
-        if (!line) continue;
-        let evt;
-        try { evt = JSON.parse(line); } catch (_) { continue; }
-        if (evt.event === 'progress') {
-          lastElapsed = evt.elapsed || 0;
-          setProgress(evt.phase, evt.message, evt.elapsed);
-          logRow('[' + (evt.elapsed || 0).toFixed(1) + 's] ' + (evt.phase || '') + ': ' + (evt.message || ''));
-        } else if (evt.event === 'heartbeat') {
-          lastElapsed = evt.elapsed || 0;
-          setProgress('working', 'Waiting for Claude…', evt.elapsed);
-        } else if (evt.event === 'done') {
-          lastElapsed = evt.elapsed || lastElapsed;
-          lastResult = evt.result;
-          cached = !!evt.cached;
-          logRow('[' + lastElapsed.toFixed(1) + 's] done', 'done');
-        } else if (evt.event === 'cancelled') {
-          cancelled = true;
-          lastElapsed = evt.elapsed || lastElapsed;
-          if (evt.result) partialResult = evt.result;
-          const partTag = evt.partial
-            ? ' (partial saved: ' + (evt.chunks_done || 0) + '/' + (evt.chunks_total || '?') + ')'
-            : '';
-          logRow('[' + lastElapsed.toFixed(1) + 's] cancelled' + partTag, 'err');
-        } else if (evt.event === 'error') {
-          throw new Error(evt.error || 'Extraction failed');
-        }
-      }
+    const data = await res.json();
+    if (data.status === 'already_running') {
+      logRow('Job already running — attaching to existing job.');
     }
-
-    if (cancelled || cancelledByUser) {
-      handleCancelledUI(lastElapsed, partialResult);
-      return;
-    }
-    if (lastResult) {
-      renderResult(lastResult, { cached, elapsed: lastElapsed });
-      clearProgress();
-      if (!cached && pdfSelect.value === pdf) {
-        loadEstimate(pdf);
-      }
-    } else {
-      throw new Error('Stream ended without a result.');
-    }
+    startPolling(pdf);
   } catch (e) {
-    if (cancelledByUser || e.name === 'AbortError') {
-      handleCancelledUI(lastElapsed, partialResult);
-      return;
-    }
     showError(e.message || String(e));
     clearProgress();
     logRow('error: ' + (e.message || e), 'err');
-    resultsWrap.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div>'
-      + '<p>' + escapeHtml(e.message || String(e)) + '</p></div>';
-  } finally {
     setExtracting(false);
-    abortController = null;
   }
 }
 
